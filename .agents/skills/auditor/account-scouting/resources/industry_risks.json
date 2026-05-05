@@ -1,0 +1,49 @@
+{
+  "industries": {
+    "garment_and_textile": {
+      "name": "May mặc và Dệt may",
+      "risk_hotspots": [
+        {
+          "area": "Quản lý định mức vải (BOM)",
+          "leakage_type": "Lãng phí nguyên liệu",
+          "description": "Chênh lệch giữa định mức thiết kế và lượng vải thực tế sử dụng trong sản xuất."
+        },
+        {
+          "area": "Phụ liệu (Trims)",
+          "leakage_type": "Thất thoát tài sản",
+          "description": "Các phụ liệu nhỏ (cúc, khóa, mác) dễ bị thất thoát hoặc đặt dư thừa không kiểm soát."
+        }
+      ]
+    },
+    "electronics_manufacturing": {
+      "name": "Sản xuất Điện tử",
+      "risk_hotspots": [
+        {
+          "area": "Linh kiện lỗi thời (Obsolete Components)",
+          "leakage_type": "Đọng vốn (Dead Stock)",
+          "description": "Thay đổi thiết kế nhanh dẫn đến linh kiện cũ tồn kho không dùng được."
+        },
+        {
+          "area": "Tỷ lệ phế phẩm (Scrap Rate)",
+          "leakage_type": "Lãng phí chi phí sản xuất",
+          "description": "Phế phẩm phát sinh cao hơn định mức kỹ thuật cho phép."
+        }
+      ]
+    },
+    "food_and_beverage": {
+      "name": "Thực phẩm và Đồ uống",
+      "risk_hotspots": [
+        {
+          "area": "Quản lý hạn sử dụng (FEFO)",
+          "leakage_type": "Hủy bỏ hàng hóa (Write-off)",
+          "description": "Hàng hết hạn do không tuân thủ quy trình xuất kho ưu tiên hàng cũ."
+        },
+        {
+          "area": "Hao hụt trong vận chuyển",
+          "leakage_type": "Thất thoát hàng hóa",
+          "description": "Sự mâu thuẫn giữa số lượng xuất xưởng và số lượng nhận tại kho phân phối."
+        }
+      ]
+    }
+  }
+}

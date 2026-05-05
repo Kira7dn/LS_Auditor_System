@@ -1,0 +1,23 @@
+{
+  "variance_thresholds": {
+    "price_variance": {
+      "low_risk": 0.05,
+      "medium_risk": 0.10,
+      "high_risk": 0.20
+    },
+    "quantity_variance": {
+      "low_risk": 0.03,
+      "medium_risk": 0.07,
+      "high_risk": 0.15
+    },
+    "lead_time_variance_days": {
+      "low_risk": 3,
+      "medium_risk": 7,
+      "high_risk": 14
+    }
+  },
+  "behavioral_patterns": {
+    "split_po_threshold": 0.9,
+    "buffer_stock_multiplier": 1.5
+  }
+}

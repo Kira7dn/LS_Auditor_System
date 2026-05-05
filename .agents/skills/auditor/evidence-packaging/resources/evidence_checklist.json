@@ -1,0 +1,18 @@
+{
+  "high_fidelity_requirements": [
+    "Primary Key (PO No, Invoice No, etc.)",
+    "Timestamp of occurrence",
+    "Calculated financial impact",
+    "Reference to raw data source (File/Line)",
+    "Screenshot or Log snippet (if applicable)",
+    "Root cause link"
+  ],
+  "file_naming_convention": "EVID_{DATE}_{FINDING_ID}_{ITEM_TYPE}.{EXT}",
+  "storage_hierarchy": [
+    "Evidence_Packs/",
+    "  {Finding_ID}/",
+    "    data/",
+    "    images/",
+    "    logs/"
+  ]
+}

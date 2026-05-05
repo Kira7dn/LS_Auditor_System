@@ -1,0 +1,21 @@
+{
+  "mermaid_styles": {
+    "discovery": {
+      "fill": "#e1f5fe",
+      "stroke": "#01579b"
+    },
+    "execution": {
+      "fill": "#fff3e0",
+      "stroke": "#e65100"
+    },
+    "delivery": {
+      "fill": "#e8f5e9",
+      "stroke": "#1b5e20"
+    },
+    "risk_node": {
+      "fill": "#ffebee",
+      "stroke": "#b71c1c",
+      "stroke-width": "3px"
+    }
+  }
+}

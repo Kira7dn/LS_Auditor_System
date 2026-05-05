@@ -1,0 +1,208 @@
+{
+  "identity": {
+    "name": "LS Auditor - Core Registry",
+    "tier": "auditor",
+    "version": "3.0.0",
+    "updated_at": "2026-05-05T16:00:00Z"
+  },
+  "assets": [
+    {
+      "id": "auditor-governance",
+      "type": "Rule",
+      "path": "GEMINI.md",
+      "purpose": "Core rules for LS Auditor Agent behavior and evidence integrity."
+    },
+    {
+      "id": "audit-implementation-backlog",
+      "type": "Project",
+      "path": "Training/handbook/cases/backlog.md",
+      "purpose": "Tracks audit framework development and case studies."
+    },
+    {
+      "id": "discovery-workflow",
+      "type": "Workflow",
+      "path": ".agents/workflows/auditor/discovery_workflow.md",
+      "purpose": "From raw input to Account Thesis & Process Map."
+    },
+    {
+      "id": "data-preparation-workflow",
+      "type": "Workflow",
+      "path": ".agents/workflows/auditor/data_preparation_workflow.md",
+      "purpose": "From raw data to Unified Audit Dataset."
+    },
+    {
+      "id": "audit-execution-workflow",
+      "type": "Workflow",
+      "path": ".agents/workflows/auditor/audit_execution_workflow.md",
+      "purpose": "From dataset to Risk Register & Evidence Pack."
+    },
+    {
+      "id": "solution-packaging-workflow",
+      "type": "Workflow",
+      "path": ".agents/workflows/auditor/solution_packaging_workflow.md",
+      "purpose": "From findings to Solution Proposal & ROI."
+    },
+    {
+      "id": "final-report-workflow",
+      "type": "Workflow",
+      "path": ".agents/workflows/auditor/final_report_workflow.md",
+      "purpose": "Aggregating all artifacts into the final audit report."
+    },
+    {
+      "id": "account-scouting",
+      "type": "Skill",
+      "path": ".agents/skills/auditor/account-scouting/",
+      "purpose": "Context research and leakage hypothesis forecasting."
+    },
+    {
+      "id": "process-mapping",
+      "type": "Skill",
+      "path": ".agents/skills/auditor/process-mapping/",
+      "purpose": "SOP deconstruction and Critical Control Point identification."
+    },
+    {
+      "id": "gemini-constitution",
+      "type": "Rule",
+      "path": "GEMINI.md",
+      "purpose": "Supreme constitution of the LS Auditor system."
+    },
+    {
+      "id": "operational-spec",
+      "type": "Rule",
+      "path": ".agents/rules/OPERATIONAL_SPEC.md",
+      "purpose": "Technical operation standards and auto-execution (Turbo) discipline."
+    },
+    {
+      "id": "script-standards",
+      "type": "Rule",
+      "path": ".agents/rules/SCRIPT_STANDARDS.md",
+      "purpose": "Strict AI-First scripting standards for all auditor tools."
+    },
+    {
+      "id": "data-strategy",
+      "type": "Skill",
+      "path": ".agents/skills/auditor/data-strategy/",
+      "purpose": "Audit data architecture and normalization logic."
+    },
+    {
+      "id": "variance-analysis",
+      "type": "Skill",
+      "path": ".agents/skills/auditor/variance-analysis/",
+      "purpose": "Plan vs. Actual comparison and anomaly detection."
+    },
+    {
+      "id": "root-cause-synthesis",
+      "type": "Skill",
+      "path": ".agents/skills/auditor/root-cause-synthesis/",
+      "purpose": "Synthesizing systemic failures from individual exceptions."
+    },
+    {
+      "id": "evidence-packaging",
+      "type": "Skill",
+      "path": ".agents/skills/auditor/evidence-packaging/",
+      "purpose": "Standardizing finding dossiers and evidence links."
+    },
+    {
+      "id": "solution-design",
+      "type": "Skill",
+      "path": ".agents/skills/auditor/solution-design/",
+      "purpose": "Intervention roadmap and ROI calculation."
+    },
+    {
+      "id": "auditor-mermaid-expert",
+      "type": "Skill",
+      "path": ".agents/skills/auditor/auditor-mermaid-expert/",
+      "purpose": "Specialized audit process diagramming with auto-styling."
+    },
+    {
+      "id": "mermaid-diagrams",
+      "type": "Skill",
+      "path": ".agents/skills/common/mermaid-diagrams/",
+      "purpose": "Base Mermaid syntax and modern visual styles (handDrawn, elk)."
+    },
+    {
+      "id": "writing-clearly",
+      "type": "Skill",
+      "path": ".agents/skills/common/writing-clearly-and-concisely/",
+      "purpose": "Rules for sharp, professional audit reporting."
+    },
+    {
+      "id": "requirements-clarity",
+      "type": "Skill",
+      "path": ".agents/skills/common/requirements-clarity/",
+      "purpose": "Defining Working Specs for data tools and audit logic."
+    },
+    {
+      "id": "prompt-engineering",
+      "type": "Skill",
+      "path": ".agents/skills/common/prompt-engineering-patterns/",
+      "purpose": "Optimizing agent reasoning for complex audit scenarios."
+    },
+    {
+      "id": "template-account-thesis",
+      "type": "Template",
+      "path": ".agents/templates/auditor/account-thesis.md",
+      "purpose": "Leakage hypothesis and customer context template."
+    },
+    {
+      "id": "template-process-map",
+      "type": "Template",
+      "path": ".agents/templates/auditor/process-map.md",
+      "purpose": "Business process flow template with Mermaid support."
+    },
+    {
+      "id": "template-control-point-table",
+      "type": "Template",
+      "path": ".agents/templates/auditor/control-point-table.md",
+      "purpose": "Master list of identified control points."
+    },
+    {
+      "id": "template-data-quality-log",
+      "type": "Template",
+      "path": ".agents/templates/auditor/data-quality-log.md",
+      "purpose": "Data quality assessment and normalization log."
+    },
+    {
+      "id": "template-business-analysis-report",
+      "type": "Template",
+      "path": ".agents/templates/auditor/business-analysis-report.md",
+      "purpose": "Quantitative analysis and audit metrics report."
+    },
+    {
+      "id": "template-candidate-exceptions",
+      "type": "Template",
+      "path": ".agents/templates/auditor/candidate-exceptions.md",
+      "purpose": "List of potential anomalies and exceptions."
+    },
+    {
+      "id": "template-risk-register",
+      "type": "Template",
+      "path": ".agents/templates/auditor/risk-register.md",
+      "purpose": "Confirmed risk inventory and impact assessment."
+    },
+    {
+      "id": "template-evidence-pack",
+      "type": "Template",
+      "path": ".agents/templates/auditor/evidence-pack.md",
+      "purpose": "Detailed evidence dossiers for findings."
+    },
+    {
+      "id": "template-intervention-thesis",
+      "type": "Template",
+      "path": ".agents/templates/auditor/intervention-thesis.md",
+      "purpose": "Intervention roadmap and ROI projections."
+    },
+    {
+      "id": "final-audit-report",
+      "type": "Template",
+      "path": ".agents/templates/auditor/final-audit-report.md",
+      "purpose": "Executive summary of audit results and findings."
+    },
+    {
+      "id": "case-material-planning",
+      "type": "Case Study",
+      "path": "Training/handbook/cases/material-planning/CASE_STUDY.md",
+      "purpose": "Organized governance audit case with sub-artifacts for material planning."
+    }
+  ]
+}

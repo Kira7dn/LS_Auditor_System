@@ -1,0 +1,19 @@
+{
+  "systemic_failures": [
+    {
+      "category": "Data Integrity",
+      "symptoms": ["Master data mismatch", "Missing timestamps", "Orphaned records"],
+      "root_cause": "Manual data entry workflows without validation layers."
+    },
+    {
+      "category": "Procurement Control",
+      "symptoms": ["Split POs", "Unauthorized vendors", "Price variances > 20%"],
+      "root_cause": "Weak approval hierarchy or bypass of ERP control points."
+    },
+    {
+      "category": "Operational Efficiency",
+      "symptoms": ["High scrap rate", "Idle time", "Buffer stock building"],
+      "root_cause": "Inaccurate BOM standards or lack of shop-floor visibility."
+    }
+  ]
+}

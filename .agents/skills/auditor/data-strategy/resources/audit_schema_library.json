@@ -1,0 +1,33 @@
+{
+  "schemas": {
+    "procurement_cycle": {
+      "tables": [
+        {
+          "name": "PR_Master",
+          "keys": ["PR_ID"],
+          "fields": ["PR_Date", "Item_ID", "Qty", "Dept_ID"]
+        },
+        {
+          "name": "PO_Master",
+          "keys": ["PO_ID"],
+          "fields": ["PO_Date", "PR_ID", "Vendor_ID", "Qty", "UnitPrice"]
+        },
+        {
+          "name": "GRN_Master",
+          "keys": ["GRN_ID"],
+          "fields": ["GRN_Date", "PO_ID", "Received_Qty", "Warehouse_ID"]
+        }
+      ],
+      "join_logic": "PR_ID (1:N) PO_ID (1:N) GRN_ID"
+    },
+    "inventory_cycle": {
+      "tables": [
+        {
+          "name": "Stock_Master",
+          "keys": ["Item_ID", "Warehouse_ID"],
+          "fields": ["Opening_Qty", "Closing_Qty", "UOM"]
+        }
+      ]
+    }
+  }
+}

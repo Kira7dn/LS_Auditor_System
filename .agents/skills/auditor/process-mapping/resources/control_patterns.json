@@ -1,0 +1,32 @@
+{
+  "patterns": {
+    "procurement": {
+      "standard_controls": [
+        {
+          "name": "PR-PO Reconciliation",
+          "description": "Đối chiếu số lượng và mặt hàng trên đơn đặt hàng (PO) với yêu cầu mua hàng (PR) đã duyệt.",
+          "goal": "Ngăn chặn việc mua hàng sai nhu cầu hoặc đặt hàng khống."
+        },
+        {
+          "name": "Price Verification",
+          "description": "Kiểm tra đơn giá trên PO so với báo giá được duyệt hoặc giá lịch sử.",
+          "goal": "Ngăn chặn rủi ro mua hàng giá cao hoặc thông đồng nhà cung cấp."
+        }
+      ]
+    },
+    "warehouse": {
+      "standard_controls": [
+        {
+          "name": "Blind Receiving",
+          "description": "Nhân viên kho nhận hàng không biết trước số lượng trên PO để buộc phải đếm thực tế.",
+          "goal": "Đảm bảo tính chính xác của số lượng hàng nhập kho."
+        },
+        {
+          "name": "FEFO Validation",
+          "description": "Kiểm tra việc xuất hàng theo nguyên tắc First-Expired-First-Out.",
+          "goal": "Giảm thiểu rủi ro hàng hết hạn sử dụng (Write-off)."
+        }
+      ]
+    }
+  }
+}

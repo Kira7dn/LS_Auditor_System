@@ -1,0 +1,28 @@
+{
+  "stakeholders": {
+    "CFO": {
+      "focus": "Tài chính và Dòng tiền",
+      "questions": [
+        "Chỉ số quay vòng vốn lưu động hiện tại của doanh nghiệp có đang bám sát kế hoạch năm không?",
+        "Anh/chị có nhận thấy sự mâu thuẫn nào giữa giá trị tồn kho trên sổ sách và thực tế tại kho không?",
+        "Các khoản giảm trừ giá trị hàng tồn kho (Write-off) trong quý vừa qua tập trung vào nhóm vật tư nào nhất?"
+      ]
+    },
+    "Production_Manager": {
+      "focus": "Hiệu suất và Lãng phí",
+      "questions": [
+        "Làm thế nào để anh/chị kiểm soát được việc công nhân xin cấp phát vật tư thêm ngoài định mức (BOM)?",
+        "Khi kế hoạch sản xuất thay đổi bất ngờ, hệ thống PR/PO mất bao lâu để phản ứng và dừng các đơn hàng không cần thiết?",
+        "Tỷ lệ phế phẩm thực tế tại chuyền sản xuất đang được ghi nhận thủ công hay tự động qua hệ thống?"
+      ]
+    },
+    "Procurement_Head": {
+      "focus": "Chi phí và Nhà cung cấp",
+      "questions": [
+        "Làm thế nào để bộ phận thu mua biết được một yêu cầu PR là thực sự cần thiết hay chỉ là 'đặt dự phòng' của bộ phận sản xuất?",
+        "Quy trình lựa chọn nhà cung cấp cho các mặt hàng không thường xuyên (Spot buy) đang được kiểm soát như thế nào để đảm bảo giá tốt nhất?",
+        "Có bao nhiêu phần trăm PO được phát hành sau khi hàng đã về đến kho?"
+      ]
+    }
+  }
+}

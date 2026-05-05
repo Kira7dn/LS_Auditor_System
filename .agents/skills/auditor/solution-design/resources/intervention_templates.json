@@ -1,0 +1,22 @@
+{
+  "interventions": [
+    {
+      "name": "Master Price Lock",
+      "type": "Technical Control",
+      "description": "Lock unit prices in ERP to contract rates. Require VP approval for overrides.",
+      "expected_impact": "Eliminates random price spikes."
+    },
+    {
+      "name": "Dynamic Buffer Management",
+      "type": "Process Change",
+      "description": "Switch from static stock levels to demand-driven buffer calculation.",
+      "expected_impact": "Reduces dead stock by 20-30%."
+    },
+    {
+      "name": "Consolidated Sourcing",
+      "type": "Commercial Strategy",
+      "description": "Aggregate volume across all departments to negotiate volume discounts.",
+      "expected_impact": "5-10% cost reduction across categories."
+    }
+  ]
+}
