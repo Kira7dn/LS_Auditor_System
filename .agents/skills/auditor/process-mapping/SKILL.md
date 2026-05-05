@@ -68,3 +68,11 @@ graph LR
 - **Copy-Paste SOP**: Chỉ liệt kê lại nội dung SOP mà không phân tích logic.
 - **Bỏ qua ngoại lệ**: Chỉ vẽ luồng "Happy Path" (luồng đúng) mà bỏ qua các trường hợp sai lỗi/hủy bỏ.
 - **Thiếu ID**: Không đánh mã ID cho các điểm kiểm soát (CP-xx) dẫn đến khó khăn khi đối chiếu dữ liệu sau này.
+
+## Assistant Contract
+- **Trigger**: Khi cần bóc tách SOP, handoff hoặc workflow vận hành.
+- **Input**: SOP text/file, stakeholder notes, system screenshots nếu có.
+- **Output**: process map, control point table, risk handoff notes.
+- **Artifacts**: `Projects/<case_id>/working/process-map.md`, `control-point-table.md`.
+- **Failure Modes**: nhầm SOP với thực tế, bỏ sót workaround, thiếu control owner.
+- **Acceptance Checklist**: mọi handoff có owner; mọi critical control point có risk và evidence source.

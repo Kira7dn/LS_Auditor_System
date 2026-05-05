@@ -10,7 +10,7 @@ Workflow này hướng dẫn Agent cách thực hiện phân tích sai lệch, c
 Trước khi bắt đầu, Agent PHẢI nạp các tri thức sau:
 - [GEMINI.md](../../../GEMINI.md): Hiến pháp vận hành.
 - [asset-index.json](../../../asset-index.json): Bản đồ tài sản tri thức.
-- [CASE_STUDY.md](../../../Training/handbook/cases/material-planning/CASE_STUDY.md): Luận đề và phương pháp chẩn đoán mẫu.
+- `[case-study-path]` (MVP default: `Training/handbook/material-planning/CASE_STUDY.md`): Luận đề và phương pháp chẩn đoán mẫu.
 
 ## 2. Chuẩn bị (Preparation)
 Xác định các tham số thực thi:

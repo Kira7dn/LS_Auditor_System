@@ -64,3 +64,11 @@ Mọi Unified Dataset phải có tối thiểu các cột chuẩn:
 - **Mất dữ liệu do Inner Join**: Sử dụng Inner Join quá mức làm mất các giao dịch mồ côi (orphaned records) - vốn là nơi chứa nhiều rủi ro Audit nhất.
 - **Sai lệch đơn vị tính**: Không quy đổi UoM dẫn đến các phép tính toán sai lệch hàng nghìn lần (Ví dụ: Cái vs Thùng).
 - **Thiếu kiểm tra trùng lặp**: Coi các bản ghi trùng lặp là giao dịch thật, làm thổi phồng giá trị rò rỉ.
+
+## Assistant Contract
+- **Trigger**: Khi chuẩn bị normalize/join dữ liệu audit.
+- **Input**: raw data dictionary, sample files, schema library hoặc case data spec.
+- **Output**: schema map, join spec, validation spec.
+- **Artifacts**: `Projects/<case_id>/artifacts/data_quality_log.json`, `working/data-spec.md`.
+- **Failure Modes**: grain không rõ, join key yếu, mất dòng sau join nhưng không cảnh báo.
+- **Acceptance Checklist**: có required columns, grain, join keys, expected join rate và data quality thresholds.

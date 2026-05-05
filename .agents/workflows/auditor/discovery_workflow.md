@@ -10,7 +10,7 @@ Workflow này hướng dẫn Agent thực hiện các bước tìm hiểu ban đ
 Agent PHẢI nạp các tri thức sau:
 - [GEMINI.md](../../../GEMINI.md)
 - [asset-index.json](../../../asset-index.json)
-- [CASE_STUDY.md](../../../Training/handbook/cases/material-planning/CASE_STUDY.md)
+- `[case-study-path]` (MVP default: `Training/handbook/material-planning/CASE_STUDY.md`)
 
 ## 2. Thực thi Khám phá (Operational Execution)
 

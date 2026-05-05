@@ -9,7 +9,7 @@ Workflow này hướng dẫn Agent cách đóng gói các phát hiện Audit th�
 ## 1. Nạp Ngữ cảnh (Context Loading)
 Agent PHẢI nạp các tri thức sau:
 - [GEMINI.md](../../../GEMINI.md)
-- [CASE_STUDY.md](../../../Training/handbook/cases/material-planning/CASE_STUDY.md)
+- `[case-study-path]` (MVP default: `Training/handbook/material-planning/CASE_STUDY.md`)
 
 ## 2. Thực thi Giải pháp (Solution Execution)
 

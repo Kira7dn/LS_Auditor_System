@@ -57,3 +57,11 @@ print(f"Giá trị rò rỉ: {leakage_value}")
 - **Nhầm lẫn đơn vị tính**: Dẫn đến giá trị rò rỉ bị tính khống lên hàng triệu đô la.
 - **Bỏ qua Inventory On-hand**: Chỉ nhìn vào PO mà không nhìn vào kho hiện tại dẫn đến kết luận sai về nhu cầu mua thêm.
 - **Thiếu bằng chứng đối chiếu**: Đưa ra kết luận rò rỉ mà không chỉ ra được chứng từ nào (PO No nào, PR No nào) gây ra lỗi đó.
+
+## Assistant Contract
+- **Trigger**: Khi có unified dataset và cần lượng hóa leakage.
+- **Input**: dataset path, metric spec, thresholds.
+- **Output**: leakage analysis JSON, candidate exceptions.
+- **Artifacts**: `Projects/<case_id>/artifacts/leakage_analysis.json`, `candidate-exceptions.md`.
+- **Failure Modes**: sai đơn vị tính, thiếu actual/plan fields, threshold không phù hợp ngữ cảnh.
+- **Acceptance Checklist**: mọi exception có transaction ID, variance, leakage và risk status.

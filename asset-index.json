@@ -2,27 +2,81 @@
   "identity": {
     "name": "LS Auditor - Core Registry",
     "tier": "auditor",
-    "version": "3.0.0",
-    "updated_at": "2026-05-05T16:00:00Z"
+    "version": "3.1.0",
+    "updated_at": "2026-05-06T00:00:00+07:00"
   },
   "assets": [
     {
-      "id": "auditor-governance",
+      "id": "gemini-constitution",
       "type": "Rule",
       "path": "GEMINI.md",
-      "purpose": "Core rules for LS Auditor Agent behavior and evidence integrity."
+      "purpose": "Supreme constitution for LS Auditor agent behavior and evidence integrity."
+    },
+    {
+      "id": "operational-spec",
+      "type": "Rule",
+      "path": ".agents/rules/OPERATIONAL_SPEC.md",
+      "purpose": "Operational hierarchy, bootstrap and case workspace discipline."
+    },
+    {
+      "id": "script-standards",
+      "type": "Rule",
+      "path": ".agents/rules/SCRIPT_STANDARDS.md",
+      "purpose": "AI-first CLI/script standards for JSON stdout and stderr logging."
+    },
+    {
+      "id": "data-governance",
+      "type": "Rule",
+      "path": ".agents/rules/DATA_GOVERNANCE.md",
+      "purpose": "Raw data immutability, schema discipline and data quality minimums."
+    },
+    {
+      "id": "evidence-standards",
+      "type": "Rule",
+      "path": ".agents/rules/EVIDENCE_STANDARDS.md",
+      "purpose": "Traceability and Evidence Pack requirements for findings."
+    },
+    {
+      "id": "finding-standards",
+      "type": "Rule",
+      "path": ".agents/rules/FINDING_STANDARDS.md",
+      "purpose": "Required finding structure, severity and candidate/confirmed split."
+    },
+    {
+      "id": "artifact-lifecycle",
+      "type": "Rule",
+      "path": ".agents/rules/ARTIFACT_LIFECYCLE.md",
+      "purpose": "Case workspace output lifecycle and template immutability."
+    },
+    {
+      "id": "rule-authoring",
+      "type": "Rule",
+      "path": ".agents/rules/RULE_AUTHORING.md",
+      "purpose": "Maintenance rules for writing non-overlapping agent rules."
+    },
+    {
+      "id": "auditor-assistant-spec",
+      "type": "Rule",
+      "path": ".agents/rules/AUDITOR_ASSISTANT_SPEC.md",
+      "purpose": "Production MVP capability and CLI contract for LS Auditor Assistant."
     },
     {
       "id": "audit-implementation-backlog",
       "type": "Project",
-      "path": "Training/handbook/cases/backlog.md",
+      "path": "backlog.md",
       "purpose": "Tracks audit framework development and case studies."
+    },
+    {
+      "id": "case-material-planning",
+      "type": "Case Study",
+      "path": "Training/handbook/material-planning/CASE_STUDY.md",
+      "purpose": "Material Planning audit case used as the MVP validation case."
     },
     {
       "id": "discovery-workflow",
       "type": "Workflow",
       "path": ".agents/workflows/auditor/discovery_workflow.md",
-      "purpose": "From raw input to Account Thesis & Process Map."
+      "purpose": "From raw input to Account Thesis and Process Map."
     },
     {
       "id": "data-preparation-workflow",
@@ -34,19 +88,25 @@
       "id": "audit-execution-workflow",
       "type": "Workflow",
       "path": ".agents/workflows/auditor/audit_execution_workflow.md",
-      "purpose": "From dataset to Risk Register & Evidence Pack."
+      "purpose": "From dataset to Risk Register and Evidence Pack."
     },
     {
       "id": "solution-packaging-workflow",
       "type": "Workflow",
       "path": ".agents/workflows/auditor/solution_packaging_workflow.md",
-      "purpose": "From findings to Solution Proposal & ROI."
+      "purpose": "From findings to Solution Proposal and ROI."
     },
     {
       "id": "final-report-workflow",
       "type": "Workflow",
       "path": ".agents/workflows/auditor/final_report_workflow.md",
       "purpose": "Aggregating all artifacts into the final audit report."
+    },
+    {
+      "id": "full-audit-assistant-workflow",
+      "type": "Workflow",
+      "path": ".agents/workflows/auditor/full_audit_assistant_workflow.md",
+      "purpose": "End-to-end assistant workflow from case initialization to final report."
     },
     {
       "id": "account-scouting",
@@ -59,24 +119,6 @@
       "type": "Skill",
       "path": ".agents/skills/auditor/process-mapping/",
       "purpose": "SOP deconstruction and Critical Control Point identification."
-    },
-    {
-      "id": "gemini-constitution",
-      "type": "Rule",
-      "path": "GEMINI.md",
-      "purpose": "Supreme constitution of the LS Auditor system."
-    },
-    {
-      "id": "operational-spec",
-      "type": "Rule",
-      "path": ".agents/rules/OPERATIONAL_SPEC.md",
-      "purpose": "Technical operation standards and auto-execution (Turbo) discipline."
-    },
-    {
-      "id": "script-standards",
-      "type": "Rule",
-      "path": ".agents/rules/SCRIPT_STANDARDS.md",
-      "purpose": "Strict AI-First scripting standards for all auditor tools."
     },
     {
       "id": "data-strategy",
@@ -115,94 +157,16 @@
       "purpose": "Specialized audit process diagramming with auto-styling."
     },
     {
-      "id": "mermaid-diagrams",
-      "type": "Skill",
-      "path": ".agents/skills/common/mermaid-diagrams/",
-      "purpose": "Base Mermaid syntax and modern visual styles (handDrawn, elk)."
-    },
-    {
-      "id": "writing-clearly",
-      "type": "Skill",
-      "path": ".agents/skills/common/writing-clearly-and-concisely/",
-      "purpose": "Rules for sharp, professional audit reporting."
-    },
-    {
-      "id": "requirements-clarity",
-      "type": "Skill",
-      "path": ".agents/skills/common/requirements-clarity/",
-      "purpose": "Defining Working Specs for data tools and audit logic."
-    },
-    {
-      "id": "prompt-engineering",
-      "type": "Skill",
-      "path": ".agents/skills/common/prompt-engineering-patterns/",
-      "purpose": "Optimizing agent reasoning for complex audit scenarios."
-    },
-    {
-      "id": "template-account-thesis",
-      "type": "Template",
-      "path": ".agents/templates/auditor/account-thesis.md",
-      "purpose": "Leakage hypothesis and customer context template."
-    },
-    {
-      "id": "template-process-map",
-      "type": "Template",
-      "path": ".agents/templates/auditor/process-map.md",
-      "purpose": "Business process flow template with Mermaid support."
-    },
-    {
-      "id": "template-control-point-table",
-      "type": "Template",
-      "path": ".agents/templates/auditor/control-point-table.md",
-      "purpose": "Master list of identified control points."
-    },
-    {
-      "id": "template-data-quality-log",
-      "type": "Template",
-      "path": ".agents/templates/auditor/data-quality-log.md",
-      "purpose": "Data quality assessment and normalization log."
-    },
-    {
-      "id": "template-business-analysis-report",
-      "type": "Template",
-      "path": ".agents/templates/auditor/business-analysis-report.md",
-      "purpose": "Quantitative analysis and audit metrics report."
-    },
-    {
-      "id": "template-candidate-exceptions",
-      "type": "Template",
-      "path": ".agents/templates/auditor/candidate-exceptions.md",
-      "purpose": "List of potential anomalies and exceptions."
-    },
-    {
-      "id": "template-risk-register",
-      "type": "Template",
-      "path": ".agents/templates/auditor/risk-register.md",
-      "purpose": "Confirmed risk inventory and impact assessment."
-    },
-    {
-      "id": "template-evidence-pack",
-      "type": "Template",
-      "path": ".agents/templates/auditor/evidence-pack.md",
-      "purpose": "Detailed evidence dossiers for findings."
-    },
-    {
-      "id": "template-intervention-thesis",
-      "type": "Template",
-      "path": ".agents/templates/auditor/intervention-thesis.md",
-      "purpose": "Intervention roadmap and ROI projections."
-    },
-    {
-      "id": "final-audit-report",
+      "id": "template-final-audit-report",
       "type": "Template",
       "path": ".agents/templates/auditor/final-audit-report.md",
       "purpose": "Executive summary of audit results and findings."
     },
     {
-      "id": "case-material-planning",
-      "type": "Case Study",
-      "path": "Training/handbook/cases/material-planning/CASE_STUDY.md",
-      "purpose": "Organized governance audit case with sub-artifacts for material planning."
+      "id": "template-evidence-pack",
+      "type": "Template",
+      "path": ".agents/templates/auditor/evidence-pack.md",
+      "purpose": "Detailed evidence dossier for findings."
     }
   ]
 }

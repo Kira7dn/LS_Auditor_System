@@ -36,3 +36,11 @@ description: Chuyên gia thiết kế sơ đồ Mermaid chuẩn Audit. Tích h�
 ## 6. Lưu ý (Pitfalls)
 - Không vẽ sơ đồ quá 15 nodes trong một file Markdown để đảm bảo khả năng hiển thị.
 - Luôn kiểm tra tính tương thích của renderer khi sử dụng các tính năng mới như `elk` layout.
+
+## 7. Assistant Contract
+- **Trigger**: Khi cần trực quan hóa process, control gaps, evidence flow hoặc report summary.
+- **Input**: node list, connection list, diagram type.
+- **Output**: Mermaid code with audit styling.
+- **Artifacts**: `Projects/<case_id>/artifacts/*.mmd` hoặc nhúng trong report.
+- **Failure Modes**: thiếu control/risk labels, sơ đồ quá dày, không có legend.
+- **Acceptance Checklist**: sơ đồ có actors, controls, risks, data/system nodes và đọc được ở cấp quản lý.

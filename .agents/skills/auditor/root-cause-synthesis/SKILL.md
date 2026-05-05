@@ -63,3 +63,11 @@ Phân tích nguyên nhân qua 4M:
 - **Kết luận vội vàng**: Đưa ra nguyên nhân mà không có đủ số lượng Findings để chứng minh tính hệ thống.
 - **Lỗi ngụy biện**: Nhầm lẫn giữa sự tương quan (Correlation) và nguyên nhân kết quả (Causation).
 - **Giải pháp hời hợt**: Đưa ra nguyên nhân là "Do ý thức nhân viên kém" (đây thường không phải nguyên nhân gốc rễ mà hệ thống có thể sửa được).
+
+## Assistant Contract
+- **Trigger**: Khi đã có candidate exceptions hoặc confirmed findings.
+- **Input**: exception list, category map, threshold.
+- **Output**: systemic risk groups and root cause candidates.
+- **Artifacts**: `Projects/<case_id>/working/problem-classification.md`.
+- **Failure Modes**: nhóm quá rộng, thiếu control gap, nhầm triệu chứng thành nguyên nhân.
+- **Acceptance Checklist**: mỗi systemic risk có exception IDs, control gap và intervention direction.

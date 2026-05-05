@@ -58,3 +58,11 @@ Mọi đề xuất phải kèm theo một con số:
 - **Giải pháp quá lý thuyết**: Đề xuất các hệ thống IT đắt tiền mà khách hàng không đủ trình độ vận hành.
 - **Thiếu lộ trình cụ thể**: Chỉ nói chung chung "Cần cải thiện quy trình" mà không nói rõ bước 1 làm gì, bước 2 làm gì.
 - **Bỏ qua khía cạnh con người**: Quên mất việc đào tạo và thay đổi tư duy cho những người trực tiếp thực hiện.
+
+## Assistant Contract
+- **Trigger**: Khi findings và root cause đã đủ rõ để thiết kế can thiệp.
+- **Input**: confirmed findings, root causes, leakage values, implementation constraints.
+- **Output**: intervention thesis, ROI metrics, solution proposal.
+- **Artifacts**: `Projects/<case_id>/working/intervention-thesis.md`, `solution-proposal.md`.
+- **Failure Modes**: solution không nối với root cause, ROI thiếu assumption, roadmap không có owner.
+- **Acceptance Checklist**: mỗi intervention nối với finding/root cause, có owner, cost, saving và payback.

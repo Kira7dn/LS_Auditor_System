@@ -58,3 +58,11 @@ Một hồ sơ bằng chứng hoàn chỉnh phải bao gồm 3 lớp:
 - **Bằng chứng rời rạc**: Chỉ đưa ra PO lỗi mà không chỉ ra được các bước liên quan bị bypass.
 - **Thiếu ID tham chiếu**: Không gắn mã ID khiến khách hàng không thể tìm lại giao dịch đó trong hệ thống của họ.
 - **Quá nhiều dữ liệu rác**: Đưa vào quá nhiều chứng từ không liên quan làm loãng hồ sơ bằng chứng.
+
+## Assistant Contract
+- **Trigger**: Khi nâng candidate exception thành confirmed finding.
+- **Input**: finding JSON, source artifact paths, evidence output directory.
+- **Output**: Evidence Pack folder with `FINDING.md` and source artifacts.
+- **Artifacts**: `Projects/<case_id>/Evidence_Packs/<finding_id>/`.
+- **Failure Modes**: thiếu transaction ID, thiếu calculation trail, không ghi limitation.
+- **Acceptance Checklist**: Evidence Pack có source, timestamp/kỳ dữ liệu, leakage logic và confidence level.

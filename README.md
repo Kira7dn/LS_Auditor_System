@@ -32,9 +32,32 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 # 2. Khởi tạo Workspace
 uv sync
 
-# 3. Thực thi Forensic (Ví dụ)
-uv run .agents/skills/auditor/variance-analysis/scripts/variance_calculator.py
+# 3. Kiểm tra registry
+uv run ls-auditor registry inspect
+
+# 4. Khởi tạo case Material Planning
+uv run ls-auditor init-case --case-id material-planning --template material-planning
 ```
+
+---
+
+## 🧰 CLI Assistant Commands
+
+Production MVP cung cấp các command chuẩn JSON để Agent và Auditor phối hợp:
+
+```powershell
+uv run ls-auditor validate --input <file> --schema <schema.json> --out <validation.json>
+uv run ls-auditor normalize --input <file> --spec <normalize.json> --out <normalized.parquet>
+uv run ls-auditor join --spec <join.json> --out <unified.parquet>
+uv run ls-auditor compute --dataset <unified.parquet> --metric-spec <metric.json> --out <leakage.json>
+uv run ls-auditor rule-test --dataset <unified.parquet> --rules <rules.json> --out <rule_test.json>
+uv run ls-auditor trace --finding <finding.json> --out-dir <Evidence_Packs>
+uv run ls-auditor inspect-parquet --input <unified.parquet>
+uv run ls-auditor chart --dataset <unified.parquet> --out <chart.md>
+uv run ls-auditor assemble-report --case-dir <case_dir> --out <FINAL_AUDIT_REPORT.md>
+```
+
+Mọi command trả JSON qua `stdout`; log/cảnh báo kỹ thuật đi qua `stderr`.
 
 ---
 
@@ -62,6 +85,18 @@ Evidence_Pack_ID/
 │   └── visual_process.mmd        # Sơ đồ quy trình thực tế
 ├── FINDING.md                    # Mô tả sai lệch & Giá trị thiệt hại
 └── INTERVENTION_THESIS.md        # Luận đề can thiệp & ROI dự kiến
+```
+
+Case workspace mặc định:
+
+```text
+Projects/<case_id>/
+├── raw/
+├── working/
+│   └── templates/
+├── artifacts/
+├── Evidence_Packs/
+└── FINAL_AUDIT_REPORT.md
 ```
 
 ---

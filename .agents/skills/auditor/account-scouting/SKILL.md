@@ -59,3 +59,11 @@ Cách đặt câu hỏi để mở khóa thông tin:
 - **Hời hợt**: Chỉ liệt kê thông tin chung chung mà không đưa ra giả thuyết cụ thể.
 - **Lạc quan**: Tin vào những lời quảng cáo về hệ thống ERP của khách hàng mà không kiểm chứng kẽ hở.
 - **Thiếu trọng tâm**: Liệt kê quá nhiều rủi ro nhỏ mà bỏ qua những "tảng băng chìm" về dòng tiền.
+
+## Assistant Contract
+- **Trigger**: Bắt đầu case mới hoặc cần tạo leakage hypothesis.
+- **Input**: client name, industry key, profile text hoặc profile file path.
+- **Output**: risk hotspots, wedge questions, account thesis draft.
+- **Artifacts**: `Projects/<case_id>/working/account-thesis.md`.
+- **Failure Modes**: thiếu industry key, profile text quá mỏng, không có giả thuyết quy đổi được leakage.
+- **Acceptance Checklist**: có ít nhất 3 hypothesis; mỗi hypothesis có reasoning, evidence needed và stakeholder liên quan.
