@@ -8,18 +8,18 @@ Tài liệu này là danh sách chính thức các thành phần cần xây dự
 *Các công cụ CLI thực thi kỹ thuật, đảm bảo tính chính xác và hiệu suất.*
 
 ### 1.1. Xử lý & Hợp nhất dữ liệu
-- [ ] `normalize_cli`: Chuẩn hóa dữ liệu thô (Schema, Data Types, UoM).
-- [ ] `join_cli`: Hợp nhất nhiều nguồn dữ liệu (Supports Fuzzy Matching).
-- [ ] `validate_cli`: Kiểm tra tính toàn vẹn và chất lượng dữ liệu đầu vào.
+- [x] `normalize_cli`: Chuẩn hóa dữ liệu thô (Tích hợp trong `ls-auditor`).
+- [x] `join_cli`: Hợp nhất nhiều nguồn dữ liệu (Tích hợp trong `ls-auditor`).
+- [x] `validate_cli`: Kiểm tra tính toàn vẹn và chất lượng dữ liệu.
 
 ### 1.2. Phân tích & Kiểm soát
-- [ ] `compute_cli`: Thực thi tính toán Metric và Leakage dựa trên Spec.
-- [ ] `rule_test_cli`: Kiểm tra các quy tắc tuân thủ và logic nghiệp vụ.
-- [ ] `trace_cli`: Thu thập và đóng gói bằng chứng (Evidence bundles).
+- [x] `compute_cli`: Thực thi tính toán Metric và Leakage (Lệnh `compute-risks`).
+- [x] `rule_test_cli`: Kiểm tra các quy tắc tuân thủ (Lệnh `compute-risks`).
+- [x] `trace_cli`: Đóng gói hồ sơ bằng chứng (Lệnh `trace`).
 
 ### 1.3. Tiện ích & Hiển thị
-- [ ] `inspect_parquet`: Công cụ soi nội dung và cấu trúc dữ liệu Parquet.
-- [ ] `chart_cli`: Tạo các biểu đồ dữ liệu (Pareto, Trend, Heatmap).
+- [x] `inspect_parquet`: Công cụ soi nội dung dữ liệu (Lệnh `inspect`).
+- [x] `chart_cli`: Tạo các biểu đồ dữ liệu (Hỗ trợ qua `mermaid_expert_helper.py`).
 - [ ] `dashboard_builder_cli`: Tự động dựng giao diện tương tác (Streamlit/UI).
 
 ---

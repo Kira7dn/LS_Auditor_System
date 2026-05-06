@@ -34,15 +34,16 @@ class ProfileAnalyzer:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="LS Auditor: Account Profile Analyzer")
-    parser.add_argument("--client", type=str, required=True, help="Tên khách hàng")
-    parser.add_argument("--industry", type=str, required=True, help="Mã ngành (e.g., garment_and_textile)")
-    parser.add_argument("--text", type=str, required=True, help="Văn bản hồ sơ khách hàng")
-    parser.add_argument("--db_path", type=str, default=None, help="Đường dẫn file industry_risks.json")
+    parser = argparse.ArgumentParser(description="LS Auditor: Account Profile Analyzer (Generic)")
+    parser.add_argument("--client", type=str, required=True, help="Client name")
+    parser.add_argument("--industry", type=str, required=True, help="Industry key (e.g., garment_and_textile)")
+    parser.add_argument("--text", type=str, required=True, help="Path to profile text file or raw text")
+    parser.add_argument("--db_path", type=str, default=None, help="Path to industry_risks.json")
+    parser.add_argument("--out", type=str, help="Optional output file path")
 
     args = parser.parse_args()
 
-    # Xác định đường dẫn DB mặc định
+    # Determine default DB path
     db_path = args.db_path or os.path.join(os.path.dirname(__file__), "../resources/industry_risks.json")
 
     try:
@@ -50,35 +51,26 @@ def main():
         analyzer = ProfileAnalyzer(db_path)
         risks = analyzer.scan_for_keywords(profile_text, args.industry)
 
-        print(
-            json.dumps(
-                {
-                    "status": "success",
-                    "client": args.client,
-                    "industry": args.industry,
-                    "findings_count": len(risks),
-                    "risks": risks,
-                    "warnings": [],
-                    "errors": [],
-                },
-                indent=2,
-                ensure_ascii=False,
-            )
-        )
+        result = {
+            "status": "success",
+            "client": args.client,
+            "industry": args.industry,
+            "findings_count": len(risks),
+            "risks": risks,
+        }
+
+        output_json = json.dumps(result, indent=2, ensure_ascii=False)
+        print(output_json)
+
+        if args.out:
+            Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+            with open(args.out, "w", encoding="utf-8") as f:
+                f.write(output_json)
+            logging.info(f"Analysis saved to {args.out}")
 
     except Exception as e:
         logging.error(f"Analysis failed: {str(e)}")
-        print(
-            json.dumps(
-                {
-                    "status": "error",
-                    "error_code": "PROFILE_ANALYSIS_FAILED",
-                    "message": str(e),
-                    "suggestion": "Check --industry, --text and --db_path inputs.",
-                },
-                ensure_ascii=False,
-            )
-        )
+        print(json.dumps({"status": "error", "message": str(e)}))
         sys.exit(1)
 
 

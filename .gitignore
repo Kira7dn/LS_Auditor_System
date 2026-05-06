@@ -63,3 +63,6 @@ Thumbs.db
 # Project Specific
 /Evidence_Packs/
 /tests/.pytest_cache/
+
+.ruff_cache/
+.pytest_cache/

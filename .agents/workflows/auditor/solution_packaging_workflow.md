@@ -18,7 +18,7 @@ Gộp các ngoại lệ riêng lẻ thành các nhóm rủi ro hệ thống.
 
 // turbo
 ```bash
-uv run .agents/skills/auditor/root-cause-synthesis/scripts/synthesis_helper.py --exceptions "[exception-json]" --category_map "[map-json]"
+uv run .agents/skills/auditor/root-cause-synthesis/scripts/synthesis_helper.py --exceptions "[exception-json-path]" --category_map "[map-json-path]" --out "Projects/[case-id]/artifacts/synthesis_results.json"
 ```
 
 ### Bước 2.2: Thiết kế giải pháp & Tính toán ROI (ROI Analysis)
@@ -26,7 +26,7 @@ Thiết kế lộ trình can thiệp và tính toán hiệu quả kinh tế.
 
 // turbo
 ```bash
-uv run .agents/skills/auditor/solution-design/scripts/roi_calculator.py --investment "[cost]" --savings "[savings]"
+uv run .agents/skills/auditor/solution-design/scripts/roi_calculator.py --investment "[cost]" --savings "[annual-savings]"
 ```
 
 ## 3. Xác nhận Artifacts (Verification)

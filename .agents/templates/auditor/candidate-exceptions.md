@@ -1,18 +1,15 @@
-# TEMPLATE: CANDIDATE EXCEPTIONS (DANH SÁCH GIAO DỊCH NGHI VẤN)
+# CANDIDATE EXCEPTIONS: [CASE_NAME]
 
-## 1. TỔNG QUAN NGOẠI LỆ
-- **Tổng số giao dịch kiểm tra:**
-- **Số giao dịch phát hiện nghi vấn:**
-- **Tổng giá trị rủi ro:**
+Danh sách các ngoại lệ trọng yếu được ưu tiên dựa trên giá trị rò rỉ (Pareto 80/20).
 
-## 2. DANH SÁCH CHI TIẾT
-| ID Giao dịch | Ngày | Loại rủi ro | Giá trị sai lệch | Trạng thái xác minh |
-| --- | --- | --- | --- | --- |
-| | | | | |
+### 📊 Phân tích Pareto (80/20)
+- **Tổng rò rỉ tiềm ẩn:** $[total_leakage]
+- **Số lượng ngoại lệ trọng yếu:** [critical_count] giao dịch chịu trách nhiệm cho 80% rủi ro.
 
-## 3. MÔ TẢ CHI TIẾT CÁC CASE TRỌNG YẾU
-### Case ID: [Ví dụ: PO-12345]
-- **Hiện tượng**: (Mô tả sự bất thường, ví dụ: Đặt mua vật tư A khi tồn kho đủ dùng cho 6 tháng)
-- **Quy tắc bị vi phạm**: (Ví dụ: Rule 01 - Inventory Cap)
-- **Người thực hiện/Phê duyệt**:
-- **Đề xuất của Agent**: (Ví dụ: Cần kiểm tra lại phiếu yêu cầu PR tương ứng)
+### 🚩 Danh sách ngoại lệ ưu tiên
+| ID | Loại rủi ro | Leakage | Bằng chứng sơ bộ | Hành động yêu cầu | Mức độ bằng chứng |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [Finding ID] | [Risk Type] | $[Amount] | [Evidence Snippet] | [Investigate/Trace/Confirm] | [High/Medium/Low] |
+
+---
+**Ghi chú:** Các ngoại lệ này cần được đóng gói thành Evidence Pack trước khi đưa vào báo cáo cuối cùng.

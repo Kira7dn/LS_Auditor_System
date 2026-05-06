@@ -5,12 +5,14 @@ import sys
 from pathlib import Path
 
 from ls_auditor.data import (
-    compute_variance,
+    compute_risks,
     copy_templates,
     inspect_parquet,
     join_tables,
     normalize_table,
+    prioritize_exceptions,
     read_table,
+    render_audit_reports,
     run_rule_tests,
     validate_table,
 )
@@ -48,10 +50,26 @@ def build_parser() -> argparse.ArgumentParser:
     join.add_argument("--spec", required=True)
     join.add_argument("--out", required=True)
 
-    compute = subparsers.add_parser("compute")
-    compute.add_argument("--dataset", required=True)
-    compute.add_argument("--metric-spec", required=True)
-    compute.add_argument("--out")
+    compute_risks = subparsers.add_parser("compute-risks")
+    compute_risks.add_argument("--dataset", required=True)
+    compute_risks.add_argument("--risk-spec", required=True)
+    compute_risks.add_argument("--out")
+
+    prioritize = subparsers.add_parser("prioritize")
+    prioritize.add_argument("--findings", required=True)
+    prioritize.add_argument("--top-pct", type=float, default=0.8)
+    prioritize.add_argument("--out")
+
+    report = subparsers.add_parser("report")
+    report.add_argument("--prioritized-data", required=True)
+    report.add_argument("--template-dir", required=True)
+    report.add_argument("--out-dir", required=True)
+
+    run_all = subparsers.add_parser("run-all")
+    run_all.add_argument("--dataset", required=True)
+    run_all.add_argument("--risk-spec", required=True)
+    run_all.add_argument("--out-dir", required=True)
+    run_all.add_argument("--top-pct", type=float, default=0.8)
 
     rule_test = subparsers.add_parser("rule-test")
     rule_test.add_argument("--dataset", required=True)
@@ -128,14 +146,66 @@ def run(args: argparse.Namespace) -> dict:
         metrics = join_tables(spec, args.out)
         return json_result("success", inputs={"spec": args.spec}, outputs={"dataset": args.out}, metrics=metrics)
 
-    if args.command == "compute":
-        spec = load_json_value(args.metric_spec, default={})
-        metrics = compute_variance(args.dataset, spec)
-        result = json_result("success", inputs={"dataset": args.dataset, "metric_spec": args.metric_spec}, metrics=metrics)
+    if args.command == "compute-risks":
+        spec = load_json_value(args.risk_spec, default={})
+        findings = compute_risks(args.dataset, spec)
+        result = json_result("success", inputs={"dataset": args.dataset, "risk_spec": args.risk_spec}, metrics={"count": len(findings)}, outputs={"findings": findings})
         if args.out:
             write_json(args.out, result)
-            result["outputs"]["result_path"] = args.out
         return result
+
+    if args.command == "prioritize":
+        findings_data = load_json_value(args.findings, default={})
+        # If findings_data is the full json_result from compute-risks
+        actual_findings = findings_data.get("outputs", {}).get("findings", []) if isinstance(findings_data, dict) else findings_data
+        metrics = prioritize_exceptions(actual_findings, args.top_pct)
+        result = json_result("success", inputs={"findings": args.findings, "top_pct": args.top_pct}, metrics=metrics)
+        if args.out:
+            write_json(args.out, result)
+        return result
+
+    if args.command == "report":
+        data = load_json_value(args.prioritized_data, default={})
+        # Handle the structure returned by prioritize command
+        actual_data = data.get("metrics", {}) if "metrics" in data else data
+        files = render_audit_reports(actual_data, args.template_dir, args.out_dir)
+        return json_result("success", inputs={"prioritized_data": args.prioritized_data, "template_dir": args.template_dir}, outputs={"generated_files": files})
+
+    if args.command == "run-all":
+        out_dir = Path(args.out_dir)
+        artifacts_dir = out_dir / "artifacts"
+        evidence_dir = out_dir / "evidence"
+        artifacts_dir.mkdir(parents=True, exist_ok=True)
+        
+        # 1. Compute Risks
+        risk_spec = load_json_value(args.risk_spec, default={})
+        findings = compute_risks(args.dataset, risk_spec)
+        write_json(artifacts_dir / "audit_findings.json", json_result("success", outputs={"findings": findings}))
+        
+        # 2. Prioritize
+        prioritized_metrics = prioritize_exceptions(findings, args.top_pct)
+        prioritized_result = json_result("success", metrics=prioritized_metrics)
+        write_json(artifacts_dir / "prioritized_findings.json", prioritized_result)
+        
+        # 3. Report
+        template_dir = Path(".agents/templates/auditor/")
+        report_files = render_audit_reports(prioritized_metrics, template_dir, artifacts_dir)
+        
+        # 4. Trace (Top Findings)
+        evidence_files = []
+        for finding in prioritized_metrics.get("top_exceptions", [])[:10]: # Trace top 10
+            trace_result = create_evidence_pack(finding, evidence_dir)
+            evidence_files.extend(trace_result["files"])
+            
+        return json_result(
+            "success", 
+            inputs={"dataset": args.dataset, "risk_spec": args.risk_spec},
+            outputs={
+                "reports": report_files,
+                "evidence_count": len(prioritized_metrics.get("top_exceptions", [])[:10]),
+                "dossier_root": str(out_dir)
+            }
+        )
 
     if args.command == "rule-test":
         rules = load_json_value(args.rules, default={})
@@ -149,10 +219,29 @@ def run(args: argparse.Namespace) -> dict:
         return result
 
     if args.command == "trace":
-        finding = load_json_value(args.finding, default={})
-        metrics = create_evidence_pack(finding, args.out_dir)
+        data = load_json_value(args.finding, default={})
+        
+        # Determine if it's a single finding or a list (from prioritized_findings.json)
+        findings = []
+        if isinstance(data, list):
+            findings = data
+        elif isinstance(data, dict):
+            if "metrics" in data and "top_exceptions" in data["metrics"]:
+                findings = data["metrics"]["top_exceptions"]
+            elif "outputs" in data and "findings" in data["outputs"]:
+                findings = data["outputs"]["findings"]
+            else:
+                findings = [data]
+        
+        results = []
+        for f in findings:
+            results.append(create_evidence_pack(f, args.out_dir))
+            
         return json_result(
-            "success", inputs={"finding": args.finding}, outputs={"evidence_root": metrics["evidence_root"]}, metrics=metrics
+            "success", 
+            inputs={"finding_source": args.finding}, 
+            outputs={"evidence_count": len(results), "out_dir": str(args.out_dir)},
+            metrics={"count": len(results)}
         )
 
     if args.command == "inspect-parquet":

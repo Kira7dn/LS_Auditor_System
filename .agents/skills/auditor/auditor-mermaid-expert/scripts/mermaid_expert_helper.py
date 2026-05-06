@@ -2,6 +2,7 @@ import argparse
 import json
 import logging
 import sys
+from pathlib import Path
 from typing import List
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s", stream=sys.stderr)
@@ -55,11 +56,12 @@ class MermaidExpertHelper:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="LS Auditor: Mermaid Diagram Generator")
-    parser.add_argument("--type", choices=["flowchart", "erd"], default="flowchart", help="Loại sơ đồ")
-    parser.add_argument("--nodes", type=str, help="JSON list các node (dành cho flowchart)")
-    parser.add_argument("--connections", type=str, help="JSON list các kết nối (dành cho flowchart)")
-    parser.add_argument("--direction", type=str, default="TB", help="Hướng sơ đồ (TB hoặc LR)")
+    parser = argparse.ArgumentParser(description="LS Auditor: Mermaid Diagram Generator (Generic)")
+    parser.add_argument("--type", choices=["flowchart", "erd"], default="flowchart", help="Diagram type")
+    parser.add_argument("--nodes", type=str, help="JSON list of nodes")
+    parser.add_argument("--connections", type=str, help="JSON list of connections")
+    parser.add_argument("--direction", type=str, default="TB", help="Direction (TB or LR)")
+    parser.add_argument("--out", type=str, help="Optional output file path (Markdown)")
 
     args = parser.parse_args()
 
@@ -70,9 +72,16 @@ def main():
             connections = json.loads(args.connections) if args.connections else []
             mermaid_code = expert.create_flowchart(nodes, connections, args.direction)
 
-            print(
-                json.dumps({"status": "success", "type": "flowchart", "mermaid_code": mermaid_code}, indent=2, ensure_ascii=False)
-            )
+            result = {"status": "success", "type": "flowchart", "mermaid_code": mermaid_code}
+            
+            print(json.dumps(result, indent=2, ensure_ascii=False))
+
+            if args.out:
+                Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+                md_content = f"```mermaid\n{mermaid_code}\n```"
+                with open(args.out, "w", encoding="utf-8") as f:
+                    f.write(md_content)
+                logging.info(f"Diagram saved to {args.out}")
         else:
             print(json.dumps({"status": "error", "message": "ERD type not yet fully implemented in CLI."}))
 

@@ -32,9 +32,17 @@ uv run .agents/skills/auditor/auditor-mermaid-expert/scripts/mermaid_expert_help
 
 ## 3. Xác nhận Artifacts (Verification)
 Đảm bảo các file sau đã được khởi tạo chuẩn xác:
-- `.agents/templates/auditor/account-thesis.md`
-- `.agents/templates/auditor/process-map.md`
-- `.agents/templates/auditor/control-point-table.md`
+- `account-thesis.md`
+- `process-map.md`
+- `control-point-table.md`
+
+### Bước 3.2: Dọn dẹp (Cleanup)
+Loại bỏ các file trung gian (.json, .txt) để giữ cho thư mục artifacts sạch sẽ trước khi bàn giao.
+
+// turbo
+```bash
+rm Projects/[case-id]/artifacts/*.json Projects/[case-id]/artifacts/*.txt
+```
 
 ---
 **Status:** ACTIVE HARDENED WORKFLOW (Antigravity Optimized)

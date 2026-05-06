@@ -1,6 +1,7 @@
 import argparse
 import json
 import sys
+from pathlib import Path
 from typing import Dict
 
 
@@ -21,21 +22,29 @@ def calculate_roi(investment: float, annual_savings: float) -> Dict[str, float]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="LS Auditor: ROI & Payback Calculator")
+    parser = argparse.ArgumentParser(description="LS Auditor: ROI & Payback Calculator (Generic)")
     parser.add_argument("--investment", type=float, required=True, help="Total investment cost")
     parser.add_argument("--savings", type=float, required=True, help="Annual savings")
+    parser.add_argument("--out", type=str, help="Optional output file path")
 
     args = parser.parse_args()
 
     try:
         results = calculate_roi(args.investment, args.savings)
+        result_dict = {
+            "status": "success", 
+            "investment": args.investment, 
+            "annual_savings": args.savings, 
+            "metrics": results
+        }
 
-        # Output strictly JSON to stdout
-        print(
-            json.dumps(
-                {"status": "success", "investment": args.investment, "annual_savings": args.savings, "metrics": results}, indent=2
-            )
-        )
+        output_json = json.dumps(result_dict, indent=2)
+        print(output_json)
+
+        if args.out:
+            Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+            with open(args.out, "w", encoding="utf-8") as f:
+                f.write(output_json)
 
     except Exception as e:
         print(json.dumps({"status": "error", "message": str(e)}))

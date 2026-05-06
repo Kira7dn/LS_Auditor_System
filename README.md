@@ -8,6 +8,16 @@
 
 ---
 
+> [!IMPORTANT]
+> **🤖 AGENT INSTRUCTION (Read First)**
+> This workspace is optimized for AI-First operations. Any Agent landing here MUST:
+> 1. Read **[GEMINI.md](GEMINI.md)** to understand the Core Constitution and Technical Standards.
+> 2. Consult **[asset-index.json](asset-index.json)** to map available Skills and Workflows.
+> 3. Use **`uv run`** for all script executions to maintain environment integrity.
+> 4. Prioritize **Generic Excellence** by decoupling case-specific data from core logic.
+
+---
+
 ## ⚡ Core Capabilities
 
 Hệ thống cung cấp 6 năng lực tác chiến được chuẩn hóa cho Auditor:

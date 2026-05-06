@@ -85,180 +85,69 @@ Sau khi Audit phát hiện rò rỉ, Auditor đề xuất lộ trình can thiệ
 
 Case study này chứng minh năng lực của LS Auditor trong việc không chỉ tìm ra lỗi sai giao dịch, mà còn chẩn đoán được **bệnh lý vận hành** của doanh nghiệp. Kết quả can thiệp giúp giải phóng 15-30% vốn lưu động bị khóa trong kho và thiết lập kỷ luật quản trị mới cho nhà máy.
 
+---
 
-## VII. Hướng dẫn thực hiện bài tập Audit
+## VII. MA TRẬN SẢN PHẨM (ARTIFACT MATRIX)
 
-Trong bài này, bạn đóng vai **Auditor trainee**. Bạn không cần viết code. Việc của bạn là đọc hồ sơ, đặt yêu cầu rõ cho Antigravity, kiểm tra kết quả trả về và phản biện những kết luận chưa đủ bằng chứng.
-
-### Bước 1: Mở case làm việc
-
-Mở Antigravity trong workspace này và gửi yêu cầu:
-
-**PROMPT**
-
-> Hãy khởi tạo case audit `material-planning` từ folder `Training/handbook/material-planning`, sau đó chuẩn bị nơi lưu kết quả làm bài.
-
-Sau khi gửi prompt, kiểm tra Antigravity có báo đã khởi tạo case `material-planning`. Nếu Antigravity hỏi có ghi đè kết quả cũ không, chọn không ghi đè trừ khi giảng viên yêu cầu.
-
-### Bước 2: Hiểu hồ sơ đầu vào
-
-Đọc các nguồn sau trong folder bài tập:
-
-- `policies/`: quy trình chính thức, approval matrix, workaround.
-- `interview/`: lời phỏng vấn và mâu thuẫn vận hành.
-- `data/`: dữ liệu mô phỏng và data dictionary.
-- `compliance/`: tiêu chí tham khảo nếu cần.
-
-Trước khi gửi prompt, tự ghi nhanh 3 nghi vấn ban đầu: quy trình nào có thể bị bypass, dữ liệu nào có thể không đáng tin, bộ phận nào có động cơ đặt dư. Sau đó gửi prompt:
-
-**PROMPT**
-
-> Hãy chạy workflow `.agents/workflows/auditor/discovery_workflow.md` cho case Material Planning. Đối chiếu SOP, workaround và interview notes để lập bản đồ quy trình, điểm kiểm soát và mâu thuẫn vận hành.
-
-Kết quả bạn cần kiểm tra:
-
-- process map;
-- bảng control points;
-- danh sách điểm quy trình khác giữa SOP và thực tế;
-- giả thuyết ban đầu về defensive ordering.
-
-Nếu kết quả chỉ mô tả lại SOP mà không chỉ ra mâu thuẫn thực tế, yêu cầu Antigravity làm lại phần Discovery.
-
-### Bước 3: Kiểm tra và chuẩn bị dữ liệu
-
-Dữ liệu nằm trực tiếp trong:
-
-```text
-Training/handbook/material-planning/data/
-```
-
-Bảng cần dùng:
-
-- `production_plan.csv`
-- `bom.csv`
-- `purchase_requests.csv`
-- `purchase_orders.csv`
-- `inventory_balance.csv`
-- `material_consumption.csv`
-
-Gửi prompt:
-
-**PROMPT**
-
-> Hãy chạy workflow `.agents/workflows/auditor/data_preparation_workflow.md` cho case Material Planning. Kiểm tra chất lượng dữ liệu trong folder `data/`, giải thích từng bảng bằng ngôn ngữ audit, kiểm tra key join và chuẩn bị bảng phân tích hợp nhất cho bài audit.
-
-Kết quả bạn cần kiểm tra:
-
-- log chất lượng dữ liệu;
-- bảng phân tích hợp nhất;
-- ghi chú các vấn đề dữ liệu có thể ảnh hưởng kết luận.
-
-Nếu có lỗi dữ liệu, yêu cầu Antigravity nói rõ lỗi đó làm yếu kết luận nào.
-
-### Bước 4: Tìm ngoại lệ và lượng hóa rò rỉ
-
-Gửi prompt:
-
-**PROMPT**
-
-> Hãy chạy workflow `.agents/workflows/auditor/audit_execution_workflow.md` cho case Material Planning. Phân tích dữ liệu để tìm defensive ordering, over-purchase, dead stock risk, emergency buying và split PO. Lượng hóa leakage, nhưng chỉ gọi là candidate exception nếu chưa có bằng chứng đầy đủ.
-
-Bắt buộc kiểm tra 6 câu hỏi:
-
-1. PR nào request vượt nhu cầu BOM?
-2. PO nào mua vượt PR hoặc vượt nhu cầu sản xuất?
-3. Vật tư nào tồn kho trên 90 ngày nhưng vẫn được mua thêm?
-4. PO urgent nào có giá cao hơn target price?
-5. Có cụm PO nào bị chia nhỏ dưới ngưỡng phê duyệt không?
-6. Vật tư nào được request nhiều nhưng tiêu thụ thực tế thấp?
-
-Kết quả bạn cần kiểm tra:
-
-- danh sách candidate exceptions;
-- leakage analysis;
-- risk register;
-- ít nhất 3 finding đủ mạnh để đóng bằng chứng.
-
-Không chấp nhận danh sách exception nếu thiếu `pr_id`, `po_id`, `plan_id` hoặc `material_id`.
-
-### Bước 5: Đóng Evidence Pack
-
-Chọn ít nhất 3 candidate exceptions quan trọng nhất. Với từng exception, gửi prompt riêng và thay `[finding_id]` bằng mã finding cụ thể:
-
-**PROMPT**
-
-> Hãy đóng Evidence Pack cho `[finding_id]` trong case Material Planning. Evidence Pack phải chỉ rõ giao dịch, dữ liệu nguồn, logic tính leakage, control bị lỗi và giới hạn của kết luận.
-
-Mỗi Evidence Pack phải có:
-
-- ID giao dịch liên quan (`pr_id`, `po_id`, `plan_id`, `material_id`);
-- dữ liệu nguồn hoặc extract;
-- cách tính leakage;
-- mô tả control bị lỗi;
-- giới hạn hoặc giả định của kết luận.
-
-Không chấp nhận finding nếu không truy được về dòng dữ liệu nguồn. Nếu bằng chứng còn yếu, giữ ở mức nghi vấn và không đưa vào final report như finding xác nhận.
-
-### Bước 6: Tổng hợp nguyên nhân và giải pháp
-
-Gửi prompt:
-
-**PROMPT**
-
-> Hãy chạy workflow `.agents/workflows/auditor/solution_packaging_workflow.md` cho case Material Planning. Tổng hợp các exception thành nguyên nhân gốc rễ, sau đó đề xuất intervention thesis, solution proposal và lộ trình 30-60-90 ngày.
-
-Bạn cần kiểm tra hệ thống có tổng hợp đúng các lỗi hệ thống không:
-
-- ERP stock không đủ tin cậy nên planner đặt buffer.
-- Approval routing yếu với PR nhỏ nhưng DIOH cao.
-- Purchasing xử lý urgent qua email trước khi ERP hoàn chỉnh.
-- Warehouse dùng bảng trắng/Zalo ngoài hệ thống.
-- Finance review tồn kho quá muộn so với thời điểm PO được tạo.
-
-Kết quả bạn cần kiểm tra:
-
-- problem classification;
-- intervention thesis;
-- solution proposal;
-- lộ trình 30-60-90 ngày.
-
-Nếu phần nguyên nhân chỉ đổ lỗi cho cá nhân, yêu cầu Antigravity viết lại theo lỗi hệ thống và control gap.
-
-### Bước 7: Tạo báo cáo cuối cùng
-
-Gửi prompt:
-
-**PROMPT**
-
-> Hãy chạy workflow `.agents/workflows/auditor/final_report_workflow.md` cho case Material Planning. Tổng hợp toàn bộ kết quả thành final audit report. Báo cáo phải có executive summary, finding trọng yếu, evidence, root cause, recommendation và ROI hypothesis.
-
-Báo cáo cuối cùng phải trả lời rõ:
-
-- tổng leakage ước tính;
-- top material/item gây rủi ro lớn nhất;
-- control gap gây defensive ordering;
-- bằng chứng cho từng finding trọng yếu;
-- đề xuất can thiệp và ROI hypothesis.
-
-Trước khi chấp nhận báo cáo, kiểm tra mọi con số leakage trong báo cáo có thể truy ngược về Evidence Pack hoặc dữ liệu nguồn.
-
-### Tiêu chí hoàn thành
-
-Bài làm đạt yêu cầu khi Antigravity tạo hoặc hiển thị đủ:
-
-- process map;
-- control point table;
-- data quality log;
-- leakage analysis;
-- candidate exceptions;
-- risk register;
-- ít nhất 3 Evidence Packs;
-- intervention thesis;
-- final audit report.
-
-Nguyên tắc cuối: kết luận nào không có bằng chứng thì phải giữ ở mức nghi vấn, không được đưa vào final report như finding xác nhận.
+| Giai đoạn | Prompt chính | Công cụ thực thi | Kết quả đầu ra (Artifacts) |
+| :--- | :--- | :--- | :--- |
+| **1. Discovery** | Discovery Workflow | `analyze_profile.py` | `account-thesis.md`, `process-map.md` |
+| **2. Data Prep** | Data Prep Workflow | `ls-auditor` | `unified_audit_dataset.parquet` |
+| **3. Execution** | Execution Workflow | `compute-risks`, `trace` | `candidate-exceptions.md`, `Evidence_Packs/` |
+| **4. Solution** | Solution Workflow | `synthesis_helper.py` | `problem-classification.md`, `solution-proposal.md` |
+| **5. Final** | Final Report Workflow | `ls-auditor` | `final_report.md` |
 
 ---
 
+## VIII. HƯỚNG DẪN THỰC HIỆN (PASTE & RUN)
+
+Bạn đóng vai **Auditor trainee**. Việc của bạn là **Copy & Paste** các Prompt dưới đây và kiểm tra kết quả.
+
+### Bước 1: Khởi tạo Case
+**PROMPT**
+> Hãy khởi tạo case audit `material-planning` từ folder `Training/handbook/material-planning`, sau đó chuẩn bị nơi lưu kết quả làm bài tại folder `results/material-planning/`.
+
+### Bước 2: Discovery (Khám phá quy trình)
+**PROMPT**
+> Hãy chạy workflow `.agents/workflows/auditor/discovery_workflow.md` cho case Material Planning. Đối chiếu SOP, workaround và interview notes để lập bản đồ quy trình và các mâu thuẫn vận hành.
+
+**📋 Tiêu chí kiểm tra (Verification):**
+- [ ] Có sơ đồ **Process Map** (Mermaid). ✅
+- [ ] Có bảng **Control Points** xác định các điểm rủi ro. ✅
+- [ ] Có giả thuyết về hành vi **Defensive Ordering**. ✅
+
+### Bước 3: Chuẩn bị dữ liệu (Data Prep)
+**PROMPT**
+> Hãy chạy workflow `.agents/workflows/auditor/data_preparation_workflow.md` cho case Material Planning. Kiểm tra chất lượng dữ liệu trong folder `data/` và tạo bảng phân tích hợp nhất.
+
+**📋 Tiêu chí kiểm tra (Verification):**
+- [ ] Có **Data Quality Log** (Cảnh báo các dòng lỗi/thiếu). ✅
+- [ ] Có bảng **Unified Dataset** (Dữ liệu đã được Join). ✅
+
+### Bước 4: Tìm ngoại lệ & Bằng chứng (Forensic)
+**PROMPT**
+> Hãy chạy workflow `.agents/workflows/auditor/audit_execution_workflow.md` cho case Material Planning. Thực hiện phân tích Pareto 80/20 và TỰ ĐỘNG ĐÓNG GÓI HỒ SƠ BẰNG CHỨNG (Evidence Packs).
+
+**📋 Tiêu chí kiểm tra (Verification):**
+- [ ] Báo cáo **candidate-exceptions.md** hiển thị rò rỉ ~$647k. ✅
+- [ ] Thư mục **evidence/** chứa các Dossier bằng chứng chi tiết. ✅
+
+### Bước 5: Thiết kế giải pháp (Solution)
+**PROMPT**
+> Hãy chạy workflow `.agents/workflows/auditor/solution_packaging_workflow.md` cho case Material Planning. Tổng hợp nguyên nhân gốc rễ và đề xuất lộ trình 30-60-90 ngày.
+
+**📋 Tiêu chí kiểm tra (Verification):**
+- [ ] Có file **problem-classification.md** (Lỗi hệ thống). ✅
+- [ ] Có file **solution-proposal.md** (ROI & Lộ trình). ✅
+
+### Bước 6: Tổng hợp báo cáo cuối cùng
+**PROMPT**
+> Hãy chạy workflow `.agents/workflows/auditor/final_report_workflow.md` cho case Material Planning. Tổng hợp toàn bộ kết quả thành bản báo cáo Audit cuối cùng chuyên nghiệp.
+
+**📋 Tiêu chí kiểm tra (Verification):**
+- [ ] Có file **final_report.md** đầy đủ 6 phần theo template. ✅
+- [ ] Con số rò rỉ đồng nhất trên toàn bộ hồ sơ. ✅
+
 ---
+**Status:** PRODUCTION READY (Hardened)
 *Reference: [05_AUDITOR_CAPABILITY.md](../../../05_AUDITOR_CAPABILITY.md)*

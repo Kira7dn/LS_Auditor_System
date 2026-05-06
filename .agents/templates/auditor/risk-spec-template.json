@@ -1,0 +1,17 @@
+{
+  "risks": [
+    {
+      "id": "RISK_ID_001",
+      "name": "Example Risk Name",
+      "condition": "column_a > column_b",
+      "leakage_expr": "(column_a - column_b) * unit_price",
+      "severity": "High",
+      "metadata": {
+        "case_id": "Project Name",
+        "control_point_id": "CP-001",
+        "cause": "Hypothetical root cause",
+        "approver": "Role or Person responsible"
+      }
+    }
+  ]
+}

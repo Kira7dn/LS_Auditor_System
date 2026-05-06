@@ -38,7 +38,8 @@ def error_result(error_code: str, message: str, suggestion: str = "") -> dict[st
 
 
 def emit(result: dict[str, Any]) -> None:
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    sys.stdout.buffer.write(json.dumps(result, ensure_ascii=False, indent=2).encode("utf-8"))
+    sys.stdout.buffer.write(b"\n")
 
 
 def load_json_value(value: str | None, *, default: Any = None) -> Any:

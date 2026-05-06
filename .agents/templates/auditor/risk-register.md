@@ -1,13 +1,10 @@
-# TEMPLATE: RISK REGISTER (DANH MỤC RỦI RO ĐÃ XÁC NHẬN)
+# RISK REGISTER: [CASE_NAME]
 
-## 1. TÓM TẮT RỦI RO
-| ID Rủi ro | Tên rủi ro | Mức độ (H/M/L) | Tần suất | Giá trị ảnh hưởng |
-| --- | --- | --- | --- | --- |
-| R-01 | | | | |
+Tổng hợp các vùng rủi ro hệ thống phát hiện qua phân tích dữ liệu.
 
-## 2. CHI TIẾT CÁC RỦI RO TRỌNG YẾU
-### R-01: [Ví dụ: Đặt hàng khẩn cấp dù tồn kho còn nhiều]
-- **Mô tả**: (Chi tiết về rủi ro này trong thực tế)
-- **Nguyên nhân gốc rễ dự kiến**: (Ví dụ: Thiếu tin tưởng vào hệ thống dự báo)
-- **Bằng chứng liên quan**: (Link tới Evidence Pack)
-- **Trạng thái xác nhận của khách hàng**:
+| Loại rủi ro | Số lượng case | Tổng rò rỉ tiềm ẩn | Leakage TB/case | Mức độ ưu tiên | Giả thuyết nguyên nhân |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [Risk Type] | [Count] | $[Total] | $[Avg] | [Priority] | [Hypothesis] |
+
+---
+**Status:** DRAFT (Awaiting Evidence Packaging)
