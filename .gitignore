@@ -46,12 +46,6 @@ uv.lock
 .pydevproject
 .settings/
 
-# Audit Data (Protect sensitive client data)
-*.csv
-*.xlsx
-*.xls
-*.parquet
-*.jsonl
 # Ngoại trừ các file config/resource trong .agents
 !/.agents/**/*.json
 !/.agents/**/*.md
