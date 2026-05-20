@@ -60,3 +60,5 @@ Thumbs.db
 
 .ruff_cache/
 .pytest_cache/
+
+.LinkStrategy/

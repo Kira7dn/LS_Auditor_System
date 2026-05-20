@@ -50,10 +50,11 @@ def build_parser() -> argparse.ArgumentParser:
     join.add_argument("--spec", required=True)
     join.add_argument("--out", required=True)
 
-    compute_risks = subparsers.add_parser("compute-risks")
-    compute_risks.add_argument("--dataset", required=True)
-    compute_risks.add_argument("--risk-spec", required=True)
-    compute_risks.add_argument("--out")
+    compute = subparsers.add_parser("compute", aliases=["compute-risks"])
+    compute.add_argument("--dataset", required=True)
+    compute.add_argument("--metric-spec")
+    compute.add_argument("--risk-spec")
+    compute.add_argument("--out")
 
     prioritize = subparsers.add_parser("prioritize")
     prioritize.add_argument("--findings", required=True)
@@ -146,10 +147,51 @@ def run(args: argparse.Namespace) -> dict:
         metrics = join_tables(spec, args.out)
         return json_result("success", inputs={"spec": args.spec}, outputs={"dataset": args.out}, metrics=metrics)
 
-    if args.command == "compute-risks":
-        spec = load_json_value(args.risk_spec, default={})
-        findings = compute_risks(args.dataset, spec)
-        result = json_result("success", inputs={"dataset": args.dataset, "risk_spec": args.risk_spec}, metrics={"count": len(findings)}, outputs={"findings": findings})
+    if args.command in {"compute", "compute-risks"}:
+        spec_path = args.metric_spec or args.risk_spec
+        if not spec_path:
+            raise ValueError("Either --metric-spec or --risk-spec must be specified.")
+        spec = load_json_value(spec_path, default={})
+        if "high_risk_price_variance" in spec:
+            findings = []
+            frame = read_table(args.dataset)
+            threshold = spec["high_risk_price_variance"]
+            for index, row in frame.iterrows():
+                actual_price = row.get("actual_price", 0.0)
+                target_price = row.get("target_price", 0.0)
+                actual_qty = row.get("actual_qty", 0.0)
+                plan_qty = row.get("plan_qty", 0.0)
+                if target_price > 0:
+                    variance = (actual_price - target_price) / target_price
+                    if variance > threshold:
+                        leakage = max(0.0, (actual_qty - plan_qty) * actual_price)
+                        findings.append({
+                            "id": f"FIND-{index+1:03d}",
+                            "risk_id": "PRICE_VARIANCE",
+                            "type": "High Risk Price Variance",
+                            "leakage": float(leakage),
+                            "severity": "High",
+                            "evidence": f"Price variance {variance:.2f} exceeds threshold {threshold:.2f}",
+                            "row_index": int(index),
+                            "pr_id": str(row.get("id", f"PO-{index+1}")),
+                            "material_id": str(row.get("item", "N/A")),
+                        })
+            total_leakage = sum(f["leakage"] for f in findings)
+            result = json_result(
+                "success",
+                inputs={"dataset": args.dataset, "metric_spec": spec_path},
+                metrics={"finding_count": len(findings), "total_leakage": total_leakage},
+                outputs={"findings": findings}
+            )
+        else:
+            findings = compute_risks(args.dataset, spec)
+            total_leakage = sum(f.get("leakage", 0.0) for f in findings)
+            result = json_result(
+                "success",
+                inputs={"dataset": args.dataset, "risk_spec": spec_path},
+                metrics={"count": len(findings), "total_leakage": total_leakage, "finding_count": len(findings)},
+                outputs={"findings": findings}
+            )
         if args.out:
             write_json(args.out, result)
         return result
@@ -240,7 +282,11 @@ def run(args: argparse.Namespace) -> dict:
         return json_result(
             "success", 
             inputs={"finding_source": args.finding}, 
-            outputs={"evidence_count": len(results), "out_dir": str(args.out_dir)},
+            outputs={
+                "evidence_count": len(results), 
+                "out_dir": str(args.out_dir),
+                "evidence_root": results[0]["evidence_root"] if results else str(args.out_dir)
+            },
             metrics={"count": len(results)}
         )
 

@@ -67,6 +67,18 @@
       "purpose": "Tracks audit framework development and case studies."
     },
     {
+      "id": "ls-audit-support-system",
+      "type": "Project",
+      "path": "docs/LS_Audit_Support_System.md",
+      "purpose": "Supreme architecture, strategic purposes, core data contracts, and modular framework specifications for the LS Audit Support System."
+    },
+    {
+      "id": "ls-marketing-strategy",
+      "type": "Project",
+      "path": "docs/LS_Marketing_Strategy.md",
+      "purpose": "Go-To-Market (GTM) and automated digital marketing funnel strategy utilizing the AI Auditor Agent."
+    },
+    {
       "id": "case-material-planning",
       "type": "Case Study",
       "path": "Training/handbook/material-planning/CASE_STUDY.md",

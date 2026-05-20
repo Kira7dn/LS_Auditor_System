@@ -25,12 +25,13 @@ def create_evidence_pack(finding: dict[str, Any], out_dir: str | Path) -> dict[s
         content = render_finding(finding)
         
     (root / "EVIDENCE.md").write_text(content, encoding="utf-8")
+    (root / "FINDING.md").write_text(content, encoding="utf-8")
     (artifacts / "finding.json").write_text(json.dumps(finding, ensure_ascii=False, indent=2), encoding="utf-8")
     
     return {
         "finding_id": finding_id,
         "evidence_root": str(root),
-        "files": [str(root / "EVIDENCE.md"), str(artifacts / "finding.json")],
+        "files": [str(root / "EVIDENCE.md"), str(root / "FINDING.md"), str(artifacts / "finding.json")],
     }
 
 
