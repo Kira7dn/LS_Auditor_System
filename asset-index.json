@@ -79,6 +79,12 @@
       "purpose": "Go-To-Market (GTM) and automated digital marketing funnel strategy utilizing the AI Auditor Agent."
     },
     {
+      "id": "ls-content-strategy",
+      "type": "Project",
+      "path": "docs/LS_Content_Strategy.md",
+      "purpose": "Content strategy and core market narratives for branding and trust acceleration."
+    },
+    {
       "id": "case-material-planning",
       "type": "Case Study",
       "path": "Training/handbook/material-planning/CASE_STUDY.md",
