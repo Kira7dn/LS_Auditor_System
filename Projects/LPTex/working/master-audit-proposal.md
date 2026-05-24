@@ -37,6 +37,7 @@ mindmap
     *   **Vinatex:** Thoái toàn bộ **19,11% vốn** (4,5 triệu cổ phần) với giá sàn chiết khấu 12.000 đồng/cổ phần (giảm 39% so với lần chào bán trước).
     *   **Hanosimex:** Thoái toàn bộ **8,87% vốn** (2,1 triệu cổ phần).
 *   **Hiện trạng thoái vốn:** Kế hoạch đấu giá công khai được triển khai từ cuối năm 2024 nhưng **hiện vẫn chưa hoàn tất thành công**. Phần vốn nhà nước (gần 28%) vẫn bị mắc kẹt tại LPTex do doanh nghiệp liên tục thua lỗ.
+*   **Tín hiệu phục hồi tài chính (Q1/2025):** Theo báo cáo nội bộ mới nhất, LPTex có dấu hiệu phục hồi tích cực trong Q1/2025 với doanh thu đạt **230 tỷ đồng** (+12.2% so với Q1/2024) và lợi nhuận ròng đạt **22 tỷ đồng** (+83.3% so với Q1/2024). Điều này chứng tỏ doanh nghiệp đang bước vào chu kỳ tăng trưởng mới, việc khẩn trương bịt các lỗ hổng thất thoát lúc này sẽ giúp tối đa hóa EBITDA và nâng cao giá trị định giá thoái vốn của nhà nước trong các quý tiếp theo.
 *   **Áp lực lên Ban quản trị:** Việc chưa thể hoàn tất thoái vốn đặt Ban quản trị dưới áp lực rất lớn của các cơ quan quản lý vốn nhà nước (Vinatex) về trách nhiệm bảo toàn tài sản và bắt buộc phải đạt mục tiêu **giảm lỗ xuống dưới 4,5 tỷ đồng trong năm tài chính này** để tạo điều kiện thuận lợi cho đợt thoái vốn tiếp theo.
 
 ---
@@ -56,6 +57,11 @@ Nhà xưởng 80.000 m² đặt tại TP.HCM phải chịu mức lương tối t
 ### 📌 3.4. Rủi Ro Đình Chỉ Hoạt Động Do Xung Đột Pháp Lý Môi Trường (9View Apartment)
 *   **Thực trạng:** Nhà máy dệt nhuộm và hoàn tất tại Thủ Đức nằm sát chung cư **9View Apartment** (khu dân cư đông đúc). Việc vận hành lò hơi đốt than cám gây khói đen và mùi khét dẫn đến đơn khiếu nại liên tục của người dân lên Sở Tài nguyên và Môi trường TP.HCM. Doanh nghiệp từng bị xử phạt **430 triệu đồng** năm 2022 do vi phạm xả thải và khói bụi vượt chuẩn.
 *   **Hậu quả hiện hữu:** Nếu LPTex không khắc phục triệt để và bị đình chỉ hoạt động khâu nhuộm do không được cấp Giấy phép Môi trường mới, toàn bộ chuỗi sản xuất khép kín sẽ bị tê liệt. Rủi ro pháp lý này trực tiếp đe dọa làm đóng băng tiến trình thoái vốn và làm sụt giảm nghiêm trọng định giá doanh nghiệp.
+
+### 📌 3.5. Sự thiếu hụt năng lực kỹ thuật hệ thống (Industrial Engineering - IE)
+Từ dữ liệu tuyển dụng thực tế (LPTex tuyển dụng liên tục nhân viên IE không yêu cầu kinh nghiệm, chấp nhận đào tạo từ đầu theo [tin đăng tuyển dụng chính thức trên cộng đồng Professional Merchandisers](https://www.facebook.com/groups/Professional.Merchandiser/posts/c%C3%B4ng-ty-cp-d%E1%BB%87t-may-li%C3%AAn-ph%C6%B0%C6%A1ng-tuy%E1%BB%83n-d%E1%BB%A5ng-nv-%C4%91i-l%C3%A0m-ngayv%E1%BB%8B-tr%C3%AD-nh%C3%A2n-vi%C3%AAn-ie-th%C3%A0n/9656258791078005/)), có thể nhận thấy rõ điểm nghẽn về năng lực quản trị quy trình:
+*   **Phòng IE mỏng và biến động nhân sự lớn:** Bộ phận IE (chịu trách nhiệm đo đếm thời gian chế tạo SAM, cân bằng chuyền, kiểm soát hao phí Kaizen) đang thiếu hụt trầm trọng các nhân sự có chuyên môn sâu.
+*   **Rủi ro từ đo đạc và báo cáo thủ công (Manual Control):** Quy trình kiểm soát năng suất hiện tại phụ thuộc hoàn toàn vào đo bấm giờ thủ công (stopwatch) và báo cáo Excel. Việc dựa vào các nhân sự trẻ chưa có kinh nghiệm thực tế khiến hệ thống dễ bị công nhân lành nghề "qua mặt" bằng cách thao tác chậm lại khi đo định mức nhằm xin SAM cao hơn. Đồng thời, phòng IE không thể tự phát hiện các lỗi hệ thống tinh vi như mượn sản lượng liên PO hay ngắt cảm biến phát thải lò hơi để kịp tiến độ.
 
 ---
 
@@ -94,10 +100,12 @@ Dưới lăng kính kiểm toán dữ liệu, Link Strategy xác định 5 khu v
 
 Từ năm 2026, cơ chế điều chỉnh biên giới carbon (CBAM) của EU chính thức áp thuế carbon lên hàng nhập khẩu. Các đối tác lớn của LPTex (Ted Baker, Next) bắt buộc phải có báo cáo phát thải carbon "embedded carbon" minh bạch trong khâu dệt nhuộm để được thông quan.
 
+Đồng thời, theo định hướng chiến lược đến năm 2030 của chính LPTex, doanh nghiệp đặt mục tiêu nâng tỷ trọng sản phẩm đạt chứng nhận xanh lên **ít nhất 30% tổng sản lượng** và hoàn thiện toàn bộ báo cáo ESG. Do đó, việc xây dựng năng lực giám sát carbon không chỉ là để đối phó WAF của Buyer, mà là thực thi đúng lộ trình phát triển cốt lõi của công ty.
+
 ### 📌 Lợi ích từ Giải pháp Carbon Ledger bất biến của LS:
 1.  **Hồ sơ bằng chứng sạch (Audit-Ready):** Tích hợp AWS Object Lock và DLT để khóa dữ liệu phát thải thực tế ngay từ tầng cảm biến vật lý. Cho phép các tổ chức kiểm toán quốc tế (SGS/Bureau Veritas) xác thực báo cáo ESG của LPTex trong **chưa đầy 1 giờ** thay vì hàng tuần đối soát thủ công.
 2.  **Dữ liệu lưỡng dụng tối ưu hóa OpEx:** Giám sát điện năng tiêu thụ (Scope 2) và lò hơi/nước/than cám (Scope 1) vừa phục vụ báo cáo ESG/CBAM, vừa giúp phát hiện rò rỉ nhiệt năng dệt nhuộm và hao phí điện máy dệt/may để **tiết kiệm 10% - 15% chi phí năng lượng** cho nhà máy.
-3.  **Tăng giá trị định giá thoái vốn:** Định vị LPTex là một doanh nghiệp chuẩn bị sẵn sàng cho tương lai (future-proof) trước rào cản kỹ thuật của châu Âu, thu hút dòng vốn đầu tư tư nhân mới.
+3.  **Hỗ trợ trực tiếp mục tiêu chiến lược 30% vải sinh thái:** Cung cấp định lượng minh bạch lượng carbon lưu vết trên từng mét vải len/veston, giúp LPTex dễ dàng đạt các chứng chỉ xanh và gia tăng định giá thoái vốn.
 
 ---
 
@@ -110,7 +118,9 @@ Từ năm 2026, cơ chế điều chỉnh biên giới carbon (CBAM) của EU ch
 
 ### 6.2. Phân tích khoảng trống kiểm soát quy trình
 *   **Đồng bộ số liệu giữa các bộ phận:** Quy trình đối soát thủ công giữa bộ phận sản xuất, kho và kế toán dễ dẫn đến sự lệch pha số liệu. Việc áp dụng giải pháp của LS đóng vai trò là hệ thống đối chiếu độc lập, đảm bảo tính nhất quán của dữ liệu vận hành.
+*   **Xung đột KPI giữa các khối phòng ban biệt lập (Siloed KPI Conflict):** Cơ cấu tổ chức của LPTex phân bổ Khối Sản xuất (quản lý phân xưởng), Khối Kinh doanh & XNK (quản lý mua hàng) và Khối Tài chính thành các nhánh độc lập. Sự tách biệt này dẫn đến mâu thuẫn lợi ích: Phân xưởng sản xuất có xu hướng che giấu lỗi chất lượng mẻ nhuộm hoặc hao hụt bàn cắt bằng các giao dịch hồi tố/mượn sản lượng chéo để bảo toàn KPI năng suất, trong khi Khối Tài chính và Kế toán không có công cụ để phát hiện sớm. Hệ thống của LS đóng vai trò là "trọng tài số liệu độc lập" giúp kết nối dữ liệu minh bạch xuyên suốt các khối.
 *   **Rà soát lỗi hệ thống thay vì lỗi cá nhân:** Giải pháp tập trung nhận diện các điểm nghẽn hệ thống (Systemic Failures) thông qua tổng hợp các ngoại lệ, từ đó đề xuất giải pháp cải tiến quy trình thay vì quy trách nhiệm cá nhân.
+
 
 ### 6.3. Quản Trị Rủi Ro Dự Án (Project Risk Management)
 *   **Rủi ro thích ứng quy trình (Process Adaptation):** Thao tác thủ công truyền thống của công nhân có thể tạo ra rào cản khi chuyển đổi số. LS giải quyết bằng cách thiết kế giao diện số hóa tối giản trên thiết bị cầm tay để giảm thiểu thao tác nhập liệu phức tạp.

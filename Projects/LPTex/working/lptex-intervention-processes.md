@@ -8,7 +8,7 @@ Tài liệu này hệ thống hóa các quy trình vận hành nhạy cảm tạ
 
 Một câu hỏi cốt lõi đặt ra là: *LPTex là một doanh nghiệp dệt may lâu đời (từ năm 1960), sở hữu đội ngũ kỹ sư và công nhân lành nghề hàng đầu Việt Nam, tại sao vẫn để xảy ra những tổn thất và rủi ro lớn như vậy?*
 
-Triết lý **"Software-Defined Intervention"** của Link Strategy chỉ ra rằng, vấn đề không nằm ở **năng lực chuyên môn của con người**, mà nằm ở các **lỗi hệ thống (Systemic Failures)** tích tụ qua nhiều năm:
+Triết lý **"Software-Defined Intervention"** của Link Strategy chỉ ra rằng, vấn đề không nằm ở **năng lực chuyên môn dệt may truyền thống**, mà nằm ở các **lỗi hệ thống (Systemic Failures)** tích tụ qua nhiều năm và sự quá tải trước các yêu cầu mới của thị trường toàn cầu:
 
 1. **Xung đột KPI nội bộ (KPI Misalignment):** 
    - Đội ngũ kỹ thuật vận hành theo các KPI cục bộ bị xung đột trực tiếp. Tổ trưởng tổ cắt phải ưu tiên năng suất chuyền may (tốc độ cắt) hơn là dừng chuyền 45 phút để chỉnh co rút vải trên máy CAD để tiết kiệm 1.5% vải. Tổ lò hơi phải ưu tiên cấp đủ hơi cho xưởng nhuộm hơn là dừng lò báo cáo chất lượng than dơ (do thu mua mua rẻ).
@@ -16,6 +16,11 @@ Triết lý **"Software-Defined Intervention"** của Link Strategy chỉ ra r�
    - LPTex có ERP và thiết bị đo lường hiện đại, nhưng dữ liệu không liên thông thời gian thực. Dữ liệu co rút thực tế đo được ở xưởng nhuộm hoàn tất không tự động cập nhật về máy CAD của tổ cắt; dữ liệu cân than lò hơi ghi tay ở sổ xưởng không khớp nối thời gian thực với hóa đơn trên ERP.
 3. **Tâm lý phòng vệ cựu quốc doanh (Defensive Workarounds):**
    - Trong môi trường cựu quốc doanh nhạy cảm, việc báo cáo sai lỗi (như cắt hỏng, khí thải vượt chuẩn) dẫn đến phạt thi đua cá nhân. Công nhân và tổ trưởng tự hình thành các "lối đi tắt" (workarounds) như mượn sản lượng chéo PO, ngắt cảm biến khí thải để che giấu lỗi vận hành, tạo ra các lỗ rò rỉ khổng lồ mà Ban giám đốc không thể thấy được.
+4. **Sự tụt hậu trước các yêu cầu xuất khẩu thế hệ mới (Outpaced by Modern Export Requirements):**
+   - Đội ngũ lâu năm dệt may cực kỳ lành nghề trong sản xuất hàng basic truyền thống, nhưng đang bị quá tải và tụt hậu trước 3 tiêu chuẩn mới của cuộc chơi toàn cầu:
+     * *Hộ chiếu dữ liệu phát thải (Carbon Passport):* Yêu cầu báo cáo carbon bất biến (Scope 1, Scope 2) cho từng PO để vượt thuế CBAM châu Âu, thay thế hoàn toàn cho các báo cáo tĩnh viết tay định kỳ hàng năm.
+     * *Vận hành nguyên vật liệu động (Dynamic BOM & Shrinkage):* Dòng vải Merino và vải lamination công nghệ mới có đặc tính co rút biến động mạnh theo nhiệt ẩm, đòi hỏi liên kết dữ liệu tự động giữa nhuộm và CAD thay vì áp tỷ lệ co rút tĩnh 5% kiểu cũ.
+     * *Kiểm soát hao hụt trực tuyến (Inline Control):* Thay vì ghi nhận giá thành hồi tố (1-2 tháng sau khi PO hoàn thành), hệ thống đòi hỏi cảnh báo vượt định mức nguyên vật liệu (BOM depletion) ngay tại bàn cắt thời gian thực để ngăn chặn tiền phạt đền của Buyer.
 
 Do đó, sự can thiệp của LS-ASS không phải là để đào tạo lại kỹ thuật cho LPTex, mà là cung cấp **hệ thống giám sát dữ liệu độc lập, liên thông** và các **chốt chặn tự động (Inline Controls)** để vá các điểm mù quản trị này.
 
@@ -29,13 +34,9 @@ Dưới đây là 8 quy trình nghiệp vụ nhạy cảm, dễ phát sinh hao h
 *   **Hiện trạng & Nghiệp vụ:** Công nhân phòng cắt nhận lệnh sản xuất (PO) và thực hiện trải vải dệt thoi len chải kỹ thành nhiều lớp, áp sơ đồ cắt (CAD marker) để cắt thành các chi tiết bộ veston.
 *   **Điểm đau (Pain Points):**
     *   Hao hụt vải thực tế vượt định mức thiết kế lý thuyết từ **1.5% - 2.0%** (tương đương tổn thất **7 - 10 tỷ đồng/năm**).
-    *   Nguyên nhân do co rút vải không đồng đều sau dệt-nhuộm, lãng phí đầu tấm vải khi trải, hoặc lỗi cắt phạm của công nhân. Số liệu hao hụt chỉ được phát hiện cuối kỳ đối soát kế toán (sau 1-2 tháng).
-*   **Sự can thiệp của LS (Layer 2 - Module 1):**
-    *   **Số hóa Lệnh cắt & Trải vải:** Tích hợp dữ liệu từ phần mềm CAD (sơ đồ cắt tối ưu) vào máy tính bảng tại bàn cắt.
-    *   **Đối soát thời gian thực:** Công nhân quét mã vạch cây vải xuất kho, nhập chiều dài trải vải thực tế. Hệ thống tự động tính toán chênh lệch diện tích vải sử dụng thực tế so với CAD định mức.
-    *   **Chốt chặn cảnh báo (Inline Control):** Phát cảnh báo tức thời lên màn hình quản lý sản xuất nếu tỷ lệ hao hụt vượt quá **1.0%** ngay tại thời điểm cắt, giúp tổ trưởng điều chỉnh kỹ thuật trải vải ngay lập tức.
-*   **Lưu ý đặc thù LPTex (LS-ASS Focus):**
+  *   **Lưu ý đặc thù LPTex (LS-ASS Focus):**
     *   **Định mức co rút động:** Thu thập dữ liệu độ co rút thực tế đo được sau khâu Hoàn tất của từng cây vải để tự động điều chỉnh sơ đồ cắt (CAD marker) trước khi trải cắt, thay vì áp dụng một tỷ lệ co rút tĩnh chung cho mọi lô vải len Merino.
+    *   **Hỗ trợ bù đắp năng lực đội ngũ IE non trẻ:** Tự động hóa hoàn toàn việc cập nhật tỷ lệ co rút từ xưởng hoàn tất về máy cắt CAD. Việc này giúp loại bỏ rủi ro sai sót thủ công của các nhân viên kỹ thuật hệ thống (IE) trẻ chưa kinh nghiệm (như đã xác nhận từ dữ liệu tuyển dụng của LPTex).
     *   **Dự báo cạn kiệt định mức Buyer (BOM depletion warning):** Dự báo nguy cơ thiếu hụt vải của PO dựa trên hao hụt cắt lũy kế thực tế so với định mức cấp phát của Buyer (Ted Baker, Next), cảnh báo sớm COO để ngăn chặn rủi ro tự mua vải bù giá cao hoặc bị phạt khấu trừ (Chargeback).
 
 ### 2. Use Case 2: Thu hồi & Cấn trừ Phụ liệu cao cấp (Khâu Kho & Chuyền may)
@@ -54,16 +55,19 @@ Dưới đây là 8 quy trình nghiệp vụ nhạy cảm, dễ phát sinh hao h
 ### 3. Use Case 3: Vận hành Lò hơi & Giám sát Khí thải (Khâu Nhuộm & Hoàn tất, Mở rộng Carbon Ledger Scope 2)
 *   **Hiện trạng & Nghiệp vụ:** Nhà máy Thủ Đức sử dụng lò hơi đốt than cám để cung cấp hơi nước nhiệt năng cho bể nhuộm, đồng thời tiêu thụ điện năng lớn cho máy dệt và máy may.
 *   **Điểm đau (Pain Points):**
-    *   Lượng khói đen và mùi khét phát sinh lớn gây xung đột nghiêm trọng với cư dân chung cư **9View Apartment** sát vách, dẫn đến việc bị phạt hành chính **430 triệu đồng** năm 2022 và nguy cơ bị Sở TN&MT đình chỉ sản xuất.
+    *   Lượng khói đen và mùi khét phát sinh lớn gây xung đột nghiêm trọng với cư dân chung cư **9View Apartment** sát vách, dẫn đến việc bị phạt hành chính **430 triệu đồng** năm 2022 và nguy cơ bị Sở TN&MT định chỉ sản xuất.
     *   Các đối tác xuất khẩu EU (Ted Baker, Next) yêu cầu báo cáo phát thải carbon tích lũy "embedded carbon" của sản phẩm (bao gồm cả điện năng tiêu thụ dệt/may - Scope 2) để thông quan qua rào cản thuế CBAM.
 *   **Sự can thiệp của LS (Layer 3 - Carbon Ledger & Energy Monitor):**
     *   **Cảm biến buồng đốt & Khói thải:** Lắp đặt cảm biến đo O2, CO, bụi mịn (PM2.5) tại ống khói lò hơi và đồng hồ đo lượng than cám nạp tự động để điều chỉnh tỷ lệ gió/nhiên liệu, triệt tiêu khói đen khét.
     *   **Smart Energy Meters:** Tích hợp đồng hồ điện thông minh đo điện năng tiêu thụ thời gian thực tại các phân xưởng Sợi, Dệt và May.
     *   **Immutable Carbon Ledger:** Lưu trữ dữ liệu phát thải Scope 1 (lò hơi) và Scope 2 (điện năng) bất biến trên đám mây, tự động xuất báo cáo dấu chân carbon sản phẩm (Product Carbon Footprint) đạt chuẩn CBAM của EU và làm bằng chứng trình Sở TN&MT xin Giấy phép Môi trường mới.
 *   **Lưu ý đặc thù LPTex (LS-ASS Focus):**
+    *   **Mối liên kết chất lượng sản phẩm công nghệ (Tech-textiles) & Ổn định hơi nước:** Bảo đảm sự ổn định áp suất và nhiệt độ hơi nước lò hơi cung cấp cho khâu nhuộm lamination (ép màng chống thấm/chống nhăn của Veston công nghệ). Biến động áp suất lò hơi trực tiếp gây lỗi bong màng lamination hoặc lệch màu vải sinh thái cao cấp.
+    *   **Đồng bộ với mục tiêu chiến lược xanh 2030:** Dữ liệu Carbon Ledger trực tiếp làm bằng chứng đối soát để LPTex dán nhãn xanh sinh thái đạt chuẩn ISO 14064-3 phục vụ mục tiêu **30% sản lượng đạt chuẩn xanh đến năm 2030**.
     *   **Cảnh báo khói đen sớm:** Cảnh báo sớm tại buồng đốt lò hơi dựa trên tỷ lệ oxy tiêu chuẩn và bụi mịn ($PM2.5$) trước khi khói đen kịp phát tán ra ngoài ống khói gây khiếu nại từ cư dân chung cư 9View.
     *   **Đối chéo hóa đơn than & Phát thải (Cross-system Reconciliation):** Tự động đối chiếu lượng than cám mua vào trên hóa đơn VAT kế toán với dữ liệu IoT lò hơi để phát hiện chênh lệch phát thải carbon thực tế so với báo cáo CBAM, ngăn rủi ro trượt Compliance Audit của Buyer.
     *   **Carbon Ledger bất biến:** Khóa bất biến dữ liệu Scope 1 và Scope 2 trên đám mây (AWS Object Lock/DLT) để làm lá chắn pháp lý tin cậy khi làm việc với Sở TN&MT TP.HCM.
+
 
 ### 4. Use Case 4: Quản lý Chất lượng mẻ nhuộm & Rework (Khâu Nhuộm)
 *   **Hiện trạng & Nghiệp vụ:** Vải mộc được đưa vào bể nhuộm áp suất cao theo công thức hóa chất (recipe) định sẵn để đạt màu chỉ định.
