@@ -2,7 +2,7 @@
 
 * **Đối tượng tiếp cận:** Bà Trần Thị Thúy Hường (Phó Chủ tịch HĐQT LPTex, kiêm Chủ tịch LPTex Highland).
 * **Người thực hiện:** Chuyên viên Sale (Quan hệ: Cháu họ trực hệ của bà Hường).
-* **Mục tiêu:** Xin được bản dump dữ liệu lịch sử để chạy chẩn đoán thử miễn phí (Free Trial) trong 3 ngày, làm tiền đề ký hợp đồng Giai đoạn 1 (Clarity Audit) trị giá **250 triệu VNĐ ($10,000)**.
+* **Mục tiêu:** Xin được một bộ dữ liệu mẫu giới hạn từ các PO đã hoàn thành để chạy chẩn đoán thử miễn phí (Free Trial) trong 3 ngày, làm tiền đề ký hợp đồng Giai đoạn 1 (Clarity Audit) trị giá **250 triệu VNĐ ($10,000)**.
 * **Định vị tiếp cận:** Đóng vai trò người nhà hỗ trợ âm thầm (Under-the-radar Advisor) mang đến giải pháp vá kẽ hở dữ liệu để bảo vệ uy tín của cô trước đợt thoái vốn nhạy cảm và các cuộc thanh tra môi trường đột xuất.
 
 ---
@@ -41,20 +41,22 @@
 > 
 > Bạn ấy chia sẻ là xưởng dệt may lớn cỡ nào đi nữa thì công nhân cũng hay có mấy 'bệnh lý vận hành' y hệt nhau để đối phó tiến độ. Từ kinh nghiệm bên Regina kết hợp nghiên cứu thực tế xưởng mình, tụi cháu thấy LPTex đang bị hở thông tin ở hai điểm lớn này mà ERP hiện tại đang bị mù:
 >
-> 1. * **Hao hụt vải bàn cắt:** Công nhân bàn cắt vì bị ép tiến độ giao hàng nhanh cho chuyền may, nên họ cứ áp hệ số co rút mặc định 5% cho nhanh máy mà không cập nhật số liệu co rút thực tế từ xưởng nhuộm. Lô nào co ít hơn là mình lãng phí vải; lô nào co nhiều hơn là hỏng đồ, may lên lệch size bị Buyer phạt. Mỗi năm LPTex mất từ 7 đến 10 tỷ đồng chỉ riêng khâu này mà ERP hiện tại đang bị mù, không nhìn thấy được.
-> 2. * **Tự ý tắt cảm biến lò hơi:** Công nhân lò hơi vì sợ bị phạt khi đốt than dơ (do thu mua nhập giá rẻ để tiết kiệm chi phí ngắn hạn) nên họ thường ngắt cảm biến để tránh còi hú báo động về Ban giám đốc. Kết quả là khói đen xả ra ngoài làm dân kiện, còn số liệu báo cáo carbon nộp Buyer thì chắp vá, không có bằng chứng gốc.
+> 1. **Hao hụt len Merino cao cấp:** Sợi mộc mình nhận từ liên doanh Dalat Worsted Spinning hợp tác với tập đoàn Südwolle của Đức có chất lượng rất cao. Nhưng khi dệt nhuộm hoàn tất xong, công nhân bàn cắt Thủ Đức vì bị ép tiến độ nên họ cứ áp hệ số co rút mặc định 5% cho nhanh máy mà không cập nhật số liệu co rút thực tế. Lô nào co ít hơn là mình phí phạm sợi Merino đắt tiền; lô nào co nhiều hơn là hỏng đồ, may lên lệch size bị Buyer phạt đền. Mỗi năm mình lãng phí 7 đến 10 tỷ chỉ riêng khâu này mà ERP đang bị mù.
+> 2. **Rủi ro môi trường và xuất xứ sợi tái chế:** Công nhân lò hơi hay ngắt cảm biến để tránh còi hú khi đốt than dơ. Kết quả là khói đen xả ra ngoài gây khiếu nại. Cháu thấy cô vừa phải đăng tuyển gấp Chuyên viên Môi trường đầu năm nay để đối phó đợt rà soát xả thải của Sở TN&MT. Đã vậy, LPTex mình đang nhập sợi tái chế từ Trung Quốc, đây là điểm Buyer châu Âu soi rất kỹ khi tính thuế carbon CBAM. Nếu mình không có số liệu carbon lò hơi sạch và bất biến gắn với PO để chứng minh, họ sẽ nghi ngờ nguồn sợi của mình và treo đơn hàng ngay.
 >
 > *Tụi cháu có giải pháp liên thông dữ liệu tự động, chạy ngầm dưới nền. Nó tự động khớp thông số co rút từ nhuộm sang máy CAD bàn cắt và đo than lò hơi thời gian thực. Công nhân dưới xưởng cứ làm việc bình thường, không bị chậm tiến độ sản xuất hay xáo trộn công việc của họ. Nó vừa giúp cô tự động vá kẽ hở để **thu hồi lại tầm 5 - 7 tỷ tiền vải vụn và than thất thoát** để làm đẹp sổ sách thoái vốn, vừa tự động ghi nhận số liệu sạch để cô gia hạn Giấy phép Môi trường và thông quan hàng sang EU thuận lợi."*
+
 
 
 ---
 
 ## BƯỚC 3: XỬ LÝ CÁC CÂU HỎI & TỪ CHỐI (REALISTIC OBJECTION HANDLING)
 
-### 1. Từ chối về ngân sách: *"Công ty đang lỗ lớn (năm ngoái lỗ 51 tỷ), lấy tiền đâu ra làm công nghệ lúc này?"*
-> **Phản hồi:** *"Dạ cháu biết LPTex đang thắt lưng buộc bụng. Chính vì thế tụi cháu thiết kế Giai đoạn 1 chỉ quét và vá lỗi dữ liệu với chi phí cực nhỏ: **250 triệu VNĐ**. 
+### 1. Từ chối về ngân sách: *"Công ty mới phục hồi có lãi lại chút ít sau đợt lỗ nặng 51 tỷ năm 2023, dòng tiền dạo này cô phải ưu tiên rót cho dự án Ea Kar ngoài Đắk Lắk, lấy đâu ra ngân sách làm công nghệ lúc này?"*
+> **Phản hồi:** *"Dạ cháu biết LPTex đang phải thắt chặt chi tiêu để tập trung cho dự án xanh ngoài Đắk Lắk. Chính vì thế tụi cháu mới thiết kế Giai đoạn 1 chỉ quét và vá lỗi dữ liệu với chi phí cực nhỏ: **250 triệu VNĐ**. 
 > 
-> Khoản này nằm dưới hạn mức phải đấu thầu công khai nên cô có toàn quyền tự quyết ký duyệt dịch vụ kỹ thuật nội bộ luôn, không cần trình Tập đoàn Vinatex phê duyệt phức tạp. Tụi cháu cam kết bằng văn bản: **Nếu trong 4 tuần không chỉ ra được tối thiểu 10 tỷ VND thất thoát từ số liệu thật của LPTex, tụi cháu hoàn trả 100% chi phí.** Cô không mất gì cả mà lại có báo cáo sạch để trình Vinatex."*
+> Khoản này nằm dưới hạn mức phải đấu thầu công khai nên cô có toàn quyền tự quyết ký duyệt dịch vụ kỹ thuật nội bộ luôn, không cần trình Tập đoàn Vinatex phê duyệt phức tạp. Tụi cháu cam kết bằng văn bản: **Nếu trong 4 tuần không chỉ ra được tối thiểu 10 tỷ VND thất thoát từ số liệu thật của LPTex, tụi cháu hoàn trả 100% chi phí.** Cô không mất gì cả mà lại có báo cáo sạch để chứng minh dòng tiền vận hành của mình đang tối ưu."*
+
 
 ### 2. Từ chối về năng lực nội bộ: *"LPTex có ban IT và kỹ sư dệt may lâu đời, sao họ không tự làm?"*
 > **Phản hồi:** *"Các anh kỹ sư của mình rất giỏi nghề cô ạ. Nhưng họ đang bận chữa cháy sản xuất hàng ngày. 
@@ -71,10 +73,10 @@
 
 ## BƯỚC 4: ĐỀ XUẤT CHỐT KHÔNG RỦI RO (THE NO-RISK CLOSE)
 
-* **Mục tiêu:** Hạ thấp rào cản tối đa. Xin bản Excel cũ để chứng minh năng lực miễn phí trong 3 ngày.
+* **Mục tiêu:** Hạ thấp rào cản tối đa. Xin bộ dữ liệu mẫu giới hạn từ các PO cũ để chứng minh năng lực miễn phí trong 3 ngày.
 
 > **Đoạn hội thoại mẫu:**
 >
-> **Sale:** *"Thế này đi cô, để cô thấy năng lực thực tế của tụi cháu trước khi quyết định chi tiền. Cô chỉ cần chỉ đạo IT xuất cho cháu 1 bản dump dữ liệu Excel cũ (gồm nhật ký bàn cắt, sản lượng may hoàn tất, và nhật ký vận hành lò hơi của 3 PO đã hoàn thành gần nhất).*
+> **Sale:** *"Thế này đi cô, để cô thấy năng lực thực tế của tụi cháu trước khi quyết định chi tiền. Cô chỉ cần chỉ đạo IT xuất cho cháu một bộ dữ liệu mẫu read-only từ Excel cũ, giới hạn trong 3 PO đã hoàn thành gần nhất (gồm nhật ký bàn cắt, sản lượng may hoàn tất, và nhật ký vận hành lò hơi nếu có).*
 >
 > *Tụi cháu mang về chạy quét thử hoàn toàn miễn phí. Trong vòng 3 ngày, cháu gửi lại cô một báo cáo chỉ rõ: LPTex bị lệch co rút ở những cây vải nào, lượng vải lãng phí quy đổi ra tiền là bao nhiêu, và những khung giờ nào lò hơi bị ngắt cảm biến. Cháu gửi kết quả riêng cho cô tự xử lý nội bộ, không ai biết ngoài cô cháu mình. Nếu cô thấy đúng lỗi thực tế thì mình ký hợp đồng triển khai tiếp, còn không đúng thì coi như cháu hỗ trợ rà soát hộ cô miễn phí, cô không mất gì cả. Cô cho cháu thử sức giúp cô nhé?"*

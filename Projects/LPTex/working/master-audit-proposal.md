@@ -85,7 +85,7 @@ Dưới lăng kính kiểm toán dữ liệu, Link Strategy xác định 5 khu v
 *   **Nội dung rà soát đối chiếu:** Cách thức lưu vết lịch sử lỗi mẻ nhuộm và các lần xử lý lại (rework) để phục vụ việc tối ưu hóa công thức nhuộm tự động cho các mẻ sau.
 
 ### 4.4. Thất thoát do lỗi dây chuyền tích lũy (Cascading Yield Loss - Sợi & Dệt)
-*   **Mô tả:** Lỗi sợi (đứt sợi, lẫn tạp chất) hoặc co rút sợi Merino không đạt tiêu chuẩn phát sinh từ khâu sợi/dệt nhưng không được phát hiện sớm, lan truyền sang khâu dệt-nhuộm làm hỏng mẻ nhuộm và lãng phí toàn bộ hóa chất, năng lượng dệt nhuộm đã thực hiện. Đồng thời là rủi ro thất thoát tài chính vô hình do mua bán sợi không quy chuẩn đo độ ẩm (Moisture Regain Settlement) với liên doanh DWS Đà Lạt.
+*   **Mô tả:** Lỗi sợi (đứt sợi, lẫn tạp chất) hoặc co rút sợi Merino không đạt tiêu chuẩn phát sinh từ khâu sợi/dệt nhưng không được phát hiện sớm, lan truyền sang khâu dệt-nhuộm làm hỏng mẻ nhuộm và lãng phí toàn bộ hóa chất, năng lượng dệt nhuộm đã thực hiện. Sợi Merino mộc chất lượng cao được cung cấp từ liên doanh **Dalat Worsted Spinning (DWS)** (hợp tác với tập đoàn sợi len hàng đầu nước Đức **Südwolle Group**), tuy nhiên do LPTex thiếu công cụ đo kiểm trực tuyến tại Thủ Đức nên các lỗi vật lý vẫn bị bỏ qua. Đồng thời là rủi ro thất thoát tài chính vô hình do mua bán sợi không quy chuẩn đo độ ẩm (Moisture Regain Settlement) với DWS.
 *   **Thiệt hại ước tính:** **2 - 3 tỷ đồng/năm**.
 *   **Nội dung rà soát đối chiếu:** Kiểm tra lỗi vải mộc ngoại quan, độ co rút sợi tại bàn kiểm vải mộc trước khi chuyển bể nhuộm và đối soát cân bù độ ẩm len Merino theo tiêu chuẩn thương mại (18.25%).
 
@@ -100,7 +100,11 @@ Dưới lăng kính kiểm toán dữ liệu, Link Strategy xác định 5 khu v
 
 Từ năm 2026, cơ chế điều chỉnh biên giới carbon (CBAM) của EU chính thức áp thuế carbon lên hàng nhập khẩu. Các đối tác lớn của LPTex (Ted Baker, Next) bắt buộc phải có báo cáo phát thải carbon "embedded carbon" minh bạch trong khâu dệt nhuộm để được thông quan.
 
-Đồng thời, theo định hướng chiến lược đến năm 2030 của chính LPTex, doanh nghiệp đặt mục tiêu nâng tỷ trọng sản phẩm đạt chứng nhận xanh lên **ít nhất 30% tổng sản lượng** và hoàn thiện toàn bộ báo cáo ESG. Do đó, việc xây dựng năng lực giám sát carbon không chỉ là để đối phó WAF của Buyer, mà là thực thi đúng lộ trình phát triển cốt lõi của công ty.
+Đòn bẩy đặc thù về nguồn cung và pháp lý môi trường của LPTex:
+*   **Rủi ro xuất xứ nguyên liệu dệt:** Trong khi len 100% được nhập khẩu từ Úc, LPTex lại đang phụ thuộc vào **sợi tái chế nhập khẩu từ Trung Quốc** do nguồn cung nội địa thiếu hụt. Đây là điểm nhạy cảm cao mà Buyer EU sẽ kiểm tra gắt gao trong báo cáo nguồn gốc ESG/CBAM. Nếu LPTex không có hệ thống Carbon Ledger minh bạch để bóc tách rõ lượng carbon và chứng chỉ nguồn gốc từng lô sợi, nguy cơ bị treo đơn hàng là rất lớn.
+*   **Áp lực pháp lý môi trường hiện hành:** Việc LPTex đăng tuyển gấp **Chuyên viên Kỹ thuật Môi trường** vào đầu năm 2026 chứng tỏ áp lực tuân thủ xả thải từ Sở TN&MT TP.HCM đối với nhà máy Thủ Đức là cực kỳ căng thẳng. Báo cáo phát thải thời gian thực từ lò hơi là lá chắn pháp lý thiết thực nhất để LPTex đối thoại với cơ quan quản lý.
+
+Đồng thời, theo định hướng chiến lược đến năm 2030 của chính LPTex, doanh nghiệp đặt mục tiêu nâng tỷ trọng sản phẩm đạt chứng nhận xanh lên **ít nhất 30% tổng sản lượng** và hoàn thiện toàn bộ báo cáo ESG. Do đó, việc xây dựng năng lực giám sát carbon không chỉ là để đáp ứng yêu cầu của Buyer, mà là thực thi đúng lộ trình phát triển cốt lõi của công ty.
 
 ### 📌 Lợi ích từ Giải pháp Carbon Ledger bất biến của LS:
 1.  **Hồ sơ bằng chứng sạch (Audit-Ready):** Tích hợp AWS Object Lock và DLT để khóa dữ liệu phát thải thực tế ngay từ tầng cảm biến vật lý. Cho phép các tổ chức kiểm toán quốc tế (SGS/Bureau Veritas) xác thực báo cáo ESG của LPTex trong **chưa đầy 1 giờ** thay vì hàng tuần đối soát thủ công.
