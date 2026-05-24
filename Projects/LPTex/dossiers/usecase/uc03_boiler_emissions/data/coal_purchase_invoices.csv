@@ -1,0 +1,5 @@
+invoice_id,purchase_order_ref,coal_grade,tons_purchased,invoice_date,erp_posted_date,amount_vnd
+INV-COAL-001,PO-COAL-9901,Grade A,20.0,2026-05-02,2026-05-15,48000000.0
+INV-COAL-002,PO-COAL-9902,Grade B (Dơ),15.0,2026-05-08,2026-05-22,33000000.0
+INV-COAL-003,PO-COAL-9903,Grade A,25.0,2026-05-12,2026-05-25,60000000.0
+INV-COAL-004,PO-COAL-9904,Grade B (Dơ),20.0,2026-05-14,2026-05-29,44000000.0

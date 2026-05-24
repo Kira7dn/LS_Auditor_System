@@ -1,0 +1,6 @@
+po_number,cad_shrinkage_pct,actual_shrinkage_pct,design_length_m,actual_cut_length_m
+PO-1001,5.0,5.0,150.0,150.5
+PO-1002,5.0,3.0,110.0,120.0
+PO-1003,5.0,7.2,170.0,180.2
+PO-1004,5.0,5.1,99.5,100.0
+PO-1005,5.0,2.8,230.0,250.8
