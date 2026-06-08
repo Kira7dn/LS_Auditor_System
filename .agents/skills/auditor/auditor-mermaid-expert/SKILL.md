@@ -16,13 +16,20 @@ description: Chuyên gia thiết kế sơ đồ Mermaid chuẩn Audit. Tích h�
 - **Audit Compliance**: Sơ đồ phải hiển thị rõ các mã ID điểm kiểm soát (CP-xx).
 
 ## 3. Quy tắc "Expert" (Patterns)
-- **Pattern 1: Color Semantics**: 
-    - Actor: `#E3F2FD` (Blue 50) - Phẳng & Tin cậy.
-    - Control: `#FFFDE7` (Yellow 50) - Cảnh báo nhẹ (Nét đứt).
-    - Risk: `#FFEBEE` (Red 50) - Nguy hiểm/Rò rỉ.
-- **Pattern 2: Visual Fidelity**: 
+- **Pattern 1: Color Semantics (Dark Mode — Chuẩn chính thức)**:
+    ```
+    classDef actor   fill:#0d2d6e,stroke:#60a5fa,stroke-width:2px,color:#e0f2fe;
+    classDef control fill:#3d2d00,stroke:#fbbf24,stroke-width:2px,stroke-dasharray: 5 5,color:#fef3c7;
+    classDef risk    fill:#3d0a0a,stroke:#f87171,stroke-width:2px,color:#fecaca;
+    classDef system  fill:#052e16,stroke:#4ade80,stroke-width:2px,color:#bbf7d0;
+    ```
+    - **Actor** (navy `#0d2d6e` / xanh dương `#60a5fa`): Tác nhân người — VVB, Khách hàng.
+    - **Control** (vàng tối `#3d2d00` / amber `#fbbf24`, nét đứt): Điểm kiểm soát CP-xx.
+    - **Risk** (đỏ sẫm `#3d0a0a` / đỏ `#f87171`): Rủi ro rò rỉ, nguy hiểm.
+    - **System** (xanh lá đậm `#052e16` / `#4ade80`): Hệ thống kỹ thuật, dịch vụ Cloud.
+- **Pattern 2: Visual Fidelity**:
     - Sử dụng `look: handDrawn` khi thảo luận sơ bộ với khách hàng để tạo cảm giác thân thiện.
-    - Sử dụng `look: classic` cho báo cáo Audit chính thức.
+    - Sử dụng `look: classic` cho báo cáo Audit chính thức xuất PDF.
 
 ## 4. Công cụ đi kèm (Local Assets)
 - **Script**: `scripts/mermaid_expert_helper.py` (Engine tạo mã Mermaid chuẩn hiện đại).

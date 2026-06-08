@@ -16,7 +16,7 @@
   </div><!-- QUAN TRỌNG: KHÔNG ĐỂ KHOẢNG TRẮNG Ở ĐÂY --><div style="display: inline-block !important; width: 54% !important; vertical-align: middle !important; text-align: right !important; white-space: normal !important; line-height: 1.5 !important; margin: 0 !important; background-color: transparent !important;">
     <!-- Khối Branding Badge -->
     <div style="display: inline-flex !important; align-items: center !important; background-color: #003366 !important; padding: 8px 14px !important; border-radius: 4px !important; text-align: left !important; box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;">
-      <img src="../Assets/LS-logo.png"" width="32" height="32" alt="Link Strategy Logo" style="background-color: white !important; padding: 2px !important; border-radius: 50% !important; display: block !important; border: none !important; object-fit: contain !important;">
+      <img src="../Assets/LINK%20STRATEGY.png" width="32" height="32" alt="Link Strategy Logo" style="background-color: white !important; padding: 2px !important; border-radius: 50% !important; display: block !important; border: none !important; object-fit: contain !important;">
       <div style="margin-left: 12px !important; background-color: transparent !important;">
         <div style="font-size: 1.25em !important; font-weight: bold !important; letter-spacing: 1px !important; line-height: 1 !important; background-color: transparent !important;">
           <span style="color: white !important; background-color: transparent !important;">LINK</span> <span style="color: #FFB800 !important; background-color: transparent !important;">STRATEGY</span>
