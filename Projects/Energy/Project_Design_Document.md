@@ -180,18 +180,11 @@ Hệ thống sử dụng luồng xử lý và truyền dữ liệu thời gian t
 * **Lưu vết chống sửa đổi:** Các chỉ số năng lượng và phát thải được tổng hợp và ghi nhận mã băm (Hash) vào LeDB nhằm hỗ trợ phát hiện chỉnh sửa số liệu hồi tố.
 <div class="page-break"></div>
 
-## 6. Energy Ledger Design
+## 6. Energy & Carbon Accounting Model
 
-### 6.1 Energy Source Classification & Coding
+### 6.1 Energy Ledger & Reconciliation
 
-Hệ thống năng lượng được phân loại nguồn rõ ràng để theo dõi dòng chảy năng lượng xanh:
-
-* **Solar (Mã nguồn: ENG-PV):** Điện mặt trời tự sản tự tiêu từ hệ thống áp mái **1.086 MWp**.
-* **Wind (Mã nguồn: ENG-WD):** Điện gió tự sản tự tiêu từ **6 trụ tua-bin gió trục đứng**, tổng công suất **60 kW**.
-* **Bio-Methanol (Mã nguồn: ENG-BM):** Điện từ pin nhiên liệu RMFC sinh học, công suất **0.5 MW**.
-* **Grid (Mã nguồn: ENG-GR):** Điện lưới quốc gia bù tải cho các thời điểm nguồn tại chỗ không đủ đáp ứng nhu cầu sạc.
-
-### 6.2 Energy Balance & Flow Model
+**Energy Balance & Flow Model**
 
 Quy trình cân bằng năng lượng thời gian thực thực thi trên hệ điều hành LeOS tại Hub dịch vụ tuân thủ nguyên tắc:
 
@@ -213,134 +206,94 @@ $$
 \sum E_{Charger\_Output} \cdot \eta_{charge} = \sum \Delta P_{kWh} + L_{Transmission}
 $$
 
-### 6.3 Energy Balance Reconciliation Example (Ví dụ đối soát cân bằng năng lượng thực tế)
+**Energy Balance Reconciliation Example**
 
-LeOS đối soát dòng điện theo ngày. Ví dụ dưới đây minh họa 1 ngày vận hành trung bình của hạm đội pilot 5 xe, chưa phải sản lượng đo đạc chính thức.
+Sổ cái năng lượng ghi nhận theo giao dịch/sự kiện vận hành như phát điện, nạp pin, xả pin và phiên sạc. Bảng dưới đây là ví dụ đối soát năng lượng phân bổ cho hạm đội pilot 5 xe trong 1 ngày tại Hub Hiệp Hoà - Quảng Ninh; số minh họa chưa phải sản lượng đo đạc chính thức.
 
-| Hạng mục | Giá trị minh họa |
-| :-- | --: |
-| Điện mặt trời tự phát (ENG-PV) | 390 kWh |
-| Điện gió tự phát (ENG-WD) | 24 kWh |
-| Điện RMFC Bio-Methanol (ENG-BM) | 150 kWh |
-| Điện lưới bù tải (ENG-GR) | 376 kWh |
-| **Tổng năng lượng phát ra** | **940 kWh** |
-| Nạp vào pin VFB/BESS | 80 kWh |
-| Xả từ pin ra đầu sạc sau hiệu suất | 61.2 kWh |
-| Điện sạc đo tại đầu súng | 840 kWh |
-| Hao hụt truyền dẫn và điều phối | 81.2 kWh |
+| Phân loại | Hạng mục | Công suất tối đa/ngày | Kế hoạch năng lượng/ngày | Hiệu suất / Hệ số sử dụng (%) |
+| :-- | :-- | --: | --: | --: |
+| **Nguồn phát** | Điện mặt trời tự phát | 26,064 kWh<br>(1,086 kWp x 24h) | 3,800.0 kWh | 14.6% |
+| **Nguồn phát** | Điện gió tự phát | 1,440 kWh<br>(60 kW x 24h) | 0.0 kWh | 0.0% |
+| **Nguồn phát** | Điện RMFC Bio-Methanol | 12,000 kWh<br>(500 kW x 24h) | 0.0 kWh | 0.0% |
+| **Nguồn phát** | Điện lưới bù tải | N/A | 0.0 kWh | 0.0% |
+| *Cộng phát* | **Tổng nguồn phát (A)** | | **3,800.0 kWh** | |
+| **Lưu trữ** | VFB (Pin dòng chảy) | 4,000 kWh<br>(Dung lượng pin) | 0.0 kWh | 0.0% |
+| **Lưu trữ** | BESS (Lithium-ion) | 1,000 kWh<br>(Dung lượng pin) | 840.0 kWh | 84.0% |
+| **Lưu trữ** | Hao hụt tại pin lưu trữ | 100 kWh<br>(1,000x10%) | 84.0 kWh<br>(840 x 10%) | 84.0% |
+| **Tiêu thụ** | Điện sạc đo tại đầu súng | 1,520 kWh<br>(3x440kWh + 2x100kWh) | 840.0 kWh | 55.3% |
+| **Tiêu thụ** | Năng lượng sạch chưa phân bổ | 26,064 kWh<br>(Hệ thống Solar) | 2,676.0 kWh | 10.3% |
+| **Tiêu thụ** | Hao hụt truyền dẫn hệ thống | 190.0 kWh<br>(5% x 3,800) | 200.0 kWh | 5.3% |
+| *Cộng nhận* | **Tổng tiêu thụ + Hao hụt (B)** | | **3,800.0 kWh** | |
 
 **Quy tắc đối soát khớp sổ cái năng lượng (Energy Ledger Reconciliation Rule):**
 
 $$
-\text{Năng lượng phát ra} + \text{Năng lượng xả} = \text{Năng lượng sạc xe} + \text{Năng lượng nạp pin} + \text{Hao hụt}
+\text{Tổng nguồn phát (A)} = \text{Điện sạc xe} + \text{Chưa phân bổ} + \text{Hao hụt truyền dẫn} + \text{Hao hụt lưu trữ pin}
 $$
 
 $$
-940 \text{ kWh (Phát)} + 61.2 \text{ kWh (Xả)} = 840 \text{ kWh (Sạc)} + 80 \text{ kWh (Nạp)} + 81.2 \text{ kWh (Hao hụt)}
+3,800.0 \text{ kWh} = 840.0 \text{ kWh} + 2,676.0 \text{ kWh} + 200.0 \text{ kWh} + 84.0 \text{ kWh}
 $$
 
-*Kết quả đối soát:* Hai vế khớp trong ví dụ minh họa **(1,001.2 kWh = 1,001.2 kWh)**. LeOS ký số và ghi nhận giao dịch vào LeDB.
+*Kết quả đối soát:* Kế hoạch ngày khớp hoàn toàn **(A = B = 3,800.0 kWh)**. LeOS ký số và ghi nhận giao dịch vào LeDB.
 
-## 7. Carbon Accounting & Baseline Methodology
+### 6.2 Carbon Accounting & Baseline Methodology
 
-### 7.1 Baseline vs. Project Comparison Table (Bảng đối chiếu Trước và Sau dự án)
-
-Dưới đây là bảng đối chiếu định hướng giữa kịch bản vận tải truyền thống và kịch bản Le-GCP. Kết luận cuối cùng phụ thuộc dữ liệu vận hành đã xác minh.
-
-| Khía cạnh so sánh                            | Kịch bản Trước dự án (Before - Baseline)                                                                                   | Kịch bản Sau dự án (After - Project Le-GCP)                                                                                                                               |
-| :---------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nguồn năng lượng**                  | Dầu diesel hoặc điện lưới thông thường.                            | Ưu tiên Solar, Gió, RMFC Bio-Methanol; phần còn lại đối soát theo nguồn thực tế.                                                   |
-| **Phát thải**         | Phát thải trực tiếp từ diesel và gián tiếp từ điện lưới.                   | Không có phát thải ống xả; phát thải gián tiếp phụ thuộc tỷ lệ điện sạch thực tế.                                         |
-| **MRV** | Hóa đơn dầu, công tơ cơ học hoặc log sạc ghi tay.                         | Le-NodeMobile/Hub ghi nhận tải trọng, quãng đường và điện năng sạc. |
-| **Liêm chính dữ liệu**          | Dữ liệu thủ công, khó truy xuất nguồn điện. | Thiết bị biên ký số, LeDB lưu mã băm để phát hiện chỉnh sửa hồi tố.                                            |
-| **Thẩm định**               | Kiểm toán dựa nhiều vào chứng từ giấy.  | Auditor Gateway hỗ trợ truy xuất, đối soát hash và rà soát trước khi phát hành chứng thư.                                |
-
-### 7.2 Phát thải Đường cơ sở của xe dầu tương đương (Baseline Emissions)
-
-Với mỗi chuyến xe chạy bằng dầu diesel, lượng phát thải được tính theo công thức:
+Phát thải đường cơ sở và phát thải dự án được tính theo các công thức:
 
 $$
-GHG_{Baseline, i} = D_i \times FE_{Diesel, i} \times EF_{Diesel}
-$$
-
-Trong đó, định mức tiêu hao dầu thực tế $FE_{Diesel, i}$ (lít/km) phụ thuộc vào tải trọng chở hàng của chuyến xe $i$:
-
-$$
-FE_{Diesel, i} = FE_{Base} + \alpha \times W_i
-$$
-
-Thông số chính: $D_i$ là quãng đường GPS, $W_i$ là tải trọng, $EF_{Diesel}=2.68$ kg CO2/lít. $FE_{Base}$ áp dụng **0.25 lít/km** cho xe đầu kéo và **0.18 lít/km** cho xe tải trung; $\alpha=0.005$ lít/(km · tấn).
-
-#### Ví dụ tính toán minh họa cho Hạm đội Pilot 5 xe chạy trong 1 năm:
-
-Giả định minh họa, sẽ thay bằng dữ liệu pilot đã xác minh:
-
-| Nhóm xe diesel tương đương | Quãng đường | Tải TB | FE tính toán | Dầu tiêu thụ | Phát thải |
-| :-- | --: | --: | --: | --: | --: |
-| 3 xe đầu kéo CAMC | 180,000 km/năm | 25 tấn | 0.375 lít/km | 67,500 lít | 180.90 tCO2/năm |
-| 2 xe tải trung Farizon | 120,000 km/năm | 8 tấn | 0.220 lít/km | 26,400 lít | 70.75 tCO2/năm |
-
-$$
-GHG_{Baseline} = 180.90 + 70.75 = 251.65 \text{ tấn } CO_2\text{/năm}
-$$
-
-### 7.3 Phát thải thực tế của dự án xe điện LeTRON (Project Emissions)
-
-Với mỗi chuyến xe điện sạc hỗn hợp tại Hub, lượng phát thải thực tế được tính theo công thức:
-
-$$
-GHG_{Project, i} = E_i \times EF_{Hub}
-$$
-
-Trong đó, hệ số phát thải trung bình của trạm sạc tại thời điểm sạc $EF_{Hub}$ (kg CO2/kWh) được tính dựa trên tỷ lệ sạc thực tế của 4 nguồn cấp:
-
-$$
-EF_{Hub} = S_{Grid} \times EF_{Grid} + S_{Solar} \times EF_{Solar} + S_{Wind} \times EF_{Wind} + S_{Methanol} \times EF_{Methanol}
-$$
-
-Thông số chính: $E_i$ là điện sạc đo tại đầu súng; $S_{Grid}, S_{Solar}, S_{Wind}, S_{Methanol}$ là tỷ lệ nguồn. $EF_{Grid}=0.7228$ kg CO2/kWh; Solar/Wind/Bio-Methanol tạm tính 0.00 khi có hồ sơ nguồn gốc và đánh giá vòng đời phù hợp.
-
-#### Ví dụ tính toán minh họa cho Hạm đội Pilot 5 xe điện chạy trong 1 năm:
-
-Định mức tiêu thụ và tỷ lệ nguồn dưới đây là giả định minh họa, cần hiệu chỉnh bằng dữ liệu đo tại Hub.
-
-| Nhóm xe điện | Quãng đường | Định mức điện | Điện sạc |
-| :-- | --: | --: | --: |
-| 3 xe CAMC G2E | 180,000 km/năm | 1.30 kWh/km | 234,000 kWh/năm |
-| 2 xe Farizon H9E | 120,000 km/năm | 0.60 kWh/km | 72,000 kWh/năm |
-| **Tổng hạm đội** | **300,000 km/năm** |  | **306,000 kWh/năm** |
-
-Kiểm tra nhanh với dung lượng pin: $(3 \times 440) + (2 \times 100) = 1,520$ kWh; mức sạc bình quân $306,000 \div 365 \approx 838.36$ kWh/ngày, tương đương khoảng **0.55 vòng sạc đầy toàn hạm đội/ngày**.
-
-Với giả định 60% năng lượng sạch tự cấp và 40% điện lưới:
-
-$$
-GHG_{Project} = (306,000 \times 40\%) \times 0.7228 = 88,470.72 \text{ kg } CO_2 \approx 88.47 \text{ tấn } CO_2\text{/năm}
-$$
-
-### 7.4 Lượng phát thải giảm thiểu ròng (Net Carbon Reduction)
-
-Lượng giảm phát thải khí nhà kính ròng $\Delta GHG_i$ cho chuyến xe $i$:
-
-$$
-\Delta GHG_i = GHG_{Baseline, i} - GHG_{Project, i}
-$$
-
-#### Ví dụ tính toán minh họa giảm phát thải ròng hàng năm của hạm đội pilot:
-
-$$
-\Delta GHG = GHG_{Baseline} - GHG_{Project} = 251.65 - 88.47 = 163.18 \text{ tấn } CO_2\text{/năm}
+GHG_{Baseline} = D \times (FE_{Base} + \alpha \times W) \times EF_{Diesel}
 $$
 
 $$
-\text{Tỷ lệ giảm phát thải} = \frac{163.18}{251.65} \times 100\% \approx 64.84\%
+GHG_{Project} = E_{Charge} \times S_{Grid} \times EF_{Grid}
 $$
 
-<div class="page-break"></div>
+$$
+\Delta GHG = GHG_{Baseline} - GHG_{Project}
+$$
 
-### 7.5 Bảng tổng hợp các chỉ số định mức và hệ số phát thải áp dụng
+Trong đó, $D$ là quãng đường GPS, $W$ là tải trọng, $E_{Charge}$ là điện sạc đo tại đầu súng, $S_{Grid}$ là tỷ lệ điện lưới trong phiên sạc. Các bảng dưới đây áp dụng công thức cho ví dụ minh họa 1 năm vận hành; kết quả cuối cùng sẽ thay bằng dữ liệu đã xác minh.
 
-Bảng dưới đây tổng hợp các chỉ số nền dùng trong thuật toán LeOS:
+**Bảng 6.2A - 3 xe đầu kéo CAMC G2E**
+
+| Chỉ tiêu | Before - xe diesel tương đương | After - CAMC G2E điện |
+| :-- | --: | --: |
+| Số lượng xe | 3 xe đầu kéo diesel | 3 xe CAMC G2E |
+| Quãng đường năm | 180,000 km | 180,000 km |
+| Tải trọng giả định | 25 tấn/chuyến | 25 tấn/chuyến |
+| Định mức năng lượng | $0.25 + (0.005 \times 25) = 0.375$ lít/km | 1.30 kWh/km |
+| Nhiên liệu / điện năng năm | 67,500 lít diesel | 234,000 kWh |
+| Phát thải tính toán | $67,500 \times 2.68 = 180.90$ tCO2 | $(234,000 \times 40\%) \times 0.7228 = 67.65$ tCO2 |
+| Giảm phát thải |  | **113.25 tCO2/năm** |
+
+**Bảng 6.2B - 2 xe Farizon H9E**
+
+| Chỉ tiêu | Before - xe diesel tương đương | After - Farizon H9E điện |
+| :-- | --: | --: |
+| Số lượng xe | 2 xe tải trung diesel | 2 xe Farizon H9E |
+| Quãng đường năm | 120,000 km | 120,000 km |
+| Tải trọng giả định | 8 tấn/chuyến | 8 tấn/chuyến |
+| Định mức năng lượng | $0.18 + (0.005 \times 8) = 0.220$ lít/km | 0.60 kWh/km |
+| Nhiên liệu / điện năng năm | 26,400 lít diesel | 72,000 kWh |
+| Phát thải tính toán | $26,400 \times 2.68 = 70.75$ tCO2 | $(72,000 \times 40\%) \times 0.7228 = 20.82$ tCO2 |
+| Giảm phát thải |  | **49.93 tCO2/năm** |
+
+**Bảng 6.2C - Tổng hợp hạm đội pilot**
+
+| Chỉ tiêu | Before - Baseline | After - Project Le-GCP |
+| :-- | --: | --: |
+| Số lượng xe | 5 xe diesel tương đương | 5 xe điện |
+| Quãng đường năm | 300,000 km | 300,000 km |
+| Nhiên liệu / điện năng năm | 93,900 lít diesel | 306,000 kWh |
+| Phát thải năm | **251.65 tCO2** | **88.47 tCO2** |
+| Giảm phát thải ròng |  | **163.18 tCO2/năm** |
+| Tỷ lệ giảm phát thải |  | **64.84%** |
+| Kiểm tra dung lượng pin |  | 1,520 kWh danh định; sạc bình quân 838.36 kWh/ngày, khoảng 0.55 vòng sạc/ngày |
+
+Thông số áp dụng: $EF_{Diesel}=2.68$ kg CO2/lít, $EF_{Grid}=0.7228$ kg CO2/kWh. Solar/Wind/Bio-Methanol tạm tính 0.00 khi có hồ sơ nguồn gốc và đánh giá vòng đời phù hợp.
+
+**Bảng 6.2D - Thông số định mức và hệ số phát thải áp dụng**
 
 | Ký hiệu                   | Tên chỉ số                                      | Nguồn tham chiếu / Cơ sở áp dụng                | Giá trị áp dụng | Đơn vị           |
 | :-------------------------- | :------------------------------------------------- | :-------------------------------------------------------- | :------------------ | :------------------ |
@@ -349,21 +302,29 @@ Bảng dưới đây tổng hợp các chỉ số nền dùng trong thuật toá
 | **EF_Solar**          | Hệ số phát thải của Điện mặt trời         | Mặc định nguồn sạch tự sản tự tiêu               | **0.00**      | kg CO2 / kWh        |
 | **EF_Wind**           | Hệ số phát thải của Điện gió               | Mặc định nguồn sạch tự sản tự tiêu               | **0.00**      | kg CO2 / kWh        |
 | **EF_Methanol**       | Hệ số phát thải của Điện Methanol sinh học | Đánh giá vòng đời (LCA) và chứng nhận nguồn gốc của Bio-Methanol           | **0.00**      | kg CO2 / kWh        |
+| **S_Grid**            | Tỷ lệ điện lưới mục tiêu trong sạc         | Kịch bản phân bổ nguồn sạc mục tiêu năm           | **40.00**     | %                   |
 | **FE_Base (CAMC)**    | Tiêu thụ dầu cơ bản xe đầu kéo rỗng       | Thông số đăng kiểm của nhà sản xuất              | **0.25**      | lít / km           |
 | **FE_Base (Farizon)** | Tiêu thụ dầu cơ bản xe tải trung rỗng       | Quy chuẩn thống kê vận tải đường bộ Việt Nam    | **0.18**      | lít / km           |
 | **Alpha_Load**        | Hệ số tăng tiêu thụ dầu theo tải trọng     | Quy chuẩn thống kê vận tải đường bộ Việt Nam    | **0.005**     | lít / (km · tấn) |
+| **EC_Electric (CAMC)** | Tiêu thụ điện năng xe đầu kéo CAMC G2E    | Thiết kế kỹ thuật của nhà sản xuất               | **1.30**      | kWh / km           |
+| **EC_Electric (Farizon)**| Tiêu thụ điện năng xe tải trung Farizon H9E | Thiết kế kỹ thuật của nhà sản xuất               | **0.60**      | kWh / km           |
+| **Eff_VFB**           | Hiệu suất nạp/xả pin dòng chảy VFB          | Thiết kế kỹ thuật của pin dòng chảy Vanadium     | **80.00**     | %                   |
+| **Eff_BESS**          | Hiệu suất nạp/xả pin Lithium-ion BESS       | Thiết kế kỹ thuật của hệ thống pin Lithium       | **90.00**     | %                   |
+| **CF_Solar**          | Hệ số công suất điện mặt trời Quảng Ninh  | Bản đồ bức xạ và khí tượng Quảng Ninh            | **14.60**     | %                   |
+| **CF_Wind**           | Hệ số công suất điện gió Quảng Ninh       | Bản đồ khí tượng và tài nguyên gió Uông Bí       | **29.90**     | %                   |
+| **Loss_Transmission** | Tỷ lệ hao hụt truyền dẫn thiết kế của Hub  | Thiết kế hệ thống phân phối điện nội bộ Hub      | **5.00**      | %                   |
 | **Eff_Charge**        | Hiệu suất truyền dẫn sạc vật lý tại Hub    | Thiết kế kỹ thuật của trạm sạc nhanh Megawatt      | **94.00**     | %                   |
 <div class="page-break"></div>
 
-## 8. Monitoring, Reporting & Verification (MRV) Framework
+## 7. Monitoring, Reporting & Verification (MRV) Framework
 
-### 8.1 Quy trình thu thập dữ liệu (Monitoring Process)
+### 7.1 Quy trình thu thập dữ liệu (Monitoring Process)
 
 * **Tần suất mục tiêu:** Le-NodeMobile và Le-NodeHub thu thập dữ liệu mỗi 5 giây khi thiết bị và kết nối hoạt động bình thường.
 * **Tham số theo dõi:** GPS (kinh độ, vĩ độ), Pin SoC (%), Dòng điện sạc (A), Điện áp sạc (V), Cảm biến tải trọng trục (kg).
 * **Đóng gói dữ liệu:** Thiết bị biên lưu đệm dữ liệu thô và đồng bộ lên Carbon/Energy Ledger khi có kết nối 4G/5G ổn định.
 
-### 8.2 Khung báo cáo và Bằng chứng (Reporting & Evidence Register)
+### 7.2 Khung báo cáo và Bằng chứng (Reporting & Evidence Register)
 
 * **Báo cáo chuyến hàng:** Tạo Le-GCP sau khi xe hoàn thành lộ trình và dữ liệu được xác nhận bằng geofence.
 * **Nhật ký bằng chứng (Evidence Dossier):** Mỗi chuyến xe được liên kết với một hồ sơ bằng chứng số bao gồm:
@@ -372,7 +333,7 @@ Bảng dưới đây tổng hợp các chỉ số nền dùng trong thuật toá
   * Mã băm giao dịch ghi nhận trong LeDB (TxID).
   * Biên bản sạc điện sạch lưu trữ trên Energy Ledger.
 
-### 8.3 Quy trình kiểm toán (Verification Process)
+### 7.3 Quy trình kiểm toán (Verification Process)
 
 * Đơn vị kiểm toán độc lập truy cập thông qua tài khoản Auditor Access Gateway độc lập.
 * Kiểm toán viên chọn một chuyến xe, hệ thống truy xuất chữ ký số thiết bị biên và đối soát mã Hash trong LeDB.
@@ -412,32 +373,32 @@ graph TD
 
 <div class="page-break"></div>
 
-## 9. Data Quality & Governance Framework
+## 8. Data Quality & Governance Framework
 
-### 9.1 Kiểm soát chất lượng dữ liệu (Data Quality Rules)
+### 8.1 Kiểm soát chất lượng dữ liệu (Data Quality Rules)
 
 * **Completeness:** Dữ liệu viễn trắc mục tiêu đạt tối thiểu 95% thời gian di chuyển trước khi xét cấp Le-GCP.
 * **Accuracy:** Sai lệch đối soát giữa điện xả từ lưu trữ Hub và điện nạp vào xe qua CAN Bus mục tiêu dưới 2%.
 
-### 9.2 Quy trình xử lý lỗi cảm biến và Mất dữ liệu (Fallback Procedure)
+### 8.2 Quy trình xử lý lỗi cảm biến và Mất dữ liệu (Fallback Procedure)
 
 * **Mất kết nối:** Le-NodeMobile lưu dữ liệu cục bộ trên bộ nhớ mã hóa; khi có kết nối, thiết bị đồng bộ bù kèm chữ ký số và timestamp gốc.
 * **Lỗi cảm biến tải trọng:** Nếu cảm biến trục xe lỗi hoặc bất thường, hệ thống dùng trọng lượng từ phiếu cân hoặc E-Waybill đã ký số để thay thế $W_i$.
 
-## 10. Le-GCP & Auditor Gateway Implementation
+## 9. Le-GCP & Auditor Gateway Implementation
 
-### 10.1 Cấp Chứng thư Le-GCP (Passport Generation Logic)
+### 9.1 Cấp Chứng thư Le-GCP (Passport Generation Logic)
 
 * **Trigger:** Xe hoàn tất giao hàng theo geofence và tắt máy.
 * **Tạo chứng thư:** LeOS tổng hợp dữ liệu, tạo JSON chứng thư và ghi mã hash giao dịch vào LeDB.
 * **Bàn giao:** Chứng thư được mã hóa và gửi qua API đến hệ thống ERP của đối tác FDI.
 
-### 10.2 Thiết kế cổng kiểm toán Auditor Gateway
+### 9.2 Thiết kế cổng kiểm toán Auditor Gateway
 
 * **Giao diện Web:** Cổng 2FA cho kiểm toán viên bên thứ ba.
 * **Truy xuất:** Tìm chứng thư theo Shipment ID hoặc biển số, xem nguồn điện sạc và trạng thái toàn vẹn dữ liệu trong LeDB.
 
-### 10.3 Lộ trình triển khai (Roadmap)
+### 9.3 Lộ trình triển khai (Roadmap)
 
 * **Giai đoạn 1 (Tháng 8 - Tháng 10/2026):** Chạy thử nghiệm pilot hạm đội 5 xe chạy thực địa. Hoàn thiện tích hợp LeOS/LeDB và rà soát thuật toán nền với đơn vị kiểm toán.
 * **Giai đoạn 2 (Quý 1/2027):** Chuẩn bị mở rộng mạng lưới lên 20 xe điện nặng, nâng cấp công suất Hub sạc và triển khai thương mại theo kết quả pilot và thẩm định dữ liệu.

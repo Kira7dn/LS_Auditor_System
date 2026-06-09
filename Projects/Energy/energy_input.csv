@@ -1,0 +1,22 @@
+Parameter,Value,Unit,Description
+Solar_Capacity,1.086,MWp,Công suất đỉnh hệ thống điện mặt trời áp mái
+Wind_Capacity,60.0,kW,Công suất hệ thống tuabin gió trục đứng
+RMFC_Capacity,500.0,kW,Công suất pin nhiên liệu RMFC
+VFB_Capacity,4000.0,kWh,Dung lượng pin dòng chảy Vanadium
+BESS_Capacity,1000.0,kWh,Dung lượng pin Lithium BESS
+VFB_Efficiency,0.80,-,Hiệu suất nạp xả pin VFB
+BESS_Efficiency,0.90,-,Hiệu suất nạp xả pin BESS
+Loss_Transmission,0.05,-,Tỷ lệ hao hụt truyền dẫn lưới thiết kế
+Eff_Charge,0.94,-,Hiệu suất truyền dẫn sạc vật lý tại Hub
+Solar_Daily_KWh,3800.0,kWh,Kế hoạch sản lượng Solar ngày
+Wind_Daily_KWh,0.0,kWh,Kế hoạch sản lượng Wind ngày
+RMFC_Daily_KWh,0.0,kWh,Kế hoạch sản lượng RMFC ngày
+Grid_Daily_KWh,0.0,kWh,Kế hoạch điện lưới bù tải ngày
+Fleet_Charging_Daily_KWh,840.0,kWh,Kế hoạch điện sạc xe ngày
+CAMC_Trucks,3,xe,Số lượng xe đầu kéo CAMC G2E
+Farizon_Trucks,2,xe,Số lượng xe tải trung Farizon H9E
+CAMC_Distance_Year,180000.0,km,Tổng quãng đường năm của đội xe CAMC
+Farizon_Distance_Year,120000.0,km,Tổng quãng đường năm của đội xe Farizon
+CAMC_Payload,25.0,tấn,Tải trọng giả định của xe CAMC
+Farizon_Payload,8.0,tấn,Tải trọng giả định của xe Farizon
+Operating_Days,365.0,ngày,Số ngày hoạt động trong năm

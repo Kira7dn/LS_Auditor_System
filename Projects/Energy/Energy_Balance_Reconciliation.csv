@@ -1,0 +1,14 @@
+﻿Phân loại,Hạng mục,Công suất tối đa/ngày (kWh),Kế hoạch năng lượng/ngày (kWh),Hiệu suất / Hệ số sử dụng (%)
+Nguồn phát,Điện mặt trời tự phát,26064,3800,15%
+Nguồn phát,Điện gió tự phát,1440,0,0%
+Nguồn phát,Điện RMFC Bio-Methanol,12000,0,0%
+Nguồn phát,Điện lưới bù tải,0,0,0%
+Nguồn phát,Tổng nguồn phát (A),39504,3800,10%
+Lưu trữ,VFB (Pin dòng chảy),4000,0,0%
+Lưu trữ,BESS (Lithium-ion),1000,840,84%
+Lưu trữ,Hao hụt tại pin lưu trữ,500,84,17%
+Tiêu thụ,Điện sạc đo tại đầu súng,1520,840,55%
+Tiêu thụ,Năng lượng sạch chưa phân bổ,26064,2676,10%
+Tiêu thụ,Hao hụt truyền dẫn hệ thống,190,200,5%
+Tiêu thụ,Tổng tiêu thụ + Hao hụt (B),,3800,
+Đối soát,Chênh lệch (A - B),,0,
