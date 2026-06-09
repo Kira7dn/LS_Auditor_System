@@ -47,7 +47,7 @@ Ranh giới vật lý của dự án được xác định rõ ràng qua 3 nhóm
   * Trạm biến áp đấu nối điện lưới quốc gia (dự phòng bù tải đỉnh).
   * Hệ thống lưu trữ năng lượng tích hợp: Bể pin dòng chảy Vanadium VFB [Điền dung lượng] MWh và Lithium-ion BESS [Điền dung lượng] MWh.
 * **Mobility Assets (Tài sản di động):**
-  * Hạm đội xe điện nặng: 5 xe đầu kéo CAMC [Điền mã và công suất].
+  * Hạm đội xe điện nặng: 5 xe đầu kéo CAMC [Điền dòng xe và công suất pin].
   * Phạm vi di chuyển thực địa: Các tuyến đường vận chuyển kết nối giữa các Khu công nghiệp (KCN) trọng điểm, với điểm bắt đầu và kết thúc tại các Hub sạc của LeTRON.
 * **Facility Assets (Tài sản hạ tầng):**
   * Service Hub: Trạm dịch vụ trung tâm tích hợp hệ thống sạc Megawatt công suất lớn và khu vực quản lý kỹ thuật.
@@ -118,7 +118,7 @@ Ranh giới số xác định phạm vi thu thập dữ liệu và luồng xử 
 
 Hệ thống sử dụng luồng xử lý và truyền dữ liệu thời gian thực được bảo mật qua ba tầng để đảm bảo tính minh bạch:
 
-<img src="./ref/image/digital_architecture_diagram.png" alt="Sơ đồ Kiến trúc Dữ liệu số (Digital Architecture Diagram)" height="360px" style="display:block; margin:15px auto;" />
+<img src="./ref/image/digital_architecture_diagram.png" alt="Sơ đồ Kiến trúc Dữ liệu số (Digital Architecture Diagram)" height="500px" style="display:block; margin:15px auto;" />
 
 * **Telemetry (Viễn trắc):** Dữ liệu từ xe và súng sạc được đẩy về gateway biên theo tần suất 5 giây/lần.
 * **Ký số bảo mật:** Mọi gói tin trước khi gửi lên đám mây đều được ký số bằng khóa riêng (Private Key) được lưu trữ an toàn trong chip bảo mật phần cứng tại thiết bị biên.
