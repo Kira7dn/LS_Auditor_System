@@ -1,0 +1,18 @@
+﻿Ký hiệu,Tên chỉ số,Nguồn tham chiếu / Cơ sở áp dụng,Giá trị áp dụng,Đơn vị
+EF_Grid,Hệ số phát thải của Lưới điện Việt Nam,Quyết định của Cục Biến đổi khí hậu (Bộ TN&MT),0.7228,kg CO2 / kWh
+EF_Diesel,Hệ số phát thải của dầu Diesel,Hướng dẫn kiểm kê khí nhà kính IPCC 2006,2.68,kg CO2 / lít
+EF_Solar,Hệ số phát thải của Điện mặt trời,Mặc định nguồn sạch tự sản tự tiêu,0.00,kg CO2 / kWh
+EF_Wind,Hệ số phát thải của Điện gió,Mặc định nguồn sạch tự sản tự tiêu,0.00,kg CO2 / kWh
+EF_Methanol,Hệ số phát thải của Điện Methanol sinh học,Đánh giá vòng đời (LCA) và chứng nhận nguồn gốc của Bio-Methanol,0.00,kg CO2 / kWh
+S_Grid,Tỷ lệ điện lưới mục tiêu trong sạc,Kịch bản phân bổ nguồn sạc mục tiêu năm,40.00,%
+FE_Base (CAMC),Tiêu thụ dầu cơ bản xe đầu kéo rỗng,Thông số đăng kiểm của nhà sản xuất,0.25,lít / km
+FE_Base (Farizon),Tiêu thụ dầu cơ bản xe tải trung rỗng,Quy chuẩn thống kê vận tải đường bộ Việt Nam,0.18,lít / km
+Alpha_Load,Hệ số tăng tiêu thụ dầu theo tải trọng,Quy chuẩn thống kê vận tải đường bộ Việt Nam,0.005,lít / (km · tấn)
+EC_Electric (CAMC),Tiêu thụ điện năng xe đầu kéo CAMC G2E,Thiết kế kỹ thuật của nhà sản xuất,1.30,kWh / km
+EC_Electric (Farizon),Tiêu thụ điện năng xe tải trung Farizon H9E,Thiết kế kỹ thuật của nhà sản xuất,0.60,kWh / km
+Eff_VFB,Hiệu suất nạp/xả pin dòng chảy VFB,Thiết kế kỹ thuật của pin dòng chảy Vanadium,80.00,%
+Eff_BESS,Hiệu suất nạp/xả pin Lithium-ion BESS,Thiết kế kỹ thuật của hệ thống pin Lithium,90.00,%
+CF_Solar,Hệ số công suất điện mặt trời Quảng Ninh,Bản đồ bức xạ và khí tượng Quảng Ninh,14.60,%
+CF_Wind,Hệ số công suất điện gió Quảng Ninh,Bản đồ khí tượng và tài nguyên gió Uông Bí,29.90,%
+Loss_Transmission,Tỷ lệ hao hụt truyền dẫn thiết kế của Hub,Thiết kế hệ thống phân phối điện nội bộ Hub,5.00,%
+Eff_Charge,Hiệu suất truyền dẫn sạc vật lý tại Hub,Thiết kế kỹ thuật của trạm sạc nhanh Megawatt,94.00,%

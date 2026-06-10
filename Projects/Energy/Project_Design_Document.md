@@ -4,7 +4,7 @@
 
 ### 1.1 Project Overview
 
-Dự án thí điểm vận tải xanh kết nối các KCN trọng điểm bằng xe điện nặng, sạc Megawatt và nguồn năng lượng tái tạo tại Service Hub; đồng thời thiết lập hệ thống dữ liệu chuẩn hóa để sẵn sàng đáp ứng các tiêu chuẩn carbon quốc tế tự nguyện như Verra VCS / Gold Standard.
+Dự án thí điểm vận tải xanh kết nối các KCN trọng điểm bằng xe điện nặng, sạc Megawatt và nguồn năng lượng tái tạo tại Service Hub; đồng thời thiết lập hệ thống dữ liệu chuẩn hóa để sẵn sàng đáp ứng các yêu cầu kiểm kê phát thải và báo cáo carbon quốc tế như ISO 14064-2 và ISO 14067.
 
 ### 1.2 Business Objectives
 
@@ -32,7 +32,14 @@ Dự án thí điểm vận tải xanh kết nối các KCN trọng điểm bằ
 * **Audit Trail:** Thiết lập chuỗi bằng chứng số liên tục từ thiết bị biên phục vụ hoạt động kiểm toán độc lập.
 * **CBAM Support:** Chuẩn hóa dữ liệu phát thải đáp ứng báo cáo biên giới carbon của EU.
 * **ISO/IEC 27001 & TISAX:** Định hướng kiểm soát an ninh thông tin và an toàn dữ liệu chuỗi cung ứng công nghệ cao.
-* **Verra & Gold Standard Readiness:** Định hình dữ liệu chuẩn hóa phục vụ việc đóng gói chứng chỉ carbon theo cơ chế quốc tế tự nguyện (VCS/GS) trong tương lai.
+* **Data Integrity & Traceability:** Thiết lập quy trình quản lý dữ liệu đảm bảo tính toàn vẹn; dữ liệu sau khi thẩm định được cấp dưới dạng chứng thư số Le-GCP cho khách hàng FDI phục vụ báo cáo Scope 3 và CBAM.
+
+### 1.6 Commercial Model & Value Proposition (Mô hình Thương mại & Giá trị đề xuất)
+
+Dự án vận hành theo mô hình B2B "Green Logistics as a Service" (Vận tải Xanh tích hợp), trong đó:
+* **Sản phẩm thương mại:** LeTRON cung cấp dịch vụ vận tải vật lý bằng xe điện nặng tích hợp kèm chứng thư số giảm phát thải **Le-GCP**.
+* **Định giá giá trị (Value-based Pricing):** Dịch vụ vận tải được định giá ở mức cao (premium cước vận tải) dựa trên giá trị tài chính thực tế mà khách hàng FDI tiết kiệm được từ việc giảm/né thuế biên giới carbon (CBAM) của EU nhờ sử dụng chỉ số phát thải carbon thấp được chứng nhận trong Le-GCP.
+* **Chuyển giao tài sản carbon:** Quyền sở hữu lượng giảm phát thải (Emission Reduction Rights) của mỗi chuyến hàng được chuyển giao tự động và hoàn toàn cho khách hàng mua dịch vụ để họ báo cáo Scope 3 và CBAM.
 
 ## 2. Project Scope & Boundary
 
