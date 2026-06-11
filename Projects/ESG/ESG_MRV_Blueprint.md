@@ -27,6 +27,8 @@ Nguyên tắc này giúp LS tránh xung đột lợi ích:
 
 Giá trị LS cung cấp là hạ tầng và phương pháp để các bên có thể làm đúng vai trò của mình trên cùng một nền dữ liệu minh bạch, có thể truy xuất và kiểm tra.
 
+<div class="page-break"></div>
+
 ### 0.1 Lý do tách vai trò tính toán và xác minh
 
 Nếu doanh nghiệp thuê VVB như TÜV, SGS hoặc đơn vị tương đương để trực tiếp tính toán phát thải và lập báo cáo, VVB đó có thể không còn đủ độc lập để xác minh chính kết quả do họ tạo ra. Điều này tạo rủi ro conflict-of-interest và làm yếu giá trị của verification statement.
@@ -57,6 +59,8 @@ Nguyên tắc vận hành:
 Tài liệu này xác định ranh giới vai trò giữa LS, doanh nghiệp sử dụng hệ thống, cơ quan quản lý nhà nước như Sở Tài nguyên và Môi trường (Sở TNMT), và tổ chức kiểm toán/xác minh độc lập như TÜV, SGS hoặc đơn vị tương đương.
 
 Mục tiêu của hệ thống là hỗ trợ doanh nghiệp thu thập, chuẩn hóa, tính toán, lưu vết và đóng gói dữ liệu phát thải để phục vụ báo cáo nội bộ, Scope 3, ESG, chuỗi cung ứng hoặc hồ sơ xác minh độc lập. Việc doanh nghiệp sử dụng dữ liệu vào mục đích nào, công bố ra sao và chịu trách nhiệm trước bên thứ ba như thế nào không thuộc trách nhiệm vận hành của LS, trừ khi có hợp đồng tư vấn riêng quy định rõ phạm vi.
+
+<div class="page-break"></div>
 
 ## 2. Nguyên tắc boundary
 
@@ -92,6 +96,8 @@ Doanh nghiệp chịu trách nhiệm:
 - Quyết định sử dụng kết quả cho Scope 1, Scope 2, Scope 3, ESG, supplier reporting, product carbon footprint hoặc mục đích khác.
 - Chịu trách nhiệm với khách hàng, nhà đầu tư, cơ quan quản lý hoặc bên thứ ba về mọi tuyên bố phát thải do doanh nghiệp công bố.
 
+<div class="page-break"></div>
+
 ### 2.3 TÜV/SGS là verifier độc lập
 
 Tổ chức xác minh độc lập có thể thực hiện:
@@ -125,6 +131,8 @@ Sở TNMT không phải là:
 - Bên xác minh độc lập thay cho TÜV/SGS, trừ khi pháp luật hoặc quyết định có thẩm quyền quy định rõ.
 - Bên sở hữu dữ liệu phát thải của doanh nghiệp.
 - Bên bảo chứng thương mại cho claim ESG, Scope 3, Net-Zero hoặc carbon credit của doanh nghiệp.
+
+<div class="page-break"></div>
 
 ## 3. Flow vai trò tổng thể
 
@@ -206,6 +214,8 @@ flowchart TD
     class GOV_REQ,GOV_RECEIVE,GOV_REVIEW gov;
 ```
 
+<div class="page-break"></div>
+
 ## 4. Responsibility matrix
 
 | Hoạt động | LS | Doanh nghiệp | TÜV/SGS hoặc verifier | Sở TNMT / Cơ quan quản lý |
@@ -233,6 +243,8 @@ Hệ thống có thể xử lý các nhóm dữ liệu sau, nhưng quyền sở 
 - Dữ liệu kiểm soát: log hệ thống, chữ ký số, hash, timestamp, quyền truy cập, hồ sơ hiệu chuẩn.
 
 LS có thể thiết kế nơi lưu trữ, chuẩn hóa schema, quy tắc kiểm tra và logic tính toán. LS không mặc nhiên trở thành chủ sở hữu dữ liệu hoặc bên chịu trách nhiệm về tính đúng đắn nghiệp vụ của dữ liệu nguồn.
+
+<div class="page-break"></div>
 
 ## 6. Verification boundary
 
@@ -267,6 +279,8 @@ Không nên dùng:
 > Dữ liệu từ hệ thống mặc nhiên giúp doanh nghiệp đạt Net-Zero, giảm thuế hoặc đáp ứng CBAM.
 
 > Sở TNMT vận hành hoặc bảo chứng hệ thống của LS/doanh nghiệp.
+
+<div class="page-break"></div>
 
 ## 8. Ghi nhận trao đổi sơ bộ với Sở TNMT Quảng Ninh
 
