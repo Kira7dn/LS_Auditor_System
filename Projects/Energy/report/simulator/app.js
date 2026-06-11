@@ -1,7 +1,19 @@
 const DATA_PATHS = {
-  params: "../data/calculation_parameters.json",
-  pv: "../data/ninja_pv_21.0158_106.8009_uncorrected.raw.json",
-  wind: "../data/ninja_wind_21.0158_106.8009_uncorrected.raw.json",
+  params: [
+    "../data/calculation_parameters.json",
+    "/data/calculation_parameters.json",
+    "./data/calculation_parameters.json",
+  ],
+  pv: [
+    "../data/ninja_pv_21.0158_106.8009_uncorrected.raw.json",
+    "/data/ninja_pv_21.0158_106.8009_uncorrected.raw.json",
+    "./data/ninja_pv_21.0158_106.8009_uncorrected.raw.json",
+  ],
+  wind: [
+    "../data/ninja_wind_21.0158_106.8009_uncorrected.raw.json",
+    "/data/ninja_wind_21.0158_106.8009_uncorrected.raw.json",
+    "./data/ninja_wind_21.0158_106.8009_uncorrected.raw.json",
+  ],
 };
 
 const STORAGE_KEY = "letron-energy-simulator:v2";
@@ -759,9 +771,21 @@ function allocationDataset(label, rows, key, color) {
 }
 
 async function loadJson(path) {
-  const response = await fetch(path);
-  if (!response.ok) throw new Error(`Không tải được ${path}: ${response.status}`);
-  return response.json();
+  const candidates = Array.isArray(path) ? path : [path];
+  const errors = [];
+  for (const candidate of candidates) {
+    try {
+      const response = await fetch(candidate);
+      if (!response.ok) {
+        errors.push(`${candidate}: ${response.status}`);
+        continue;
+      }
+      return response.json();
+    } catch (error) {
+      errors.push(`${candidate}: ${error.message}`);
+    }
+  }
+  throw new Error(`Không tải được dữ liệu. Đã thử: ${errors.join("; ")}`);
 }
 
 async function init() {
