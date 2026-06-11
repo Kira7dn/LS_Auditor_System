@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LeTRON - Mô phỏng Năng lượng & Phát thải</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">LeTRON Logistics Xanh</p>
+        <h1>Mô phỏng Năng lượng & Phát thải</h1>
+      </div>
+      <div class="header-meta">
+        <span id="dataStatus">Đang tải dữ liệu...</span>
+        <button id="resetButton" type="button">Khôi phục PDD</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="controls" aria-label="Bảng điều khiển mô phỏng">
+        <section>
+          <h2>Hạm đội</h2>
+          <div class="field-grid">
+            <label>
+              CAMC G2E
+              <input id="camcCount" type="number" min="0" step="1" />
+            </label>
+            <label>
+              CAMC km/năm
+              <input id="camcKm" type="number" min="0" step="1000" />
+            </label>
+            <label>
+              CAMC kWh/km
+              <input id="camcKwhKm" type="number" min="0" step="0.01" />
+            </label>
+            <label>
+              CAMC diesel lít/km
+              <input id="camcDiesel" type="number" min="0" step="0.001" />
+            </label>
+            <label>
+              Farizon H9E
+              <input id="farizonCount" type="number" min="0" step="1" />
+            </label>
+            <label>
+              Farizon km/năm
+              <input id="farizonKm" type="number" min="0" step="1000" />
+            </label>
+            <label>
+              Farizon kWh/km
+              <input id="farizonKwhKm" type="number" min="0" step="0.01" />
+            </label>
+            <label>
+              Farizon diesel lít/km
+              <input id="farizonDiesel" type="number" min="0" step="0.001" />
+            </label>
+          </div>
+        </section>
+
+        <section>
+          <h2>Nguồn phát</h2>
+          <div class="field-grid">
+            <label>
+              Điện mặt trời MWp
+              <input id="solarMw" type="number" min="0" step="0.001" />
+            </label>
+            <label>
+              Điện gió kW
+              <input id="windKw" type="number" min="0" step="1" />
+            </label>
+            <label>
+              RMFC kW
+              <input id="rmfcKw" type="number" min="0" step="1" />
+            </label>
+            <label>
+              RMFC điều độ %
+              <input id="rmfcDispatch" type="number" min="0" max="100" step="1" />
+            </label>
+            <label>
+              RMFC hiệu suất %
+              <input id="rmfcEff" type="number" min="0" max="100" step="1" placeholder="Chưa có" />
+            </label>
+          </div>
+        </section>
+
+        <section>
+          <h2>Lưu trữ & Hao hụt</h2>
+          <div class="field-grid">
+            <label>
+              VFB công suất MW
+              <input id="vfbPowerMw" type="number" min="0" step="0.1" />
+            </label>
+            <label>
+              VFB dung lượng MWh
+              <input id="vfbCapacityMwh" type="number" min="0" step="0.1" />
+            </label>
+            <label>
+              VFB hiệu suất %
+              <input id="vfbEff" type="number" min="1" max="100" step="1" />
+            </label>
+            <label>
+              BESS công suất MW
+              <input id="bessPowerMw" type="number" min="0" step="0.1" />
+            </label>
+            <label>
+              BESS dung lượng MWh
+              <input id="bessCapacityMwh" type="number" min="0" step="0.1" />
+            </label>
+            <label>
+              BESS hiệu suất %
+              <input id="bessEff" type="number" min="1" max="100" step="1" />
+            </label>
+            <label>
+              Hiệu suất sạc %
+              <input id="chargeEff" type="number" min="1" max="100" step="1" />
+            </label>
+            <label>
+              Hao hụt truyền dẫn %
+              <input id="transmissionLoss" type="number" min="0" max="100" step="0.1" />
+            </label>
+          </div>
+        </section>
+      </aside>
+
+      <section class="dashboard">
+        <section class="kpi-grid" aria-label="Tóm tắt mô phỏng">
+          <article class="kpi">
+            <span>Nhu cầu sạc năm</span>
+            <strong id="kpiLoad">--</strong>
+          </article>
+          <article class="kpi">
+            <span>Tỷ lệ năng lượng sạch</span>
+            <strong id="kpiRenewable">--</strong>
+          </article>
+          <article class="kpi">
+            <span>Điện lưới nhập</span>
+            <strong id="kpiGrid">--</strong>
+          </article>
+          <article class="kpi">
+            <span>RMFC sử dụng</span>
+            <strong id="kpiRmfc">--</strong>
+          </article>
+          <article class="kpi">
+            <span>Năng lượng sạch dư</span>
+            <strong id="kpiSurplus">--</strong>
+          </article>
+          <article class="kpi">
+            <span>Đường cơ sở WTW</span>
+            <strong id="kpiBaseline">--</strong>
+          </article>
+          <article class="kpi">
+            <span>Dự án WTW</span>
+            <strong id="kpiProject">--</strong>
+          </article>
+          <article class="kpi">
+            <span>Giảm phát thải</span>
+            <strong id="kpiReduction">--</strong>
+          </article>
+          <article class="kpi">
+            <span>Tỷ lệ giảm</span>
+            <strong id="kpiReductionRate">--</strong>
+          </article>
+        </section>
+
+        <section class="chart-panel chart-wide">
+          <div class="panel-header">
+            <h2>Cân bằng năng lượng</h2>
+            <div class="chart-controls">
+              <label>
+                Hiển thị
+                <select id="periodSelect">
+                  <option value="day">Ngày</option>
+                  <option value="week">Tuần</option>
+                  <option value="month">Tháng</option>
+                </select>
+              </label>
+              <label>
+                Tháng
+                <select id="monthSelect">
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="all">Cả năm</option>
+                </select>
+              </label>
+              <span id="balanceNote">Cột ghép: nguồn cung so với phân bổ</span>
+            </div>
+          </div>
+          <canvas id="balanceChart" aria-label="Biểu đồ cân bằng năng lượng"></canvas>
+        </section>
+
+        <section id="periodEmissionsPanel" class="chart-panel chart-wide" hidden>
+          <div class="panel-header">
+            <h2>Phát thải lũy kế</h2>
+            <span>Biểu đồ vùng lũy kế dùng cùng bộ lọc Ngày/Tuần/Tháng</span>
+          </div>
+          <canvas id="periodEmissionsChart" aria-label="Biểu đồ phát thải lũy kế"></canvas>
+        </section>
+
+        <div class="chart-row">
+          <section class="chart-panel">
+            <div class="panel-header">
+              <h2>Cơ cấu năng lượng năm</h2>
+            </div>
+            <canvas id="energyMixChart" aria-label="Biểu đồ cơ cấu năng lượng năm"></canvas>
+          </section>
+
+          <section class="chart-panel">
+            <div class="panel-header">
+              <h2>So sánh phát thải</h2>
+              <span id="rmfcStatus">Phát thải RMFC: chưa xác định</span>
+            </div>
+            <canvas id="emissionsChart" aria-label="Biểu đồ so sánh phát thải"></canvas>
+          </section>
+        </div>
+
+        <section class="table-panel">
+          <div class="panel-header">
+            <h2>Dấu vết mô hình</h2>
+          </div>
+          <div class="trace-grid">
+            <div><span>CF điện mặt trời</span><strong id="tracePvCf">--</strong></div>
+            <div><span>CF điện gió</span><strong id="traceWindCf">--</strong></div>
+            <div><span>Nạp lưu trữ</span><strong id="traceStorageCharge">--</strong></div>
+            <div><span>Xả lưu trữ</span><strong id="traceStorageDischarge">--</strong></div>
+            <div><span>Hao hụt lưu trữ</span><strong id="traceStorageLoss">--</strong></div>
+            <div><span>Hao hụt truyền dẫn</span><strong id="traceTransmissionLoss">--</strong></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

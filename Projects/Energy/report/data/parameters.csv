@@ -1,0 +1,26 @@
+parameter,name,value,value_percent,value_fraction,unit,source,status
+EF_Grid_location,Hệ số phát thải lưới điện Việt Nam location-based,0.6592,,,kg CO2/kWh,Công văn số 1726/BĐKH-PTCBT cho năm 2023,Đã xác nhận
+EF_Diesel_combustion,Hệ số phát thải CO2 từ đốt dầu Diesel,74100,,,kg CO2/TJ,QĐ 226-BTNMT / IPCC 2006,Đã xác nhận
+EF_Diesel_WTT,Hệ số phát thải thượng nguồn dầu Diesel,22500,,,kg CO2e/TJ,GLEC default diesel WTW 97.8 trừ TTW 75.3,Đã xác nhận
+Density_Diesel,Khối lượng riêng dầu Diesel,0.84,,,kg/lít,Giả định kỹ thuật cần xác nhận theo nguồn nhiên liệu thực tế,Cần xác nhận
+NCV_Diesel,Trị số tỏa nhiệt ròng dầu Diesel,43.0,,,TJ/Gg,IPCC 2006 default / hồ sơ nhiên liệu,Đã xác nhận
+EF_SolarWind_EP,Hệ số phát thải vòng đời Solar/Wind,0.040,,,kg CO2e/kWh,GLEC conservative default,Đã xác nhận
+EF_BioMethanol_LCA,Hệ số vòng đời renewable methanol,40,,,g CO2e/MJ fuel,Methanol Institute conservative renewable methanol range,Xác nhận một phần
+Eff_RMFC,Hiệu suất điện RMFC Bio-Methanol,,,,%,Cần datasheet/vendor evidence,TBD
+EF_RMFC_EP,Hệ số phát thải điện RMFC Bio-Methanol,0.144 / Eff_RMFC,,,kg CO2e/kWh,EF_BioMethanol_LCA x 3.6 / Eff_RMFC,Phụ thuộc Eff_RMFC
+S_Grid,Tỷ lệ điện lưới trong phiên sạc theo ví dụ 6.1,,0.00,0.00,%,Energy Balance Reconciliation Example,
+S_SolarWind,Tỷ lệ điện Solar/Wind trong phiên sạc theo ví dụ 6.1,,100.00,1.00,%,Energy Balance Reconciliation Example,
+S_RMFC,Tỷ lệ điện RMFC Bio-Methanol trong phiên sạc theo ví dụ 6.1,,0.00,0.00,%,Energy Balance Reconciliation Example,
+FE_Baseline_CAMC,Định mức diesel đối chứng xe đầu kéo nặng 25 tấn,0.375,,,lít/km,Benchmark HDV Ricardo,
+FE_Baseline_Farizon,Định mức diesel đối chứng xe tải trung 8 tấn,0.220,,,lít/km,Benchmark HDV Ricardo,
+EC_Electric_CAMC,Tiêu thụ điện CAMC G2E,1.30,,,kWh/km,Thiết kế kỹ thuật nhà sản xuất,
+EC_Electric_Farizon,Tiêu thụ điện Farizon H9E,0.60,,,kWh/km,Thiết kế kỹ thuật nhà sản xuất,
+Eff_VFB,Hiệu suất nạp/xả VFB,,68.00,0.68,%,U.S. DOE/PNNL,Đã xác nhận
+Eff_BESS,Hiệu suất nạp/xả Lithium-ion BESS,,85.00,0.85,%,Lazard LCOS điều chỉnh bảo thủ,Đã xác nhận
+CF_Solar,Hệ số công suất điện mặt trời tại tọa độ khảo sát,,14.786,0.14786,%,ninja_pv_21.0158_106.8009_uncorrected.csv,Có dữ liệu Renewables.ninja theo giờ
+CF_Wind,Hệ số công suất điện gió tại tọa độ khảo sát,,18.117,0.18117,%,ninja_wind_21.0158_106.8009_uncorrected.csv,Có dữ liệu Renewables.ninja theo giờ
+Loss_Transmission,Tỷ lệ hao hụt truyền dẫn Hub,,5.00,0.05,%,Thiết kế hệ thống phân phối điện nội bộ Hub,
+Eff_Charge,Hiệu suất truyền dẫn sạc vật lý tại Hub,,94.00,0.94,%,Thiết kế kỹ thuật trạm sạc Megawatt,
+telemetry_frequency,Tần suất thu thập dữ liệu,5,,,seconds,MRV Monitoring Process,
+renewable_self_supply_target_min,Tỷ lệ năng lượng tái tạo tự cung cấp mục tiêu tối thiểu,,60.00,0.60,%,Sustainability Objectives,
+renewable_self_supply_target_max,Tỷ lệ năng lượng tái tạo tự cung cấp mục tiêu tối đa,,100.00,1.00,%,Sustainability Objectives,

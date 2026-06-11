@@ -1,0 +1,9 @@
+asset_group,asset_name,quantity,model,parameter_1,value_1,unit_1,parameter_2,value_2,unit_2,parameter_3,value_3,unit_3,metering_iot,operational_role
+Phương tiện,Xe đầu kéo điện nặng,3,CAMC G2E,battery_capacity_per_vehicle,440,kWh/xe,,,,,,"Le-NodeMobile; Cảm biến tải trục",Vận chuyển nguyên liệu nặng
+Phương tiện,Xe tải điện trung,2,Farizon H9E,battery_capacity_per_vehicle,106.95,kWh/xe,,,,,,"Le-NodeMobile; Cảm biến tải trục",Vận chuyển thành phẩm FDI
+Trạm sạc,Trạm siêu sạc Megawatt tại Hub Hiệp Hoà,5,Súng sạc Megawatt (MCS),power_per_charger,1.2,MW/trụ,total_design_power,6.0,MW,protocol,OCPP 2.0.1,"Công tơ thông minh 3 pha Class 0.5S; Gateway Le-NodeHub",Sạc nhanh công suất lớn cho hạm đội xe
+Nguồn phát,Hệ thống Điện mặt trời,1,Solar áp mái,capacity,1.086,MWp,,,,,,"Cảm biến bức xạ Pyranometer; SCADA kết nối LeOS",Nguồn phát sạch tự dùng chính
+Nguồn phát,Hệ thống Điện gió,6,Tua-bin gió trục đứng,power_per_turbine,10,kW/trụ,total_power,60,kW,,,"Cảm biến tốc độ gió; SCADA kết nối LeOS",Nguồn phát sạch bổ trợ
+Nguồn phát,Pin nhiên liệu RMFC,1,RMFC chạy Bio-Methanol,power,0.5,MW,,,,,,"SCADA giám sát nhiên liệu kết nối LeOS",Nguồn phát sạch bù tải nền
+Pin lưu trữ,Bể pin dòng chảy Vanadium,1,Vanadium Flow (VFB),power,2,MW,energy_capacity,4,MWh,,,"BMS & SCADA",Lưu trữ năng lượng sạch dài hạn
+Pin lưu trữ,Hệ thống pin Lithium BESS,1,Lithium-ion BESS,power,0.5,MW,energy_capacity,1,MWh,,,"BMS & SCADA",Điều hòa công suất đỉnh trạm sạc

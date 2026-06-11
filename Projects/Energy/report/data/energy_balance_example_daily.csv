@@ -1,0 +1,13 @@
+category,item,max_daily_capacity_kwh,max_daily_capacity_expression,planned_energy_kwh_per_day,planned_energy_expression,utilization_percent
+Nguồn phát,Điện mặt trời tự phát,26064,1086 kWp x 24h,3800.0,,14.6
+Nguồn phát,Điện gió tự phát,1440,60 kW x 24h,0.0,,0.0
+Nguồn phát,Điện RMFC Bio-Methanol,12000,500 kW x 24h,0.0,,0.0
+Nguồn phát,Điện lưới bù tải,,,0.0,,0.0
+Cộng phát,Tổng nguồn phát (A),,,3800.0,,
+Lưu trữ,VFB (Pin dòng chảy),4000,Dung lượng pin,0.0,,0.0
+Lưu trữ,BESS (Lithium-ion),1000,Dung lượng pin,840.0,,84.0
+Lưu trữ,Hao hụt tại pin lưu trữ,100,1000 x 10%,84.0,840 x 10%,84.0
+Tiêu thụ,Điện sạc đo tại đầu súng,1533.90,3 x 440 kWh + 2 x 106.95 kWh,840.0,,54.8
+Tiêu thụ,Năng lượng sạch chưa phân bổ,26064,Hệ thống Solar,2676.0,,10.3
+Tiêu thụ,Hao hụt truyền dẫn hệ thống,190.0,5% x 3800,200.0,,5.3
+Cộng nhận,Tổng tiêu thụ + Hao hụt (B),,,3800.0,,

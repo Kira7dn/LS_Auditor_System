@@ -1,0 +1,497 @@
+{
+  "source_document": "../Project_Design_Document.md",
+  "extraction_date": "2026-06-11",
+  "project": {
+    "name": "LeTRON Green Logistics",
+    "service_hub": "Hub Dịch vụ Hiệp Hoà - Quảng Ninh",
+    "renewable_self_supply_target_min_percent": 60.0,
+    "renewable_self_supply_target_max_percent": 100.0,
+    "pilot_fleet_vehicle_count": 5
+  },
+  "assets": {
+    "vehicles": [
+      {
+        "asset_group": "Phương tiện",
+        "asset_name": "Xe đầu kéo điện nặng",
+        "quantity": 3,
+        "model": "CAMC G2E",
+        "battery_capacity_kwh_per_vehicle": 440.0,
+        "iot": ["Le-NodeMobile", "Cảm biến tải trục"],
+        "operational_role": "Vận chuyển nguyên liệu nặng"
+      },
+      {
+        "asset_group": "Phương tiện",
+        "asset_name": "Xe tải điện trung",
+        "quantity": 2,
+        "model": "Farizon H9E",
+        "battery_capacity_kwh_per_vehicle": 106.95,
+        "iot": ["Le-NodeMobile", "Cảm biến tải trục"],
+        "operational_role": "Vận chuyển thành phẩm FDI"
+      }
+    ],
+    "charging": [
+      {
+        "asset_group": "Trạm sạc",
+        "asset_name": "Trạm siêu sạc Megawatt tại Hub Hiệp Hoà",
+        "quantity": 5,
+        "model": "Súng sạc Megawatt (MCS)",
+        "power_mw_per_charger": 1.2,
+        "total_design_power_mw": 6.0,
+        "protocol": "OCPP 2.0.1",
+        "metering": "Công tơ thông minh 3 pha Class 0.5S, Gateway Le-NodeHub"
+      }
+    ],
+    "generation": [
+      {
+        "asset_group": "Nguồn phát",
+        "asset_name": "Hệ thống Điện mặt trời",
+        "quantity": 1,
+        "model": "Solar áp mái",
+        "capacity_mwp": 1.086,
+        "metering": "Cảm biến bức xạ Pyranometer, SCADA kết nối LeOS"
+      },
+      {
+        "asset_group": "Nguồn phát",
+        "asset_name": "Hệ thống Điện gió",
+        "quantity": 6,
+        "model": "Tua-bin gió trục đứng",
+        "power_kw_per_turbine": 10.0,
+        "total_power_kw": 60.0,
+        "metering": "Cảm biến tốc độ gió, SCADA kết nối LeOS"
+      },
+      {
+        "asset_group": "Nguồn phát",
+        "asset_name": "Pin nhiên liệu RMFC",
+        "quantity": 1,
+        "model": "RMFC chạy Bio-Methanol",
+        "power_mw": 0.5,
+        "metering": "SCADA giám sát nhiên liệu kết nối LeOS"
+      }
+    ],
+    "storage": [
+      {
+        "asset_group": "Pin lưu trữ",
+        "asset_name": "Bể pin dòng chảy Vanadium",
+        "quantity": 1,
+        "model": "Vanadium Flow (VFB)",
+        "power_mw": 2.0,
+        "energy_capacity_mwh": 4.0,
+        "metering": "BMS & SCADA"
+      },
+      {
+        "asset_group": "Pin lưu trữ",
+        "asset_name": "Hệ thống pin Lithium BESS",
+        "quantity": 1,
+        "model": "Lithium-ion BESS",
+        "power_mw": 0.5,
+        "energy_capacity_mwh": 1.0,
+        "metering": "BMS & SCADA"
+      }
+    ]
+  },
+  "calculation_parameters": {
+    "EF_Grid_location": {
+      "name": "Hệ số phát thải của lưới điện Việt Nam theo location-based",
+      "value": 0.6592,
+      "unit": "kg CO2/kWh",
+      "source": "Công văn số 1726/BĐKH-PTCBT ban hành ngày 03/12/2024 cho năm 2023",
+      "status": "Đã xác nhận"
+    },
+    "EF_Diesel_combustion": {
+      "name": "Hệ số phát thải CO2 từ đốt dầu Diesel theo năng lượng",
+      "value": 74100.0,
+      "unit": "kg CO2/TJ",
+      "source": "QĐ 226-BTNMT / IPCC 2006",
+      "status": "Đã xác nhận"
+    },
+    "EF_Diesel_WTT": {
+      "name": "Hệ số phát thải thượng nguồn của dầu Diesel",
+      "value": 22500.0,
+      "unit": "kg CO2e/TJ",
+      "source": "GLEC default diesel: WTW 97.8 trừ TTW 75.3 gCO2e/MJ",
+      "status": "Đã xác nhận"
+    },
+    "Density_Diesel": {
+      "name": "Khối lượng riêng dầu Diesel dùng cho quy đổi",
+      "value": 0.84,
+      "unit": "kg/lít",
+      "source": "Giả định kỹ thuật cần xác nhận theo nguồn nhiên liệu thực tế",
+      "status": "Cần xác nhận theo nguồn nhiên liệu thực tế"
+    },
+    "NCV_Diesel": {
+      "name": "Trị số tỏa nhiệt ròng của dầu Diesel",
+      "value": 43.0,
+      "unit": "TJ/Gg",
+      "source": "IPCC 2006 default / hồ sơ nhiên liệu",
+      "status": "Đã xác nhận"
+    },
+    "EF_SolarWind_EP": {
+      "name": "Hệ số phát thải cung ứng năng lượng/vòng đời của Solar/Wind",
+      "value": 0.04,
+      "unit": "kg CO2e/kWh",
+      "source": "GLEC conservative default cho hạ tầng phát điện tái tạo",
+      "status": "Đã xác nhận"
+    },
+    "EF_BioMethanol_LCA": {
+      "name": "Hệ số vòng đời bảo thủ của renewable methanol",
+      "value": 40.0,
+      "unit": "g CO2e/MJ fuel",
+      "source": "Methanol Institute paper: renewable methanol thường đạt 10-40 gCO2e/MJ",
+      "status": "Xác nhận một phần"
+    },
+    "Eff_RMFC": {
+      "name": "Hiệu suất điện của máy RMFC Bio-Methanol",
+      "value": null,
+      "unit": "%",
+      "source": "Cần datasheet/vendor evidence",
+      "status": "TBD"
+    },
+    "EF_RMFC_EP": {
+      "name": "Hệ số phát thải cung ứng năng lượng/vòng đời của điện RMFC Bio-Methanol",
+      "value": null,
+      "expression": "0.144 / Eff_RMFC",
+      "unit": "kg CO2e/kWh",
+      "source": "EF_BioMethanol_LCA x 3.6 / Eff_RMFC",
+      "status": "Phụ thuộc Eff_RMFC"
+    },
+    "S_Grid": {
+      "name": "Tỷ lệ điện lưới trong phiên sạc theo ví dụ 6.1",
+      "value_percent": 0.0,
+      "value_fraction": 0.0,
+      "unit": "%",
+      "source": "Energy Balance Reconciliation Example"
+    },
+    "S_SolarWind": {
+      "name": "Tỷ lệ điện Solar/Wind trong phiên sạc theo ví dụ 6.1",
+      "value_percent": 100.0,
+      "value_fraction": 1.0,
+      "unit": "%",
+      "source": "Energy Balance Reconciliation Example"
+    },
+    "S_RMFC": {
+      "name": "Tỷ lệ điện RMFC Bio-Methanol trong phiên sạc theo ví dụ 6.1",
+      "value_percent": 0.0,
+      "value_fraction": 0.0,
+      "unit": "%",
+      "source": "Energy Balance Reconciliation Example"
+    },
+    "FE_Baseline_CAMC": {
+      "name": "Định mức diesel đối chứng cho xe đầu kéo nặng theo lớp tải 25 tấn",
+      "value": 0.375,
+      "unit": "lít/km",
+      "source": "Benchmark HDV Ricardo"
+    },
+    "FE_Baseline_Farizon": {
+      "name": "Định mức diesel đối chứng cho xe tải trung theo lớp tải 8 tấn",
+      "value": 0.22,
+      "unit": "lít/km",
+      "source": "Benchmark HDV Ricardo"
+    },
+    "EC_Electric_CAMC": {
+      "name": "Tiêu thụ điện năng xe đầu kéo CAMC G2E",
+      "value": 1.3,
+      "unit": "kWh/km",
+      "source": "Thiết kế kỹ thuật của nhà sản xuất"
+    },
+    "EC_Electric_Farizon": {
+      "name": "Tiêu thụ điện năng xe tải trung Farizon H9E",
+      "value": 0.6,
+      "unit": "kWh/km",
+      "source": "Thiết kế kỹ thuật của nhà sản xuất"
+    },
+    "Eff_VFB": {
+      "name": "Hiệu suất nạp/xả pin dòng chảy VFB",
+      "value_percent": 68.0,
+      "value_fraction": 0.68,
+      "unit": "%",
+      "source": "U.S. DOE/PNNL"
+    },
+    "Eff_BESS": {
+      "name": "Hiệu suất nạp/xả pin Lithium-ion BESS",
+      "value_percent": 85.0,
+      "value_fraction": 0.85,
+      "unit": "%",
+      "source": "Lazard LCOS, điều chỉnh bảo thủ"
+    },
+    "CF_Solar": {
+      "name": "Hệ số công suất điện mặt trời tại tọa độ khảo sát",
+      "value_percent": 14.786,
+      "value_fraction": 0.14786,
+      "unit": "%",
+      "source": "ninja_pv_21.0158_106.8009_uncorrected.csv",
+      "status": "Có dữ liệu Renewables.ninja theo giờ"
+    },
+    "CF_Wind": {
+      "name": "Hệ số công suất điện gió tại tọa độ khảo sát",
+      "value_percent": 18.117,
+      "value_fraction": 0.18117,
+      "unit": "%",
+      "source": "ninja_wind_21.0158_106.8009_uncorrected.csv",
+      "status": "Có dữ liệu Renewables.ninja theo giờ"
+    },
+    "Loss_Transmission": {
+      "name": "Tỷ lệ hao hụt truyền dẫn thiết kế của Hub",
+      "value_percent": 5.0,
+      "value_fraction": 0.05,
+      "unit": "%",
+      "source": "Thiết kế hệ thống phân phối điện nội bộ Hub"
+    },
+    "Eff_Charge": {
+      "name": "Hiệu suất truyền dẫn sạc vật lý tại Hub",
+      "value_percent": 94.0,
+      "value_fraction": 0.94,
+      "unit": "%",
+      "source": "Thiết kế kỹ thuật của trạm sạc nhanh Megawatt"
+    }
+  },
+  "renewable_resource_profiles": {
+    "coordinate": {
+      "latitude": 21.015799563109237,
+      "longitude": 106.80087277197177
+    },
+    "dataset": "merra2",
+    "date_from": "2019-01-01",
+    "date_to": "2019-12-31",
+    "row_count_hours": 8760,
+    "timezone_in_file": "Asia/Jakarta",
+    "interpretation": "Cột electricity là kW phát ra trên mỗi 1 kW công suất lắp đặt, nên có thể dùng trực tiếp làm hệ số công suất theo giờ.",
+    "pv": {
+      "file": "ninja_pv_21.0158_106.8009_uncorrected.csv",
+      "raw_json_file": "ninja_pv_21.0158_106.8009_uncorrected.raw.json",
+      "source": "Renewables.ninja Solar photovoltaic power (PV) Point API",
+      "license": "CC BY-NC 4.0",
+      "reference": "https://doi.org/10.1016/j.energy.2016.08.060",
+      "capacity_kw_basis": 1.0,
+      "system_loss_fraction": 0.1,
+      "tracking": 0,
+      "tilt_degrees": 35,
+      "azimuth_degrees": 180,
+      "annual_specific_yield_kwh_per_kw": 1295.225,
+      "capacity_factor_percent": 14.786,
+      "capacity_factor_fraction": 0.14786,
+      "max_hourly_kw_per_kw": 0.806,
+      "min_hourly_kw_per_kw": 0.0
+    },
+    "wind": {
+      "file": "ninja_wind_21.0158_106.8009_uncorrected.csv",
+      "raw_json_file": "ninja_wind_21.0158_106.8009_uncorrected.raw.json",
+      "source": "Renewables.ninja Wind power Point API",
+      "license": "CC BY-NC 4.0",
+      "reference": "https://doi.org/10.1016/j.energy.2016.08.068",
+      "capacity_kw_basis": 1.0,
+      "height_m": 80,
+      "turbine": "Vestas V90 2000",
+      "annual_specific_yield_kwh_per_kw": 1587.008,
+      "capacity_factor_percent": 18.117,
+      "capacity_factor_fraction": 0.18117,
+      "max_hourly_kw_per_kw": 0.927,
+      "min_hourly_kw_per_kw": 0.0,
+      "average_wind_speed_mps": 5.157,
+      "max_wind_speed_mps": 12.957,
+      "min_wind_speed_mps": 0.016
+    }
+  },
+  "fleet_emission_examples": [
+    {
+      "vehicle_group": "CAMC G2E",
+      "vehicle_count": 3,
+      "baseline_vehicle": "xe đầu kéo diesel tương đương",
+      "annual_distance_km": 180000.0,
+      "assumed_payload_ton_per_trip": 25.0,
+      "baseline_fuel_intensity_l_per_km": 0.375,
+      "project_energy_intensity_kwh_per_km": 1.3,
+      "annual_diesel_liters": 67500.0,
+      "annual_electricity_kwh": 234000.0,
+      "baseline_ttw_tco2": 180.66,
+      "baseline_wtt_tco2e": 54.86,
+      "baseline_wtw_tco2e": 235.52,
+      "project_grid_tco2": 0.0,
+      "project_solarwind_ep_tco2e": 9.36,
+      "project_rmfc_ep_tco2e": 0.0,
+      "project_wtw_tco2e": 9.36,
+      "emission_reduction_tco2e_per_year": 226.16
+    },
+    {
+      "vehicle_group": "Farizon H9E",
+      "vehicle_count": 2,
+      "baseline_vehicle": "xe tải trung diesel tương đương",
+      "annual_distance_km": 120000.0,
+      "assumed_payload_ton_per_trip": 8.0,
+      "baseline_fuel_intensity_l_per_km": 0.22,
+      "project_energy_intensity_kwh_per_km": 0.6,
+      "annual_diesel_liters": 26400.0,
+      "annual_electricity_kwh": 72000.0,
+      "baseline_ttw_tco2": 70.66,
+      "baseline_wtt_tco2e": 21.46,
+      "baseline_wtw_tco2e": 92.12,
+      "project_grid_tco2": 0.0,
+      "project_solarwind_ep_tco2e": 2.88,
+      "project_rmfc_ep_tco2e": 0.0,
+      "project_wtw_tco2e": 2.88,
+      "emission_reduction_tco2e_per_year": 89.23
+    },
+    {
+      "vehicle_group": "Pilot fleet total",
+      "vehicle_count": 5,
+      "annual_distance_km": 300000.0,
+      "annual_diesel_liters": 93900.0,
+      "annual_electricity_kwh": 306000.0,
+      "baseline_ttw_tco2": 251.32,
+      "baseline_wtt_tco2e": 76.31,
+      "baseline_wtw_tco2e": 327.64,
+      "project_grid_tco2": 0.0,
+      "project_solarwind_ep_tco2e": 12.24,
+      "project_rmfc_ep_tco2e": 0.0,
+      "project_wtw_tco2e": 12.24,
+      "emission_reduction_tco2e_per_year": 315.4,
+      "emission_reduction_percent": 96.26,
+      "nominal_fleet_battery_capacity_kwh": 1533.9,
+      "average_daily_charged_energy_kwh": 838.36,
+      "average_daily_charge_cycles": 0.55
+    }
+  ],
+  "energy_balance_example_daily": [
+    {
+      "category": "Nguồn phát",
+      "item": "Điện mặt trời tự phát",
+      "max_daily_capacity_kwh": 26064.0,
+      "max_daily_capacity_expression": "1086 kWp x 24h",
+      "planned_energy_kwh_per_day": 3800.0,
+      "utilization_percent": 14.6
+    },
+    {
+      "category": "Nguồn phát",
+      "item": "Điện gió tự phát",
+      "max_daily_capacity_kwh": 1440.0,
+      "max_daily_capacity_expression": "60 kW x 24h",
+      "planned_energy_kwh_per_day": 0.0,
+      "utilization_percent": 0.0
+    },
+    {
+      "category": "Nguồn phát",
+      "item": "Điện RMFC Bio-Methanol",
+      "max_daily_capacity_kwh": 12000.0,
+      "max_daily_capacity_expression": "500 kW x 24h",
+      "planned_energy_kwh_per_day": 0.0,
+      "utilization_percent": 0.0
+    },
+    {
+      "category": "Nguồn phát",
+      "item": "Điện lưới bù tải",
+      "max_daily_capacity_kwh": null,
+      "planned_energy_kwh_per_day": 0.0,
+      "utilization_percent": 0.0
+    },
+    {
+      "category": "Cộng phát",
+      "item": "Tổng nguồn phát (A)",
+      "planned_energy_kwh_per_day": 3800.0
+    },
+    {
+      "category": "Lưu trữ",
+      "item": "VFB (Pin dòng chảy)",
+      "max_daily_capacity_kwh": 4000.0,
+      "planned_energy_kwh_per_day": 0.0,
+      "utilization_percent": 0.0
+    },
+    {
+      "category": "Lưu trữ",
+      "item": "BESS (Lithium-ion)",
+      "max_daily_capacity_kwh": 1000.0,
+      "planned_energy_kwh_per_day": 840.0,
+      "utilization_percent": 84.0
+    },
+    {
+      "category": "Lưu trữ",
+      "item": "Hao hụt tại pin lưu trữ",
+      "max_daily_capacity_kwh": 100.0,
+      "max_daily_capacity_expression": "1000 x 10%",
+      "planned_energy_kwh_per_day": 84.0,
+      "planned_energy_expression": "840 x 10%",
+      "utilization_percent": 84.0
+    },
+    {
+      "category": "Tiêu thụ",
+      "item": "Điện sạc đo tại đầu súng",
+      "max_daily_capacity_kwh": 1533.9,
+      "max_daily_capacity_expression": "3 x 440 kWh + 2 x 106.95 kWh",
+      "planned_energy_kwh_per_day": 840.0,
+      "utilization_percent": 54.8
+    },
+    {
+      "category": "Tiêu thụ",
+      "item": "Năng lượng sạch chưa phân bổ",
+      "max_daily_capacity_kwh": 26064.0,
+      "planned_energy_kwh_per_day": 2676.0,
+      "utilization_percent": 10.3
+    },
+    {
+      "category": "Tiêu thụ",
+      "item": "Hao hụt truyền dẫn hệ thống",
+      "max_daily_capacity_kwh": 190.0,
+      "max_daily_capacity_expression": "5% x 3800",
+      "planned_energy_kwh_per_day": 200.0,
+      "utilization_percent": 5.3
+    },
+    {
+      "category": "Cộng nhận",
+      "item": "Tổng tiêu thụ + Hao hụt (B)",
+      "planned_energy_kwh_per_day": 3800.0
+    }
+  ],
+  "mrv": {
+    "telemetry_frequency_seconds": 5,
+    "monitored_parameters": [
+      {"name": "GPS kinh độ", "unit": "decimal degrees"},
+      {"name": "GPS vĩ độ", "unit": "decimal degrees"},
+      {"name": "Pin SoC", "unit": "%"},
+      {"name": "Dòng điện sạc", "unit": "A"},
+      {"name": "Điện áp sạc", "unit": "V"},
+      {"name": "Cảm biến tải trọng trục", "unit": "kg"}
+    ],
+    "connectivity": "4G/5G",
+    "passport_trigger": "Xe hoàn tất giao hàng theo geofence và tắt máy",
+    "evidence_fields": ["Device ID", "Raw Data Hash", "TxID", "Energy Ledger clean charging record"],
+    "auditor_gateway_auth": "2FA",
+    "auditor_search_keys": ["Shipment ID", "biển số"]
+  },
+  "formulas": {
+    "energy_supply": "E_Supply(t) = E_Solar(t) + E_Wind(t) + E_RMFC(t) + E_Grid(t)",
+    "storage_soc": "SOC_Storage(t) = SOC_Storage(t-1) + eta_in * E_Surplus(t) - E_Deficit(t) / eta_out",
+    "charger_balance": "sum(E_Charger_Output) * eta_charge = sum(Delta_P_kWh) + L_Transmission",
+    "baseline_wtw": "GHG_Baseline_WTW = GHG_Baseline_TTW + GHG_Baseline_WTT",
+    "baseline_ttw": "GHG_Baseline_TTW = D * FE_Baseline * (1 + k_empty) * Density_Diesel * NCV_Diesel * EF_Diesel_combustion / 1e9",
+    "baseline_wtt": "GHG_Baseline_WTT = D * FE_Baseline * (1 + k_empty) * Density_Diesel * NCV_Diesel * EF_Diesel_WTT / 1e9",
+    "project_wtw": "GHG_Project_WTW = GHG_Project_Operation + GHG_Project_EnergyProvision",
+    "project_operation": "GHG_Project_Operation = 0",
+    "project_energy_provision": "GHG_Project_EnergyProvision = E_Charge * (S_Grid * EF_Grid_location + S_SolarWind * EF_SolarWind_EP + S_RMFC * EF_RMFC_EP) / 1000",
+    "emission_reduction": "Delta_GHG_WTW = GHG_Baseline_WTW - GHG_Project_WTW",
+    "daily_energy_reconciliation": "A = vehicle_charging + unallocated_clean_energy + transmission_loss + storage_loss",
+    "solar_hourly_generation_from_ninja": "E_Solar_hourly_kWh = PV_capacity_kW * ninja_pv.electricity",
+    "wind_hourly_generation_from_ninja": "E_Wind_hourly_kWh = Wind_capacity_kW * ninja_wind.electricity"
+  },
+  "roadmap": [
+    {
+      "phase": 1,
+      "period": "Tháng 8 - Tháng 10/2026",
+      "fleet_vehicle_count": 5,
+      "objective": "Chạy thử nghiệm pilot hạm đội 5 xe, hoàn thiện LeOS/LeDB, rà soát thuật toán nền với đơn vị kiểm toán"
+    },
+    {
+      "phase": 2,
+      "period": "Quý 1/2027",
+      "target_vehicle_count": 20,
+      "objective": "Mở rộng mạng lưới lên 20 xe điện nặng, nâng cấp công suất Hub sạc và triển khai thương mại"
+    }
+  ],
+  "open_items": [
+    {
+      "parameter": "Eff_RMFC",
+      "issue": "Cần datasheet/vendor evidence hoặc suất tiêu hao nhiên liệu/kWh để tính EF_RMFC_EP."
+    },
+    {
+      "parameter": "k_empty",
+      "issue": "Có trong công thức baseline nhưng chưa có giá trị thiết kế trong PDD."
+    }
+  ]
+}

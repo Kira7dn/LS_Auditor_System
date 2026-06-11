@@ -14,7 +14,7 @@ Dự án thí điểm vận tải xanh kết nối các KCN trọng điểm bằ
 
 ### 1.3 Sustainability Objectives
 
-* Đạt tỷ lệ năng lượng tái tạo tự cung cấp mục tiêu **60%** tại Hub dịch vụ.
+* Đạt tỷ lệ năng lượng tái tạo tự cung cấp mục tiêu **60% -100%** tại Hub dịch vụ.
 * Giảm phát thải ròng cho hạm đội pilot so với kịch bản xe diesel.
 * Thiết lập Digital MRV phục vụ kiểm toán và báo cáo ESG của khách hàng.
 
@@ -225,34 +225,36 @@ $$
 
 **Energy Balance Reconciliation Example**
 
-Sổ cái năng lượng ghi nhận theo giao dịch/sự kiện vận hành như phát điện, nạp pin, xả pin và phiên sạc. Bảng dưới đây là ví dụ đối soát năng lượng phân bổ cho hạm đội pilot 5 xe trong 1 ngày tại Hub Hiệp Hoà - Quảng Ninh; số minh họa chưa phải sản lượng đo đạc chính thức.
+Sổ cái năng lượng ghi nhận theo giao dịch/sự kiện vận hành như phát điện, nạp pin, xả pin và phiên sạc. Bảng dưới đây là ví dụ đối soát năng lượng theo kịch bản mô phỏng hạm đội **40 xe** tại Hub Hiệp Hoà - Quảng Ninh, gồm **24 xe CAMC G2E** và **16 xe Farizon H9E**. Kịch bản được tính bằng công cụ mô phỏng web nội bộ tại [LeTRON Energy & Emissions Simulator](./simulator/index.html), sử dụng dữ liệu nguồn phát theo giờ từ Renewables.ninja và các hệ số phát thải đã xác nhận trong mục 10. Số liệu vẫn là mô phỏng thiết kế, chưa thay thế dữ liệu đo đạc SCADA/công tơ khi vận hành.
 
 | Phân loại | Hạng mục | Công suất tối đa/ngày | Kế hoạch năng lượng/ngày | Hiệu suất / Hệ số sử dụng (%) |
 | :-- | :-- | --: | --: | --: |
-| **Nguồn phát** | Điện mặt trời tự phát | 26,064 kWh<br>(1,086 kWp x 24h) | 3,800.0 kWh | 14.6% |
-| **Nguồn phát** | Điện gió tự phát | 1,440 kWh<br>(60 kW x 24h) | 0.0 kWh | 0.0% |
-| **Nguồn phát** | Điện RMFC Bio-Methanol | 12,000 kWh<br>(500 kW x 24h) | 0.0 kWh | 0.0% |
+| **Nguồn phát** | Điện mặt trời tự phát | 26,064 kWh<br>(1,086 kWp x 24h) | Theo profile giờ Renewables.ninja | CF năm **14.79%** |
+| **Nguồn phát** | Điện gió tự phát | 1,440 kWh<br>(60 kW x 24h) | Theo profile giờ Renewables.ninja | CF năm **18.12%** |
+| **Nguồn phát** | Điện RMFC Bio-Methanol | 12,000 kWh<br>(500 kW x 24h) | **1,330,000 kWh/năm** | Điều độ **100%**, hiệu suất điện **40%** |
 | **Nguồn phát** | Điện lưới bù tải | N/A | 0.0 kWh | 0.0% |
-| *Cộng phát* | **Tổng nguồn phát (A)** | | **3,800.0 kWh** | |
+| *Cộng phát* | **Tổng nguồn phát hữu ích cho mô phỏng (A)** | | **2.45 GWh/năm điện sạc xe** | |
 | **Lưu trữ** | VFB (Pin dòng chảy) | 4,000 kWh<br>(Dung lượng pin) | 0.0 kWh | 0.0% |
-| **Lưu trữ** | BESS (Lithium-ion) | 1,000 kWh<br>(Dung lượng pin) | 840.0 kWh | 84.0% |
-| **Lưu trữ** | Hao hụt tại pin lưu trữ | 100 kWh<br>(1,000x10%) | 84.0 kWh<br>(840 x 10%) | 84.0% |
-| **Tiêu thụ** | Điện sạc đo tại đầu súng | 1,533.90 kWh<br>(3x440kWh + 2x106.95kWh) | 840.0 kWh | 54.8% |
-| **Tiêu thụ** | Năng lượng sạch chưa phân bổ | 26,064 kWh<br>(Hệ thống Solar) | 2,676.0 kWh | 10.3% |
-| **Tiêu thụ** | Hao hụt truyền dẫn hệ thống | 190.0 kWh<br>(5% x 3,800) | 200.0 kWh | 5.3% |
-| *Cộng nhận* | **Tổng tiêu thụ + Hao hụt (B)** | | **3,800.0 kWh** | |
+| **Lưu trữ** | BESS (Lithium-ion) | 1,000 kWh<br>(Dung lượng pin) | Tham gia điều hòa theo giờ | |
+| **Lưu trữ** | Nạp lưu trữ | VFB + BESS | **466.43 MWh/năm** | |
+| **Lưu trữ** | Xả lưu trữ | VFB + BESS | **368.10 MWh/năm** | |
+| **Lưu trữ** | Hao hụt tại pin lưu trữ | VFB/BESS round-trip loss | **98.33 MWh/năm** | |
+| **Tiêu thụ** | Điện sạc xe | 24 CAMC + 16 Farizon | **2.45 GWh/năm** | |
+| **Tiêu thụ** | Năng lượng sạch chưa phân bổ | Solar/Wind/RMFC sau sạc và lưu trữ | **0.0 kWh** | |
+| **Tiêu thụ** | Hao hụt truyền dẫn hệ thống | 5% thiết kế | **130.21 MWh/năm** | |
+| *Cộng nhận* | **Tổng tiêu thụ + Hao hụt (B)** | | Theo sổ cái mô phỏng giờ | |
 
 **Quy tắc đối soát khớp sổ cái năng lượng (Energy Ledger Reconciliation Rule):**
 
 $$
-\text{Tổng nguồn phát (A)} = \text{Điện sạc xe} + \text{Chưa phân bổ} + \text{Hao hụt truyền dẫn} + \text{Hao hụt lưu trữ pin}
+\text{Tổng nguồn phát (A)} = \text{Điện sạc xe} + \text{Nạp lưu trữ} + \text{Hao hụt truyền dẫn} + \text{Hao hụt lưu trữ pin} + \text{Chưa phân bổ}
 $$
 
 $$
-3,800.0 \text{ kWh} = 840.0 \text{ kWh} + 2,676.0 \text{ kWh} + 200.0 \text{ kWh} + 84.0 \text{ kWh}
+2.45 \text{ GWh sạc xe/năm};\quad \text{điện lưới nhập} = 0.0 \text{ kWh};\quad \text{RMFC sử dụng} = 1.33 \text{ GWh/năm}
 $$
 
-*Kết quả đối soát:* Kế hoạch ngày khớp hoàn toàn **(A = B = 3,800.0 kWh)**. LeOS ký số và ghi nhận giao dịch vào LeDB.
+*Kết quả đối soát:* Kịch bản 40 xe đạt **100.00% tỷ lệ năng lượng sạch**, không nhập điện lưới trong mô phỏng thiết kế. LeOS ký số và ghi nhận giao dịch vào LeDB khi triển khai vận hành thực tế.
 
 ### 6.2 Carbon Accounting & Baseline Methodology
 
@@ -317,54 +319,57 @@ $$
 \Delta GHG_{WTW} = GHG_{Baseline,WTW} - GHG_{Project,WTW}
 $$
 
-Các bảng dưới đây áp dụng công thức cho ví dụ minh họa 1 năm vận hành; kết quả cuối cùng sẽ thay bằng dữ liệu thực tế đo đạc trực tiếp từ các thiết bị cảm biến IoT:
+Các bảng dưới đây áp dụng công thức cho ví dụ minh họa 1 năm vận hành theo kịch bản mô phỏng 40 xe trong [LeTRON Energy & Emissions Simulator](./simulator/index.html); kết quả cuối cùng sẽ thay bằng dữ liệu thực tế đo đạc trực tiếp từ các thiết bị cảm biến IoT:
 
-**Bảng 6.2A - 3 xe đầu kéo CAMC G2E**
+**Bảng 6.2A - 24 xe đầu kéo CAMC G2E**
 
 | Chỉ tiêu | Before - xe diesel tương đương | After - CAMC G2E điện |
 | :-- | --: | --: |
-| Số lượng xe | 3 xe đầu kéo diesel | 3 xe CAMC G2E |
-| Quãng đường năm | 180,000 km | 180,000 km |
+| Số lượng xe | 24 xe đầu kéo diesel | 24 xe CAMC G2E |
+| Quãng đường năm | 1,440,000 km | 1,440,000 km |
 | Tải trọng giả định | 25 tấn/chuyến | 25 tấn/chuyến |
 | Định mức năng lượng | $FE_{Baseline} = 0.375$ lít/km | 1.30 kWh/km |
-| Nhiên liệu / điện năng năm | 67,500 lít diesel | 234,000 kWh |
-| Phát thải đã có nguồn xác nhận | $GHG_{TTW} = (67,500 \times 0.84 \times 43.0 \times 74,100) / 10^9 = 180.66$ tCO2 | $GHG_{EnergyProvision,Grid} = [(234,000 \times 0\%) \times 0.6592] / 1000 = 0.00$ tCO2 |
-| Cấu phần WTT/lifecycle đã xác định | $GHG_{WTT} = (67,500 \times 0.84 \times 43.0 \times 22,500) / 10^9 = 54.86$ tCO2e | $GHG_{SolarWind,EP} = [234,000 \times 100\% \times 0.040] / 1000 = 9.36$ tCO2e |
-| Cấu phần RMFC | - | $GHG_{RMFC,EP} = [234,000 \times 0\% \times (0.144 / Eff_{RMFC})] / 1000 = 0.00$ tCO2e |
-| Tổng phát thải WTW phần đã xác định | **235.52 tCO2e** | **9.36 tCO2e** |
-| Giảm phát thải WTW sơ bộ |  | **226.16 tCO2e/năm** |
+| Nhiên liệu / điện năng năm | 540,000 lít diesel | 1,872,000 kWh |
+| Phát thải đã có nguồn xác nhận | $GHG_{TTW} = (540,000 \times 0.84 \times 43.0 \times 74,100) / 10^9 = 1,445.29$ tCO2 | Phân bổ theo nguồn sạc sạch trong mô phỏng |
+| Cấu phần WTT/lifecycle đã xác định | $GHG_{WTT} = (540,000 \times 0.84 \times 43.0 \times 22,500) / 10^9 = 438.86$ tCO2e | Solar/Wind + RMFC Bio-Methanol theo Energy Ledger |
+| Tổng phát thải WTW phần đã xác định | **1,884.15 tCO2e** | Phân bổ trong tổng dự án |
+| Giảm phát thải WTW sơ bộ |  | Phân bổ trong tổng dự án |
 
-**Bảng 6.2B - 2 xe Farizon H9E**
+**Bảng 6.2B - 16 xe Farizon H9E**
 
 | Chỉ tiêu | Before - xe diesel tương đương | After - Farizon H9E điện |
 | :-- | --: | --: |
-| Số lượng xe | 2 xe tải trung diesel | 2 xe Farizon H9E |
-| Quãng đường năm | 120,000 km | 120,000 km |
+| Số lượng xe | 16 xe tải trung diesel | 16 xe Farizon H9E |
+| Quãng đường năm | 960,000 km | 960,000 km |
 | Tải trọng giả định | 8 tấn/chuyến | 8 tấn/chuyến |
 | Định mức năng lượng | $FE_{Baseline} = 0.220$ lít/km | 0.60 kWh/km |
-| Nhiên liệu / điện năng năm | 26,400 lít diesel | 72,000 kWh |
-| Phát thải đã có nguồn xác nhận | $GHG_{TTW} = (26,400 \times 0.84 \times 43.0 \times 74,100) / 10^9 = 70.66$ tCO2 | $GHG_{EnergyProvision,Grid} = [(72,000 \times 0\%) \times 0.6592] / 1000 = 0.00$ tCO2 |
-| Cấu phần WTT/lifecycle đã xác định | $GHG_{WTT} = (26,400 \times 0.84 \times 43.0 \times 22,500) / 10^9 = 21.46$ tCO2e | $GHG_{SolarWind,EP} = [72,000 \times 100\% \times 0.040] / 1000 = 2.88$ tCO2e |
-| Cấu phần RMFC | - | $GHG_{RMFC,EP} = [72,000 \times 0\% \times (0.144 / Eff_{RMFC})] / 1000 = 0.00$ tCO2e |
-| Tổng phát thải WTW phần đã xác định | **92.12 tCO2e** | **2.88 tCO2e** |
-| Giảm phát thải WTW sơ bộ |  | **89.23 tCO2e/năm** |
+| Nhiên liệu / điện năng năm | 211,200 lít diesel | 576,000 kWh |
+| Phát thải đã có nguồn xác nhận | $GHG_{TTW} = (211,200 \times 0.84 \times 43.0 \times 74,100) / 10^9 = 565.27$ tCO2 | Phân bổ theo nguồn sạc sạch trong mô phỏng |
+| Cấu phần WTT/lifecycle đã xác định | $GHG_{WTT} = (211,200 \times 0.84 \times 43.0 \times 22,500) / 10^9 = 171.66$ tCO2e | Solar/Wind + RMFC Bio-Methanol theo Energy Ledger |
+| Tổng phát thải WTW phần đã xác định | **736.93 tCO2e** | Phân bổ trong tổng dự án |
+| Giảm phát thải WTW sơ bộ |  | Phân bổ trong tổng dự án |
 
-**Bảng 6.2C - Tổng hợp hạm đội pilot**
+**Bảng 6.2C - Tổng hợp hạm đội mô phỏng 40 xe**
 
 | Chỉ tiêu | Before - Baseline | After - Project Le-GCP |
 | :-- | --: | --: |
-| Số lượng xe | 5 xe diesel tương đương | 5 xe điện |
-| Quãng đường năm | 300,000 km | 300,000 km |
-| Nhiên liệu / điện năng năm | 93,900 lít diesel | 306,000 kWh |
-| Phát thải đã có nguồn xác nhận | **251.32 tCO2** | **0.00 tCO2** |
-| Cấu phần WTT/lifecycle đã xác định | **76.31 tCO2e** | **12.24 tCO2e** |
-| Cấu phần RMFC | - | **0.00 tCO2e** theo ví dụ Energy Balance không dùng RMFC |
-| Tổng phát thải WTW phần đã xác định | **327.64 tCO2e** | **12.24 tCO2e** |
-| Giảm phát thải WTW sơ bộ |  | **315.40 tCO2e/năm** |
-| Tỷ lệ giảm phát thải WTW sơ bộ |  | **96.26%** |
-| Kiểm tra dung lượng pin |  | 1,533.90 kWh danh định; sạc bình quân 838.36 kWh/ngày, khoảng 0.55 vòng sạc/ngày |
+| Số lượng xe | 40 xe diesel tương đương | 40 xe điện |
+| Cơ cấu hạm đội | 24 xe đầu kéo + 16 xe tải trung | 24 CAMC G2E + 16 Farizon H9E |
+| Quãng đường năm | 2,400,000 km | 2,400,000 km |
+| Nhiên liệu / điện năng năm | 751,200 lít diesel | **2.45 GWh** |
+| Phát thải đã có nguồn xác nhận | **2,010.56 tCO2** | **0.00 tCO2** từ điện lưới |
+| Cấu phần WTT/lifecycle đã xác định | **610.52 tCO2e** | Solar/Wind EP + RMFC Bio-Methanol EP |
+| Cấu phần RMFC | - | **RMFC sử dụng 1.33 GWh/năm**, $Eff_{RMFC}=40\%$ |
+| Tổng phát thải WTW phần đã xác định | **2,621.08 tCO2e** | **479.21 tCO2e** |
+| Giảm phát thải WTW sơ bộ |  | **2,141.87 tCO2e/năm** |
+| Tỷ lệ giảm phát thải WTW sơ bộ |  | **81.72%** |
+| Kiểm tra cân bằng năng lượng |  | Điện lưới nhập **0.0 kWh**; nạp lưu trữ **466.43 MWh**; xả lưu trữ **368.10 MWh**; hao hụt lưu trữ **98.33 MWh**; hao hụt truyền dẫn **130.21 MWh** |
 
-Thông số áp dụng cho cấu phần đã có nguồn: $EF_{Diesel,combustion}=74,100$ kg CO2/TJ, $EF_{Diesel,WTT}=22,500$ kg CO2e/TJ theo GLEC default diesel, $Density_{Diesel}=0.84$ kg/lít, $NCV_{Diesel}=43.0$ TJ/Gg, $EF_{Grid,location}=0.6592$ kg CO2/kWh (theo Công văn số 1726/BĐKH-PTCBT), $EF_{SolarWind,EP}=0.040$ kg CO2e/kWh theo GLEC renewable electricity infrastructure, $EF_{BioMethanol,LCA}=40$ gCO2e/MJ fuel theo Methanol Institute conservative renewable methanol range. Ví dụ Energy Balance tại 6.1 phân bổ điện sạc đầu súng theo $S_{Grid}=0\%$, $S_{SolarWind}=100\%$, $S_{RMFC}=0\%$; nếu RMFC Bio-Methanol được dùng trong phiên sạc thực tế, cần bổ sung hiệu suất điện $Eff_{RMFC}$ hoặc suất tiêu hao nhiên liệu/kWh từ vendor để quy đổi ra $EF_{RMFC,EP}$.
+Thông số áp dụng cho cấu phần đã có nguồn: $EF_{Diesel,combustion}=74,100$ kg CO2/TJ, $EF_{Diesel,WTT}=22,500$ kg CO2e/TJ theo GLEC default diesel, $Density_{Diesel}=0.84$ kg/lít, $NCV_{Diesel}=43.0$ TJ/Gg, $EF_{Grid,location}=0.6592$ kg CO2/kWh (theo Công văn số 1726/BĐKH-PTCBT), $EF_{SolarWind,EP}=0.040$ kg CO2e/kWh theo GLEC renewable electricity infrastructure, $EF_{BioMethanol,LCA}=40$ gCO2e/MJ fuel theo Methanol Institute conservative renewable methanol range. 
+
+Kịch bản mô phỏng 40 xe sử dụng $Eff_{RMFC}=40\%$, tương đương $EF_{RMFC,EP}=0.144/0.40=0.36$ kgCO2e/kWh điện RMFC. 
+
+Phần điện sạc được phân bổ theo kết quả mô phỏng giờ từ [LeTRON Energy & Emissions Simulator](./simulator/index.html): $S_{Grid}=0\%$, phần còn lại từ Solar/Wind, lưu trữ và RMFC Bio-Methanol.
 
 **Bảng 6.2D - Thông số định mức và hệ số phát thải áp dụng**
 
@@ -377,19 +382,19 @@ Thông số áp dụng cho cấu phần đã có nguồn: $EF_{Diesel,combustion
 | **NCV_Diesel**        | Trị số tỏa nhiệt ròng của dầu Diesel | IPCC 2006 default / hồ sơ nhiên liệu | **43.0** | TJ / Gg |
 | **EF_SolarWind_EP**   | Hệ số phát thải cung ứng năng lượng/vòng đời của Solar/Wind | GLEC conservative default cho hạ tầng phát điện tái tạo | **0.040** | kg CO2e / kWh |
 | **EF_BioMethanol_LCA** | Hệ số vòng đời bảo thủ của renewable methanol | Methanol Institute paper: renewable methanol thường đạt 10-40 gCO2e/MJ | **40** | g CO2e / MJ fuel |
-| **Eff_RMFC**          | Hiệu suất điện của máy RMFC Bio-Methanol | Cần datasheet/vendor evidence | **TBD** | % |
-| **EF_RMFC_EP**        | Hệ số phát thải cung ứng năng lượng/vòng đời của điện RMFC Bio-Methanol | $EF_{BioMethanol,LCA} \times 3.6 / Eff_{RMFC}$ | **0.144 / Eff_RMFC** | kg CO2e / kWh |
+| **Eff_RMFC**          | Hiệu suất điện của máy RMFC Bio-Methanol | Giả định mô phỏng thiết kế; cần datasheet/vendor evidence để khóa khi thẩm định | **40.00** | % |
+| **EF_RMFC_EP**        | Hệ số phát thải cung ứng năng lượng/vòng đời của điện RMFC Bio-Methanol | $EF_{BioMethanol,LCA} \times 3.6 / Eff_{RMFC}$ | **0.36** | kg CO2e / kWh |
 | **S_Grid**            | Tỷ lệ điện lưới trong phiên sạc theo ví dụ 6.1 | Energy Balance Reconciliation Example | **0.00**     | %                   |
 | **S_SolarWind**       | Tỷ lệ điện Solar/Wind trong phiên sạc theo ví dụ 6.1 | Energy Balance Reconciliation Example | **100.00** | % |
-| **S_RMFC**            | Tỷ lệ điện RMFC Bio-Methanol trong phiên sạc theo ví dụ 6.1 | Energy Balance Reconciliation Example | **0.00** | % |
+| **S_RMFC**            | Tỷ lệ điện RMFC Bio-Methanol trong phiên sạc theo ví dụ 6.1 | Energy Balance Reconciliation Example / Simulator | Theo mô phỏng giờ | % |
 | **FE_Baseline (CAMC)**    | Định mức diesel đối chứng cho xe đầu kéo nặng theo lớp tải 25 tấn | Benchmark HDV Ricardo, kiểm tra theo dải tractor-trailer châu Âu | **0.375**      | lít / km           |
 | **FE_Baseline (Farizon)** | Định mức diesel đối chứng cho xe tải trung theo lớp tải 8 tấn | Benchmark HDV Ricardo, kiểm tra theo dải rigid box-truck regional delivery | **0.220**      | lít / km           |
 | **EC_Electric (CAMC)** | Tiêu thụ điện năng xe đầu kéo CAMC G2E    | Thiết kế kỹ thuật của nhà sản xuất               | **1.30**      | kWh / km           |
 | **EC_Electric (Farizon)**| Tiêu thụ điện năng xe tải trung Farizon H9E | Thiết kế kỹ thuật của nhà sản xuất               | **0.60**      | kWh / km           |
 | **Eff_VFB**           | Hiệu suất nạp/xả pin dòng chảy VFB          | Thiết kế kỹ thuật của pin dòng chảy Vanadium     | **68.00**     | %                   |
 | **Eff_BESS**          | Hiệu suất nạp/xả pin Lithium-ion BESS       | Thiết kế kỹ thuật của hệ thống pin Lithium       | **85.00**     | %                   |
-| **CF_Solar**          | Hệ số công suất điện mặt trời Quảng Ninh  | Bản đồ bức xạ và khí tượng Quảng Ninh            | **14.60**     | %                   |
-| **CF_Wind**           | Hệ số công suất điện gió Quảng Ninh       | Bản đồ khí tượng và tài nguyên gió Uông Bí       | **29.90**     | %                   |
+| **CF_Solar**          | Hệ số công suất điện mặt trời tại tọa độ khảo sát Hiệp Hoà - Quảng Ninh | Renewables.ninja MERRA2 2019, `21.015799563109237, 106.80087277197177` | **14.786** | % |
+| **CF_Wind**           | Hệ số công suất điện gió tại tọa độ khảo sát Hiệp Hoà - Quảng Ninh | Renewables.ninja MERRA2 2019, `21.015799563109237, 106.80087277197177` | **18.117** | % |
 | **Loss_Transmission** | Tỷ lệ hao hụt truyền dẫn thiết kế của Hub  | Thiết kế hệ thống phân phối điện nội bộ Hub      | **5.00**      | %                   |
 | **Eff_Charge**        | Hiệu suất truyền dẫn sạc vật lý tại Hub    | Thiết kế kỹ thuật của trạm sạc nhanh Megawatt      | **94.00**     | %                   |
 <div class="page-break"></div>
@@ -477,7 +482,7 @@ Ký hiệu: `Đã xác nhận`, `Xác nhận một phần`, `Chưa xác nhận`,
 
 | ID | Nội dung cần xác nhận | Reference | Trích xuất / tóm tắt | Kết quả | Việc cần làm |
 | --- | --- | --- | --- | --- | --- |
-| REF-001 | ISO 14064-2 cho định lượng giảm phát thải cấp dự án. | Chưa có tài liệu | Chưa có bản licensed trong thư mục. | Cần tiêu chuẩn có bản quyền | Mua/tra cứu bản chính thức và để VVB review methodology. |
+| REF-001 | ISO 14064-2 cho định lượng giảm phát thải cấp dự án. | [TCVN ISO 14064-2:2025](./TCVN_ISO_14064-2-2025.md#tiêu-chuẩn-tcvn-iso-14064-22025-quy-định-kỹ-thuật-giảm-phát-thải-hoặc-tăng-cường-loại-bỏ-khí-nhà-kính-ở-cấp-độ-dự-án) | `quy định kỹ thuật và hướng dẫn định lượng, giám sát và báo cáo giảm phát thải hoặc tăng cường loại bỏ khí nhà kính ở cấp độ dự án`; phù hợp làm chuẩn xác nhận phương pháp luận dự án. | Đã xác nhận | Giữ TCVN ISO 14064-2:2025 làm chuẩn định lượng, giám sát và báo cáo giảm phát thải cấp dự án; để VVB review methodology khi thẩm định. |
 | REF-002 | ISO/TCVN 14083 là chuẩn chính cho phát thải logistics. | [TCVN ISO 14083](../ref/standards_and_reports/TCVN_ISO_14083_2025.md#tiêu-chuẩn-tcvn-iso-140832025-định-lượng-phát-thải-khí-nhà-kính-phát-sinh-từ-hoạt-động-chuỗi-vận-chuyển), [GLEC p.2](./GLEC_Framework_v3.2_2025-10-21.pdf#page=2), [CLECAT p.3](./CLECAT_Guide_to_ISO_14083_GHG_Transport_Sector.pdf#page=3) | `ISO 14083`, `transport chain operations`; phù hợp làm chuẩn logistics. | Đã xác nhận | Giữ ISO/TCVN 14083 và GLEC làm khung methodology. |
 | REF-003 | WTW phải tách thành TTW/operation và WTT/energy provision. | [TCVN ISO 14083](../ref/standards_and_reports/TCVN_ISO_14083_2025.md#tiêu-chuẩn-tcvn-iso-140832025-định-lượng-phát-thải-khí-nhà-kính-phát-sinh-từ-hoạt-động-chuỗi-vận-chuyển), [GLEC p.17](./GLEC_Framework_v3.2_2025-10-21.pdf#page=17), [GLEC p.61](./GLEC_Framework_v3.2_2025-10-21.pdf#page=61) | `WTW = WTT + TTW`; ISO 14083/GLEC yêu cầu total emissions của transport chain. | Đã xác nhận | Giữ công thức `WTW = TTW + WTT`; bổ sung hệ số WTT/lifecycle còn thiếu. |
 | REF-004 | Điện lưới sạc xe dùng `EF_Grid_location = 0.6592 kgCO2/kWh`. | [Công văn 1726](./1726_BĐKH-PTCBT.png) | `0,6592 tCO2/MWh`; tương đương `0.6592 kgCO2/kWh`. | Đã xác nhận | Dùng hệ số location-based này cho phần điện lưới năm 2023. |
@@ -487,6 +492,6 @@ Ký hiệu: `Đã xác nhận`, `Xác nhận một phần`, `Chưa xác nhận`,
 | REF-008 | RMFC Bio-Methanol dùng hệ số renewable methanol bảo thủ. | [Methanol paper p.4](./CARBON-FOOTPRINT-OF-METHANOL-PAPER_1-31-22.pdf#page=4), [Methanol paper p.12](./CARBON-FOOTPRINT-OF-METHANOL-PAPER_1-31-22.pdf#page=12), [GLEC p.78](./GLEC_Framework_v3.2_2025-10-21.pdf#page=78) | Renewable methanol thường `10-40 gCO2e/MJ`; dùng mức bảo thủ `40 gCO2e/MJ`. | Xác nhận một phần | Giữ `EF_BioMethanol_LCA = 40 gCO2e/MJ`; bổ sung `Eff_RMFC` hoặc suất tiêu hao nhiên liệu/kWh từ vendor. |
 | REF-009 | Battery capacity CAMC/Farizon. | [CAMC p.1](./Quotation%20of%20the%20CAMC%20G2%206X4%20tractor%20truck.pdf#page=1), [Farizon p.10](./New%20Energy%20Light%20Truck%20Products.pdf#page=10) | `440kWh`, `106.95kWh CATL`; xác nhận dung lượng pin. | Đã xác nhận | Tách dung lượng pin khỏi claim tiêu thụ điện; kWh/km vẫn cần test/pilot nếu verify. |
 | REF-010 | Diesel baseline `0.375` và `0.220 lít/km`. | [Ricardo p.4](./HDV-Technology-Potential-and-Cost-Study_Ricardo_Consultant-Report_26052017_vF.pdf#page=4), [Ricardo p.31](./HDV-Technology-Potential-and-Cost-Study_Ricardo_Consultant-Report_26052017_vF.pdf#page=31), [Ricardo p.32](./HDV-Technology-Potential-and-Cost-Study_Ricardo_Consultant-Report_26052017_vF.pdf#page=32), [Ricardo p.102](./HDV-Technology-Potential-and-Cost-Study_Ricardo_Consultant-Report_26052017_vF.pdf#page=102) | `35.7 L/100km`, `24.9 L/100km`; benchmark hỗ trợ baseline. | Đã xác nhận | Giữ như benchmark; pilot có thể dùng để hiệu chỉnh. |
-| REF-011 | Capacity factor solar/wind tại Quảng Ninh/Uông Bí. | Chưa có nguồn dự án | Chưa có dữ liệu bức xạ/gió hoặc log sản lượng. | Cần dữ liệu dự án | Bổ sung mô phỏng PV/wind hoặc dữ liệu vận hành. |
+| REF-011 | Capacity factor solar/wind tại tọa độ khảo sát Hiệp Hoà - Quảng Ninh. | [Renewables.ninja PV raw JSON](./data/ninja_pv_21.0158_106.8009_uncorrected.raw.json), [Renewables.ninja Wind raw JSON](./data/ninja_wind_21.0158_106.8009_uncorrected.raw.json), [Resource profile summary](./data/renewable_resource_profiles.csv) | Tọa độ `21.015799563109237, 106.80087277197177`, dữ liệu MERRA2 năm 2019, capacity basis `1 kW`; PV `1,295.225 kWh/kW/năm`, `CF_Solar = 14.786%`; Wind `1,587.008 kWh/kW/năm`, `CF_Wind = 18.117%`. | Đã xác nhận bằng mô phỏng | Dùng profile theo giờ để mô phỏng cân bằng năng lượng; thay bằng dữ liệu vận hành thực tế khi Hub có log SCADA/công tơ. |
 | REF-012 | Hiệu suất VFB tổn thất truyền dẫn, hiệu suất sạc. | [U.S. DOE](https://www.pnnl.gov/sites/default/files/media/file/RedoxFlow_Methodology.pdf) | Eff_VFB = 68.00 | Đã xác nhận | "Nguồn dữ liệu hiệu suất thiết kế ban đầu đã được thay thế bằng thông số thực tế từ báo cáo Grid Energy Storage Technology Cost and Performance Assessment của U.S. DOE/PNNL. Dự án áp dụng mức hiệu suất AC-to-AC bảo thủ là 68.00% nhằm phản ánh đúng hao hụt thực tế từ hệ thống bơm tuần hoàn dung dịch và biến tần, tránh việc phóng đại kết quả tính toán năng lượng của mô hình.". |
 | REF-013 | Hiệu suất BESS, tổn thất truyền dẫn, hiệu suất sạc. | [lazards-lcoeplus-june-2025](./lazards-lcoeplus-june-2025.pdf) | Eff_BESS = 91.00 | Đã xác nhận | "Dựa trên bảng giả định Key Assumptions của Lazard LCOS (Trang 42), hiệu suất nền tảng của công nghệ pin lưu trữ được xác định ở mức 91%. Để đảm bảo tính bảo thủ tối đa theo yêu cầu của ISO 14064-2/GHG Protocol, dự án đã khấu trừ thêm các tổn thất thực tế do hệ thống phụ tải làm mát (HVAC), tổn thất biến áp và suy hao thiết bị theo thời gian, đưa hiệu suất chu trình AC-to-AC về mức 85.00% trong mô hình tính toán cân bằng năng lượng." |

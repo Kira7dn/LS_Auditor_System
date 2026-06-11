@@ -1,0 +1,101 @@
+{
+  "source_document": "../Project_Design_Document.md",
+  "formulas": [
+    {
+      "id": "energy_supply",
+      "name": "Tổng năng lượng cung cấp đầu vào",
+      "formula": "E_Supply(t) = E_Solar(t) + E_Wind(t) + E_RMFC(t) + E_Grid(t)",
+      "output_unit": "kWh"
+    },
+    {
+      "id": "storage_soc",
+      "name": "Thay đổi dung lượng pin lưu trữ",
+      "formula": "SOC_Storage(t) = SOC_Storage(t-1) + eta_in * E_Surplus(t) - E_Deficit(t) / eta_out",
+      "output_unit": "kWh"
+    },
+    {
+      "id": "charger_balance",
+      "name": "Cân bằng tại đầu súng sạc",
+      "formula": "sum(E_Charger_Output) * eta_charge = sum(Delta_P_kWh) + L_Transmission",
+      "output_unit": "kWh"
+    },
+    {
+      "id": "baseline_wtw",
+      "name": "Phát thải đường cơ sở WTW",
+      "formula": "GHG_Baseline_WTW = GHG_Baseline_TTW + GHG_Baseline_WTT",
+      "output_unit": "tCO2e"
+    },
+    {
+      "id": "baseline_ttw",
+      "name": "Phát thải vận hành diesel TTW",
+      "formula": "GHG_Baseline_TTW = D * FE_Baseline * (1 + k_empty) * Density_Diesel * NCV_Diesel * EF_Diesel_combustion / 1e9",
+      "output_unit": "tCO2"
+    },
+    {
+      "id": "baseline_wtt",
+      "name": "Phát thải thượng nguồn diesel WTT",
+      "formula": "GHG_Baseline_WTT = D * FE_Baseline * (1 + k_empty) * Density_Diesel * NCV_Diesel * EF_Diesel_WTT / 1e9",
+      "output_unit": "tCO2e"
+    },
+    {
+      "id": "project_wtw",
+      "name": "Phát thải dự án WTW",
+      "formula": "GHG_Project_WTW = GHG_Project_Operation + GHG_Project_EnergyProvision",
+      "output_unit": "tCO2e"
+    },
+    {
+      "id": "project_operation",
+      "name": "Phát thải vận hành xe điện",
+      "formula": "GHG_Project_Operation = 0",
+      "output_unit": "tCO2e"
+    },
+    {
+      "id": "project_energy_provision",
+      "name": "Phát thải cung ứng năng lượng cho xe điện",
+      "formula": "GHG_Project_EnergyProvision = E_Charge * (S_Grid * EF_Grid_location + S_SolarWind * EF_SolarWind_EP + S_RMFC * EF_RMFC_EP) / 1000",
+      "output_unit": "tCO2e"
+    },
+    {
+      "id": "emission_reduction",
+      "name": "Lượng giảm phát thải ròng",
+      "formula": "Delta_GHG_WTW = GHG_Baseline_WTW - GHG_Project_WTW",
+      "output_unit": "tCO2e"
+    },
+    {
+      "id": "solar_hourly_generation_from_ninja",
+      "name": "Sản lượng điện mặt trời theo giờ từ hệ số Renewables.ninja",
+      "formula": "E_Solar_hourly_kWh = PV_capacity_kW * ninja_pv.electricity",
+      "output_unit": "kWh/hour",
+      "note": "File ninja_pv dùng capacity=1 kW; cột electricity là kW/kW theo từng giờ."
+    },
+    {
+      "id": "wind_hourly_generation_from_ninja",
+      "name": "Sản lượng điện gió theo giờ từ hệ số Renewables.ninja",
+      "formula": "E_Wind_hourly_kWh = Wind_capacity_kW * ninja_wind.electricity",
+      "output_unit": "kWh/hour",
+      "note": "File ninja_wind dùng capacity=1 kW; cột electricity là kW/kW theo từng giờ."
+    }
+  ],
+  "variables": [
+    {"symbol": "t", "unit": "timestamp/khoảng thời gian đo", "description": "Thời điểm hoặc khoảng thời gian đối soát trên Energy Ledger"},
+    {"symbol": "E_Supply(t)", "unit": "kWh", "description": "Tổng năng lượng khả dụng cấp vào hệ thống"},
+    {"symbol": "E_Solar(t)", "unit": "kWh", "description": "Sản lượng điện mặt trời tự phát"},
+    {"symbol": "E_Wind(t)", "unit": "kWh", "description": "Sản lượng điện gió tự phát"},
+    {"symbol": "E_RMFC(t)", "unit": "kWh", "description": "Sản lượng điện từ RMFC Bio-Methanol"},
+    {"symbol": "E_Grid(t)", "unit": "kWh", "description": "Điện lưới nhập vào Hub"},
+    {"symbol": "SOC_Storage(t)", "unit": "kWh", "description": "Năng lượng tồn trong hệ lưu trữ"},
+    {"symbol": "eta_in", "unit": "%/fraction", "description": "Hiệu suất nạp vào hệ lưu trữ"},
+    {"symbol": "eta_out", "unit": "%/fraction", "description": "Hiệu suất xả từ hệ lưu trữ"},
+    {"symbol": "E_Surplus(t)", "unit": "kWh", "description": "Năng lượng dư đưa vào lưu trữ"},
+    {"symbol": "E_Deficit(t)", "unit": "kWh", "description": "Năng lượng thiếu cần xả từ lưu trữ"},
+    {"symbol": "E_Charger_Output", "unit": "kWh", "description": "Điện năng đo tại đầu ra trụ/súng sạc"},
+    {"symbol": "eta_charge", "unit": "%/fraction", "description": "Hiệu suất nạp từ đầu ra trụ sạc vào pin xe"},
+    {"symbol": "Delta_P_kWh", "unit": "kWh", "description": "Mức tăng năng lượng pin xe từ thay đổi SoC và dung lượng pin danh định"},
+    {"symbol": "L_Transmission", "unit": "kWh", "description": "Hao hụt truyền dẫn, cáp, chuyển đổi và sai lệch đo lường"},
+    {"symbol": "D", "unit": "km", "description": "Quãng đường hành trình đo từ GPS"},
+    {"symbol": "FE_Baseline", "unit": "lít/km", "description": "Định mức tiêu thụ dầu diesel đối chứng"},
+    {"symbol": "W", "unit": "tấn", "description": "Tải trọng hàng hóa thực tế"},
+    {"symbol": "k_empty", "unit": "%/fraction", "description": "Hệ số hiệu chỉnh chuyến chạy rỗng, chưa có giá trị trong PDD"},
+    {"symbol": "E_Charge", "unit": "kWh", "description": "Tổng điện năng sạc đo tại đầu súng MCS"}
+  ]
+}

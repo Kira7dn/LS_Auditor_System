@@ -1,0 +1,14 @@
+id,parameter_or_claim,reference,status,action
+REF-001,ISO 14064-2 cho định lượng giảm phát thải cấp dự án,Chưa có tài liệu,Cần tiêu chuẩn có bản quyền,Mua/tra cứu bản chính thức và để VVB review methodology
+REF-002,ISO/TCVN 14083 là chuẩn chính cho phát thải logistics,TCVN ISO 14083; GLEC p.2; CLECAT p.3,Đã xác nhận,Giữ ISO/TCVN 14083 và GLEC làm khung methodology
+REF-003,WTW phải tách thành TTW/operation và WTT/energy provision,TCVN ISO 14083; GLEC p.17; GLEC p.61,Đã xác nhận,Giữ công thức WTW = TTW + WTT
+REF-004,EF_Grid_location = 0.6592 kgCO2/kWh,Công văn 1726,Đã xác nhận,Dùng hệ số location-based này cho phần điện lưới năm 2023
+REF-005,EF_Diesel_combustion = 74100 kgCO2/TJ,QĐ 226 p.2; IPCC p.12,Đã xác nhận,Giữ cho cấu phần TTW
+REF-006,EF_Diesel_WTT = 22500 kgCO2e/TJ,GLEC p.77; GLEC p.118,Đã xác nhận,Dùng GLEC default; thay nếu VVB yêu cầu hệ số địa phương/chuyên biệt hơn
+REF-007,EF_SolarWind_EP = 0.040 kgCO2e/kWh,GLEC p.82; GLEC p.118,Đã xác nhận,Thay bằng LCA dự án nếu có
+REF-008,EF_BioMethanol_LCA = 40 gCO2e/MJ fuel,Methanol paper p.4; Methanol paper p.12; GLEC p.78,Xác nhận một phần,Bổ sung Eff_RMFC hoặc suất tiêu hao nhiên liệu/kWh từ vendor
+REF-009,Battery capacity CAMC/Farizon,CAMC p.1; Farizon p.10,Đã xác nhận,Tách dung lượng pin khỏi claim tiêu thụ điện
+REF-010,Diesel baseline 0.375 và 0.220 lít/km,Ricardo p.4; p.31; p.32; p.102,Đã xác nhận,Giữ benchmark; pilot có thể hiệu chỉnh
+REF-011,Capacity factor solar/wind tại tọa độ khảo sát,"ninja_pv_21.0158_106.8009_uncorrected.csv; ninja_wind_21.0158_106.8009_uncorrected.csv",Có dữ liệu mô phỏng Renewables.ninja theo giờ,Dùng làm hệ số điện theo giờ; thay bằng log vận hành thực tế khi có
+REF-012,Eff_VFB = 68.00%,U.S. DOE/PNNL,Đã xác nhận,Dùng mức AC-to-AC bảo thủ
+REF-013,Eff_BESS = 85.00% từ nền tảng 91.00% Lazard,Lazard LCOS p.42,Đã xác nhận,Dùng mức chu trình AC-to-AC bảo thủ 85.00%

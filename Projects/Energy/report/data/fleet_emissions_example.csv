@@ -1,0 +1,4 @@
+vehicle_group,vehicle_count,baseline_vehicle,annual_distance_km,assumed_payload_ton_per_trip,baseline_fuel_intensity_l_per_km,project_energy_intensity_kwh_per_km,annual_diesel_liters,annual_electricity_kwh,baseline_ttw_tco2,baseline_wtt_tco2e,baseline_wtw_tco2e,project_grid_tco2,project_solarwind_ep_tco2e,project_rmfc_ep_tco2e,project_wtw_tco2e,emission_reduction_tco2e_per_year,emission_reduction_percent,nominal_fleet_battery_capacity_kwh,average_daily_charged_energy_kwh,average_daily_charge_cycles
+CAMC G2E,3,xe đầu kéo diesel tương đương,180000,25,0.375,1.30,67500,234000,180.66,54.86,235.52,0.00,9.36,0.00,9.36,226.16,,,,
+Farizon H9E,2,xe tải trung diesel tương đương,120000,8,0.220,0.60,26400,72000,70.66,21.46,92.12,0.00,2.88,0.00,2.88,89.23,,,,
+Pilot fleet total,5,xe diesel tương đương,300000,, , ,93900,306000,251.32,76.31,327.64,0.00,12.24,0.00,12.24,315.40,96.26,1533.90,838.36,0.55
