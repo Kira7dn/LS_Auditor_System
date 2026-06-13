@@ -127,6 +127,12 @@
       "purpose": "End-to-end assistant workflow from case initialization to final report."
     },
     {
+      "id": "pdf-to-kb-workflow",
+      "type": "Workflow",
+      "path": ".agents/workflows/auditor/pdf-to-kb.md",
+      "purpose": "Workflow guide to split PDFs into clean structured KB markdowns and ingest to Neo4j via Concept Map."
+    },
+    {
       "id": "account-scouting",
       "type": "Skill",
       "path": ".agents/skills/auditor/account-scouting/",

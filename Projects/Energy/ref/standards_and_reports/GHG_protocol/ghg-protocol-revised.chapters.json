@@ -1,0 +1,83 @@
+{
+  "pdf": "Projects\\Energy\\ref\\standards_and_reports\\GHG_protocol\\ghg-protocol-revised.pdf",
+  "total_pages": 116,
+  "chapters": [
+    {
+      "num": 1,
+      "slug": "principles",
+      "title": "GHG Accounting and Reporting Principles",
+      "start_page": 9,
+      "end_page": 12
+    },
+    {
+      "num": 2,
+      "slug": "goals_and_design",
+      "title": "Business Goals and Inventory Design",
+      "start_page": 13,
+      "end_page": 18
+    },
+    {
+      "num": 3,
+      "slug": "org_boundaries",
+      "title": "Setting Organizational Boundaries",
+      "start_page": 19,
+      "end_page": 26
+    },
+    {
+      "num": 4,
+      "slug": "oper_boundaries",
+      "title": "Setting Operational Boundaries",
+      "start_page": 27,
+      "end_page": 36
+    },
+    {
+      "num": 5,
+      "slug": "tracking_time",
+      "title": "Tracking Emissions Over Time",
+      "start_page": 37,
+      "end_page": 42
+    },
+    {
+      "num": 6,
+      "slug": "identifying_calculating",
+      "title": "Identifying and Calculating GHG Emissions",
+      "start_page": 43,
+      "end_page": 50
+    },
+    {
+      "num": 7,
+      "slug": "inventory_quality",
+      "title": "Managing Inventory Quality",
+      "start_page": 51,
+      "end_page": 60
+    },
+    {
+      "num": 8,
+      "slug": "reductions_offsets",
+      "title": "Accounting for GHG Reductions",
+      "start_page": 61,
+      "end_page": 64
+    },
+    {
+      "num": 9,
+      "slug": "reporting",
+      "title": "Reporting GHG Emissions",
+      "start_page": 65,
+      "end_page": 71
+    },
+    {
+      "num": 10,
+      "slug": "verification",
+      "title": "Verification of GHG Emissions",
+      "start_page": 72,
+      "end_page": 77
+    },
+    {
+      "num": 11,
+      "slug": "targets",
+      "title": "Setting a GHG Target",
+      "start_page": 78,
+      "end_page": 116
+    }
+  ]
+}

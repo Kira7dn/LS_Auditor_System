@@ -1,0 +1,426 @@
+{
+  "nodes": [
+    {
+      "id": "ghg_protocol",
+      "label": "Standard",
+      "name": "GHG Protocol Corporate Standard (Revised Edition)",
+      "doc_id": "principles",
+      "anchor": "principles_relevance"
+    },
+    {
+      "id": "relevance",
+      "label": "Principle",
+      "name": "Relevance",
+      "doc_id": "principles",
+      "anchor": "principles_relevance"
+    },
+    {
+      "id": "completeness",
+      "label": "Principle",
+      "name": "Completeness",
+      "doc_id": "principles",
+      "anchor": "principles_completeness"
+    },
+    {
+      "id": "consistency",
+      "label": "Principle",
+      "name": "Consistency",
+      "doc_id": "principles",
+      "anchor": "principles_consistency"
+    },
+    {
+      "id": "accuracy",
+      "label": "Principle",
+      "name": "Accuracy",
+      "doc_id": "principles",
+      "anchor": "principles_accuracy"
+    },
+    {
+      "id": "transparency",
+      "label": "Principle",
+      "name": "Transparency",
+      "doc_id": "principles",
+      "anchor": "principles_transparency"
+    },
+    {
+      "id": "req_boundary_selection",
+      "label": "Requirement",
+      "name": "Companies shall select and apply a consolidation approach consistently",
+      "doc_id": "org_boundaries",
+      "anchor": "boundary_control"
+    },
+    {
+      "id": "req_scope_reporting",
+      "label": "Requirement",
+      "name": "Companies shall separately account for and report scopes 1 and 2 at a minimum",
+      "doc_id": "oper_boundaries",
+      "anchor": "scope_1"
+    },
+    {
+      "id": "req_recalculation",
+      "label": "Requirement",
+      "name": "Base year emissions shall be retroactively recalculated to reflect significant structural changes",
+      "doc_id": "tracking_time",
+      "anchor": "recalc_rules"
+    },
+    {
+      "id": "stationary_combustion",
+      "label": "EmissionSourceType",
+      "name": "Stationary Combustion",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "purchased_electricity",
+      "label": "EmissionSourceType",
+      "name": "Purchased Electricity Consumption",
+      "doc_id": "oper_boundaries",
+      "anchor": "scope_2"
+    },
+    {
+      "id": "emission_factor_method",
+      "label": "CalculationMethod",
+      "name": "Emission Factor Calculation Approach",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "emissions_multiplication",
+      "label": "Formula",
+      "name": "Emissions = Activity Data x Emission Factor",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "fuel_quantity",
+      "label": "ActivityDataType",
+      "name": "Purchased fuel quantity data",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "electricity_consumption",
+      "label": "ActivityDataType",
+      "name": "Metered electricity consumption (MWh)",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "fuel_emission_factor",
+      "label": "EmissionFactor",
+      "name": "Fuel carbon content or default fuel emission factor",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "grid_emission_factor",
+      "label": "EmissionFactor",
+      "name": "Local grid or supplier-specific emission factor",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "fuel_invoice",
+      "label": "EvidenceType",
+      "name": "Fuel Purchase Invoice",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "utility_bill",
+      "label": "EvidenceType",
+      "name": "Electricity Utility Bill",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_steps"
+    },
+    {
+      "id": "m_and_a_contracts",
+      "label": "EvidenceType",
+      "name": "M&A Legal Contracts and Asset Transfer Records",
+      "doc_id": "tracking_time",
+      "anchor": "recalc_rules"
+    },
+    {
+      "id": "boundary_completeness_check",
+      "label": "ControlPoint",
+      "name": "Verify completeness of corporate boundary and consolidation approach",
+      "doc_id": "org_boundaries",
+      "anchor": "boundary_consolidation_levels"
+    },
+    {
+      "id": "recalculation_trigger_audit",
+      "label": "ControlPoint",
+      "name": "Audit M&A events to trigger base year recalculation significance check",
+      "doc_id": "tracking_time",
+      "anchor": "recalc_rules"
+    },
+    {
+      "id": "reconcile_asset_registry_vs_scopes",
+      "label": "AuditTest",
+      "name": "Reconcile corporate asset registry vs consolidated facility scope reports",
+      "doc_id": "org_boundaries",
+      "anchor": "boundary_consolidation_levels"
+    },
+    {
+      "id": "verify_base_year_adjustments",
+      "label": "AuditTest",
+      "name": "Recalculate historic emissions for target base year adjustments",
+      "doc_id": "tracking_time",
+      "anchor": "recalc_rules"
+    },
+    {
+      "id": "goals_inventory",
+      "label": "Requirement",
+      "name": "Identify GHG risks and reduction opportunities in corporate inventory",
+      "doc_id": "goals_and_design",
+      "anchor": "goals_inventory"
+    },
+    {
+      "id": "recalc_significance",
+      "label": "Requirement",
+      "name": "Articulate base year recalculation policy and significance threshold",
+      "doc_id": "tracking_time",
+      "anchor": "recalc_significance"
+    },
+    {
+      "id": "outsourcing_recalc",
+      "label": "BoundaryRule",
+      "name": "Outsourcing/insourcing does not trigger recalculation if reported under Scope 2 or 3",
+      "doc_id": "tracking_time",
+      "anchor": "outsourcing_recalc"
+    },
+    {
+      "id": "calc_scope3",
+      "label": "CalculationMethod",
+      "name": "Scope 3 emissions calculations using activity data and published/third-party factors",
+      "doc_id": "identifying_calculating",
+      "anchor": "calc_scope3"
+    },
+    {
+      "id": "ef_selection",
+      "label": "BoundaryRule",
+      "name": "Preferred use of source- or facility-specific emission factors over generic ones",
+      "doc_id": "identifying_calculating",
+      "anchor": "ef_selection"
+    },
+    {
+      "id": "inventory_quality_assurance",
+      "label": "ControlPoint",
+      "name": "Establish inventory quality management system with generic and source-specific checks",
+      "doc_id": "inventory_quality",
+      "anchor": "inventory_quality_assurance"
+    },
+    {
+      "id": "reductions_accounting",
+      "label": "Requirement",
+      "name": "Account for reductions in indirect emissions transparently",
+      "doc_id": "reductions_offsets",
+      "anchor": "reductions_accounting"
+    },
+    {
+      "id": "reporting_required",
+      "label": "Requirement",
+      "name": "A public GHG report shall include required information (Scopes 1 & 2 at minimum)",
+      "doc_id": "reporting",
+      "anchor": "reporting_required"
+    },
+    {
+      "id": "reporting_optional",
+      "label": "Requirement",
+      "name": "Optional information including Scope 3 relevant categories may be reported",
+      "doc_id": "reporting",
+      "anchor": "reporting_optional"
+    },
+    {
+      "id": "verification_standard",
+      "label": "Requirement",
+      "name": "Objective assessment of accuracy and completeness conforming to GHG principles",
+      "doc_id": "verification",
+      "anchor": "verification_standard"
+    },
+    {
+      "id": "target_setting",
+      "label": "Requirement",
+      "name": "Define absolute or intensity targets, target boundary, base year, and offset policy",
+      "doc_id": "targets",
+      "anchor": "target_setting"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ghg_protocol",
+      "to": "req_boundary_selection",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "ghg_protocol",
+      "to": "req_scope_reporting",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "ghg_protocol",
+      "to": "req_recalculation",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "req_boundary_selection",
+      "to": "consistency",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "req_scope_reporting",
+      "to": "completeness",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "req_recalculation",
+      "to": "consistency",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "stationary_combustion",
+      "to": "req_scope_reporting",
+      "type": "SUBJECT_TO"
+    },
+    {
+      "from": "purchased_electricity",
+      "to": "req_scope_reporting",
+      "type": "SUBJECT_TO"
+    },
+    {
+      "from": "emission_factor_method",
+      "to": "emissions_multiplication",
+      "type": "USES_FORMULA"
+    },
+    {
+      "from": "emission_factor_method",
+      "to": "accuracy",
+      "type": "MUST_COMPLY_WITH"
+    },
+    {
+      "from": "emission_factor_method",
+      "to": "fuel_quantity",
+      "type": "REQUIRES_ACTIVITY_DATA"
+    },
+    {
+      "from": "emission_factor_method",
+      "to": "electricity_consumption",
+      "type": "REQUIRES_ACTIVITY_DATA"
+    },
+    {
+      "from": "emission_factor_method",
+      "to": "fuel_emission_factor",
+      "type": "USES_FACTOR"
+    },
+    {
+      "from": "emission_factor_method",
+      "to": "grid_emission_factor",
+      "type": "USES_FACTOR"
+    },
+    {
+      "from": "boundary_completeness_check",
+      "to": "req_boundary_selection",
+      "type": "CHECKS_REQUIREMENT"
+    },
+    {
+      "from": "boundary_completeness_check",
+      "to": "req_scope_reporting",
+      "type": "CHECKS_REQUIREMENT"
+    },
+    {
+      "from": "recalculation_trigger_audit",
+      "to": "req_recalculation",
+      "type": "CHECKS_REQUIREMENT"
+    },
+    {
+      "from": "boundary_completeness_check",
+      "to": "fuel_invoice",
+      "type": "REQUIRES_EVIDENCE"
+    },
+    {
+      "from": "boundary_completeness_check",
+      "to": "utility_bill",
+      "type": "REQUIRES_EVIDENCE"
+    },
+    {
+      "from": "recalculation_trigger_audit",
+      "to": "m_and_a_contracts",
+      "type": "REQUIRES_EVIDENCE"
+    },
+    {
+      "from": "reconcile_asset_registry_vs_scopes",
+      "to": "boundary_completeness_check",
+      "type": "EXECUTES_CONTROL"
+    },
+    {
+      "from": "verify_base_year_adjustments",
+      "to": "recalculation_trigger_audit",
+      "type": "EXECUTES_CONTROL"
+    },
+    {
+      "from": "ghg_protocol",
+      "to": "goals_inventory",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "ghg_protocol",
+      "to": "recalc_significance",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "recalc_significance",
+      "to": "consistency",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "outsourcing_recalc",
+      "to": "recalc_significance",
+      "type": "SUBJECT_TO"
+    },
+    {
+      "from": "calc_scope3",
+      "to": "req_scope_reporting",
+      "type": "SUBJECT_TO"
+    },
+    {
+      "from": "ef_selection",
+      "to": "accuracy",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "inventory_quality_assurance",
+      "to": "accuracy",
+      "type": "ENSURES_COMPLIANCE_WITH"
+    },
+    {
+      "from": "reductions_accounting",
+      "to": "transparency",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "ghg_protocol",
+      "to": "reporting_required",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "ghg_protocol",
+      "to": "reporting_optional",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "reporting_required",
+      "to": "transparency",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "verification_standard",
+      "to": "accuracy",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "target_setting",
+      "to": "consistency",
+      "type": "APPLIES_PRINCIPLE"
+    }
+  ]
+}

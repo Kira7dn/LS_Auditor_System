@@ -1,0 +1,1114 @@
+{
+  "node_props": {
+    "Concept": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": true,
+        "values": [
+          "accuracy",
+          "base_year_recalc",
+          "boundary_completeness_check",
+          "calculation_steps",
+          "completeness",
+          "consistency",
+          "control_approach",
+          "electricity_consumption",
+          "emission_factor_method",
+          "emissions_multiplication",
+          "equity_share",
+          "financial_control",
+          "fuel_emission_factor",
+          "fuel_invoice",
+          "fuel_quantity",
+          "ghg_protocol",
+          "grid_emission_factor",
+          "m_and_a_contracts",
+          "operational_control",
+          "purchased_electricity",
+          "recalculation_trigger_audit",
+          "reconcile_asset_registry_vs_scopes",
+          "relevance",
+          "req_boundary_selection",
+          "req_recalculation",
+          "req_scope_reporting",
+          "scope_1",
+          "scope_2",
+          "scope_3",
+          "stationary_combustion",
+          "transparency",
+          "utility_bill",
+          "verify_base_year_adjustments"
+        ],
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "Principle": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "BoundaryApproach": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "ControlType": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "EmissionScope": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "RecalculationRule": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "MethodCategory": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "Standard": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "Requirement": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "EmissionSourceType": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "CalculationMethod": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "Formula": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "ActivityDataType": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "EmissionFactor": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "EvidenceType": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "ControlPoint": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ],
+    "AuditTest": [
+      {
+        "property": "id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "name",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "doc_id",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "anchor",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_path",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      },
+      {
+        "property": "file_uri",
+        "type": "STRING",
+        "aura_data_type": "string",
+        "low_cardinality": false,
+        "has_fulltext_index": false
+      }
+    ]
+  },
+  "rel_props": {},
+  "relationships": [
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "ALTERNATIVE_TO"
+    },
+    {
+      "end": "BoundaryApproach",
+      "start": "Concept",
+      "type": "ALTERNATIVE_TO"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "CATEGORIZED_AS"
+    },
+    {
+      "end": "ControlType",
+      "start": "Concept",
+      "type": "CATEGORIZED_AS"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "DETERMINED_BY"
+    },
+    {
+      "end": "ControlType",
+      "start": "Concept",
+      "type": "DETERMINED_BY"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "ENSURES_COMPLIANCE_WITH"
+    },
+    {
+      "end": "Principle",
+      "start": "Concept",
+      "type": "ENSURES_COMPLIANCE_WITH"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "end": "Principle",
+      "start": "Concept",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "CONTAINS"
+    },
+    {
+      "end": "Requirement",
+      "start": "Concept",
+      "type": "CONTAINS"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "SUBJECT_TO"
+    },
+    {
+      "end": "Requirement",
+      "start": "Concept",
+      "type": "SUBJECT_TO"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "USES_FORMULA"
+    },
+    {
+      "end": "Formula",
+      "start": "Concept",
+      "type": "USES_FORMULA"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "MUST_COMPLY_WITH"
+    },
+    {
+      "end": "Principle",
+      "start": "Concept",
+      "type": "MUST_COMPLY_WITH"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "REQUIRES_ACTIVITY_DATA"
+    },
+    {
+      "end": "ActivityDataType",
+      "start": "Concept",
+      "type": "REQUIRES_ACTIVITY_DATA"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "USES_FACTOR"
+    },
+    {
+      "end": "EmissionFactor",
+      "start": "Concept",
+      "type": "USES_FACTOR"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "CHECKS_REQUIREMENT"
+    },
+    {
+      "end": "Requirement",
+      "start": "Concept",
+      "type": "CHECKS_REQUIREMENT"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "REQUIRES_EVIDENCE"
+    },
+    {
+      "end": "EvidenceType",
+      "start": "Concept",
+      "type": "REQUIRES_EVIDENCE"
+    },
+    {
+      "end": "Concept",
+      "start": "Concept",
+      "type": "EXECUTES_CONTROL"
+    },
+    {
+      "end": "ControlPoint",
+      "start": "Concept",
+      "type": "EXECUTES_CONTROL"
+    },
+    {
+      "end": "Concept",
+      "start": "BoundaryApproach",
+      "type": "ALTERNATIVE_TO"
+    },
+    {
+      "end": "BoundaryApproach",
+      "start": "BoundaryApproach",
+      "type": "ALTERNATIVE_TO"
+    },
+    {
+      "end": "Concept",
+      "start": "BoundaryApproach",
+      "type": "CATEGORIZED_AS"
+    },
+    {
+      "end": "ControlType",
+      "start": "BoundaryApproach",
+      "type": "CATEGORIZED_AS"
+    },
+    {
+      "end": "Concept",
+      "start": "EmissionScope",
+      "type": "DETERMINED_BY"
+    },
+    {
+      "end": "ControlType",
+      "start": "EmissionScope",
+      "type": "DETERMINED_BY"
+    },
+    {
+      "end": "Concept",
+      "start": "RecalculationRule",
+      "type": "ENSURES_COMPLIANCE_WITH"
+    },
+    {
+      "end": "Principle",
+      "start": "RecalculationRule",
+      "type": "ENSURES_COMPLIANCE_WITH"
+    },
+    {
+      "end": "Concept",
+      "start": "MethodCategory",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "end": "Principle",
+      "start": "MethodCategory",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "end": "Concept",
+      "start": "Standard",
+      "type": "CONTAINS"
+    },
+    {
+      "end": "Requirement",
+      "start": "Standard",
+      "type": "CONTAINS"
+    },
+    {
+      "end": "Concept",
+      "start": "Requirement",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "end": "Principle",
+      "start": "Requirement",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "end": "Concept",
+      "start": "EmissionSourceType",
+      "type": "SUBJECT_TO"
+    },
+    {
+      "end": "Requirement",
+      "start": "EmissionSourceType",
+      "type": "SUBJECT_TO"
+    },
+    {
+      "end": "Concept",
+      "start": "CalculationMethod",
+      "type": "USES_FORMULA"
+    },
+    {
+      "end": "Formula",
+      "start": "CalculationMethod",
+      "type": "USES_FORMULA"
+    },
+    {
+      "end": "Concept",
+      "start": "CalculationMethod",
+      "type": "MUST_COMPLY_WITH"
+    },
+    {
+      "end": "Principle",
+      "start": "CalculationMethod",
+      "type": "MUST_COMPLY_WITH"
+    },
+    {
+      "end": "Concept",
+      "start": "CalculationMethod",
+      "type": "REQUIRES_ACTIVITY_DATA"
+    },
+    {
+      "end": "ActivityDataType",
+      "start": "CalculationMethod",
+      "type": "REQUIRES_ACTIVITY_DATA"
+    },
+    {
+      "end": "Concept",
+      "start": "CalculationMethod",
+      "type": "USES_FACTOR"
+    },
+    {
+      "end": "EmissionFactor",
+      "start": "CalculationMethod",
+      "type": "USES_FACTOR"
+    },
+    {
+      "end": "Concept",
+      "start": "ControlPoint",
+      "type": "CHECKS_REQUIREMENT"
+    },
+    {
+      "end": "Requirement",
+      "start": "ControlPoint",
+      "type": "CHECKS_REQUIREMENT"
+    },
+    {
+      "end": "Concept",
+      "start": "ControlPoint",
+      "type": "REQUIRES_EVIDENCE"
+    },
+    {
+      "end": "EvidenceType",
+      "start": "ControlPoint",
+      "type": "REQUIRES_EVIDENCE"
+    },
+    {
+      "end": "Concept",
+      "start": "AuditTest",
+      "type": "EXECUTES_CONTROL"
+    },
+    {
+      "end": "ControlPoint",
+      "start": "AuditTest",
+      "type": "EXECUTES_CONTROL"
+    }
+  ],
+  "metadata": {
+    "constraint": [
+      {
+        "id": 3,
+        "name": "concept_id_unique",
+        "type": "NODE_PROPERTY_UNIQUENESS",
+        "entityType": "NODE",
+        "labelsOrTypes": [
+          "Concept"
+        ],
+        "properties": [
+          "id"
+        ],
+        "enforcedLabel": null,
+        "ownedIndex": "concept_id_unique",
+        "propertyType": null
+      }
+    ],
+    "index": [
+      {
+        "label": "Concept",
+        "properties": [
+          "id"
+        ],
+        "size": 33,
+        "type": "RANGE",
+        "valuesSelectivity": 1.0,
+        "distinctValues": 33.0
+      }
+    ],
+    "node_count": 33,
+    "vector_index": [],
+    "fulltext_index": []
+  }
+}

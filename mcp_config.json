@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "neo4j": {
+      "command": "d:/BusinessAnalyze/LS/LS_Auditor_System/.venv/Scripts/neo4j-mcp-server.exe",
+      "env": {
+        "NEO4J_URI": "neo4j+s://177d8aab.databases.neo4j.io",
+        "NEO4J_USERNAME": "177d8aab",
+        "NEO4J_PASSWORD": "pBlo3HPrpKsVmvTyeRIZqrGpYcq2rf7aPalClXoAchM",
+        "NEO4J_DATABASE": "177d8aab",
+        "NEO4J_READ_ONLY": "true"
+      }
+    }
+  }
+}
