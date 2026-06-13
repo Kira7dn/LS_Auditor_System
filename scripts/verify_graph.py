@@ -8,6 +8,7 @@ Outputs JSON to stdout, debug messages to stderr.
 import sys
 import os
 import json
+import argparse
 from pathlib import Path
 from neo4j import GraphDatabase
 
@@ -25,6 +26,11 @@ def main():
     try:
         sys.stdout.reconfigure(encoding='utf-8')
         sys.stderr.reconfigure(encoding='utf-8')
+
+        parser = argparse.ArgumentParser(description="Verify Neo4j concept graph integrity.")
+        parser.add_argument("--full-json", action="store_true", help="Include full distributions and sample paths")
+        parser.add_argument("--sample-limit", type=int, default=5, help="Sample path/orphan limit for compact output")
+        args = parser.parse_args()
 
         env_path = Path(".env")
         load_env(env_path)
@@ -73,7 +79,8 @@ def main():
             path_res = session.run(
                 "MATCH p = (cp:ControlPoint)-[*1..4]->(target) "
                 "RETURN [n in nodes(p) | {id: n.id, label: [l in labels(n) WHERE l <> 'Concept'][0], name: n.name}] AS path "
-                "LIMIT 5"
+                "LIMIT $limit",
+                limit=args.sample_limit,
             )
             paths = []
             for r in path_res:
@@ -85,12 +92,28 @@ def main():
             orphan_res = session.run(
                 "MATCH (r:Requirement) "
                 "WHERE not (r)-[]-() "
-                "RETURN r.id AS id, r.name AS name"
+                "RETURN r.id AS id, r.name AS name "
+                "LIMIT $limit",
+                limit=args.sample_limit,
             )
             orphans = [{"id": r["id"], "name": r["name"]} for r in orphan_res]
             results["orphan_requirements"] = orphans
 
         driver.close()
+        if not args.full_json:
+            results = {
+                "status": "success",
+                "total_nodes": results["total_nodes"],
+                "total_relationships": results["total_relationships"],
+                "node_label_count": len(node_counts),
+                "relationship_type_count": len(rel_counts),
+                "sample_path_count": len(paths),
+                "orphan_requirement_count_sample": len(orphans),
+                "orphan_requirements_sample": orphans,
+                "sample_paths": paths,
+            }
+        else:
+            results["status"] = "success"
         print(json.dumps(results, indent=2, ensure_ascii=False))
 
     except Exception as e:
