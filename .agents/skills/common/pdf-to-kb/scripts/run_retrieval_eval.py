@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 
-QUERY_GRAPH = Path("C:/Users/kira7/.gemini/config/skills/pdf-to-kb/scripts/query_graph.py")
+QUERY_GRAPH = Path(__file__).parent / "query_graph.py"
 
 
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -28,6 +28,7 @@ def citation_complete(citation: dict[str, Any]) -> bool:
 def score_result(payload: dict[str, Any], expected_concepts: list[str], expected_anchors: list[str]) -> dict[str, Any]:
     results = payload.get("results", [])
     citations = payload.get("citations", [])
+    pdf_citations = payload.get("pdf_citations", [])
     graph_ids = [item.get("id") for item in results if item.get("id")]
     anchors = [item.get("anchor") for item in citations if item.get("anchor")]
     top1_pool = []
@@ -43,9 +44,11 @@ def score_result(payload: dict[str, Any], expected_concepts: list[str], expected
         "anchor_hit": bool(set(anchors) & set(expected_anchors)),
         "concept_hit": bool(set(graph_ids) & set(expected_concepts)),
         "citation_complete": bool(complete_citations),
+        "pdf_bbox_resolved": bool(pdf_citations),
         "graph_ids": graph_ids[:5],
         "anchors": anchors[:5],
         "complete_citation_count": len(complete_citations),
+        "pdf_citation_count": len(pdf_citations),
     }
 
 
@@ -71,6 +74,9 @@ def run_query(question: dict[str, Any], args: argparse.Namespace) -> dict[str, A
     ]
     if args.full_query_json:
         command.append("--full-json")
+    if args.with_pdf_bbox:
+        command.append("--with-pdf-bbox")
+        command.extend(["--citation-index", args.citation_index])
     proc = subprocess.run(command, check=False, capture_output=True, text=True, encoding="utf-8")
     if proc.returncode != 0:
         return {"status": "error", "query": query, "stderr": proc.stderr, "stdout": proc.stdout}
@@ -94,7 +100,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         lines.append(
             f"- `{marker}` `{item['id']}`: top5=`{item['top_5_hit']}`, "
             f"anchor=`{item['anchor_hit']}`, concept=`{item['concept_hit']}`, "
-            f"citations=`{item['complete_citation_count']}`"
+            f"citations=`{item['complete_citation_count']}`, pdf_bbox=`{item.get('pdf_citation_count', 0)}`"
         )
     return "\n".join(lines) + "\n"
 
@@ -111,6 +117,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out-json", default="Projects/ESG/eval/retrieval_eval_report.json")
     parser.add_argument("--out-md", default="Projects/ESG/eval/retrieval_eval_report.md")
     parser.add_argument("--full-query-json", action="store_true")
+    parser.add_argument("--with-pdf-bbox", action="store_true")
+    parser.add_argument("--citation-index", default="Projects/ESG/graph/citation_index/pdf_citation_index.jsonl")
     return parser.parse_args()
 
 
@@ -150,6 +158,8 @@ def main() -> None:
             "anchor_hit_rate": round(sum(1 for case in successful if case["anchor_hit"]) / max(1, total), 3),
             "concept_hit_rate": round(sum(1 for case in successful if case["concept_hit"]) / max(1, total), 3),
             "citation_complete_rate": round(sum(1 for case in successful if case["citation_complete"]) / max(1, total), 3),
+            "pdf_bbox_resolve_rate": round(sum(1 for case in successful if case.get("pdf_bbox_resolved")) / max(1, total), 3),
+            "pdf_citation_count": sum(case.get("pdf_citation_count", 0) for case in successful),
         }
         report = {
             "status": "success",

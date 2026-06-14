@@ -23,9 +23,9 @@ Chào Agent, đây là bản Hiến pháp tối cao của hệ thống **LS Audi
 Để đảm bảo thực thi đúng quy trình nghiệp vụ, Agent **BẮT BUỘC** thực hiện bootstrap theo thứ tự:
 
 1. Đọc **`Training/handbook/cases/backlog.md`** để nắm roadmap và tiến độ các task.
-2. Tham chiếu các **Global Workflows** trong `C:\Users\kira7\.gemini\config\global_workflows\` khi task liên quan đến quy trình chuẩn toàn hệ thống.
+2. Tham chiếu các **Workflows** trong `.agents/workflows/` khi task liên quan đến quy trình chuẩn toàn hệ thống.
 3. Tham chiếu các **`Workflows`** trong `.agents/workflows/auditor/` ứng với giai đoạn hiện tại (Discovery, Execution, hoặc Delivery).
-4. Kích hoạt các **`Skills`** tương ứng trong `.agents/skills/` hoặc `C:\Users\kira7\.gemini\config\skills\` (Ưu tiên các kỹ năng trong `auditor/`, `common/`, và skill domain-specific được nhắc trực tiếp).
+4. Kích hoạt các **`Skills`** tương ứng trong `.agents/skills/` (ưu tiên `auditor/`, `common/`, và skill domain-specific được nhắc trực tiếp).
 
 ---
 
@@ -42,7 +42,7 @@ Chào Agent, đây là bản Hiến pháp tối cao của hệ thống **LS Audi
 
 Khi task liên quan đến PDF, Knowledge Base, RAG, Neo4j graph, chuẩn mực ESG/GHG/luật hoặc tài liệu có rủi ro pháp lý:
 
-1. **Bắt buộc dùng workflow A-Z:** Đọc `C:\Users\kira7\.gemini\config\global_workflows\pdf-to-kb.md` trước khi extract/import/query một bộ tài liệu mới.
+1. **Bắt buộc dùng workflow A-Z:** Đọc `.agents/workflows/auditor/pdf-to-kb.md` và skill `.agents/skills/common/pdf-to-kb/SKILL.md` trước khi extract/import/query một bộ tài liệu mới.
 2. **Citation First:** Không coi kết quả là đạt nếu `validate_citations.py --strict-metadata` chưa trả `issue_count = 0`.
 3. **Expert Overlay Priority:** `concept_map.json` do chuyên gia tạo là lớp enhance/override cuối cùng; sau LLM import phải import lại `concept_map.json`.
 4. **Multi-source Layout:** Với `Projects/ESG`, PDF nguồn đặt trong `sources/<source_id>/`, Markdown extract đặt trong `kb/<collection>/`, graph overlay/report đặt trong `graph/`, manifest đặt trong `manifests/`. Không đặt thêm PDF/report sinh mới trực tiếp ở root project.

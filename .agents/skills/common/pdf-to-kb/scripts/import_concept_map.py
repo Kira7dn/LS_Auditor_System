@@ -7,7 +7,7 @@ before writing to Neo4j database.
 Tuân thủ nghiêm ngặt bộ tiêu chuẩn SCRIPT_STANDARDS.md (AI-First Scripting).
 
 Usage:
-  uv run C:/Users/kira7/.gemini/config/skills/pdf-to-kb/scripts/import_concept_map.py --map Projects/ESG/graph/concept_map.json --kb-dir Projects/ESG/kb/ghg_protocol
+  uv run scripts/import_legal_rag.py
 
 Output (stdout):
   JSON object with execution details or error status.
@@ -61,7 +61,7 @@ def map_hash(map_path: Path) -> str:
 
 def resolve_doc_file(kb_dir: Path, doc_id: str) -> Optional[Path]:
     """Resolve doc_id to NN_doc_id.md or doc_id.md inside kb_dir."""
-    matches = sorted(f for f in kb_dir.glob("*.md") if f.stem == doc_id or f.name.endswith(f"{doc_id}.md"))
+    matches = sorted(f for f in kb_dir.rglob("*.md") if f.stem == doc_id or f.name.endswith(f"{doc_id}.md"))
     return matches[0] if matches else None
 
 def anchor_regex(anchor: str) -> re.Pattern:
@@ -101,6 +101,16 @@ def file_uri_for_anchor(file_path: Path, anchor: str) -> str:
 
 def metadata_source_id(metadata: Dict[str, Any], fallback: str) -> str:
     return str(metadata.get("source_id") or fallback)
+
+def collection_id_for_file(kb_dir: Path, file_path: Path, fallback: str) -> str:
+    """Infer collection_id from the first folder under the KB root."""
+    try:
+        relative = file_path.resolve().relative_to(kb_dir.resolve())
+    except ValueError:
+        return fallback
+    if len(relative.parts) > 1:
+        return relative.parts[0]
+    return fallback
 
 def compact_list(items: List[str], limit: int = 5) -> List[str]:
     return items[:limit]
@@ -376,9 +386,16 @@ def main():
         if args.auto_sections:
             print("Importing deterministic Markdown section graph...", file=sys.stderr)
             with driver.session(database=database) as session:
-                for md_file in sorted(kb_dir.glob("*.md")):
+                for md_file in sorted(kb_dir.rglob("*.md")):
                     if ".bak." in md_file.name:
                         continue
+                    # Only filter by source_id when the caller explicitly scoped to one source.
+                    content = md_file.read_text(encoding="utf-8")
+                    metadata = parse_frontmatter(content)
+                    file_source_id = metadata_source_id(metadata, args.source_id)
+                    if args.source_id and file_source_id != args.source_id:
+                        continue
+                    file_collection_id = collection_id_for_file(kb_dir, md_file, args.collection_id)
                     chapter, sections, section_edges = extract_sections_from_markdown(md_file, kb_dir)
                     missing_metadata = [
                         key for key in ("source_pdf", "page_start", "page_end", "content_hash") if not chapter.get(key)
@@ -394,7 +411,7 @@ def main():
                     for node in auto_nodes:
                         active_node_ids.add(node["id"])
                         label = node["label"]
-                        node_source_id = metadata_source_id(parse_frontmatter(md_file.read_text(encoding="utf-8")), args.source_id)
+                        node_source_id = metadata_source_id(metadata, args.source_id)
                         query = (
                             f"MERGE (c:Concept {{id: $id}}) "
                             f"SET c.name = $name, c.doc_id = $doc_id, c.anchor = $anchor, "
@@ -417,7 +434,7 @@ def main():
                             file_path=node["file_path"],
                             file_uri=node["file_uri"],
                             project_id=args.project_id,
-                            collection_id=args.collection_id,
+                            collection_id=file_collection_id,
                             source_id=node_source_id,
                             source_pdf=node.get("source_pdf"),
                             page_start=node.get("page_start"),
@@ -445,8 +462,8 @@ def main():
                             source_map=source_map,
                             source_map_hash=source_map_hash,
                             project_id=args.project_id,
-                            collection_id=args.collection_id,
-                            source_id=args.source_id,
+                            collection_id=file_collection_id,
+                            source_id=file_source_id,
                             import_batch_id=import_batch_id,
                             edge_key=edge["edge_key"],
                         )
@@ -454,6 +471,7 @@ def main():
         
         # 2b. Merge curated concept_map nodes as an overlay.
         nodes_created = 0
+        node_scopes: Dict[str, Tuple[str, str]] = {}
         with driver.session(database=database) as session:
             for node in map_data.get("nodes", []):
                 node_id = node["id"]
@@ -474,10 +492,12 @@ def main():
                 rel_path = str(file_path.resolve())
                 file_uri = file_uri_for_anchor(file_path, anchor)
                 source_pdf = metadata.get("source_pdf") or args.source_pdf
-                source_id = metadata_source_id(metadata, args.source_id)
+                source_id = str(node.get("source_id") or metadata_source_id(metadata, args.source_id))
+                collection_id = str(node.get("collection_id") or collection_id_for_file(kb_dir, file_path, args.collection_id))
                 page_start = metadata.get("page_start")
                 page_end = metadata.get("page_end")
                 content_hash = metadata.get("content_hash")
+                node_scopes[node_id] = (collection_id, source_id)
                 
                 # Ingestion is idempotent using MERGE
                 query = (
@@ -502,7 +522,7 @@ def main():
                     file_path=rel_path,
                     file_uri=file_uri,
                     project_id=args.project_id,
-                    collection_id=args.collection_id,
+                    collection_id=collection_id,
                     source_id=source_id,
                     source_pdf=source_pdf,
                     page_start=page_start,
@@ -523,6 +543,10 @@ def main():
                 rel_type = edge["type"]
                 edge_key = f"{from_id}|{rel_type}|{to_id}"
                 active_edge_keys.append(edge_key)
+                from_scope = node_scopes.get(from_id, (args.collection_id, args.source_id))
+                to_scope = node_scopes.get(to_id, (args.collection_id, args.source_id))
+                edge_collection_id = from_scope[0] if from_scope[0] == to_scope[0] else "cross_collection"
+                edge_source_id = from_scope[1] if from_scope[1] == to_scope[1] else "cross_source"
                 
                 query = (
                     f"MATCH (a:Concept {{id: $from_id}}) "
@@ -541,8 +565,8 @@ def main():
                     source_map=source_map,
                     source_map_hash=source_map_hash,
                     project_id=args.project_id,
-                    collection_id=args.collection_id,
-                    source_id=args.source_id,
+                    collection_id=edge_collection_id,
+                    source_id=edge_source_id,
                     import_batch_id=import_batch_id,
                     edge_key=edge_key,
                 )

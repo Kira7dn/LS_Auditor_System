@@ -1,0 +1,19 @@
+{
+  "_comment": "Font classification thresholds for extract_pdf_to_kb.py",
+  "h2_min_size": 12.5,
+  "h3_min_size": 10.0,
+  "h3_max_len": 100,
+  "h3_no_trailing_punct": true,
+  "callout_max_size": 9.5,
+  "callout_min_len": 8,
+  "skip_max_size": 8.5,
+  "superscript_max_size": 7.5,
+  "diagram_cluster_min": 3,
+  "diagram_avg_len_max": 35,
+  "bold_flag": 16,
+  "italic_flag": 2,
+  "box_label_pattern": "^(BOX|FIGURE|TABLE|APPENDIX)\\s*([A-Z][-.]?\\s*)?[\\d\\.]",
+  "spaced_label_pattern": "^([A-Z] ){2,}[A-Z]$",
+  "noise_words": ["GUIDANCE", "STANDARD", "GUIDANCESTANDARD", "STANDARD GUIDANCE"],
+  "chapter_label_pattern": "C H A P T E R\\s+\\d+"
+}

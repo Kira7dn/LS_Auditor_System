@@ -58,6 +58,10 @@ Thumbs.db
 /Evidence_Packs/
 /tests/.pytest_cache/
 
+# Generated PDF bbox highlight cache. Keep citation indexes/reports tracked;
+# highlight images are reproducible from source PDF + bbox index.
+Projects/**/evidence/highlights/
+
 .ruff_cache/
 .pytest_cache/
 

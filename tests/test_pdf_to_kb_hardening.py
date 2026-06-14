@@ -4,8 +4,8 @@ import importlib.util
 from pathlib import Path
 
 
-SKILL_ROOT = Path("C:/Users/kira7/.gemini/config/skills/pdf-to-kb")
 REPO_ROOT = Path(__file__).resolve().parents[1]
+SKILL_ROOT = REPO_ROOT / ".agents/skills/common/pdf-to-kb"
 
 
 def load_module(name: str, relative_path: str):
@@ -18,12 +18,7 @@ def load_module(name: str, relative_path: str):
 
 
 def load_repo_module(name: str, relative_path: str):
-    spec = importlib.util.spec_from_file_location(name, REPO_ROOT / relative_path)
-    assert spec is not None
-    assert spec.loader is not None
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+    return load_module(name, relative_path)
 
 
 def test_postprocess_items_suppresses_heading_cluster_without_type_error() -> None:
@@ -81,6 +76,16 @@ def test_import_scope_source_id_falls_back_when_metadata_missing() -> None:
     assert importer.metadata_source_id({}, "fallback") == "fallback"
 
 
+def test_import_infers_collection_from_kb_root(tmp_path: Path) -> None:
+    importer = load_module("import_concept_map_collection", "scripts/import_concept_map.py")
+    md = tmp_path / "ghg_protocol" / "04_oper_boundaries.md"
+    md.parent.mkdir()
+    md.write_text("# Operational Boundaries\n", encoding="utf-8")
+
+    assert importer.collection_id_for_file(tmp_path, md, "fallback") == "ghg_protocol"
+    assert importer.collection_id_for_file(md.parent, md, "fallback") == "fallback"
+
+
 def test_query_node_payload_includes_scope_fields() -> None:
     query_graph = load_module("query_graph_scope", "scripts/query_graph.py")
 
@@ -104,6 +109,34 @@ def test_query_node_payload_includes_scope_fields() -> None:
     assert payload["project_id"] == "esg"
     assert payload["collection_id"] == "ghg_protocol"
     assert payload["source_id"] == "ghg_protocol_corporate_standard"
+
+
+def test_query_evidence_markdown_includes_pdf_highlight_image() -> None:
+    query_graph = load_module("query_graph_evidence", "scripts/query_graph.py")
+
+    evidence = query_graph.evidence_markdown(
+        [
+            {
+                "anchor": "scope_3",
+                "file_uri": "file:///kb.md#scope_3",
+                "matched_text": "Scope 3 is an optional reporting category.",
+            }
+        ],
+        [
+            {
+                "anchor": "scope_3",
+                "page_number": 27,
+                "bbox": [1, 2, 3, 4],
+                "highlight_uri": "file:///highlight.png",
+                "ambiguous": False,
+            }
+        ],
+        5,
+    )
+
+    assert evidence[0]["pdf_highlight_uri"] == "file:///highlight.png"
+    assert evidence[0]["pdf_highlight_markdown"] == "![PDF highlight](file:///highlight.png)"
+    assert "PDF: page 27" in evidence[0]["markdown"]
 
 
 def test_local_search_uses_fts_and_returns_citation(tmp_path: Path) -> None:
@@ -430,3 +463,155 @@ def test_manifest_hash_and_uri_mask(tmp_path: Path) -> None:
 
     assert manifest.sha256_file(target) == "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
     assert manifest.mask_uri("neo4j+s://177d8aab.databases.neo4j.io") == "neo4j+s://177d***"
+
+
+def test_pdf_bbox_resolver_matches_scope_anchor_and_cache_name() -> None:
+    bbox = load_repo_module("pdf_bbox_citations", "scripts/pdf_bbox_citations.py")
+    citations = [
+        {
+            "project_id": "esg",
+            "collection_id": "ghg_protocol",
+            "source_id": "ghg_protocol_corporate_standard",
+            "anchor": "scope_1",
+            "matched_text": "Scope 1 direct emissions",
+        }
+    ]
+    index = [
+        {
+            "project_id": "esg",
+            "collection_id": "ghg_protocol",
+            "source_id": "ghg_protocol_corporate_standard",
+            "anchor": "scope_1",
+            "source_pdf": "source.pdf",
+            "page_number": 27,
+            "bbox": [1.0, 2.0, 3.0, 4.0],
+            "matched_pdf_text": "Scope 1: Direct GHG emissions",
+            "confidence": 0.95,
+        }
+    ]
+
+    resolved = bbox.resolve_pdf_citations(citations, index)
+
+    assert resolved[0]["anchor"] == "scope_1"
+    assert resolved[0]["page_number"] == 27
+    assert bbox.highlight_file_name(resolved[0]).startswith("ghg_protocol_corporate_standard__scope_1__p27__")
+
+
+def test_highlight_file_name_uses_multi_bbox_hash() -> None:
+    bbox = load_repo_module("pdf_bbox_citations_multi", "scripts/pdf_bbox_citations.py")
+    record = {
+        "source_id": "source",
+        "anchor": "anchor",
+        "page_number": 1,
+        "bbox": [1, 2, 3, 4],
+        "bboxes": [[1, 2, 3, 4], [5, 6, 7, 8]],
+    }
+
+    single = dict(record)
+    single.pop("bboxes")
+    assert bbox.highlight_file_name(record) != bbox.highlight_file_name(single)
+
+
+def test_answer_claims_attach_pdf_citation_by_anchor() -> None:
+    answer = load_repo_module("answer_question_pdf_bbox", "scripts/answer_question.py")
+    claims = [{"claim": "Scope 1 direct emissions", "citation": {"anchor": "scope_1"}}]
+
+    enriched = answer.attach_pdf_citations(claims, [{"anchor": "scope_1", "page_number": 27}])
+
+    assert enriched[0]["pdf_bbox_missing"] is False
+    assert enriched[0]["pdf_citation"]["page_number"] == 27
+
+
+def test_query_legal_rag_wrapper_hides_project_pdf_bbox_defaults() -> None:
+    wrapper = load_repo_module("query_legal_rag", "scripts/query_legal_rag.py")
+
+    args = __import__("argparse").Namespace(
+        preset="ghg",
+        id=None,
+        search="scope 1",
+        mode=None,
+        depth=1,
+        limit=5,
+        full_json=False,
+        no_pdf_bbox=False,
+        no_render_highlights=False,
+    )
+
+    command = wrapper.build_command(args)
+
+    assert "--kb-dir" in command
+    assert "Projects/ESG/kb/ghg_protocol" in command
+    assert "--project-id" in command
+    assert "esg" in command
+    assert "--collection-id" in command
+    assert "ghg_protocol" in command
+    assert "--source-id" in command
+    assert "ghg_protocol_corporate_standard" in command
+    assert "--with-pdf-bbox" in command
+    assert "--render-highlights" in command
+    assert "--search" in command
+
+
+def test_answer_legal_rag_wrapper_sets_bbox_defaults() -> None:
+    wrapper = load_repo_module("answer_legal_rag", "scripts/answer_legal_rag.py")
+
+    args = __import__("argparse").Namespace(
+        preset="ghg",
+        question="Scope 1 là gì?",
+        limit=8,
+        claim_limit=3,
+        no_pdf_bbox=False,
+        no_render_highlights=False,
+    )
+
+    command = wrapper.build_command(args)
+
+    assert "--with-pdf-bbox" in command
+    assert "--render-highlights" in command
+    assert "--question" in command
+    assert "Scope 1 là gì?" in command
+
+
+def test_import_legal_rag_wrapper_uses_global_map_and_kb_root() -> None:
+    wrapper = load_repo_module("import_legal_rag", "scripts/import_legal_rag.py")
+
+    args = __import__("argparse").Namespace(
+        preset="esg",
+        prune_stale=False,
+        no_auto_sections=False,
+        full_json=False,
+    )
+
+    command = wrapper.build_command(args)
+
+    assert "Projects/ESG/graph/concept_map.json" in command
+    assert "Projects/ESG/kb" in command
+    assert "Projects/ESG/kb/ghg_protocol" not in command
+    assert "--strict-citation" in command
+
+
+def test_build_citation_index_wrapper_hides_bbox_index_flags() -> None:
+    wrapper = load_repo_module("build_citation_index", "scripts/build_citation_index.py")
+
+    args = __import__("argparse").Namespace(preset="ghg")
+
+    command = wrapper.build_command(args)
+
+    assert "Projects/ESG/kb/ghg_protocol" in command
+    assert "Projects/ESG/graph/citation_index/pdf_citation_index.jsonl" in command
+    assert "--source-id" in command
+
+
+def test_pdf_citation_index_prefers_paragraph_for_duplicate_heading() -> None:
+    builder = load_repo_module("build_pdf_citation_index", "scripts/build_pdf_citation_index.py")
+
+    candidates = builder.candidate_texts(
+        {
+            "heading": "Scope 3: Other indirect GHG emissions",
+            "paragraph": "Scope 3 is optional, but it provides an opportunity to be innovative in GHG management.",
+            "duplicate_heading": True,
+        }
+    )
+
+    assert candidates[0][0] == "paragraph"
+    assert candidates[0][2] > candidates[1][2]

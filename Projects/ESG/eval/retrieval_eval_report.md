@@ -9,26 +9,28 @@
 | `anchor_hit_rate` | 0.8 |
 | `concept_hit_rate` | 0.6 |
 | `citation_complete_rate` | 1.0 |
+| `pdf_bbox_resolve_rate` | 0.95 |
+| `pdf_citation_count` | 38 |
 
 ## Cases
 
-- `PASS` `scope_1_definition`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
-- `PASS` `scope_2_definition`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
-- `PASS` `scope_3_definition`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
-- `FAIL` `scope_reporting_minimum`: top5=`False`, anchor=`False`, concept=`False`, citations=`5`
-- `PASS` `biomass_co2_scope1`: top5=`True`, anchor=`True`, concept=`False`, citations=`1`
-- `PASS` `kyoto_gases_scope1`: top5=`True`, anchor=`True`, concept=`False`, citations=`5`
-- `PASS` `organizational_boundary`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
-- `PASS` `control_approach`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
-- `PASS` `equity_share_approach`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
-- `PASS` `base_year_selection`: top5=`True`, anchor=`True`, concept=`False`, citations=`1`
-- `FAIL` `recalculation_rules`: top5=`False`, anchor=`False`, concept=`False`, citations=`3`
-- `PASS` `significance_threshold`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
-- `PASS` `structural_changes`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
-- `PASS` `calculation_steps`: top5=`True`, anchor=`True`, concept=`True`, citations=`2`
-- `PASS` `identify_sources`: top5=`True`, anchor=`True`, concept=`False`, citations=`4`
-- `FAIL` `emission_factor_selection`: top5=`False`, anchor=`False`, concept=`False`, citations=`3`
-- `PASS` `inventory_quality`: top5=`True`, anchor=`False`, concept=`True`, citations=`2`
-- `PASS` `reporting_required`: top5=`True`, anchor=`True`, concept=`False`, citations=`4`
-- `PASS` `verification_process`: top5=`True`, anchor=`True`, concept=`True`, citations=`2`
-- `PASS` `target_base_year`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`
+- `PASS` `scope_1_definition`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`1`
+- `PASS` `scope_2_definition`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`3`
+- `PASS` `scope_3_definition`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`3`
+- `FAIL` `scope_reporting_minimum`: top5=`False`, anchor=`False`, concept=`False`, citations=`5`, pdf_bbox=`0`
+- `PASS` `biomass_co2_scope1`: top5=`True`, anchor=`True`, concept=`False`, citations=`1`, pdf_bbox=`1`
+- `PASS` `kyoto_gases_scope1`: top5=`True`, anchor=`True`, concept=`False`, citations=`5`, pdf_bbox=`1`
+- `PASS` `organizational_boundary`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`2`
+- `PASS` `control_approach`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`2`
+- `PASS` `equity_share_approach`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`3`
+- `PASS` `base_year_selection`: top5=`True`, anchor=`True`, concept=`False`, citations=`1`, pdf_bbox=`1`
+- `FAIL` `recalculation_rules`: top5=`False`, anchor=`False`, concept=`False`, citations=`3`, pdf_bbox=`3`
+- `PASS` `significance_threshold`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`3`
+- `PASS` `structural_changes`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`3`
+- `PASS` `calculation_steps`: top5=`True`, anchor=`True`, concept=`True`, citations=`2`, pdf_bbox=`1`
+- `PASS` `identify_sources`: top5=`True`, anchor=`True`, concept=`False`, citations=`4`, pdf_bbox=`2`
+- `FAIL` `emission_factor_selection`: top5=`False`, anchor=`False`, concept=`False`, citations=`3`, pdf_bbox=`1`
+- `PASS` `inventory_quality`: top5=`True`, anchor=`False`, concept=`True`, citations=`2`, pdf_bbox=`2`
+- `PASS` `reporting_required`: top5=`True`, anchor=`True`, concept=`False`, citations=`4`, pdf_bbox=`2`
+- `PASS` `verification_process`: top5=`True`, anchor=`True`, concept=`True`, citations=`2`, pdf_bbox=`1`
+- `PASS` `target_base_year`: top5=`True`, anchor=`True`, concept=`True`, citations=`5`, pdf_bbox=`3`

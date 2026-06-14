@@ -7,7 +7,7 @@ source_id: "ghg_protocol_corporate_standard"
 source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
 page_start: 27
 page_end: 36
-content_hash: "c8b9c697b5f7d0ee74fe559588457fed85026b5bb4d7029e8bf95e22764da3dd"
+content_hash: "c1f77ac2d1c2779344b9be2b5a0257dff85d0f12b721d4b6fdfd6eca06375890"
 tags: ["GHG Protocol Corporate Standard", "Setting Operational Boundaries"]
 ---
 
@@ -134,6 +134,7 @@ For more guidance, see Appendix A on accounting for indirect emissions from purc
 
 emissions from such contractual arrangements are only classified as scope 3 if the selected consolidation approach (equity or control) does not apply to them. Clarification on the classification of leased assets should be obtained from the company accountant (see section on leases below).
 
+<a id="scope_3_categories"></a>
 ## Scope 3: Other indirect GHG emissions
 
 Scope 3 is optional, but it provides an opportunity to be innovative in GHG management. Companies may want to focus on accounting for and reporting those activities that are relevant to their business and goals, and for which they have reliable information. Since companies have discretion over which categories they choose to report, scope 3 may not lend itself well to comparisons across companies. This section provides an indicative list of scope 3 categories and includes case studies on some of the categories.
@@ -169,6 +170,7 @@ emission factor = 0.2 t/MWh emission factor = 0.2 t/MWh
 B’s Optional Information = 20t C’s Scope 3 emissions = 19t D’s Scope 3 emissions = 1t
 Setting Operational Boundaries
 
+<a id="dhl_outsourced_transportation"></a>
 ### DHL Nordic Express: The business case for accounting for outsourced transportation services
 
 1. Describe the value chain. Because the assessment of scope 3 emissions does not require a full life cycle assessment, it is important, for the sake of transparency, to provide a general description of the value chain and the associated GHG sources. For this step, the scope 3 categories listed can be used as a checklist. Companies usually face choices on how many levels up- and downstream to include in scope 3. Consideration of the company’s inventory or business goals and relevance of the various scope 3 categories will guide these choices.
@@ -219,6 +221,7 @@ company’s products, product use phase emissions may be a relevant category to 
 
 ### Scope 1 Scope 1 Scope 2 Scope 3
 
+<a id="ikea_customer_transportation"></a>
 ## IKEA: Customer transportation
 
 ### to and from its retail stores • Outsourced activities are often candidates for scope 3
@@ -260,6 +263,7 @@ Concern is often expressed that accounting for indirect emissions will lead to d
 Guidance on which leased assets are operating and which are finance leases should be obtained from the company accountant. In general, in a finance lease, an organization assumes all rewards and risks from the leased asset, and the asset is treated as wholly owned and is recorded as such on the balance sheet. All leased assets that do not meet those criteria are operating leases. Figure 5 illustrates the application of consolidation criteria to account for emissions from leased assets.
 Double counting needs to be avoided when compiling national (country) inventories under the Kyoto Protocol, but these are usually compiled via a top-down exercise using national economic data, rather than aggregation of bottom-up company data. Compliance regimes are more likely to focus on the “point of release” of emissions (i.e., direct emissions) and/or indirect emissions from use of electricity. For GHG risk management and voluntary reporting, double counting is less important.
 
+<a id="wri_employee_commuting"></a>
 ### World Resources Institute: Innovations in estimating employee commuting emissions
 
 benefit was that employees felt a certain amount of pride at having contributed to the inventory development process. The experience also provided a positive internal communications opportunity.
@@ -269,6 +273,7 @@ Collecting employee commuting activity data from WRI’s 140 staff can be challe
 Designing a survey that was easily navigable and had clearly articulated questions significantly improved the completeness and accuracy of the employee commuting activity data. An added
 Transportation-related emissions are the fastest growing GHG emissions category in the United States. This includes commercial, business, and personal travel as well as commuting. By accounting for commuting emissions, companies may find that several practical opportunities exist for reducing them. For example, when WRI moved to new office space, it selected a building located close to public transportation, reducing the need for employees to drive to work. In its lease, WRI also negotiated access to a locked bike room for those employees who cycle to work. Finally, telework programs significantly reduce commuting emissions by avoiding or decreasing the need to travel.
 
+<a id="abb_product_use_phase"></a>
 ### ABB: Calculating product use phase emissions associated with electrical appliances
 
 For participating in GHG markets or obtaining GHG credits, it would be unacceptable for two organizations to claim ownership of the same emissions commodity and it is therefore necessary to make sufficient provisions to ensure that this does not occur between participating companies (see chapter 11).

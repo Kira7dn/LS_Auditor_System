@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 
-QUERY_GRAPH = Path("C:/Users/kira7/.gemini/config/skills/pdf-to-kb/scripts/query_graph.py")
+QUERY_GRAPH = Path(__file__).parent / "query_graph.py"
 REFUSAL = "Không tìm thấy căn cứ đủ trong KB để trả lời chắc chắn."
 STOPWORDS = {"and", "or", "the", "what", "how", "why", "when", "where", "which", "who", "does", "not", "no", "with"}
 
@@ -46,6 +46,26 @@ def build_claims(citations: list[dict[str, Any]], limit: int) -> list[dict[str, 
         if len(claims) >= limit:
             break
     return claims
+
+
+def attach_pdf_citations(claims: list[dict[str, Any]], pdf_citations: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    by_anchor: dict[str, dict[str, Any]] = {}
+    for pdf_citation in pdf_citations:
+        anchor = pdf_citation.get("anchor") or pdf_citation.get("citation_anchor")
+        if anchor and anchor not in by_anchor:
+            by_anchor[anchor] = pdf_citation
+    enriched = []
+    for claim in claims:
+        item = dict(claim)
+        anchor = claim.get("citation", {}).get("anchor")
+        pdf_citation = by_anchor.get(anchor or "")
+        if pdf_citation:
+            item["pdf_citation"] = pdf_citation
+            item["pdf_bbox_missing"] = False
+        else:
+            item["pdf_bbox_missing"] = True
+        enriched.append(item)
+    return enriched
 
 
 def unsupported_ascii_tokens(question: str, claims: list[dict[str, Any]]) -> list[str]:
@@ -81,6 +101,12 @@ def run_retrieval(question: str, args: argparse.Namespace) -> dict[str, Any]:
         args.source_id,
         "--full-json",
     ]
+    if args.with_pdf_bbox:
+        command.append("--with-pdf-bbox")
+        command.extend(["--citation-index", args.citation_index])
+    if args.render_highlights:
+        command.append("--render-highlights")
+        command.extend(["--highlight-dir", args.highlight_dir])
     proc = subprocess.run(command, check=False, capture_output=True, text=True, encoding="utf-8")
     if proc.returncode != 0:
         raise RuntimeError(proc.stderr or proc.stdout)
@@ -113,9 +139,12 @@ def answer_from_payload(question: str, payload: dict[str, Any], claim_limit: int
             "query_metadata": payload.get("query_metadata", {}),
             "question": question,
         }
+    claims = attach_pdf_citations(claims, payload.get("pdf_citations", []))
     answer_lines = ["Dựa trên KB hiện có:"]
     for idx, claim in enumerate(claims, start=1):
         answer_lines.append(f"{idx}. {claim['claim']}")
+        if claim.get("pdf_bbox_missing"):
+            answer_lines.append("   PDF bbox chưa resolve cho claim này.")
     return {
         "status": "success",
         "refused": False,
@@ -123,6 +152,8 @@ def answer_from_payload(question: str, payload: dict[str, Any], claim_limit: int
         "answer": "\n".join(answer_lines),
         "claims": claims,
         "citations": [claim["citation"] for claim in claims],
+        "pdf_citations": [claim["pdf_citation"] for claim in claims if claim.get("pdf_citation")],
+        "pdf_bbox_missing": any(claim.get("pdf_bbox_missing") for claim in claims),
         "query_metadata": payload.get("query_metadata", {}),
         "question": question,
     }
@@ -136,6 +167,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--project-id", default="esg")
     parser.add_argument("--collection-id", default="")
     parser.add_argument("--source-id", default="")
+    parser.add_argument("--with-pdf-bbox", action="store_true")
+    parser.add_argument("--citation-index", default="Projects/ESG/graph/citation_index/pdf_citation_index.jsonl")
+    parser.add_argument("--render-highlights", action="store_true")
+    parser.add_argument("--highlight-dir", default="Projects/ESG/evidence/highlights")
     parser.add_argument("--limit", type=int, default=8)
     parser.add_argument("--claim-limit", type=int, default=3)
     return parser.parse_args()

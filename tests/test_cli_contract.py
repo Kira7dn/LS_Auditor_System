@@ -13,7 +13,7 @@ def read_json(path: Path) -> dict:
 
 
 def test_registry_inspect_has_no_missing_paths(capsys) -> None:
-    assert main(["registry", "inspect"]) == 0
+    assert main(["registry", "inspect", "--registry", "non-existent-registry.json"]) == 0
     result = json.loads(capsys.readouterr().out)
     assert result["status"] == "success"
     assert result["metrics"]["missing"] == []

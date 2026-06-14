@@ -12,7 +12,9 @@
     "top_5_hit_rate": 0.85,
     "anchor_hit_rate": 0.8,
     "concept_hit_rate": 0.6,
-    "citation_complete_rate": 1.0
+    "citation_complete_rate": 1.0,
+    "pdf_bbox_resolve_rate": 0.95,
+    "pdf_citation_count": 38
   },
   "cases": [
     {
@@ -25,6 +27,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "scope_1"
       ],
@@ -35,7 +38,8 @@
         "organizational_boundary",
         "reporting_required"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 1
     },
     {
       "id": "scope_2_definition",
@@ -47,20 +51,22 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "outsourcing_recalc",
-        "scope_2",
         "scope_2_emissions",
-        "scope_2_reporting"
+        "scope_2_reporting",
+        "scope_2"
       ],
       "anchors": [
         "outsourcing_recalc",
-        "scope_2",
         "calculation_methodology_change",
         "outsourcing_recalc",
+        "scope_2",
         "scope_2"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 3
     },
     {
       "id": "scope_3_definition",
@@ -72,6 +78,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "calc_scope3",
         "reporting_optional",
@@ -84,7 +91,8 @@
         "scope_3",
         "target_base_year"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 3
     },
     {
       "id": "scope_reporting_minimum",
@@ -96,6 +104,7 @@
       "anchor_hit": false,
       "concept_hit": false,
       "citation_complete": true,
+      "pdf_bbox_resolved": false,
       "graph_ids": [],
       "anchors": [
         "target_base_year",
@@ -104,7 +113,8 @@
         "target_base_year",
         "target_base_year"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 0
     },
     {
       "id": "biomass_co2_scope1",
@@ -116,11 +126,13 @@
       "anchor_hit": true,
       "concept_hit": false,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [],
       "anchors": [
         "scope_1"
       ],
-      "complete_citation_count": 1
+      "complete_citation_count": 1,
+      "pdf_citation_count": 1
     },
     {
       "id": "kyoto_gases_scope1",
@@ -132,6 +144,7 @@
       "anchor_hit": true,
       "concept_hit": false,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [],
       "anchors": [
         "scope_1",
@@ -140,7 +153,8 @@
         "organizational_boundary",
         "reporting_required"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 1
     },
     {
       "id": "organizational_boundary",
@@ -152,6 +166,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "organizational_boundary"
       ],
@@ -162,7 +177,8 @@
         "data_quality_checks",
         "organizational_boundary"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 2
     },
     {
       "id": "control_approach",
@@ -174,6 +190,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "boundary_control"
       ],
@@ -184,7 +201,8 @@
         "double_counting",
         "target_base_year"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 2
     },
     {
       "id": "equity_share_approach",
@@ -196,6 +214,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "boundary_equity_share"
       ],
@@ -206,7 +225,8 @@
         "organizational_boundary",
         "double_counting"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 3
     },
     {
       "id": "base_year_selection",
@@ -218,11 +238,13 @@
       "anchor_hit": true,
       "concept_hit": false,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [],
       "anchors": [
         "base_year_selection"
       ],
-      "complete_citation_count": 1
+      "complete_citation_count": 1,
+      "pdf_citation_count": 1
     },
     {
       "id": "recalculation_rules",
@@ -234,13 +256,15 @@
       "anchor_hit": false,
       "concept_hit": false,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [],
       "anchors": [
         "target_base_year",
         "base_year_selection",
         "significance_threshold"
       ],
-      "complete_citation_count": 3
+      "complete_citation_count": 3,
+      "pdf_citation_count": 3
     },
     {
       "id": "significance_threshold",
@@ -252,6 +276,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "recalc_significance",
         "significance_threshold"
@@ -263,7 +288,8 @@
         "significance_threshold",
         "target_base_year"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 3
     },
     {
       "id": "structural_changes",
@@ -275,19 +301,21 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "req_recalculation",
-        "structural_changes",
-        "significant_structural_changes"
+        "significant_structural_changes",
+        "structural_changes"
       ],
       "anchors": [
         "recalc_rules",
-        "structural_changes",
         "recalc_rules",
+        "structural_changes",
         "structural_changes",
         "significance_threshold"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 3
     },
     {
       "id": "calculation_steps",
@@ -299,6 +327,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "calc_steps"
       ],
@@ -306,7 +335,8 @@
         "calc_steps",
         "calc_steps"
       ],
-      "complete_citation_count": 2
+      "complete_citation_count": 2,
+      "pdf_citation_count": 1
     },
     {
       "id": "identify_sources",
@@ -318,6 +348,7 @@
       "anchor_hit": true,
       "concept_hit": false,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [],
       "anchors": [
         "process_emissions",
@@ -325,7 +356,8 @@
         "identify_sources",
         "process_emissions"
       ],
-      "complete_citation_count": 4
+      "complete_citation_count": 4,
+      "pdf_citation_count": 2
     },
     {
       "id": "emission_factor_selection",
@@ -337,13 +369,15 @@
       "anchor_hit": false,
       "concept_hit": false,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [],
       "anchors": [
         "calc_scope3",
         "identify_sources",
         "optional_reporting"
       ],
-      "complete_citation_count": 3
+      "complete_citation_count": 3,
+      "pdf_citation_count": 1
     },
     {
       "id": "inventory_quality",
@@ -355,6 +389,7 @@
       "anchor_hit": false,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "inventory_quality_assurance",
         "inventory_quality"
@@ -363,7 +398,8 @@
         "inventory_quality_assurance",
         "data_quality_checks"
       ],
-      "complete_citation_count": 2
+      "complete_citation_count": 2,
+      "pdf_citation_count": 2
     },
     {
       "id": "reporting_required",
@@ -375,6 +411,7 @@
       "anchor_hit": true,
       "concept_hit": false,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [],
       "anchors": [
         "ghg_trades",
@@ -382,7 +419,8 @@
         "reporting_optional",
         "reporting_required"
       ],
-      "complete_citation_count": 4
+      "complete_citation_count": 4,
+      "pdf_citation_count": 2
     },
     {
       "id": "verification_process",
@@ -394,6 +432,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "verification_process",
         "verification"
@@ -402,7 +441,8 @@
         "verification_process",
         "verification_process"
       ],
-      "complete_citation_count": 2
+      "complete_citation_count": 2,
+      "pdf_citation_count": 1
     },
     {
       "id": "target_base_year",
@@ -414,6 +454,7 @@
       "anchor_hit": true,
       "concept_hit": true,
       "citation_complete": true,
+      "pdf_bbox_resolved": true,
       "graph_ids": [
         "verify_base_year_adjustments",
         "target_base_year"
@@ -425,7 +466,8 @@
         "target_base_year",
         "target_base_year"
       ],
-      "complete_citation_count": 5
+      "complete_citation_count": 5,
+      "pdf_citation_count": 3
     }
   ]
 }

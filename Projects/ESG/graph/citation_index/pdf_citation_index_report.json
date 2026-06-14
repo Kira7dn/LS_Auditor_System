@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "anchor_count": 348,
+  "resolved_count": 339,
+  "unresolved_count": 9,
+  "bbox_resolve_rate": 0.974,
+  "ambiguous_count": 132,
+  "unresolved_sample": [
+    {
+      "anchor": "cbam_importers_al",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "cbam_importers_cog",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "cbam_importers_ef",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "cbam_importers_eur",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "cbam_importers_ghg",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "cbam_importers_ms",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "cbam_importers_mwh",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "cbam_importers_npi",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "cbam_importers_tj",
+      "markdown_file": "Projects\\ESG\\kb\\cbam_guidance_importers\\07_cbam_exemptions_annexes.md",
+      "reason": "no_pdf_match"
+    }
+  ]
+}

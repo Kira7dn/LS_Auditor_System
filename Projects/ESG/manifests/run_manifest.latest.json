@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-06-14T03:57:54Z",
+  "generated_at": "2026-06-14T10:01:32Z",
   "kb_dir": "Projects/ESG/kb/ghg_protocol",
   "scope": {
     "project_id": "esg",
@@ -11,7 +11,7 @@
   "files": {
     "concept_map": {
       "path": "Projects/ESG/graph/concept_map.json",
-      "sha256": "fc6fada056fe91e53e05d8caa096ef6973672217fb8dfcc5fc3dd1699edc52a5"
+      "sha256": "ec5022b304e8f74aedce3aa7fa1c4c194d3945688aee9fa7af0fa98507c61dc7"
     },
     "canonical_aliases": {
       "path": "Projects/ESG/graph/canonical_aliases.json",
@@ -19,11 +19,19 @@
     },
     "graph_quality_report": {
       "path": "Projects/ESG/graph/quality_reports/graph_quality_report.json",
-      "sha256": "d875da9550321623fae1d0dadfe9ddb230be984651e92637d13978090504caea"
+      "sha256": "99c6ad11d84a0992c61be346dfed2d05c5b7e1fbb97369f27f736ec5aefcfd39"
+    },
+    "pdf_citation_index": {
+      "path": "Projects/ESG/graph/citation_index/pdf_citation_index.jsonl",
+      "sha256": "137ac18837e1a623d22894141df5383da0909a3ab4e83f8ab440309059112430"
+    },
+    "pdf_citation_report": {
+      "path": "Projects/ESG/graph/citation_index/pdf_citation_index_report.json",
+      "sha256": "8ea0f54ff48c057455d0170c1eb276bfd5b8d89960efc64ea3c37d534711de9c"
     },
     "retrieval_eval_report": {
       "path": "Projects/ESG/eval/retrieval_eval_report.json",
-      "sha256": "115a32d59d4ce96f3ce6ea0aee228260271d2977cde678e1c5c550239f1032c8"
+      "sha256": "1c4bfa7e217378646c065acad5c81f3e5662bd848ee74ddd87a637c84ca674ba"
     },
     "alias_apply_report": {
       "path": "Projects/ESG/graph/import_reports/canonical_aliases_apply_report.json",
@@ -31,18 +39,18 @@
     }
   },
   "graph_quality_summary": {
-    "node_count": 171,
-    "relationship_count": 142,
-    "llm_node_count": 82,
+    "node_count": 170,
+    "relationship_count": 167,
+    "llm_node_count": 81,
     "auto_node_count": 54,
-    "llm_relationship_count": 53,
+    "llm_relationship_count": 33,
     "auto_relationship_count": 54,
     "citation_gap_count": 0,
     "exact_duplicate_name_group_count": 5,
-    "similar_name_candidate_count": 9,
-    "generic_llm_node_count": 10,
+    "similar_name_candidate_count": 7,
+    "generic_llm_node_count": 8,
     "expert_llm_overlap_count": 1,
-    "orphan_requirement_count": 9,
+    "orphan_requirement_count": 13,
     "bidirectional_edge_count": 0,
     "low_confidence_edge_count": 0
   },
@@ -53,7 +61,29 @@
     "top_5_hit_rate": 0.85,
     "anchor_hit_rate": 0.8,
     "concept_hit_rate": 0.6,
-    "citation_complete_rate": 1.0
+    "citation_complete_rate": 1.0,
+    "pdf_bbox_resolve_rate": 0.95,
+    "pdf_citation_count": 38
+  },
+  "pdf_citation_summary": {
+    "status": "success",
+    "anchor_count": 54,
+    "resolved_count": 52,
+    "unresolved_count": 2,
+    "bbox_resolve_rate": 0.963,
+    "ambiguous_count": 13,
+    "unresolved_sample": [
+      {
+        "anchor": "recalc_significance",
+        "markdown_file": "Projects\\ESG\\kb\\ghg_protocol\\05_tracking_time.md",
+        "reason": "no_pdf_match"
+      },
+      {
+        "anchor": "ef_selection",
+        "markdown_file": "Projects\\ESG\\kb\\ghg_protocol\\06_identifying_calculating.md",
+        "reason": "no_pdf_match"
+      }
+    ]
   },
   "alias_apply_summary": {
     "mode": "apply",
@@ -62,7 +92,7 @@
   },
   "citation_validation_summary": {
     "status": "success",
-    "node_count": 171,
+    "node_count": 170,
     "issue_count": 0,
     "strict_metadata": true,
     "source_map_hash": "",
@@ -79,54 +109,21 @@
     "scripts/write_run_manifest.py"
   ],
   "git_status_short": [
-    " M GEMINI.md",
-    " D Projects/ESG/ESG_MRV_Blueprint.md",
-    " D Projects/ESG/ESG_MRV_Blueprint.pdf",
-    " D \"Projects/ESG/Iron and Steel 2.1.xlsx\"",
-    " D \"Projects/ESG/Iron and Steel Version 2.0 Guidance.doc\"",
-    " D Projects/ESG/Mitigation_Goal_Standard.pdf",
-    " D Projects/ESG/Transport_Tool_v2_7.xlsx",
-    " D Projects/ESG/concept_map.json",
-    " D Projects/ESG/ghg-protocol-revised.md",
-    " D Projects/ESG/ghg-protocol-revised.pdf",
-    " D Projects/ESG/ghg-uncertainty.pdf",
-    " D Projects/ESG/ghg-uncertainty.xlsx",
-    " D Projects/ESG/ghg_kb/00_introduction.md",
-    " D Projects/ESG/ghg_kb/01_principles.md",
-    " D Projects/ESG/ghg_kb/02_goals_and_design.md",
-    " D Projects/ESG/ghg_kb/03_org_boundaries.md",
-    " D Projects/ESG/ghg_kb/04_oper_boundaries.md",
-    " D Projects/ESG/ghg_kb/05_tracking_time.md",
-    " D Projects/ESG/ghg_kb/06_identifying_calculating.md",
-    " D Projects/ESG/ghg_kb/07_inventory_quality.md",
-    " D Projects/ESG/ghg_kb/08_reductions_offsets.md",
-    " D Projects/ESG/ghg_kb/09_reporting.md",
-    " D Projects/ESG/ghg_kb/10_verification.md",
-    " D Projects/ESG/ghg_kb/11_targets.md",
-    " D Projects/ESG/hfc-cfc_1.pdf",
-    " D Projects/ESG/hfc-pfc_1.xls",
-    " D Projects/ESG/import_ghg_neo4j.cypher",
-    " D Projects/ESG/knowledge_base.md",
-    " D Projects/ESG/z7922273643230_c01d5f4b9255f83ce61089c240a7530f.docx",
-    " D Projects/ESG/z7922273643230_c01d5f4b9255f83ce61089c240a7530f.jpg",
-    " D Projects/ESG/z7922273643230_c01d5f4b9255f83ce61089c240a7530f.md",
-    " M README.md",
-    " D asset-index.json",
-    " M scripts/import_concept_map.py",
-    " M src/ls_auditor/cli.py",
-    " M src/ls_auditor/registry.py",
+    " M Projects/ESG/eval/retrieval_eval_report.json",
+    " M Projects/ESG/eval/retrieval_eval_report.md",
+    " M Projects/ESG/graph/citation_reports/citation_validation.latest.json",
+    " M Projects/ESG/graph/quality_reports/graph_quality_report.json",
+    " M Projects/ESG/graph/quality_reports/graph_quality_report.md",
+    " M docs/pdf_to_kb_legal_rag_progress.md",
+    " M scripts/answer_question.py",
+    " M scripts/run_retrieval_eval.py",
+    " M scripts/write_run_manifest.py",
     " M tests/test_pdf_to_kb_hardening.py",
-    "?? Projects/ESG/archive/",
-    "?? Projects/ESG/eval/",
-    "?? Projects/ESG/graph/",
-    "?? Projects/ESG/kb/",
-    "?? Projects/ESG/manifests/",
-    "?? Projects/ESG/sources/",
-    "?? docs/pdf_to_kb_legal_rag_progress.md",
-    "?? scripts/analyze_graph_quality.py",
-    "?? scripts/answer_question.py",
-    "?? scripts/apply_canonical_aliases.py",
-    "?? scripts/run_retrieval_eval.py",
-    "?? scripts/write_run_manifest.py"
+    "?? Projects/ESG/evidence/",
+    "?? Projects/ESG/graph/citation_index/",
+    "?? scripts/build_pdf_citation_index.py",
+    "?? scripts/pdf_bbox_citations.py",
+    "?? scripts/render_pdf_highlights.py",
+    "?? scripts/resolve_pdf_citations.py"
   ]
 }

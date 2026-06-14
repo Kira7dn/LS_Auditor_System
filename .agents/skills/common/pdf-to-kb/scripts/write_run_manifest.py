@@ -65,6 +65,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--aliases", default="Projects/ESG/graph/canonical_aliases.json")
     parser.add_argument("--graph-quality", default="Projects/ESG/graph/quality_reports/graph_quality_report.json")
     parser.add_argument("--citation-validation", default="")
+    parser.add_argument("--pdf-citation-index", default="Projects/ESG/graph/citation_index/pdf_citation_index.jsonl")
+    parser.add_argument("--pdf-citation-report", default="Projects/ESG/graph/citation_index/pdf_citation_index_report.json")
     parser.add_argument("--retrieval-eval", default="Projects/ESG/eval/retrieval_eval_report.json")
     parser.add_argument("--alias-apply-report", default="Projects/ESG/graph/import_reports/canonical_aliases_apply_report.json")
     parser.add_argument("--out", default="Projects/ESG/manifests/run_manifest.latest.json")
@@ -81,6 +83,7 @@ def main() -> None:
         retrieval_eval = load_json(Path(args.retrieval_eval))
         alias_apply = load_json(Path(args.alias_apply_report))
         citation_validation = load_json(Path(args.citation_validation)) if args.citation_validation else {}
+        pdf_citation_report = load_json(Path(args.pdf_citation_report))
         manifest = {
             "status": "success",
             "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -95,11 +98,14 @@ def main() -> None:
                 "concept_map": {"path": args.concept_map, "sha256": sha256_file(Path(args.concept_map))},
                 "canonical_aliases": {"path": args.aliases, "sha256": sha256_file(Path(args.aliases))},
                 "graph_quality_report": {"path": args.graph_quality, "sha256": sha256_file(Path(args.graph_quality))},
+                "pdf_citation_index": {"path": args.pdf_citation_index, "sha256": sha256_file(Path(args.pdf_citation_index))},
+                "pdf_citation_report": {"path": args.pdf_citation_report, "sha256": sha256_file(Path(args.pdf_citation_report))},
                 "retrieval_eval_report": {"path": args.retrieval_eval, "sha256": sha256_file(Path(args.retrieval_eval))},
                 "alias_apply_report": {"path": args.alias_apply_report, "sha256": sha256_file(Path(args.alias_apply_report))},
             },
             "graph_quality_summary": graph_quality.get("summary", {}),
             "retrieval_eval_summary": retrieval_eval.get("summary", {}),
+            "pdf_citation_summary": pdf_citation_report,
             "alias_apply_summary": {
                 "mode": alias_apply.get("mode"),
                 "alias_count": alias_apply.get("alias_count"),
@@ -107,11 +113,11 @@ def main() -> None:
             },
             "citation_validation_summary": citation_validation,
             "script_paths": [
-                "scripts/analyze_graph_quality.py",
-                "scripts/apply_canonical_aliases.py",
-                "scripts/run_retrieval_eval.py",
-                "scripts/answer_question.py",
-                "scripts/write_run_manifest.py",
+                ".agents/skills/common/pdf-to-kb/scripts/analyze_graph_quality.py",
+                ".agents/skills/common/pdf-to-kb/scripts/apply_canonical_aliases.py",
+                ".agents/skills/common/pdf-to-kb/scripts/run_retrieval_eval.py",
+                ".agents/skills/common/pdf-to-kb/scripts/answer_question.py",
+                ".agents/skills/common/pdf-to-kb/scripts/write_run_manifest.py",
             ],
             "git_status_short": git_status_short(),
         }
