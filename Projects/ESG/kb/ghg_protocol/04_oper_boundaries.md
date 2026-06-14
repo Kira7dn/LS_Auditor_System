@@ -2,8 +2,13 @@
 id: oper_boundaries
 title: "Setting Operational Boundaries"
 chapter: 4
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Setting Operational Boundaries"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 27
+page_end: 36
+content_hash: "c8b9c697b5f7d0ee74fe559588457fed85026b5bb4d7029e8bf95e22764da3dd"
+tags: ["GHG Protocol Corporate Standard", "Setting Operational Boundaries"]
 ---
 
 # Setting Operational Boundaries

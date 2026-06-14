@@ -2,8 +2,13 @@
 id: identifying_calculating
 title: "Identifying and Calculating GHG Emissions"
 chapter: 6
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Identifying and Calculating GHG Emissions"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 43
+page_end: 50
+content_hash: "c85855c58385c430a56c92f28aaf2f2058c47ccc3710734fe4b0820cfc7ff568"
+tags: ["GHG Protocol Corporate Standard", "Identifying and Calculating GHG Emissions"]
 ---
 
 # Identifying and Calculating GHG Emissions
@@ -44,9 +49,10 @@ Identifying and Calculating GHG Emissions
 Direct measurement of GHG emissions by monitoring concentration and flow rate is not common. More often, emissions may be calculated based on a mass balance or stoichiometric basis specific to a facility or process. However, the most common approach for calculating GHG emissions is through the application of documented emission factors. These factors are calculated ratios relating GHG emissions to a proxy measure of activity at an emissions source. The IPCC guidelines (IPCC, 1996) refer to a hierarchy of calculation approaches and techniques ranging from the application of generic emission factors to direct monitoring.
 
 <a id="ef_selection"></a>
+<a id="calc_scope3"></a>
 ## Collect activity data and choose emission factors
 
-For most small to medium-sized companies and for many larger companies, scope 1 GHG emissions will be calculated based on the purchased quantities of commercial fuels (such as natural gas and heating oil) using published emission factors. Scope 2 GHG emissions will primarily be calculated from metered electricity consumption and supplier-specific, local grid, or other published emission factors. <a id="calc_scope3"></a>Scope 3 GHG emissions will primarily be calculated from activity data such as fuel use or passenger miles and published or third-party emission factors. In most cases, if source- or facilityspecific emission factors are available, they are preferable to more generic or general emission factors.
+For most small to medium-sized companies and for many larger companies, scope 1 GHG emissions will be calculated based on the purchased quantities of commercial fuels (such as natural gas and heating oil) using published emission factors. Scope 2 GHG emissions will primarily be calculated from metered electricity consumption and supplier-specific, local grid, or other published emission factors. Scope 3 GHG emissions will primarily be calculated from activity data such as fuel use or passenger miles and published or third-party emission factors. In most cases, if source- or facilityspecific emission factors are available, they are preferable to more generic or general emission factors.
 In many cases, particularly when direct monitoring is either unavailable or prohibitively expensive, accurate emission data can be calculated from fuel use data. Even small users usually know both the amount of fuel consumed and have access to data on the carbon content of the fuel through default carbon content coefficients or through more accurate periodic fuel sampling. Companies should use the most accurate calculation approach available to them and that is appropriate for their reporting context.
 Industrial companies may be faced with a wider range of approaches and methodologies. They should seek guidance from the sector-specific guidelines on the GHG Protocol website (if available) or from their industry associations (e.g., International Aluminum Institute, International Iron and Steel Institute, American Petroleum Institute, WBCSD Sustainable Cement Initiative, International Petroleum Industry Environmental Conservation Association).
 

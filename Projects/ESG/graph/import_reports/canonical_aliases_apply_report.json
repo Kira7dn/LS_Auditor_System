@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "mode": "apply",
+  "alias_count": 3,
+  "results": [
+    {
+      "source": "control_approach",
+      "target": "boundary_control",
+      "status": "applied",
+      "migrated_outgoing": 0,
+      "migrated_incoming": 1,
+      "skipped_self_loops": 0
+    },
+    {
+      "source": "equity_share_approach",
+      "target": "boundary_equity_share",
+      "status": "applied",
+      "migrated_outgoing": 1,
+      "migrated_incoming": 0,
+      "skipped_self_loops": 0
+    },
+    {
+      "source": "requirement_accuracy",
+      "target": "accuracy",
+      "status": "applied",
+      "migrated_outgoing": 1,
+      "migrated_incoming": 1,
+      "skipped_self_loops": 0
+    }
+  ]
+}

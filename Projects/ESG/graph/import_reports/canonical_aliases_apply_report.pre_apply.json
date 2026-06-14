@@ -1,0 +1,64 @@
+{
+  "status": "success",
+  "mode": "dry_run",
+  "alias_count": 3,
+  "results": [
+    {
+      "source": "control_approach",
+      "target": "boundary_control",
+      "status": "dry_run",
+      "source_id": "control_approach",
+      "source_name": "Control Approach",
+      "source_labels": [
+        "Concept",
+        "Requirement"
+      ],
+      "target_id": "boundary_control",
+      "target_name": "Control approach",
+      "target_labels": [
+        "Concept",
+        "ControlPoint"
+      ],
+      "outgoing": 0,
+      "incoming": 1
+    },
+    {
+      "source": "equity_share_approach",
+      "target": "boundary_equity_share",
+      "status": "dry_run",
+      "source_id": "equity_share_approach",
+      "source_name": "Equity share approach",
+      "source_labels": [
+        "Concept",
+        "Requirement"
+      ],
+      "target_id": "boundary_equity_share",
+      "target_name": "Equity share approach",
+      "target_labels": [
+        "Concept",
+        "Section"
+      ],
+      "outgoing": 1,
+      "incoming": 0
+    },
+    {
+      "source": "requirement_accuracy",
+      "target": "accuracy",
+      "status": "dry_run",
+      "source_id": "requirement_accuracy",
+      "source_name": "Accuracy",
+      "source_labels": [
+        "Concept",
+        "Requirement"
+      ],
+      "target_id": "accuracy",
+      "target_name": "Accuracy",
+      "target_labels": [
+        "Concept",
+        "Principle"
+      ],
+      "outgoing": 1,
+      "incoming": 1
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 ---
-trigger: "always_on"
+trigger: model_decision
 description: "Chuẩn bằng chứng bắt buộc cho mọi phát hiện Audit"
 ---
 

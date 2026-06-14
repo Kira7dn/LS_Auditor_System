@@ -1,4 +1,4 @@
----
+﻿---
 trigger: "always_on"
 description: "Hiến pháp tối cao của hệ thống LS Auditor (Core Constitution)"
 ---
@@ -22,10 +22,10 @@ Chào Agent, đây là bản Hiến pháp tối cao của hệ thống **LS Audi
 
 Để đảm bảo thực thi đúng quy trình nghiệp vụ, Agent **BẮT BUỘC** thực hiện bootstrap theo thứ tự:
 
-1. Đọc **`asset-index.json`** để nắm danh mục Kỹ năng và Workflow hiện có.
-2. Đọc **`Training/handbook/cases/backlog.md`** để nắm roadmap và tiến độ các task.
+1. Đọc **`Training/handbook/cases/backlog.md`** để nắm roadmap và tiến độ các task.
+2. Tham chiếu các **Global Workflows** trong `C:\Users\kira7\.gemini\config\global_workflows\` khi task liên quan đến quy trình chuẩn toàn hệ thống.
 3. Tham chiếu các **`Workflows`** trong `.agents/workflows/auditor/` ứng với giai đoạn hiện tại (Discovery, Execution, hoặc Delivery).
-4. Kích hoạt các **`Skills`** tương ứng trong `.agents/skills/` (Ưu tiên các kỹ năng trong `auditor/` và `common/`).
+4. Kích hoạt các **`Skills`** tương ứng trong `.agents/skills/` hoặc `C:\Users\kira7\.gemini\config\skills\` (Ưu tiên các kỹ năng trong `auditor/`, `common/`, và skill domain-specific được nhắc trực tiếp).
 
 ---
 
@@ -38,15 +38,32 @@ Chào Agent, đây là bản Hiến pháp tối cao của hệ thống **LS Audi
 
 ---
 
-## IV. CẬP NHẬT & TỐI ƯU (HARDENING)
+## IV. TIÊU CHUẨN LEGAL RAG / KNOWLEDGE GRAPH
 
-1. **Template Evolution:** Chủ động cập nhật các mẫu Template trong `.agents/templates/auditor/` dựa trên kinh nghiệm thực tế từ các case study.
-2. **Skill Sharpening:** Cải tiến các logic trong `scripts/` của kỹ năng để tăng độ chính xác của việc phát hiện bất thường.
-3. **Registry Maintenance:** Duy trì `asset-index.json` luôn phản ánh đúng cấu trúc tài sản của hệ thống Auditor.
+Khi task liên quan đến PDF, Knowledge Base, RAG, Neo4j graph, chuẩn mực ESG/GHG/luật hoặc tài liệu có rủi ro pháp lý:
+
+1. **Bắt buộc dùng workflow A-Z:** Đọc `C:\Users\kira7\.gemini\config\global_workflows\pdf-to-kb.md` trước khi extract/import/query một bộ tài liệu mới.
+2. **Citation First:** Không coi kết quả là đạt nếu `validate_citations.py --strict-metadata` chưa trả `issue_count = 0`.
+3. **Expert Overlay Priority:** `concept_map.json` do chuyên gia tạo là lớp enhance/override cuối cùng; sau LLM import phải import lại `concept_map.json`.
+4. **Multi-source Layout:** Với `Projects/ESG`, PDF nguồn đặt trong `sources/<source_id>/`, Markdown extract đặt trong `kb/<collection>/`, graph overlay/report đặt trong `graph/`, manifest đặt trong `manifests/`. Không đặt thêm PDF/report sinh mới trực tiếp ở root project.
+5. **Graph Scope:** Mọi import/query/validation phải truyền hoặc dùng mặc định `project_id`, `collection_id`, `source_id`. Với GHG hiện tại: `project_id=esg`, `collection_id=ghg_protocol`, `source_id=ghg_protocol_corporate_standard`.
+6. **LLM Is Candidate, Not Truth:** LLM chỉ sinh candidate graph. Candidate phải qua validator evidence/citation/ontology/confidence trước khi import.
+7. **Canonicalization Discipline:** Dùng `canonical_aliases.json`; luôn dry-run trước khi apply alias. Chỉ apply alias chắc chắn, giữ `deferred_candidates` để review ontology.
+8. **Quality Gates:** Với prototype legal-grade, phải có graph quality report, retrieval eval, answer guardrail và run manifest.
+9. **Answer Guardrail:** Không trả lời claim thiếu citation đầy đủ (`file_uri`, `anchor`, `source_pdf`, `page_start`, `page_end`, `content_hash`). Nếu thiếu căn cứ, trả lời rõ là không tìm thấy căn cứ đủ trong KB.
+10. **Current GHG KB Baseline:** GHG KB hiện đạt prototype với `171` Concept nodes, `142` relationships, citation issues `0`, retrieval eval `20` câu, Top-5 hit rate `0.85`, citation completeness `1.0`, tests `16 passed`.
 
 ---
 
-## V. TIÊU CHUẨN MÔI TRƯỜNG KỸ THUẬT (TECHNICAL STANDARDS)
+## V. CẬP NHẬT & TỐI ƯU (HARDENING)
+
+1. **Template Evolution:** Chủ động cập nhật các mẫu Template trong `.agents/templates/auditor/` dựa trên kinh nghiệm thực tế từ các case study.
+2. **Skill Sharpening:** Cải tiến các logic trong `scripts/` của kỹ năng để tăng độ chính xác của việc phát hiện bất thường.
+3. **Workflow Maintenance:** Duy trì `GEMINI.md`, global workflows và skill docs luôn phản ánh đúng quy trình hiện hành.
+
+---
+
+## VI. TIÊU CHUẨN MÔI TRƯỜNG KỸ THUẬT (TECHNICAL STANDARDS)
 
 1. **Environment Management:** Hệ thống sử dụng **`uv`** làm công cụ quản lý môi trường và thư viện duy nhất. Tuyệt đối không sử dụng `pip` hoặc `conda`.
 2. **Dependency Definition:** Mọi thư viện phải được khai báo trong `pyproject.toml` thông qua lệnh `uv add`. Không sử dụng các file `requirements.txt` rời rạc.

@@ -1,5 +1,5 @@
 ---
-trigger: "manual"
+trigger: model_decision
 description: "Chuẩn viết và bảo trì rule cho LS Auditor Agent"
 ---
 

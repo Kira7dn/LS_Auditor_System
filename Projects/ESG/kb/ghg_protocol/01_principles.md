@@ -2,8 +2,13 @@
 id: principles
 title: "GHG Accounting and Reporting Principles"
 chapter: 1
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "GHG Accounting and Reporting Principles"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 9
+page_end: 12
+content_hash: "b04c710ce671dfddbeea3ac66d1e75ba1dd3149e268aaac9db917a28c71ccbd6"
+tags: ["GHG Protocol Corporate Standard", "GHG Accounting and Reporting Principles"]
 ---
 
 # GHG Accounting and Reporting Principles

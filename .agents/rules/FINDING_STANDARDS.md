@@ -1,5 +1,5 @@
 ---
-trigger: "always_on"
+trigger: model_decision
 description: "Chuẩn cấu trúc và chất lượng cho Audit Finding"
 ---
 

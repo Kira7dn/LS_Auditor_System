@@ -29,7 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
     registry = subparsers.add_parser("registry")
     registry_sub = registry.add_subparsers(dest="registry_command", required=True)
     inspect = registry_sub.add_parser("inspect")
-    inspect.add_argument("--registry", default="asset-index.json")
+    inspect.add_argument("--registry", required=True)
 
     init = subparsers.add_parser("init-case")
     init.add_argument("--case-id", required=True)

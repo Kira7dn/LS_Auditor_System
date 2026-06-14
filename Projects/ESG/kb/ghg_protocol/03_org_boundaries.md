@@ -2,8 +2,13 @@
 id: org_boundaries
 title: "Setting Organizational Boundaries"
 chapter: 3
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Setting Organizational Boundaries"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 19
+page_end: 26
+content_hash: "ac8a48e29091e87cd67c853057085bb7b9ea6f83c74fca12b692c78c64048629"
+tags: ["GHG Protocol Corporate Standard", "Setting Organizational Boundaries"]
 ---
 
 # Setting Organizational Boundaries

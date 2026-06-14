@@ -2,8 +2,13 @@
 id: reporting
 title: "Reporting GHG Emissions"
 chapter: 9
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Reporting GHG Emissions"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 65
+page_end: 71
+content_hash: "0e86ffae7408f3969f09c5f474c2cc38601a599fce5e7536e54d520914659929"
+tags: ["GHG Protocol Corporate Standard", "Reporting GHG Emissions"]
 ---
 
 # Reporting GHG Emissions

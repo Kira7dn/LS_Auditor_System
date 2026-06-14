@@ -1,0 +1,2032 @@
+{
+  "summary": {
+    "node_count": 171,
+    "relationship_count": 142,
+    "llm_node_count": 82,
+    "auto_node_count": 54,
+    "llm_relationship_count": 53,
+    "auto_relationship_count": 54,
+    "citation_gap_count": 0,
+    "exact_duplicate_name_group_count": 5,
+    "similar_name_candidate_count": 9,
+    "generic_llm_node_count": 10,
+    "expert_llm_overlap_count": 1,
+    "orphan_requirement_count": 9,
+    "bidirectional_edge_count": 0,
+    "low_confidence_edge_count": 0
+  },
+  "node_label_distribution": {
+    "ActivityDataType": 12,
+    "Asset": 1,
+    "AuditTest": 4,
+    "BoundaryRule": 2,
+    "CalculationMethod": 11,
+    "Chapter": 16,
+    "Company": 10,
+    "ControlPoint": 7,
+    "ControlType": 5,
+    "Definition": 7,
+    "DisclosureRequirement": 2,
+    "EmissionFactor": 4,
+    "EmissionSourceType": 8,
+    "EvidenceType": 3,
+    "Facility": 3,
+    "Finding": 1,
+    "Formula": 1,
+    "Principle": 12,
+    "Requirement": 45,
+    "Section": 13,
+    "SourceDocument": 1,
+    "Standard": 3
+  },
+  "relationship_type_distribution": {
+    "APPLIES_PRINCIPLE": 10,
+    "APPLIES_TO": 12,
+    "CALCULATED_USING": 1,
+    "CHECKS_REQUIREMENT": 3,
+    "CONFLICTS_WITH": 1,
+    "CONTAINS": 64,
+    "CREATES_FINDING": 1,
+    "DEFINES": 3,
+    "ENSURES_COMPLIANCE_WITH": 6,
+    "EVIDENCES": 1,
+    "EXECUTES_CONTROL": 2,
+    "HAS_UNCERTAINTY": 1,
+    "MUST_COMPLY_WITH": 2,
+    "OWNS": 1,
+    "PROHIBITS": 1,
+    "REQUIRES": 15,
+    "REQUIRES_ACTIVITY_DATA": 5,
+    "REQUIRES_EVIDENCE": 4,
+    "SUBJECT_TO": 4,
+    "SUPPORTS_CLAIM": 2,
+    "USES_FACTOR": 2,
+    "USES_FORMULA": 1
+  },
+  "exact_duplicate_names": [
+    {
+      "normalized_name": "accuracy",
+      "count": 2,
+      "nodes": [
+        {
+          "id": "accuracy",
+          "name": "Accuracy",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 6
+        },
+        {
+          "id": "principles_accuracy",
+          "name": "Accuracy",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 1
+        }
+      ]
+    },
+    {
+      "normalized_name": "completeness",
+      "count": 2,
+      "nodes": [
+        {
+          "id": "completeness",
+          "name": "Completeness",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 1
+        },
+        {
+          "id": "principles_completeness",
+          "name": "Completeness",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 1
+        }
+      ]
+    },
+    {
+      "normalized_name": "consistency",
+      "count": 2,
+      "nodes": [
+        {
+          "id": "consistency",
+          "name": "Consistency",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 4
+        },
+        {
+          "id": "principles_consistency",
+          "name": "Consistency",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 1
+        }
+      ]
+    },
+    {
+      "normalized_name": "relevance",
+      "count": 2,
+      "nodes": [
+        {
+          "id": "principles_relevance",
+          "name": "Relevance",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 1
+        },
+        {
+          "id": "relevance",
+          "name": "Relevance",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 0
+        }
+      ]
+    },
+    {
+      "normalized_name": "transparency",
+      "count": 2,
+      "nodes": [
+        {
+          "id": "principles_transparency",
+          "name": "Transparency",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 1
+        },
+        {
+          "id": "transparency",
+          "name": "Transparency",
+          "label": "Principle",
+          "llm_generated": false,
+          "degree": 3
+        }
+      ]
+    }
+  ],
+  "similar_name_candidates": [
+    {
+      "score": 0.952,
+      "left": {
+        "id": "direct_ghg_emissions",
+        "name": "Direct GHG emissions",
+        "label": "Requirement",
+        "llm_generated": true,
+        "degree": 0
+      },
+      "right": {
+        "id": "indirect_ghg_emissions",
+        "name": "Indirect GHG emissions",
+        "label": "Requirement",
+        "llm_generated": true,
+        "degree": 0
+      }
+    },
+    {
+      "score": 0.951,
+      "left": {
+        "id": "verification",
+        "name": "Verification of GHG Emissions",
+        "label": "Chapter",
+        "llm_generated": false,
+        "degree": 3
+      },
+      "right": {
+        "id": "verification_process",
+        "name": "10 Verification of GHG Emissions",
+        "label": "AuditTest",
+        "llm_generated": false,
+        "degree": 1
+      }
+    },
+    {
+      "score": 0.901,
+      "left": {
+        "id": "calc_steps",
+        "name": "Steps in identifying and calculating GHG emissions",
+        "label": "Section",
+        "llm_generated": false,
+        "degree": 1
+      },
+      "right": {
+        "id": "identifying_calculating",
+        "name": "Identifying and Calculating GHG Emissions",
+        "label": "Chapter",
+        "llm_generated": false,
+        "degree": 8
+      }
+    },
+    {
+      "score": 0.889,
+      "left": {
+        "id": "chapter_3",
+        "name": "Chapter 3",
+        "label": "Chapter",
+        "llm_generated": true,
+        "degree": 0
+      },
+      "right": {
+        "id": "chapter_7",
+        "name": "Chapter 7",
+        "label": "Chapter",
+        "llm_generated": true,
+        "degree": 1
+      }
+    },
+    {
+      "score": 0.889,
+      "left": {
+        "id": "chapter_3",
+        "name": "Chapter 3",
+        "label": "Chapter",
+        "llm_generated": true,
+        "degree": 0
+      },
+      "right": {
+        "id": "chapter_9",
+        "name": "Chapter 9",
+        "label": "Chapter",
+        "llm_generated": true,
+        "degree": 0
+      }
+    },
+    {
+      "score": 0.889,
+      "left": {
+        "id": "chapter_7",
+        "name": "Chapter 7",
+        "label": "Chapter",
+        "llm_generated": true,
+        "degree": 1
+      },
+      "right": {
+        "id": "chapter_9",
+        "name": "Chapter 9",
+        "label": "Chapter",
+        "llm_generated": true,
+        "degree": 0
+      }
+    },
+    {
+      "score": 0.889,
+      "left": {
+        "id": "oper_boundaries",
+        "name": "Setting Operational Boundaries",
+        "label": "Chapter",
+        "llm_generated": false,
+        "degree": 5
+      },
+      "right": {
+        "id": "org_boundaries",
+        "name": "Setting Organizational Boundaries",
+        "label": "Chapter",
+        "llm_generated": false,
+        "degree": 6
+      }
+    },
+    {
+      "score": 0.875,
+      "left": {
+        "id": "emissions_recalculation",
+        "name": "Emissions Recalculation",
+        "label": "ActivityDataType",
+        "llm_generated": true,
+        "degree": 1
+      },
+      "right": {
+        "id": "ghg_emissions",
+        "name": "GHG emissions calculation",
+        "label": "Requirement",
+        "llm_generated": true,
+        "degree": 5
+      }
+    },
+    {
+      "score": 0.862,
+      "left": {
+        "id": "org_boundaries",
+        "name": "Setting Organizational Boundaries",
+        "label": "Chapter",
+        "llm_generated": false,
+        "degree": 6
+      },
+      "right": {
+        "id": "organizational_boundaries",
+        "name": "Organizational boundaries",
+        "label": "Definition",
+        "llm_generated": true,
+        "degree": 1
+      }
+    }
+  ],
+  "generic_llm_nodes": [
+    {
+      "id": "ghg_emissions",
+      "name": "GHG emissions calculation",
+      "label": "Requirement",
+      "degree": 5,
+      "incoming": 4,
+      "outgoing": 1,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "financial_control",
+      "name": "Financial Control",
+      "label": "ControlType",
+      "degree": 4,
+      "incoming": 3,
+      "outgoing": 1,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "inventory_boundary",
+      "name": "Inventory boundary",
+      "label": "BoundaryRule",
+      "degree": 4,
+      "incoming": 3,
+      "outgoing": 1,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "company_control",
+      "name": "Company Control",
+      "label": "Company",
+      "degree": 3,
+      "incoming": 0,
+      "outgoing": 3,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "operational_control",
+      "name": "Operational Control",
+      "label": "ControlType",
+      "degree": 3,
+      "incoming": 3,
+      "outgoing": 0,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "bp_equity_share",
+      "name": "BP",
+      "label": "Company",
+      "degree": 2,
+      "incoming": 0,
+      "outgoing": 2,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "company",
+      "name": "A company",
+      "label": "Company",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "economic_substance",
+      "name": "Economic substance",
+      "label": "Principle",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "finding_emission_sources",
+      "name": "Emission Sources",
+      "label": "Finding",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    },
+    {
+      "id": "scopes_definition",
+      "name": "Scopes Definition",
+      "label": "Definition",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "source_map_hash": "llm:26abb74bfc8edf654c94510119888a82ef97b9f686d4e680584e90bd32c45511"
+    }
+  ],
+  "expert_llm_overlaps": [
+    {
+      "score": 0.862,
+      "llm_node": {
+        "id": "organizational_boundaries",
+        "name": "Organizational boundaries",
+        "label": "Definition",
+        "degree": 1
+      },
+      "expert_node": {
+        "id": "org_boundaries",
+        "name": "Setting Organizational Boundaries",
+        "label": "Chapter",
+        "degree": 6
+      }
+    }
+  ],
+  "orphan_requirements": [
+    {
+      "id": "company_responsibility",
+      "name": "Company Responsibility",
+      "llm_generated": true
+    },
+    {
+      "id": "direct_ghg_emissions",
+      "name": "Direct GHG emissions",
+      "llm_generated": true
+    },
+    {
+      "id": "emission_factor_changes",
+      "name": "Changes in emission factor",
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_targets",
+      "name": "GHG Targets",
+      "llm_generated": true
+    },
+    {
+      "id": "indirect_ghg_emissions",
+      "name": "Indirect GHG emissions",
+      "llm_generated": true
+    },
+    {
+      "id": "outsourcing_insourcing_emissions_tracking",
+      "name": "Tracking emissions for outsourcing/insourcing",
+      "llm_generated": true
+    },
+    {
+      "id": "recalculation_timing",
+      "name": "Recalculation Timing",
+      "llm_generated": true
+    },
+    {
+      "id": "significant_change",
+      "name": "Significant Change",
+      "llm_generated": true
+    },
+    {
+      "id": "verifier_responsibility",
+      "name": "Verifier Responsibility",
+      "llm_generated": true
+    }
+  ],
+  "bidirectional_edges": [],
+  "low_confidence_edges": [],
+  "citation_gaps": [],
+  "top_degree_nodes": [
+    {
+      "id": "identifying_calculating",
+      "name": "Identifying and Calculating GHG Emissions",
+      "label": "Chapter",
+      "degree": 8,
+      "incoming": 0,
+      "outgoing": 8,
+      "llm_generated": false
+    },
+    {
+      "id": "tracking_time",
+      "name": "Tracking Emissions Over Time",
+      "label": "Chapter",
+      "degree": 8,
+      "incoming": 0,
+      "outgoing": 8,
+      "llm_generated": false
+    },
+    {
+      "id": "ghg_protocol",
+      "name": "GHG Protocol Corporate Standard (Revised Edition)",
+      "label": "Standard",
+      "degree": 7,
+      "incoming": 0,
+      "outgoing": 7,
+      "llm_generated": false
+    },
+    {
+      "id": "targets",
+      "name": "Setting a GHG Target",
+      "label": "Chapter",
+      "degree": 7,
+      "incoming": 0,
+      "outgoing": 7,
+      "llm_generated": false
+    },
+    {
+      "id": "accuracy",
+      "name": "Accuracy",
+      "label": "Principle",
+      "degree": 6,
+      "incoming": 5,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "emission_factor_method",
+      "name": "Emission Factor Calculation Approach",
+      "label": "CalculationMethod",
+      "degree": 6,
+      "incoming": 0,
+      "outgoing": 6,
+      "llm_generated": false
+    },
+    {
+      "id": "org_boundaries",
+      "name": "Setting Organizational Boundaries",
+      "label": "Chapter",
+      "degree": 6,
+      "incoming": 0,
+      "outgoing": 6,
+      "llm_generated": false
+    },
+    {
+      "id": "req_scope_reporting",
+      "name": "Companies shall separately account for and report scopes 1 and 2 at a minimum",
+      "label": "Requirement",
+      "degree": 6,
+      "incoming": 5,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "boundary_completeness_check",
+      "name": "Verify completeness of corporate boundary and consolidation approach",
+      "label": "ControlPoint",
+      "degree": 5,
+      "incoming": 1,
+      "outgoing": 4,
+      "llm_generated": false
+    },
+    {
+      "id": "contracts_ghg_emissions",
+      "name": "Contracts that cover GHG emissions",
+      "label": "Requirement",
+      "degree": 5,
+      "incoming": 1,
+      "outgoing": 4,
+      "llm_generated": false
+    },
+    {
+      "id": "ghg_emissions",
+      "name": "GHG emissions calculation",
+      "label": "Requirement",
+      "degree": 5,
+      "incoming": 4,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "oper_boundaries",
+      "name": "Setting Operational Boundaries",
+      "label": "Chapter",
+      "degree": 5,
+      "incoming": 0,
+      "outgoing": 5,
+      "llm_generated": false
+    },
+    {
+      "id": "principles",
+      "name": "GHG Accounting and Reporting Principles",
+      "label": "Chapter",
+      "degree": 5,
+      "incoming": 0,
+      "outgoing": 5,
+      "llm_generated": false
+    },
+    {
+      "id": "base_year_selection",
+      "name": "Choosing a base year",
+      "label": "Requirement",
+      "degree": 4,
+      "incoming": 1,
+      "outgoing": 3,
+      "llm_generated": false
+    },
+    {
+      "id": "consistency",
+      "name": "Consistency",
+      "label": "Principle",
+      "degree": 4,
+      "incoming": 4,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "financial_control",
+      "name": "Financial Control",
+      "label": "ControlType",
+      "degree": 4,
+      "incoming": 3,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "inventory_boundary",
+      "name": "Inventory boundary",
+      "label": "BoundaryRule",
+      "degree": 4,
+      "incoming": 3,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "recalc_significance",
+      "name": "Articulate base year recalculation policy and significance threshold",
+      "label": "Requirement",
+      "degree": 4,
+      "incoming": 3,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "reporting",
+      "name": "Reporting GHG Emissions",
+      "label": "Chapter",
+      "degree": 4,
+      "incoming": 0,
+      "outgoing": 4,
+      "llm_generated": false
+    },
+    {
+      "id": "scope_2",
+      "name": "Scope 2: Electricity indirect GHG emissions",
+      "label": "Requirement",
+      "degree": 4,
+      "incoming": 1,
+      "outgoing": 3,
+      "llm_generated": false
+    },
+    {
+      "id": "company_control",
+      "name": "Company Control",
+      "label": "Company",
+      "degree": 3,
+      "incoming": 0,
+      "outgoing": 3,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_information",
+      "name": "GHG Information Consistency",
+      "label": "Requirement",
+      "degree": 3,
+      "incoming": 0,
+      "outgoing": 3,
+      "llm_generated": true
+    },
+    {
+      "id": "goals_and_design",
+      "name": "Business Goals and Inventory Design",
+      "label": "Chapter",
+      "degree": 3,
+      "incoming": 0,
+      "outgoing": 3,
+      "llm_generated": false
+    },
+    {
+      "id": "joint_operations",
+      "name": "Companies involved in joint operations",
+      "label": "ActivityDataType",
+      "degree": 3,
+      "incoming": 2,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "operational_control",
+      "name": "Operational Control",
+      "label": "ControlType",
+      "degree": 3,
+      "incoming": 3,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "recalculation_trigger_audit",
+      "name": "Audit M&A events to trigger base year recalculation significance check",
+      "label": "ControlPoint",
+      "degree": 3,
+      "incoming": 1,
+      "outgoing": 2,
+      "llm_generated": false
+    },
+    {
+      "id": "reductions_offsets",
+      "name": "Accounting for GHG Reductions",
+      "label": "Chapter",
+      "degree": 3,
+      "incoming": 0,
+      "outgoing": 3,
+      "llm_generated": false
+    },
+    {
+      "id": "reporting_required",
+      "name": "A public GHG report shall include required information (Scopes 1 & 2 at minimum)",
+      "label": "Requirement",
+      "degree": 3,
+      "incoming": 2,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "req_boundary_selection",
+      "name": "Companies shall select and apply a consolidation approach consistently",
+      "label": "Requirement",
+      "degree": 3,
+      "incoming": 2,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "req_recalculation",
+      "name": "Base year emissions shall be retroactively recalculated to reflect significant structural changes",
+      "label": "Requirement",
+      "degree": 3,
+      "incoming": 2,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "structural_changes",
+      "name": "Base year emissions recalculation for structural changes",
+      "label": "CalculationMethod",
+      "degree": 3,
+      "incoming": 3,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "transparency",
+      "name": "Transparency",
+      "label": "Principle",
+      "degree": 3,
+      "incoming": 2,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "verification",
+      "name": "Verification of GHG Emissions",
+      "label": "Chapter",
+      "degree": 3,
+      "incoming": 0,
+      "outgoing": 3,
+      "llm_generated": false
+    },
+    {
+      "id": "boundary_control",
+      "name": "Control approach",
+      "label": "ControlPoint",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "boundary_equity_share",
+      "name": "Equity share approach",
+      "label": "Section",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "bp_equity_share",
+      "name": "BP",
+      "label": "Company",
+      "degree": 2,
+      "incoming": 0,
+      "outgoing": 2,
+      "llm_generated": true
+    },
+    {
+      "id": "calc_scope3",
+      "name": "Scope 3 emissions calculations using activity data and published/third-party factors",
+      "label": "CalculationMethod",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "company",
+      "name": "A company",
+      "label": "Company",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "double_counting",
+      "name": "Double counting",
+      "label": "Principle",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "economic_substance",
+      "name": "Economic substance",
+      "label": "Principle",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "ef_selection",
+      "name": "Preferred use of source- or facility-specific emission factors over generic ones",
+      "label": "CalculationMethod",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "emission_factor",
+      "name": "Utility-specific emission factors",
+      "label": "EmissionFactor",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "finding_emission_sources",
+      "name": "Emission Sources",
+      "label": "Finding",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_reporting",
+      "name": "Public reporting and participation in voluntary GHG programs • Voluntary stakeholder reporting of GHG emissions and progress",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "goals_inventory",
+      "name": "Identify GHG risks and reduction opportunities in corporate inventory",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "inventory_quality",
+      "name": "Managing Inventory Quality",
+      "label": "Chapter",
+      "degree": 2,
+      "incoming": 0,
+      "outgoing": 2,
+      "llm_generated": false
+    },
+    {
+      "id": "inventory_quality_assurance",
+      "name": "Establish inventory quality management system with generic and source-specific checks",
+      "label": "ControlPoint",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "mandatory_reporting",
+      "name": "Participating in mandatory reporting programs",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "no_recalculation",
+      "name": "No base year emissions recalculations for non-existent facilities",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 0,
+      "outgoing": 2,
+      "llm_generated": true
+    },
+    {
+      "id": "outsourcing_recalc",
+      "name": "Outsourcing/insourcing does not trigger recalculation if reported under Scope 2 or 3",
+      "label": "BoundaryRule",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "purchased_electricity",
+      "name": "Purchased Electricity Consumption",
+      "label": "EmissionSourceType",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "reductions_accounting",
+      "name": "Account for reductions in indirect emissions transparently",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "reporting_optional",
+      "name": "Optional information including Scope 3 relevant categories may be reported",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "scope_1",
+      "name": "Scope 1: Direct GHG emissions",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "scope_3",
+      "name": "Scope 3: Other indirect GHG emissions",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "scopes_definition",
+      "name": "Scopes Definition",
+      "label": "Definition",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "significance_threshold",
+      "name": "Significance thresholds for recalculations",
+      "label": "CalculationMethod",
+      "degree": 2,
+      "incoming": 2,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "state_ownership",
+      "name": "State-ownership",
+      "label": "Chapter",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "subdivide_emissions_data",
+      "name": "Subdivide emissions data",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "target_setting",
+      "name": "Define absolute or intensity targets, target boundary, base year, and offset policy",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "verification_standard",
+      "name": "Objective assessment of accuracy and completeness conforming to GHG principles",
+      "label": "Requirement",
+      "degree": 2,
+      "incoming": 1,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "absolute_targets",
+      "name": "ABSOLUTE TARGETS reduce absolute emissions over time",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "acquired_facility",
+      "name": "Acquired Facility",
+      "label": "Facility",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "allocation_co2_risks",
+      "name": "Allocation of CO2 related risks",
+      "label": "Definition",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "apply_calculation_tools",
+      "name": "Apply calculation tools",
+      "label": "CalculationMethod",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "audit_trail",
+      "name": "Audit Trail",
+      "label": "ControlPoint",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "base_year_emissions",
+      "name": "Base Year Emissions",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "base_year_emissions_recalculation_policy",
+      "name": "Base Year Emissions Recalculation Policy",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "boundary_consolidation_levels",
+      "name": "Consolidation at multiple levels",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "bp_guidelines",
+      "name": "BP Group Reporting Guidelines for Environmental Performance",
+      "label": "Standard",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "calc_steps",
+      "name": "Steps in identifying and calculating GHG emissions",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "calculation_methodologies",
+      "name": "Calculation Methodologies",
+      "label": "CalculationMethod",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "calculation_methodology",
+      "name": "• Details of joint venture agreements, outsourcing and",
+      "label": "CalculationMethod",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "calculation_methodology_change",
+      "name": "Recalculations for changes in calculation methodology or improvements in data accuracy",
+      "label": "CalculationMethod",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "chapter_5_9",
+      "name": "Chapters 5 and 9",
+      "label": "Chapter",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "chapter_7",
+      "name": "Chapter 7",
+      "label": "Chapter",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "companies_account_for_emissions",
+      "name": "Companies account for emissions",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "company_teta",
+      "name": "Company Teta",
+      "label": "Company",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "company_volkswagen",
+      "name": "Volkswagen",
+      "label": "Company",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "completeness",
+      "name": "Completeness",
+      "label": "Principle",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "comprehensive_inventory",
+      "name": "Comprehensive and meaningful inventory",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "contractual_arrangement",
+      "name": "Contractual arrangement description",
+      "label": "ActivityDataType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "data_quality_checks",
+      "name": "DATA GATHERING, INPUT, AND HANDLING ACTIVITIES • Check a sample of input data for transcription errors • Identify spreadsheet modifications that could provide additional controls or checks on quality • Ensure that adequate version control procedures for electronic files have been implemented",
+      "label": "ControlPoint",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "divested_operations",
+      "name": "Divested Operations",
+      "label": "Company",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "electricity_consumption",
+      "name": "Metered electricity consumption (MWh)",
+      "label": "ActivityDataType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "emission_factors",
+      "name": "Documented emission factors",
+      "label": "EmissionFactor",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "emissions_multiplication",
+      "name": "Emissions = Activity Data x Emission Factor",
+      "label": "Formula",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "emissions_recalculation",
+      "name": "Emissions Recalculation",
+      "label": "ActivityDataType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "emissions_sources",
+      "name": "Relevant emissions sources",
+      "label": "EmissionSourceType",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "facility",
+      "name": "Facility of Generation",
+      "label": "Facility",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "fixed_base_year",
+      "name": "Fixed Base Year",
+      "label": "Definition",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "fuel_emission_factor",
+      "name": "Fuel carbon content or default fuel emission factor",
+      "label": "EmissionFactor",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "fuel_invoice",
+      "name": "Fuel Purchase Invoice",
+      "label": "EvidenceType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "fuel_quantity",
+      "name": "Purchased fuel quantity data",
+      "label": "ActivityDataType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "ghg_constraints",
+      "name": "GHG Constraints",
+      "label": "ControlType",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_emissions_data",
+      "name": "GHG emissions data consolidation",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_intensity_indicator",
+      "name": "Use of ratio indicators",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "ghg_inventory",
+      "name": "Conducting a rigorous GHG inventory",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_report_relevance",
+      "name": "GHG Report Relevance",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_trades",
+      "name": "Reporting project based reductions",
+      "label": "DisclosureRequirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "grid_emission_factor",
+      "name": "Local grid or supplier-specific emission factor",
+      "label": "EmissionFactor",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "historic_data_recalculation",
+      "name": "Historic data recalculation",
+      "label": "ActivityDataType",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "identify_sources",
+      "name": "Identify Sources",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "intensity_targets",
+      "name": "INTENSITY TARGETS reduce the ratio of emissions relative to",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "international_financial_reporting_standards",
+      "name": "International financial reporting standards",
+      "label": "Standard",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "ipcc_directive",
+      "name": "IPPC Directive",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "joint_financial_control",
+      "name": "Joint Financial Control",
+      "label": "ControlType",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "m_and_a_contracts",
+      "name": "M&A Legal Contracts and Asset Transfer Records",
+      "label": "EvidenceType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "materiality_threshold",
+      "name": "Materiality threshold",
+      "label": "Definition",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "mobile_combustion",
+      "name": "Mobile Combustion • Calculates direct and indirect CO emissions from fuel combustion in mobile sources • Provides calculations and emission factors for road, air, water, and rail transport HFC from Air Conditioning",
+      "label": "EmissionSourceType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "no_recalculation_for_outsourcing_insourcing",
+      "name": "No recalculation for outsourcing/insourcing",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "oil_and_gas_industry",
+      "name": "Oil and Gas Industry",
+      "label": "Company",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "optional_reporting",
+      "name": "Optional reporting for recalculations",
+      "label": "CalculationMethod",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "organizational_boundaries",
+      "name": "Organizational boundaries",
+      "label": "Definition",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "organizational_boundary",
+      "name": "Setting Organizational Boundary: X would decide whether to",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "parent_company_management",
+      "name": "Parent company management",
+      "label": "Company",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "principles_accuracy",
+      "name": "Accuracy",
+      "label": "Principle",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "principles_completeness",
+      "name": "Completeness",
+      "label": "Principle",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "principles_consistency",
+      "name": "Consistency",
+      "label": "Principle",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "principles_relevance",
+      "name": "Relevance",
+      "label": "Principle",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "principles_transparency",
+      "name": "Transparency",
+      "label": "Principle",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "process_emissions",
+      "name": "Identify GHG emissions sources",
+      "label": "EmissionSourceType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "project_quantification_method",
+      "name": "Project based reductions and offsets/credits",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "recalc_rules",
+      "name": "Recalculating base year emissions",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "recalculation_policy",
+      "name": "Recalculation Policy",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "reconcile_asset_registry_vs_scopes",
+      "name": "Reconcile corporate asset registry vs consolidated facility scope reports",
+      "label": "AuditTest",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "reduction_opportunities",
+      "name": "Reduction Opportunities",
+      "label": "ActivityDataType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "reporting_requirement",
+      "name": "Reporting on Scopes",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "responsibility_management",
+      "name": "Responsibility for managing emissions",
+      "label": "ControlPoint",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "scope_2_reporting",
+      "name": "Scope 2 reporting",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "scope_reporting",
+      "name": "Accounting and reporting on scopes",
+      "label": "DisclosureRequirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "select_calculation_approach",
+      "name": "Select a calculation approach",
+      "label": "CalculationMethod",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "senior_management_commitment",
+      "name": "1. Obtain senior management commitment",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "stationary_combustion",
+      "name": "Stationary Combustion",
+      "label": "EmissionSourceType",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "target_base_year",
+      "name": "4. Choose the target base year",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "target_boundary",
+      "name": "3.  Decide on the target boundary",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "target_type",
+      "name": "2.  Decide on the target type",
+      "label": "Section",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "transparency_acknowledgement",
+      "name": "Transparency acknowledgement",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": true
+    },
+    {
+      "id": "transparency_documentation",
+      "name": "Transparency in Documentation",
+      "label": "Requirement",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "utility_bill",
+      "name": "Electricity Utility Bill",
+      "label": "EvidenceType",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "verification_process",
+      "name": "10 Verification of GHG Emissions",
+      "label": "AuditTest",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "verification_scope",
+      "name": "Establishing the verification parameters",
+      "label": "AuditTest",
+      "degree": 1,
+      "incoming": 1,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "verify_base_year_adjustments",
+      "name": "Recalculate historic emissions for target base year adjustments",
+      "label": "AuditTest",
+      "degree": 1,
+      "incoming": 0,
+      "outgoing": 1,
+      "llm_generated": false
+    },
+    {
+      "id": "business_context",
+      "name": "Business Context",
+      "label": "ActivityDataType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "business_goals",
+      "name": "Business Goals",
+      "label": "Definition",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "chapter_3",
+      "name": "Chapter 3",
+      "label": "Chapter",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "chapter_9",
+      "name": "Chapter 9",
+      "label": "Chapter",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "companies",
+      "name": "Companies",
+      "label": "Company",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "company_activities",
+      "name": "Company activities",
+      "label": "ActivityDataType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "company_responsibility",
+      "name": "Company Responsibility",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "direct_ghg_emissions",
+      "name": "Direct GHG emissions",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "emission_factor_changes",
+      "name": "Changes in emission factor",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "external_verification",
+      "name": "External Verification",
+      "label": "ControlType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "facilities",
+      "name": "Facilities operated by the company",
+      "label": "Facility",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "fugitive_emissions",
+      "name": "Fugitive Emissions",
+      "label": "EmissionSourceType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_exposure",
+      "name": "GHG Exposure",
+      "label": "Definition",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_public_report",
+      "name": "GHG public report",
+      "label": "SourceDocument",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_registry",
+      "name": "GHG registries",
+      "label": "Asset",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "ghg_targets",
+      "name": "GHG Targets",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "holland_industries",
+      "name": "Holland Industries",
+      "label": "Company",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "indirect_emission_sources",
+      "name": "Indirect Emission Sources",
+      "label": "EmissionSourceType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "indirect_ghg_emissions",
+      "name": "Indirect GHG emissions",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "operational_boundaries",
+      "name": "Operational Boundaries",
+      "label": "ActivityDataType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "organizational_structures",
+      "name": "Organizational Structures",
+      "label": "ActivityDataType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "outsourcing_insourcing_emissions_tracking",
+      "name": "Tracking emissions for outsourcing/insourcing",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "recalculation_timing",
+      "name": "Recalculation Timing",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "relevance",
+      "name": "Relevance",
+      "label": "Principle",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": false
+    },
+    {
+      "id": "scope_2_emissions",
+      "name": "Scope 2 emissions",
+      "label": "EmissionSourceType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "significant_change",
+      "name": "Significant Change",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "significant_structural_changes",
+      "name": "Significant Structural Changes",
+      "label": "ActivityDataType",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    },
+    {
+      "id": "verifier_responsibility",
+      "name": "Verifier Responsibility",
+      "label": "Requirement",
+      "degree": 0,
+      "incoming": 0,
+      "outgoing": 0,
+      "llm_generated": true
+    }
+  ],
+  "status": "success",
+  "generated_at": "2026-06-14T03:57:10Z",
+  "neo4j_uri": "neo4j+s://177d8aab.databases.neo4j.io",
+  "database": "177d8aab",
+  "scope": {
+    "project_id": "esg",
+    "collection_id": "ghg_protocol",
+    "source_id": "ghg_protocol_corporate_standard"
+  }
+}

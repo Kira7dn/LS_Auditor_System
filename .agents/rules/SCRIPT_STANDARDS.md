@@ -1,5 +1,5 @@
 ---
-trigger: "always_on"
+trigger: model_decision
 description: "Quy tắc chuẩn hóa Script dành cho AI thực thi (AI-First Scripting Standard)"
 ---
 

@@ -1,0 +1,9 @@
+{
+  "source_id": "ghg_protocol_corporate_standard",
+  "title": "GHG Protocol Corporate Accounting and Reporting Standard",
+  "status": "ingested",
+  "pdf_dir": "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf",
+  "raw_dir": "Projects/ESG/sources/ghg_protocol_corporate_standard/raw",
+  "kb_collection": "Projects/ESG/kb/ghg_protocol",
+  "notes": "Current legal-grade prototype baseline collection."
+}

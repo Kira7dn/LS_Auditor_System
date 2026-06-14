@@ -1,5 +1,5 @@
 ---
-trigger: "always_on"
+trigger: model_decision
 description: "Quy chuẩn vận hành kỹ thuật và cơ chế thực thi tự động (Operational Specification)"
 ---
 

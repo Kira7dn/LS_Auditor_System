@@ -1,0 +1,431 @@
+{
+  "status": "success",
+  "scope": {
+    "project_id": "esg",
+    "collection_id": "ghg_protocol",
+    "source_id": "ghg_protocol_corporate_standard"
+  },
+  "summary": {
+    "question_count": 20,
+    "successful_query_count": 20,
+    "top_1_hit_rate": 0.45,
+    "top_5_hit_rate": 0.85,
+    "anchor_hit_rate": 0.8,
+    "concept_hit_rate": 0.6,
+    "citation_complete_rate": 1.0
+  },
+  "cases": [
+    {
+      "id": "scope_1_definition",
+      "question": "Scope 1 là gì?",
+      "query": "scope 1",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "scope_1"
+      ],
+      "anchors": [
+        "scope_1",
+        "scope_1",
+        "target_base_year",
+        "organizational_boundary",
+        "reporting_required"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "scope_2_definition",
+      "question": "Scope 2 là gì?",
+      "query": "scope 2",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "outsourcing_recalc",
+        "scope_2",
+        "scope_2_emissions",
+        "scope_2_reporting"
+      ],
+      "anchors": [
+        "outsourcing_recalc",
+        "scope_2",
+        "calculation_methodology_change",
+        "outsourcing_recalc",
+        "scope_2"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "scope_3_definition",
+      "question": "Scope 3 là gì?",
+      "query": "scope 3",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "calc_scope3",
+        "reporting_optional",
+        "scope_3"
+      ],
+      "anchors": [
+        "calc_scope3",
+        "reporting_optional",
+        "scope_3",
+        "scope_3",
+        "target_base_year"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "scope_reporting_minimum",
+      "question": "Doanh nghiệp tối thiểu phải báo cáo scope nào?",
+      "query": "scope 1 and 2 required",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": false,
+      "anchor_hit": false,
+      "concept_hit": false,
+      "citation_complete": true,
+      "graph_ids": [],
+      "anchors": [
+        "target_base_year",
+        "target_base_year",
+        "target_base_year",
+        "target_base_year",
+        "target_base_year"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "biomass_co2_scope1",
+      "question": "CO2 từ đốt sinh khối có tính vào scope 1 không?",
+      "query": "biomass shall not be included in scope 1",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": false,
+      "citation_complete": true,
+      "graph_ids": [],
+      "anchors": [
+        "scope_1"
+      ],
+      "complete_citation_count": 1
+    },
+    {
+      "id": "kyoto_gases_scope1",
+      "question": "Khí không thuộc Kyoto Protocol có tính vào scope 1 không?",
+      "query": "not covered by the Kyoto Protocol shall not be included in scope 1",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": false,
+      "citation_complete": true,
+      "graph_ids": [],
+      "anchors": [
+        "scope_1",
+        "reporting_required",
+        "scope_1",
+        "organizational_boundary",
+        "reporting_required"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "organizational_boundary",
+      "question": "Organizational boundary là gì?",
+      "query": "organizational boundary",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "organizational_boundary"
+      ],
+      "anchors": [
+        "organizational_boundary",
+        "organizational_boundary",
+        "organizational_boundary",
+        "data_quality_checks",
+        "organizational_boundary"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "control_approach",
+      "question": "Control approach dùng để xác định ranh giới tổ chức như thế nào?",
+      "query": "control approach",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "boundary_control"
+      ],
+      "anchors": [
+        "boundary_control",
+        "double_counting",
+        "boundary_control",
+        "double_counting",
+        "target_base_year"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "equity_share_approach",
+      "question": "Equity share approach là gì?",
+      "query": "equity share approach",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "boundary_equity_share"
+      ],
+      "anchors": [
+        "boundary_equity_share",
+        "boundary_equity_share",
+        "boundary_equity_share",
+        "organizational_boundary",
+        "double_counting"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "base_year_selection",
+      "question": "Khi chọn base year cần lưu ý gì?",
+      "query": "base year selection",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": false,
+      "citation_complete": true,
+      "graph_ids": [],
+      "anchors": [
+        "base_year_selection"
+      ],
+      "complete_citation_count": 1
+    },
+    {
+      "id": "recalculation_rules",
+      "question": "Khi nào cần recalculation base year emissions?",
+      "query": "recalculate base year emissions",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": false,
+      "anchor_hit": false,
+      "concept_hit": false,
+      "citation_complete": true,
+      "graph_ids": [],
+      "anchors": [
+        "target_base_year",
+        "base_year_selection",
+        "significance_threshold"
+      ],
+      "complete_citation_count": 3
+    },
+    {
+      "id": "significance_threshold",
+      "question": "Significance threshold trong recalculation là gì?",
+      "query": "significance threshold",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "recalc_significance",
+        "significance_threshold"
+      ],
+      "anchors": [
+        "recalc_significance",
+        "significance_threshold",
+        "target_base_year",
+        "significance_threshold",
+        "target_base_year"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "structural_changes",
+      "question": "Structural changes ảnh hưởng thế nào tới recalculation?",
+      "query": "structural changes",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "req_recalculation",
+        "structural_changes",
+        "significant_structural_changes"
+      ],
+      "anchors": [
+        "recalc_rules",
+        "structural_changes",
+        "recalc_rules",
+        "structural_changes",
+        "significance_threshold"
+      ],
+      "complete_citation_count": 5
+    },
+    {
+      "id": "calculation_steps",
+      "question": "Các bước tính toán phát thải GHG là gì?",
+      "query": "steps in identifying and calculating GHG emissions",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "calc_steps"
+      ],
+      "anchors": [
+        "calc_steps",
+        "calc_steps"
+      ],
+      "complete_citation_count": 2
+    },
+    {
+      "id": "identify_sources",
+      "question": "Làm sao xác định nguồn phát thải?",
+      "query": "identify GHG emission sources",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": false,
+      "citation_complete": true,
+      "graph_ids": [],
+      "anchors": [
+        "process_emissions",
+        "optional_reporting",
+        "identify_sources",
+        "process_emissions"
+      ],
+      "complete_citation_count": 4
+    },
+    {
+      "id": "emission_factor_selection",
+      "question": "Chọn emission factor như thế nào?",
+      "query": "choose emission factors",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": false,
+      "anchor_hit": false,
+      "concept_hit": false,
+      "citation_complete": true,
+      "graph_ids": [],
+      "anchors": [
+        "calc_scope3",
+        "identify_sources",
+        "optional_reporting"
+      ],
+      "complete_citation_count": 3
+    },
+    {
+      "id": "inventory_quality",
+      "question": "Inventory quality cần kiểm soát điều gì?",
+      "query": "inventory quality",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": true,
+      "anchor_hit": false,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "inventory_quality_assurance",
+        "inventory_quality"
+      ],
+      "anchors": [
+        "inventory_quality_assurance",
+        "data_quality_checks"
+      ],
+      "complete_citation_count": 2
+    },
+    {
+      "id": "reporting_required",
+      "question": "Báo cáo GHG bắt buộc nên bao gồm gì?",
+      "query": "required information GHG report",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": false,
+      "citation_complete": true,
+      "graph_ids": [],
+      "anchors": [
+        "ghg_trades",
+        "reporting_required",
+        "reporting_optional",
+        "reporting_required"
+      ],
+      "complete_citation_count": 4
+    },
+    {
+      "id": "verification_process",
+      "question": "Verification của báo cáo GHG kiểm tra gì?",
+      "query": "verification of GHG emissions",
+      "status": "success",
+      "top_1_hit": true,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "verification_process",
+        "verification"
+      ],
+      "anchors": [
+        "verification_process",
+        "verification_process"
+      ],
+      "complete_citation_count": 2
+    },
+    {
+      "id": "target_base_year",
+      "question": "Target base year được dùng thế nào trong mục tiêu GHG?",
+      "query": "target base year",
+      "status": "success",
+      "top_1_hit": false,
+      "top_5_hit": true,
+      "anchor_hit": true,
+      "concept_hit": true,
+      "citation_complete": true,
+      "graph_ids": [
+        "verify_base_year_adjustments",
+        "target_base_year"
+      ],
+      "anchors": [
+        "recalc_rules",
+        "target_base_year",
+        "target_base_year",
+        "target_base_year",
+        "target_base_year"
+      ],
+      "complete_citation_count": 5
+    }
+  ]
+}

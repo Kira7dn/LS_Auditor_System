@@ -1,5 +1,5 @@
 ---
-trigger: "always_on"
+trigger: model_decision
 description: "Đặc tả Production MVP cho LS Auditor Assistant"
 ---
 

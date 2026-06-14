@@ -1,0 +1,132 @@
+{
+  "status": "success",
+  "generated_at": "2026-06-14T03:57:54Z",
+  "kb_dir": "Projects/ESG/kb/ghg_protocol",
+  "scope": {
+    "project_id": "esg",
+    "collection_id": "ghg_protocol",
+    "source_id": "ghg_protocol_corporate_standard"
+  },
+  "neo4j_uri_masked": "neo4j+s://177d***",
+  "files": {
+    "concept_map": {
+      "path": "Projects/ESG/graph/concept_map.json",
+      "sha256": "fc6fada056fe91e53e05d8caa096ef6973672217fb8dfcc5fc3dd1699edc52a5"
+    },
+    "canonical_aliases": {
+      "path": "Projects/ESG/graph/canonical_aliases.json",
+      "sha256": "d21fbaad5ff85c850bb93513efe0c79e9e137ddfafadbfea888b60bec1ee9632"
+    },
+    "graph_quality_report": {
+      "path": "Projects/ESG/graph/quality_reports/graph_quality_report.json",
+      "sha256": "d875da9550321623fae1d0dadfe9ddb230be984651e92637d13978090504caea"
+    },
+    "retrieval_eval_report": {
+      "path": "Projects/ESG/eval/retrieval_eval_report.json",
+      "sha256": "115a32d59d4ce96f3ce6ea0aee228260271d2977cde678e1c5c550239f1032c8"
+    },
+    "alias_apply_report": {
+      "path": "Projects/ESG/graph/import_reports/canonical_aliases_apply_report.json",
+      "sha256": "ab87261cc46567e3fa4743fc119a1096ca95ef157fa73f3120fad2c5ff983b28"
+    }
+  },
+  "graph_quality_summary": {
+    "node_count": 171,
+    "relationship_count": 142,
+    "llm_node_count": 82,
+    "auto_node_count": 54,
+    "llm_relationship_count": 53,
+    "auto_relationship_count": 54,
+    "citation_gap_count": 0,
+    "exact_duplicate_name_group_count": 5,
+    "similar_name_candidate_count": 9,
+    "generic_llm_node_count": 10,
+    "expert_llm_overlap_count": 1,
+    "orphan_requirement_count": 9,
+    "bidirectional_edge_count": 0,
+    "low_confidence_edge_count": 0
+  },
+  "retrieval_eval_summary": {
+    "question_count": 20,
+    "successful_query_count": 20,
+    "top_1_hit_rate": 0.45,
+    "top_5_hit_rate": 0.85,
+    "anchor_hit_rate": 0.8,
+    "concept_hit_rate": 0.6,
+    "citation_complete_rate": 1.0
+  },
+  "alias_apply_summary": {
+    "mode": "apply",
+    "alias_count": 3,
+    "applied_count": 3
+  },
+  "citation_validation_summary": {
+    "status": "success",
+    "node_count": 171,
+    "issue_count": 0,
+    "strict_metadata": true,
+    "source_map_hash": "",
+    "project_id": "esg",
+    "collection_id": "ghg_protocol",
+    "source_id": "ghg_protocol_corporate_standard",
+    "issues_sample": []
+  },
+  "script_paths": [
+    "scripts/analyze_graph_quality.py",
+    "scripts/apply_canonical_aliases.py",
+    "scripts/run_retrieval_eval.py",
+    "scripts/answer_question.py",
+    "scripts/write_run_manifest.py"
+  ],
+  "git_status_short": [
+    " M GEMINI.md",
+    " D Projects/ESG/ESG_MRV_Blueprint.md",
+    " D Projects/ESG/ESG_MRV_Blueprint.pdf",
+    " D \"Projects/ESG/Iron and Steel 2.1.xlsx\"",
+    " D \"Projects/ESG/Iron and Steel Version 2.0 Guidance.doc\"",
+    " D Projects/ESG/Mitigation_Goal_Standard.pdf",
+    " D Projects/ESG/Transport_Tool_v2_7.xlsx",
+    " D Projects/ESG/concept_map.json",
+    " D Projects/ESG/ghg-protocol-revised.md",
+    " D Projects/ESG/ghg-protocol-revised.pdf",
+    " D Projects/ESG/ghg-uncertainty.pdf",
+    " D Projects/ESG/ghg-uncertainty.xlsx",
+    " D Projects/ESG/ghg_kb/00_introduction.md",
+    " D Projects/ESG/ghg_kb/01_principles.md",
+    " D Projects/ESG/ghg_kb/02_goals_and_design.md",
+    " D Projects/ESG/ghg_kb/03_org_boundaries.md",
+    " D Projects/ESG/ghg_kb/04_oper_boundaries.md",
+    " D Projects/ESG/ghg_kb/05_tracking_time.md",
+    " D Projects/ESG/ghg_kb/06_identifying_calculating.md",
+    " D Projects/ESG/ghg_kb/07_inventory_quality.md",
+    " D Projects/ESG/ghg_kb/08_reductions_offsets.md",
+    " D Projects/ESG/ghg_kb/09_reporting.md",
+    " D Projects/ESG/ghg_kb/10_verification.md",
+    " D Projects/ESG/ghg_kb/11_targets.md",
+    " D Projects/ESG/hfc-cfc_1.pdf",
+    " D Projects/ESG/hfc-pfc_1.xls",
+    " D Projects/ESG/import_ghg_neo4j.cypher",
+    " D Projects/ESG/knowledge_base.md",
+    " D Projects/ESG/z7922273643230_c01d5f4b9255f83ce61089c240a7530f.docx",
+    " D Projects/ESG/z7922273643230_c01d5f4b9255f83ce61089c240a7530f.jpg",
+    " D Projects/ESG/z7922273643230_c01d5f4b9255f83ce61089c240a7530f.md",
+    " M README.md",
+    " D asset-index.json",
+    " M scripts/import_concept_map.py",
+    " M src/ls_auditor/cli.py",
+    " M src/ls_auditor/registry.py",
+    " M tests/test_pdf_to_kb_hardening.py",
+    "?? Projects/ESG/archive/",
+    "?? Projects/ESG/eval/",
+    "?? Projects/ESG/graph/",
+    "?? Projects/ESG/kb/",
+    "?? Projects/ESG/manifests/",
+    "?? Projects/ESG/sources/",
+    "?? docs/pdf_to_kb_legal_rag_progress.md",
+    "?? scripts/analyze_graph_quality.py",
+    "?? scripts/answer_question.py",
+    "?? scripts/apply_canonical_aliases.py",
+    "?? scripts/run_retrieval_eval.py",
+    "?? scripts/write_run_manifest.py"
+  ]
+}

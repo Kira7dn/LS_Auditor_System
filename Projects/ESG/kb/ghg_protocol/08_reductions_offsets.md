@@ -2,8 +2,13 @@
 id: reductions_offsets
 title: "Accounting for GHG Reductions"
 chapter: 8
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Accounting for GHG Reductions"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 61
+page_end: 64
+content_hash: "3d304db0fd8e12f18d4801fa06a0ddea6c4ca2d314a60880f29eac307949c935"
+tags: ["GHG Protocol Corporate Standard", "Accounting for GHG Reductions"]
 ---
 
 # Accounting for GHG Reductions

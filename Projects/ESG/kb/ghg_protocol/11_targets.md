@@ -2,11 +2,15 @@
 id: targets
 title: "Setting a GHG Target"
 chapter: 11
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Setting a GHG Target"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 78
+page_end: 116
+content_hash: "f6b099c9f12c2cdb44e1561c24b7e03a311bc2892e3d8876cda1a32e645e619f"
+tags: ["GHG Protocol Corporate Standard", "Setting a GHG Target"]
 ---
 
-<a id="setting_ghg_target"></a>
 # Setting a GHG Target
 
 Setting a GHG Target

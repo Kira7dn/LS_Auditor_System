@@ -2,8 +2,13 @@
 id: inventory_quality
 title: "Managing Inventory Quality"
 chapter: 7
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Managing Inventory Quality"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 51
+page_end: 60
+content_hash: "bbf650bd8e4ed8730e6d273c1fc4e774f6e1fa289a110904204cd52d17ab3452"
+tags: ["GHG Protocol Corporate Standard", "Managing Inventory Quality"]
 ---
 
 # Managing Inventory Quality

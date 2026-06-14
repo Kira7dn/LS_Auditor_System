@@ -2,14 +2,20 @@
 id: goals_and_design
 title: "Business Goals and Inventory Design"
 chapter: 2
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Business Goals and Inventory Design"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 13
+page_end: 18
+content_hash: "24b5419e05510d2abff91e53e6e017ab9045cb6dead2a825d0df382896a74ace"
+tags: ["GHG Protocol Corporate Standard", "Business Goals and Inventory Design"]
 ---
 
 # Business Goals and Inventory Design
 
 Appendix C provides an overview of various GHG programs—many of which are based on the GHG Protocol Corporate Standard. The guidance sections of chapters 3 and 4 provide additional information on how to design an inventory for different goals and uses.
 Companies generally want their GHG inventory to be capable of serving multiple goals. It therefore makes sense to design the process from the outset to provide information for a variety of different users and uses—both current and future. The GHG Protocol Corporate Standard has been designed as a comprehensive GHG accounting and reporting framework to provide the information building blocks capable of serving most business goals (see Box 1). Thus the inventory data collected according to the GHG Protocol Corporate Standard can be aggregated and disaggregated for various organizational and operational boundaries and for different business geographic scales (state, country, Annex 1 countries, non-Annex 1 countries, facility, business unit, company, etc.).
+
 <a id="goals_inventory"></a>
 ## Managing GHG risks and identifying reduction opportunities
 

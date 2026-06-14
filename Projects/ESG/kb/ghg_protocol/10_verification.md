@@ -2,8 +2,13 @@
 id: verification
 title: "Verification of GHG Emissions"
 chapter: 10
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Verification of GHG Emissions"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 72
+page_end: 77
+content_hash: "3fa91d39ad3ed6e916a3d62286427e08cfa28bf40fc981c055cfed4bfa9a7375"
+tags: ["GHG Protocol Corporate Standard", "Verification of GHG Emissions"]
 ---
 
 # Verification of GHG Emissions

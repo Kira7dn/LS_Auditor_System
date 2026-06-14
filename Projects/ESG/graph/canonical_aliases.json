@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "description": "Conservative canonical alias map for validated LLM graph nodes. Targets are expert/curated or deterministic section nodes; aliases are applied during LLM candidate import without overwriting canonical node metadata.",
+  "aliases": {
+    "control_approach": "boundary_control",
+    "equity_share_approach": "boundary_equity_share",
+    "requirement_accuracy": "accuracy"
+  },
+  "deferred_candidates": {
+    "organizational_boundaries": {
+      "candidate_target": "org_boundaries",
+      "reason": "Similar name, but maps a Definition to a Chapter. Needs modeling decision before merge."
+    },
+    "principles_relevance": {
+      "candidate_target": "relevance",
+      "reason": "Section node and expert Principle node have different roles; keep separate until section-to-concept mapping is explicit."
+    },
+    "principles_completeness": {
+      "candidate_target": "completeness",
+      "reason": "Section node and expert Principle node have different roles; keep separate until section-to-concept mapping is explicit."
+    },
+    "principles_consistency": {
+      "candidate_target": "consistency",
+      "reason": "Section node and expert Principle node have different roles; keep separate until section-to-concept mapping is explicit."
+    },
+    "principles_transparency": {
+      "candidate_target": "transparency",
+      "reason": "Section node and expert Principle node have different roles; keep separate until section-to-concept mapping is explicit."
+    }
+  }
+}

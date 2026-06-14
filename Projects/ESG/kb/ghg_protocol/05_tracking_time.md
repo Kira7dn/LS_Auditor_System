@@ -2,8 +2,13 @@
 id: tracking_time
 title: "Tracking Emissions Over Time"
 chapter: 5
-standard: "Ghg Protocol Revised"
-tags: ["Ghg Protocol Revised", "Tracking Emissions Over Time"]
+standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
+source_pdf: "Projects/ESG/sources/ghg_protocol_corporate_standard/pdf/ghg-protocol-revised.pdf"
+page_start: 37
+page_end: 42
+content_hash: "8898c7b9bf09f7fdef011f7938daa59d62ae1235e4e97353d444ab056ffdb27f"
+tags: ["GHG Protocol Corporate Standard", "Tracking Emissions Over Time"]
 ---
 
 # Tracking Emissions Over Time
@@ -15,8 +20,8 @@ Managing risks and opportunities
 Addressing the needs of investors and other stakeholders
 A meaningful and consistent comparison of emissions over time requires that companies set a performance datum with which to compare current emissions. This
 
-<a id="recalc_rules"></a>
 <a id="recalc_significance"></a>
+<a id="recalc_rules"></a>
 ## Recalculating base year emissions
 
 Companies shall develop a base year emissions recalculation policy, and clearly articulate the basis and context for any recalculations. If applicable, the policy shall state any “significance threshold” applied for deciding on historic emissions recalculation. “Significance threshold” is a qualitative and/or quantitative criterion used to define any significant change to the data, inventory boundary, methods, or any other relevant factors. It is the responsibility of the company to determine the “significance threshold” that triggers base year emissions recalculation and to disclose it. It is the responsibility of the verifier to confirm the company’s adherence to its threshold policy. The following cases shall trigger recalculation of base year emissions:

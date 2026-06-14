@@ -12,7 +12,7 @@
 > **🤖 AGENT INSTRUCTION (Read First)**
 > This workspace is optimized for AI-First operations. Any Agent landing here MUST:
 > 1. Read **[GEMINI.md](GEMINI.md)** to understand the Core Constitution and Technical Standards.
-> 2. Consult **[asset-index.json](asset-index.json)** to map available Skills and Workflows.
+> 2. Consult global workflows in `C:\Users\kira7\.gemini\config\global_workflows\` and local `.agents/` assets for task-specific procedures.
 > 3. Use **`uv run`** for all script executions to maintain environment integrity.
 > 4. Prioritize **Generic Excellence** by decoupling case-specific data from core logic.
 
@@ -42,8 +42,8 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 # 2. Khởi tạo Workspace
 uv sync
 
-# 3. Kiểm tra registry
-uv run ls-auditor registry inspect
+# 3. Kiểm tra CLI
+uv run ls-auditor --help
 
 # 4. Khởi tạo case Material Planning
 uv run ls-auditor init-case --case-id material-planning --template material-planning
