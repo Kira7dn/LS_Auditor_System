@@ -1,4 +1,4 @@
-﻿---
+---
 trigger: "always_on"
 description: "Hiến pháp tối cao của hệ thống LS Auditor (Core Constitution)"
 ---
@@ -65,10 +65,11 @@ Khi task liên quan đến PDF, Knowledge Base, RAG, Neo4j graph, chuẩn mực 
 
 ## VI. TIÊU CHUẨN MÔI TRƯỜNG KỸ THUẬT (TECHNICAL STANDARDS)
 
-1. **Environment Management:** Hệ thống sử dụng **`uv`** làm công cụ quản lý môi trường và thư viện duy nhất. Tuyệt đối không sử dụng `pip` hoặc `conda`.
+1. **Environment Management:** Workspace sử dụng **`uv`** làm công cụ quản lý môi trường và thư viện duy nhất. Tuyệt đối không sử dụng `pip` hoặc `conda`.
 2. **Dependency Definition:** Mọi thư viện phải được khai báo trong `pyproject.toml` thông qua lệnh `uv add`. Không sử dụng các file `requirements.txt` rời rạc.
 3. **Execution Discipline:** Mọi Script phân tích phải được thực thi thông qua lệnh **`uv run <script_path>`**. Script phải tuân thủ nghiêm ngặt bộ tiêu chuẩn tại [SCRIPT_STANDARDS.md](./.agents/rules/SCRIPT_STANDARDS.md).
 4. **Hermetic Environment:** Tuyệt đối không cài đặt thư viện vào Python hệ thống. Mọi tài sản kỹ thuật phải nằm trong Virtual Environment (`.venv`) của dự án.
+5. **Anti-Redundancy & Skill-First Discipline:** Tuyệt đối không tự viết script phân tích/truy vấn mới (ví dụ: truy vấn Neo4j/Cypher, xử lý PDF) nếu các file script chuẩn của bộ Skills (như `query_graph.py`, `validate_citations.py`...) đã có sẵn và hỗ trợ chức năng tương đương. Agent bắt buộc phải đọc và kiểm tra tài liệu của Skill trước khi thực hiện code mới.
 
 ---
 

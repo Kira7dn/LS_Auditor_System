@@ -1,0 +1,35 @@
+=== 14064-2 ===
+Page 1: Lời nói đầu
+Page 1: 1  Phạm vi áp dụng
+Page 1: 2  Tài liệu viện dẫn
+Page 1: 3  Thuật ngữ và định nghĩa
+Page 1: 5  Giới thiệu các dự án KNK
+Page 1: 6  Yêu cầu đối với các dự án KNK
+Page 1: Phụ lục A (tham khảo) Hướng dẫn sử dụng tiêu chuẩn này
+Page 2: Lời nói đầu
+Page 6: Phụ lục A cung cấp hướng dẫn sử dụng cho tiêu chuẩn này.
+Page 7: 1  Phạm vi áp dụng
+Page 7: 2  Tài liệu viện dẫn
+Page 7: 3  Thuật ngữ và định nghĩa
+Page 13: 5  Giới thiệu các dự án KNK
+Page 15: 6  Yêu cầu đối với các dự án KNK
+Page 22: Phụ lục A
+=== 14067 ===
+Page 1: Lời nói đầu
+Page 1: 1  Phạm vi áp dụng
+Page 1: 2  Tài liệu viện dẫn
+Page 1: 3  Thuật ngữ, định nghĩa và các thuật ngữ viết tắt
+Page 1: 7  Báo cáo nghiên cứu CFP
+Page 1: 8  Xem xét phản biện
+Page 1: Phụ lục A (quy định) Những hạn chế của CFP
+Page 1: Phụ lục B (quy định) So sánh dựa trên CFP của các sản phẩm khác nhau
+Page 2: Lời nói đầu
+Page 6: 1  Phạm vi áp dụng
+Page 6: 2  Tài liệu viện dẫn
+Page 6: 3  Thuật ngữ, định nghĩa và các thuật ngữ viết tắt
+Page 22: Phụ lục B).
+Page 39: 7  Báo cáo nghiên cứu CFP
+Page 40: Phụ lục A);
+Page 41: 8  Xem xét phản biện
+Page 41: Phụ lục A
+Page 42: Phụ lục B

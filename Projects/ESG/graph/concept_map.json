@@ -244,6 +244,273 @@
       "name": "Define absolute or intensity targets, target boundary, base year, and offset policy",
       "doc_id": "targets",
       "anchor": "target_setting"
+    },
+    {
+      "id": "tcvn_standard",
+      "label": "Standard",
+      "name": "TCVN ISO 14064-1:2025",
+      "doc_id": "04_principles",
+      "anchor": "tcvn_principles_relevance"
+    },
+    {
+      "id": "tcvn_principles_relevance",
+      "label": "Principle",
+      "name": "Tính liên quan (Relevance)",
+      "doc_id": "04_principles",
+      "anchor": "tcvn_principles_relevance"
+    },
+    {
+      "id": "tcvn_principles_completeness",
+      "label": "Principle",
+      "name": "Tính đầy đủ (Completeness)",
+      "doc_id": "04_principles",
+      "anchor": "tcvn_principles_completeness"
+    },
+    {
+      "id": "tcvn_principles_consistency",
+      "label": "Principle",
+      "name": "Tính nhất quán (Consistency)",
+      "doc_id": "04_principles",
+      "anchor": "tcvn_principles_consistency"
+    },
+    {
+      "id": "tcvn_principles_accuracy",
+      "label": "Principle",
+      "name": "Tính chính xác (Accuracy)",
+      "doc_id": "04_principles",
+      "anchor": "tcvn_principles_accuracy"
+    },
+    {
+      "id": "tcvn_principles_transparency",
+      "label": "Principle",
+      "name": "Tính minh bạch (Transparency)",
+      "doc_id": "04_principles",
+      "anchor": "tcvn_principles_transparency"
+    },
+    {
+      "id": "tcvn_org_boundaries",
+      "label": "BoundaryRule",
+      "name": "Các ranh giới tổ chức (Organizational Boundaries)",
+      "doc_id": "05_boundaries",
+      "anchor": "tcvn_org_boundaries"
+    },
+    {
+      "id": "tcvn_report_boundaries",
+      "label": "BoundaryRule",
+      "name": "Các ranh giới báo cáo (Reporting Boundaries)",
+      "doc_id": "05_boundaries",
+      "anchor": "tcvn_report_boundaries"
+    },
+    {
+      "id": "tcvn_direct_emissions",
+      "label": "ScopeRule",
+      "name": "Phát thải trực tiếp (Direct Emissions)",
+      "doc_id": "05_boundaries",
+      "anchor": "tcvn_direct_emissions"
+    },
+    {
+      "id": "tcvn_indirect_emissions",
+      "label": "ScopeRule",
+      "name": "Phát thải gián tiếp (Indirect Emissions)",
+      "doc_id": "05_boundaries",
+      "anchor": "tcvn_indirect_emissions"
+    },
+    {
+      "id": "tcvn_inventory_categories",
+      "label": "DisclosureRequirement",
+      "name": "Các nhóm kiểm kê KNK (GHG Inventory Categories)",
+      "doc_id": "05_boundaries",
+      "anchor": "tcvn_inventory_categories"
+    },
+    {
+      "id": "tcvn_iso_14064_2",
+      "label": "Standard",
+      "name": "TCVN ISO 14064-2:2025",
+      "doc_id": "iso14064_2_principles",
+      "anchor": "iso14064_2_4_cac_nguyen_tac_4_1_khai_quat"
+    },
+    {
+      "id": "tcvn_iso_14064_2_principles_relevance",
+      "label": "Principle",
+      "name": "Tính liên quan (Relevance) - 14064-2",
+      "doc_id": "iso14064_2_principles",
+      "anchor": "iso14064_2_4_2_tinh_lien_quan"
+    },
+    {
+      "id": "tcvn_iso_14064_2_principles_completeness",
+      "label": "Principle",
+      "name": "Tính đầy đủ (Completeness) - 14064-2",
+      "doc_id": "iso14064_2_principles",
+      "anchor": "iso14064_2_4_3_tinh_ay_u"
+    },
+    {
+      "id": "tcvn_iso_14067",
+      "label": "Standard",
+      "name": "TCVN ISO 14067:2020",
+      "doc_id": "iso14067_principles",
+      "anchor": "iso14067_5_cac_nguyen_tac_5_1_quy_inh_chung"
+    },
+    {
+      "id": "tcvn_iso_14067_principles_lifecycle",
+      "label": "Principle",
+      "name": "Quan điểm vòng đời (Life Cycle Perspective) - 14067",
+      "doc_id": "iso14067_principles",
+      "anchor": "iso14067_5_2_quan_iem_vong_oi"
+    },
+    {
+      "id": "tcvn_iso_14067_principles_transparency",
+      "label": "Principle",
+      "name": "Tính minh bạch (Transparency) - 14067",
+      "doc_id": "iso14067_principles",
+      "anchor": "iso14067_5_11_tinh_minh_bach"
+    },
+    {
+      "id": "cbam_standard",
+      "label": "Standard",
+      "name": "CBAM Importer Implementation Guidance",
+      "doc_id": "cbam_introduction",
+      "anchor": "cbam_importers_the_cbam_regulation"
+    },
+    {
+      "id": "cbam_direct_emissions",
+      "label": "Definition",
+      "name": "Direct Emissions - CBAM",
+      "doc_id": "cbam_mechanism",
+      "anchor": "cbam_importers_direct_emissions_means_emissions_from_the_pro"
+    },
+    {
+      "id": "cbam_indirect_emissions",
+      "label": "Definition",
+      "name": "Indirect Emissions - CBAM",
+      "doc_id": "cbam_mechanism",
+      "anchor": "cbam_importers_indirect_emissions_means_emissions_from_the_p"
+    },
+    {
+      "id": "cbam_embedded_emissions",
+      "label": "Definition",
+      "name": "Embedded Emissions - CBAM",
+      "doc_id": "cbam_mechanism",
+      "anchor": "cbam_importers_embedded_emissions_means_emissions_released_d"
+    },
+    {
+      "id": "qd226_2022_standard",
+      "label": "Standard",
+      "name": "Quyết định 226/QĐ-BTNMT: Danh mục Hệ số Phát thải KNK",
+      "source_id": "qd226_2022_btnmt",
+      "doc_id": "00_quyet_dinh",
+      "anchor": "qd226_btnmt_page_1"
+    },
+    {
+      "id": "qd226_he_so_phat_thai",
+      "label": "EmissionFactor",
+      "name": "Hệ số Phát thải KNK (Emission Factor)",
+      "source_id": "qd226_2022_btnmt",
+      "doc_id": "00_quyet_dinh",
+      "anchor": "qd226_btnmt_page_1"
+    },
+    {
+      "id": "qd226_nang_luong",
+      "label": "EmissionFactor",
+      "name": "Hệ số Phát thải - Lĩnh vực Năng lượng (Phụ lục I)",
+      "source_id": "qd226_2022_btnmt",
+      "doc_id": "01_phu_luc_I_nang_luong",
+      "anchor": "qd226_btnmt_page_2"
+    },
+    {
+      "id": "qd226_cong_nghiep",
+      "label": "EmissionFactor",
+      "name": "Hệ số Phát thải - Lĩnh vực Công nghiệp và Sử dụng Sản phẩm (Phụ lục II)",
+      "source_id": "qd226_2022_btnmt",
+      "doc_id": "02_phu_luc_II_cong_nghiep",
+      "anchor": "qd226_btnmt_page_8"
+    },
+    {
+      "id": "qd226_nong_lam_nghiep",
+      "label": "EmissionFactor",
+      "name": "Hệ số Phát thải - Lĩnh vực Nông nghiệp, Lâm nghiệp và Sử dụng Đất (Phụ lục III)",
+      "source_id": "qd226_2022_btnmt",
+      "doc_id": "03_phu_luc_III_nong_lam_nghiep",
+      "anchor": "qd226_btnmt_page_10"
+    },
+    {
+      "id": "qd226_chat_thai",
+      "label": "EmissionFactor",
+      "name": "Hệ số Phát thải - Lĩnh vực Chất thải (Phụ lục IV)",
+      "source_id": "qd226_2022_btnmt",
+      "doc_id": "04_phu_luc_IV_chat_thai",
+      "anchor": "qd226_btnmt_page_19"
+    },
+    {
+      "id": "nd06_2022_standard",
+      "label": "Standard",
+      "name": "Nghị định 06/2022/NĐ-CP: Giảm nhẹ phát thải KNK và bảo vệ tầng ô-dôn",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "00_quy_dinh_chung",
+      "anchor": "nd06_chuong_i_quy_inh_chung"
+    },
+    {
+      "id": "nd06_quy_dinh_chung",
+      "label": "Definition",
+      "name": "Quy định chung - Phạm vi, đối tượng, giải thích từ ngữ (Điều 1-4)",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "00_quy_dinh_chung",
+      "anchor": "nd06_chuong_i_quy_inh_chung"
+    },
+    {
+      "id": "nd06_giam_nhe_phat_thai",
+      "label": "ScopeRule",
+      "name": "Giảm nhẹ phát thải KNK - MRV và phân bổ hạn ngạch (Điều 5-15)",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "01_giam_nhe_phat_thai_khi_nha_kinh",
+      "anchor": "nd06_chuong_ii_giam_nhe_phat_thai_knk_to_chuc_va_phat_trien"
+    },
+    {
+      "id": "nd06_mrv_system",
+      "label": "ControlPoint",
+      "name": "Hệ thống đo đạc, báo cáo, thẩm định (MRV) cấp quốc gia và cơ sở",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "01_giam_nhe_phat_thai_khi_nha_kinh",
+      "anchor": "nd06_chuong_ii_giam_nhe_phat_thai_knk_to_chuc_va_phat_trien"
+    },
+    {
+      "id": "nd06_kiem_ke_khi_nha_kinh",
+      "label": "Requirement",
+      "name": "Kiểm kê khí nhà kính cấp cơ sở (Điều 11)",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "01_giam_nhe_phat_thai_khi_nha_kinh",
+      "anchor": "nd06_ieu_11_kiem_ke_khi_nha_kinh"
+    },
+    {
+      "id": "nd06_han_ngach_phat_thai",
+      "label": "Requirement",
+      "name": "Phân bổ hạn ngạch phát thải KNK (Điều 12)",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "01_giam_nhe_phat_thai_khi_nha_kinh",
+      "anchor": "nd06_chuong_ii_giam_nhe_phat_thai_knk_to_chuc_va_phat_trien"
+    },
+    {
+      "id": "nd06_thi_truong_cacbon",
+      "label": "DisclosureRequirement",
+      "name": "Tổ chức và phát triển thị trường các-bon trong nước (Điều 16-21)",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "02_thi_truong_cacbon",
+      "anchor": "nd06_muc_2_to_chuc_va_phat_trien_thi_truong_cac_bon_trong_nu"
+    },
+    {
+      "id": "nd06_tin_chi_cacbon",
+      "label": "Definition",
+      "name": "Tín chỉ các-bon và cơ chế trao đổi, bù trừ",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "02_thi_truong_cacbon",
+      "anchor": "nd06_muc_2_to_chuc_va_phat_trien_thi_truong_cac_bon_trong_nu"
+    },
+    {
+      "id": "nd06_bao_ve_tang_o_don",
+      "label": "ScopeRule",
+      "name": "Bảo vệ tầng ô-dôn - Kiểm soát chất ODS/HFC (Điều 22-29)",
+      "source_id": "nd06_2022_ndcp",
+      "doc_id": "03_bao_ve_tang_o_don",
+      "anchor": "nd06_chuong_iii_bao_ve_tang_o_don"
     }
   ],
   "edges": [
@@ -421,6 +688,236 @@
       "from": "target_setting",
       "to": "consistency",
       "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_principles_relevance",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_principles_completeness",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_principles_consistency",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_principles_accuracy",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_principles_transparency",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_org_boundaries",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_report_boundaries",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_direct_emissions",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_indirect_emissions",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_standard",
+      "to": "tcvn_inventory_categories",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_principles_relevance",
+      "to": "relevance",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "tcvn_principles_completeness",
+      "to": "completeness",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "tcvn_principles_consistency",
+      "to": "consistency",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "tcvn_principles_accuracy",
+      "to": "accuracy",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "tcvn_principles_transparency",
+      "to": "transparency",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "tcvn_iso_14064_2",
+      "to": "tcvn_iso_14064_2_principles_relevance",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_iso_14064_2",
+      "to": "tcvn_iso_14064_2_principles_completeness",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_iso_14064_2_principles_relevance",
+      "to": "relevance",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "tcvn_iso_14064_2_principles_completeness",
+      "to": "completeness",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "tcvn_iso_14067",
+      "to": "tcvn_iso_14067_principles_lifecycle",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_iso_14067",
+      "to": "tcvn_iso_14067_principles_transparency",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "tcvn_iso_14067_principles_lifecycle",
+      "to": "consistency",
+      "type": "APPLIES_PRINCIPLE"
+    },
+    {
+      "from": "tcvn_iso_14067_principles_transparency",
+      "to": "transparency",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "cbam_standard",
+      "to": "cbam_direct_emissions",
+      "type": "DEFINES"
+    },
+    {
+      "from": "cbam_standard",
+      "to": "cbam_indirect_emissions",
+      "type": "DEFINES"
+    },
+    {
+      "from": "cbam_standard",
+      "to": "cbam_embedded_emissions",
+      "type": "DEFINES"
+    },
+    {
+      "from": "cbam_direct_emissions",
+      "to": "tcvn_direct_emissions",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "cbam_indirect_emissions",
+      "to": "tcvn_indirect_emissions",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "qd226_2022_standard",
+      "to": "qd226_he_so_phat_thai",
+      "type": "DEFINES"
+    },
+    {
+      "from": "qd226_2022_standard",
+      "to": "qd226_nang_luong",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "qd226_2022_standard",
+      "to": "qd226_cong_nghiep",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "qd226_2022_standard",
+      "to": "qd226_nong_lam_nghiep",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "qd226_2022_standard",
+      "to": "qd226_chat_thai",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "nd06_2022_standard",
+      "to": "nd06_quy_dinh_chung",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "nd06_2022_standard",
+      "to": "nd06_giam_nhe_phat_thai",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "nd06_2022_standard",
+      "to": "nd06_thi_truong_cacbon",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "nd06_2022_standard",
+      "to": "nd06_bao_ve_tang_o_don",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "nd06_giam_nhe_phat_thai",
+      "to": "nd06_mrv_system",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "nd06_giam_nhe_phat_thai",
+      "to": "nd06_kiem_ke_khi_nha_kinh",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "nd06_giam_nhe_phat_thai",
+      "to": "nd06_han_ngach_phat_thai",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "nd06_thi_truong_cacbon",
+      "to": "nd06_tin_chi_cacbon",
+      "type": "CONTAINS"
+    },
+    {
+      "from": "qd226_he_so_phat_thai",
+      "to": "emission_factor",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "nd06_kiem_ke_khi_nha_kinh",
+      "to": "qd226_he_so_phat_thai",
+      "type": "APPLIES_TO"
+    },
+    {
+      "from": "nd06_mrv_system",
+      "to": "reporting_and_verification",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "nd06_kiem_ke_khi_nha_kinh",
+      "to": "ghg_inventory",
+      "type": "VERSION_OF"
+    },
+    {
+      "from": "nd06_2022_standard",
+      "to": "qd226_2022_standard",
+      "type": "APPLIES_TO"
     }
   ]
 }

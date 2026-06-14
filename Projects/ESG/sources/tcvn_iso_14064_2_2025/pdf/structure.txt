@@ -1,0 +1,57 @@
+PDF: TCVN ISO 14064-2 2025.pdf (33 pages)
+
+TOC: []
+
+
+--- Page 1 ---
+TCVN ISO 14064-2:2025
+ISO 14064-2:2019
+KHÍ NHÀ KÍNH - PHẦN 2: QUY ĐỊNH KỸ THUẬT VÀ HƯỚNG DẪN ĐỊNH LƯỢNG, GIÁM
+SÁT VÀ BÁO CÁO GIẢM PHÁT THẢI HOẶC TĂNG CƯỜNG LOẠI BỎ KHÍ NHÀ KÍNH Ở
+CẤP ĐỘ DỰ ÁN
+MỤC LỤC
+Lời nói đầu
+1  Phạm vi áp dụng
+
+--- Page 2 ---
+TIÊU CHUẨN QUỐC GIA
+TCVN ISO 14064-2:2025
+ISO 14064-2:2019
+KHÍ NHÀ KÍNH - PHẦN 2: QUY ĐỊNH KỸ THUẬT VÀ HƯỚNG DẪN ĐỊNH LƯỢNG, GIÁM
+SÁT VÀ BÁO CÁO GIẢM PHÁT THẢI HOẶC TĂNG CƯỜNG LOẠI BỎ KHÍ NHÀ KÍNH Ở
+CẤP ĐỘ DỰ ÁN
+GREENHOUSE GASES - PART 2: SPECIFICATION WITH GUIDANCE AT PROJECT
+LEVEL FOR QUANTIFICATION, MONITORING AND REPORTING OF GREENHOUSE
+GAS EMISSION REDUCTIONS REMOVAL ENHANCEMENTS
+
+--- Page 5 ---
+0.2  Phương pháp tiếp cận của tiêu chuẩn này
+
+--- Page 7 ---
+1  Phạm vi áp dụng
+
+--- Page 12 ---
+3.4  Thuật ngữ liên quan đến kiểm tra xác nhận và xác nhận giá trị sử dụng
+
+--- Page 13 ---
+4.5  Tính chính xác
+4.6  Tính minh bạch
+4.7  Tính thận trọng
+5  Giới thiệu các dự án KNK
+
+--- Page 15 ---
+6  Yêu cầu đối với các dự án KNK
+6.1  Yêu cầu chung
+
+--- Page 19 ---
+6.7  Định lượng phát thải và/hoặc loại bỏ KNK
+
+--- Page 20 ---
+6.10  Giám sát dự án KNK
+
+--- Page 22 ---
+Phụ lục A
+Phụ lục này cung cấp hướng dẫn về việc sử dụng tiêu chuẩn này. Phụ lục này không nêu
+
+--- Page 24 ---
+KNK;

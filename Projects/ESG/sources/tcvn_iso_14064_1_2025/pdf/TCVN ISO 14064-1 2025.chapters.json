@@ -1,0 +1,140 @@
+{
+  "status": "success",
+  "pdf": "d:\\BusinessAnalyze\\LS\\LS_Auditor_System\\Projects\\ESG\\sources\\tcvn_iso_14064_1_2025\\pdf\\TCVN ISO 14064-1 2025.pdf",
+  "total_pages": 52,
+  "chapters": [
+    {
+      "num": 1,
+      "slug": "scope",
+      "title": "Phạm vi áp dụng",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "num": 2,
+      "slug": "normative_references",
+      "title": "Tài liệu viện dẫn",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "num": 3,
+      "slug": "terms_definitions",
+      "title": "Thuật ngữ và định nghĩa",
+      "start_page": 7,
+      "end_page": 13
+    },
+    {
+      "num": 4,
+      "slug": "principles",
+      "title": "Các nguyên tắc",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "num": 5,
+      "slug": "boundaries",
+      "title": "Các ranh giới kiểm kê KNK",
+      "start_page": 14,
+      "end_page": 16
+    },
+    {
+      "num": 6,
+      "slug": "quantification",
+      "title": "Định lượng phát thải và loại bỏ KNK",
+      "start_page": 16,
+      "end_page": 18
+    },
+    {
+      "num": 7,
+      "slug": "mitigation",
+      "title": "Các hoạt động giảm thiểu",
+      "start_page": 19,
+      "end_page": 20
+    },
+    {
+      "num": 8,
+      "slug": "quality_management",
+      "title": "Quản lý chất lượng kiểm kê KNK",
+      "start_page": 20,
+      "end_page": 21
+    },
+    {
+      "num": 9,
+      "slug": "reporting",
+      "title": "Báo cáo về KNK",
+      "start_page": 21,
+      "end_page": 23
+    },
+    {
+      "num": 10,
+      "slug": "verification_role",
+      "title": "Vai trò của tổ chức trong các hoạt động kiểm tra xác nhận",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "num": 11,
+      "slug": "annex_a",
+      "title": "Phụ lục A - Quá trình hợp nhất dữ liệu",
+      "start_page": 24,
+      "end_page": 25
+    },
+    {
+      "num": 12,
+      "slug": "annex_b",
+      "title": "Phụ lục B - Phân nhóm phát thải KNK trực tiếp và gián tiếp",
+      "start_page": 25,
+      "end_page": 30
+    },
+    {
+      "num": 13,
+      "slug": "annex_c",
+      "title": "Phụ lục C - Hướng dẫn lựa chọn, thu thập và sử dụng dữ liệu cho phương pháp tiếp cận định lượng KNK đối với phát thải trực tiếp",
+      "start_page": 31,
+      "end_page": 37
+    },
+    {
+      "num": 14,
+      "slug": "annex_d",
+      "title": "Phụ lục D - Xử lý phát thải KNK sinh học và loại bỏ CO2",
+      "start_page": 38,
+      "end_page": 38
+    },
+    {
+      "num": 15,
+      "slug": "annex_e",
+      "title": "Phụ lục E - Xử lý điện",
+      "start_page": 38,
+      "end_page": 40
+    },
+    {
+      "num": 16,
+      "slug": "annex_f",
+      "title": "Phụ lục F - Cấu trúc và tổ chức báo cáo kiểm kê KNK",
+      "start_page": 40,
+      "end_page": 41
+    },
+    {
+      "num": 17,
+      "slug": "annex_g",
+      "title": "Phụ lục G - Hướng dẫn nông nghiệp và lâm nghiệp",
+      "start_page": 42,
+      "end_page": 48
+    },
+    {
+      "num": 18,
+      "slug": "annex_h",
+      "title": "Phụ lục H - Hướng dẫn quá trình nhận dạng các phát thải KNK gián tiếp đáng kể",
+      "start_page": 49,
+      "end_page": 50
+    },
+    {
+      "num": 19,
+      "slug": "bibliography",
+      "title": "Thư mục tài liệu tham khảo",
+      "start_page": 51,
+      "end_page": 52
+    }
+  ]
+}

@@ -3,6 +3,7 @@ id: introduction
 title: "Introduction and Foreword"
 chapter: 0
 standard: "GHG Protocol Corporate Standard (Revised Edition)"
+source_id: "ghg_protocol_corporate_standard"
 tags: ["GHG Protocol", "Introduction and Foreword"]
 ---
 

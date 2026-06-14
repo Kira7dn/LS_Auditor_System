@@ -1,0 +1,8 @@
+{
+  "source_id": "cbam_guidance_importers",
+  "title": "CBAM Implementation Guidance for Importers",
+  "status": "ingested",
+  "pdf_dir": "Projects/ESG/sources/cbam_guidance_importers/pdf",
+  "kb_collection": "Projects/ESG/kb/cbam_guidance_importers",
+  "notes": "CBAM importer guidance document ingested into Neo4j graph database."
+}

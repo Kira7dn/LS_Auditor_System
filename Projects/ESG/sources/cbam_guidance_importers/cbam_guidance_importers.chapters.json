@@ -1,0 +1,51 @@
+[
+  {
+    "num": 1,
+    "slug": "cbam_summary",
+    "title": "Summary",
+    "start_page": 5,
+    "end_page": 5
+  },
+  {
+    "num": 2,
+    "slug": "cbam_introduction",
+    "title": "Introduction",
+    "start_page": 6,
+    "end_page": 9
+  },
+  {
+    "num": 3,
+    "slug": "cbam_quick_guide",
+    "title": "Quick Guide for Importers",
+    "start_page": 10,
+    "end_page": 14
+  },
+  {
+    "num": 4,
+    "slug": "cbam_mechanism",
+    "title": "The Carbon Border Adjustment Mechanism",
+    "start_page": 15,
+    "end_page": 25
+  },
+  {
+    "num": 5,
+    "slug": "cbam_goods_routes",
+    "title": "CBAM Goods and Production Routes",
+    "start_page": 26,
+    "end_page": 67
+  },
+  {
+    "num": 6,
+    "slug": "cbam_obligations",
+    "title": "Reporting Obligations",
+    "start_page": 68,
+    "end_page": 86
+  },
+  {
+    "num": 7,
+    "slug": "cbam_exemptions_annexes",
+    "title": "Exemptions and Annexes",
+    "start_page": 87,
+    "end_page": 98
+  }
+]

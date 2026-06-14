@@ -1,0 +1,65 @@
+[
+  {
+    "num": 1,
+    "slug": "iso14067_introduction",
+    "title": "Foreword and Introduction",
+    "start_page": 2,
+    "end_page": 5
+  },
+  {
+    "num": 2,
+    "slug": "iso14067_scope_normative_terms",
+    "title": "Scope, References, Terms, Definitions and Abbreviated Terms",
+    "start_page": 6,
+    "end_page": 17
+  },
+  {
+    "num": 3,
+    "slug": "iso14067_application",
+    "title": "Application",
+    "start_page": 18,
+    "end_page": 18
+  },
+  {
+    "num": 4,
+    "slug": "iso14067_principles",
+    "title": "Principles",
+    "start_page": 18,
+    "end_page": 20
+  },
+  {
+    "num": 5,
+    "slug": "iso14067_methodology",
+    "title": "Methodology for CFP Quantification",
+    "start_page": 20,
+    "end_page": 38
+  },
+  {
+    "num": 6,
+    "slug": "iso14067_report",
+    "title": "CFP Study Report",
+    "start_page": 39,
+    "end_page": 40
+  },
+  {
+    "num": 7,
+    "slug": "iso14067_critical_review",
+    "title": "Critical Review",
+    "start_page": 41,
+    "end_page": 41
+  },
+  {
+    "num": 8,
+    "slug": "iso14067_annexes",
+    "title": "Annexes A, B, C, D, E",
+    "start_page": 42,
+    "end_page": 50
+  },
+  {
+    "num": 9,
+    "slug": "iso14067_bibliography",
+    "title": "Bibliography",
+    "start_page": 51,
+    "end_page": 53
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "num": 1,
+    "slug": "iso14064_2_introduction",
+    "title": "Foreword and Introduction",
+    "start_page": 2,
+    "end_page": 6
+  },
+  {
+    "num": 2,
+    "slug": "iso14064_2_scope_normative_terms",
+    "title": "Scope, References, Terms and Definitions",
+    "start_page": 7,
+    "end_page": 11
+  },
+  {
+    "num": 3,
+    "slug": "iso14064_2_principles",
+    "title": "Principles",
+    "start_page": 12,
+    "end_page": 13
+  },
+  {
+    "num": 4,
+    "slug": "iso14064_2_project_intro",
+    "title": "Introduction of GHG Projects",
+    "start_page": 13,
+    "end_page": 14
+  },
+  {
+    "num": 5,
+    "slug": "iso14064_2_requirements",
+    "title": "Requirements for GHG Projects",
+    "start_page": 15,
+    "end_page": 21
+  },
+  {
+    "num": 6,
+    "slug": "iso14064_2_annex_a",
+    "title": "Annex A - Guidance on the use of this document",
+    "start_page": 22,
+    "end_page": 31
+  },
+  {
+    "num": 7,
+    "slug": "iso14064_2_annex_b_bibliography",
+    "title": "Annex B and Bibliography",
+    "start_page": 31,
+    "end_page": 33
+  }
+]

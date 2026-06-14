@@ -1,0 +1,106 @@
+PDF: TCVN ISO 14067 2020.pdf (53 pages)
+
+TOC: []
+
+
+--- Page 1 ---
+TCVN ISO 14067:2020
+KHÍ NHÀ KÍNH - DẤU VẾT CACBON CỦA SẢN PHẨM
+- YÊU CẦU VÀ HƯỚNG DẪN ĐỊNH LƯỢNG
+MỤC LỤC
+Lời nói đầu
+1  Phạm vi áp dụng
+2  Tài liệu viện dẫn
+3  Thuật ngữ, định nghĩa và các thuật ngữ viết tắt
+
+--- Page 2 ---
+TIÊU CHUẨN QUỐC GIA
+TCVN ISO 14067:2020
+KHÍ NHÀ KÍNH - DẤU VẾT CACBON CỦA SẢN PHẨM - YÊU CẦU VÀ HƯỚNG DẪN
+ĐỊNH LƯỢNG
+Lời nói đầu
+
+--- Page 6 ---
+KHÍ NHÀ KÍNH - DẤU VẾT CACBON CỦA SẢN PHẨM - YÊU CẦU VÀ HƯỚNG DẪN
+ĐỊNH LƯỢNG
+1  Phạm vi áp dụng
+
+--- Page 9 ---
+CFP-PCR
+
+--- Page 11 ---
+3.1.3  Sản phẩm, hệ thống sản phẩm và quá trình
+
+--- Page 14 ---
+LCI
+
+--- Page 15 ---
+[NGUỒN: TCVN ISO 14040:2009, 3.35].
+
+--- Page 16 ---
+3.1.6  Dữ liệu và chất lượng dữ liệu
+
+--- Page 17 ---
+3.1.7  Vật liệu sinh học và sử dụng đất
+
+--- Page 19 ---
+5.3  Cách tiếp cận tương đối và đơn vị chức năng hoặc đơn vị công bố
+
+--- Page 20 ---
+5.10  Tính chính xác
+5.11  Tính minh bạch
+
+--- Page 21 ---
+PCR.
+
+--- Page 23 ---
+6.3.4  Ranh giới hệ thống
+6.3.4.1  Quy định chung
+
+--- Page 24 ---
+6.3.4.3  Chuẩn mực loại bỏ
+
+--- Page 26 ---
+6.3.7  Giai đoạn sử dụng và hồ sơ sử dụng
+CFP.
+
+--- Page 28 ---
+6.4.2  Thu thập dữ liệu
+
+--- Page 31 ---
+6.4.7  Truy theo diễn biến CFP
+
+--- Page 33 ---
+6.4.9.4.2  Điện tự sản xuất và tiêu thụ nội bộ
+6.4.9.4.3  Điện kết nối trực tiếp từ nhà cung cấp
+
+--- Page 34 ---
+6.4.9.5  Thay đổi sử dụng đất
+
+--- Page 35 ---
+6.4.9.6  Sử dụng đất
+
+--- Page 36 ---
+6.4.9.8  Tóm tắt các yêu cầu và hướng dẫn trong 6.4.9
+
+--- Page 37 ---
+CHÚ DẪN
+
+--- Page 40 ---
+7.3  Thông tin cần có đối với báo cáo nghiên cứu CFP
+
+--- Page 41 ---
+7.4  Thông tin tùy chọn cho báo cáo nghiên cứu CFP
+8  Xem xét phản biện
+
+--- Page 43 ---
+ISO/TS 14027.
+
+--- Page 48 ---
+TCVN ISO/TR 14049.
+
+--- Page 49 ---
+Phụ lục E
+
+--- Page 53 ---
+UN.
