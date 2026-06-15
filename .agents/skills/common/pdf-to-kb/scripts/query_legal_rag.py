@@ -78,6 +78,24 @@ PRESETS = {
         "citation_index": "Projects/ESG/graph/citation_index/pdf_citation_index.jsonl",
         "highlight_dir": "Projects/ESG/evidence/highlights",
     },
+    "csrd": {
+        "kb_dir": "Projects/ESG/kb/esrs_csrd_guide",
+        "env": ".env",
+        "project_id": "esg",
+        "collection_id": "esrs_csrd_guide",
+        "source_id": "esrs_csrd_guide",
+        "citation_index": "Projects/ESG/graph/citation_index/pdf_citation_index.jsonl",
+        "highlight_dir": "Projects/ESG/evidence/highlights",
+    },
+    "samsung": {
+        "kb_dir": "Projects/ESG/kb/samsung_sustainability_2025",
+        "env": ".env",
+        "project_id": "esg",
+        "collection_id": "samsung_sustainability_2025",
+        "source_id": "samsung_sustainability_2025",
+        "citation_index": "Projects/ESG/graph/citation_index/pdf_citation_index.jsonl",
+        "highlight_dir": "Projects/ESG/evidence/highlights",
+    },
 }
 
 
@@ -107,6 +125,10 @@ def resolve_preset(args: argparse.Namespace) -> str:
         return "iso14064_2"
     if "14067" in combined:
         return "iso14067"
+    if "samsung" in combined:
+        return "samsung"
+    if "csrd" in combined or "esrs" in combined:
+        return "csrd"
     if "ghg" in combined or "scope" in combined:
         return "ghg"
     

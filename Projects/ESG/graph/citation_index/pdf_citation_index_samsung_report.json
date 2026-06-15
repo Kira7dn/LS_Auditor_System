@@ -1,0 +1,50 @@
+{
+  "status": "success",
+  "anchor_count": 178,
+  "resolved_count": 170,
+  "unresolved_count": 8,
+  "bbox_resolve_rate": 0.955,
+  "ambiguous_count": 18,
+  "unresolved_sample": [
+    {
+      "anchor": "109",
+      "markdown_file": "Projects\\ESG\\kb\\samsung_sustainability_2025\\01_our_company.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "57cases_190cases",
+      "markdown_file": "Projects\\ESG\\kb\\samsung_sustainability_2025\\03_people.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "377_high_risk_suppliers_audited_123_suppliers_audited",
+      "markdown_file": "Projects\\ESG\\kb\\samsung_sustainability_2025\\03_people.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "preventing_child_labor_appropriate_work_hours",
+      "markdown_file": "Projects\\ESG\\kb\\samsung_sustainability_2025\\03_people.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "3_552_cases_3_industries_33_companies",
+      "markdown_file": "Projects\\ESG\\kb\\samsung_sustainability_2025\\03_people.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "2_200",
+      "markdown_file": "Projects\\ESG\\kb\\samsung_sustainability_2025\\03_people.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "276",
+      "markdown_file": "Projects\\ESG\\kb\\samsung_sustainability_2025\\03_people.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "international_security_certification_robust_security_environment",
+      "markdown_file": "Projects\\ESG\\kb\\samsung_sustainability_2025\\03_people.md",
+      "reason": "no_pdf_match"
+    }
+  ]
+}

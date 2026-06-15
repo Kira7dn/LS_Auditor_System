@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "pdf": "Projects/ESG/sources/samsung_sustainability_2025/pdf/Samsung_Electronics_Sustainability_Report_2025_ENG.pdf",
+  "total_pages": 87,
+  "chapters": [
+    {
+      "num": 1,
+      "slug": "our_company",
+      "title": "Our Company",
+      "start_page": 1,
+      "end_page": 9
+    },
+    {
+      "num": 2,
+      "slug": "planet",
+      "title": "Planet",
+      "start_page": 10,
+      "end_page": 33
+    },
+    {
+      "num": 3,
+      "slug": "people",
+      "title": "People and Supply Chain",
+      "start_page": 34,
+      "end_page": 75
+    },
+    {
+      "num": 4,
+      "slug": "appendix",
+      "title": "Appendix and Facts Figures",
+      "start_page": 76,
+      "end_page": 87
+    }
+  ]
+}

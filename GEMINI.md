@@ -5,71 +5,52 @@ description: "Hiến pháp tối cao của hệ thống LS Auditor (Core Constit
 
 # LS AUDITOR - CORE CONSTITUTION (GEMINI.md)
 
-Chào Agent, đây là bản Hiến pháp tối cao của hệ thống **LS Auditor**. Mọi hành động của bạn tại Workspace này phải tuân thủ các quy tắc về tính chính xác của dữ liệu và tính liêm chính của bằng chứng.
+Đây là bản Hiến pháp tối cao của hệ thống **LS Auditor**. Mọi hành động của Agent tại Workspace này phải tuân thủ các quy tắc cốt lõi về tính chính xác của dữ liệu và tính liêm chính của bằng chứng.
 
 ---
 
 ## I. NGUYÊN TẮC CỐT LÕI (CORE PRINCIPLES)
 
-1. **Evidence Integrity:** Bằng chứng là sự sống còn. Mọi phát hiện sai phạm phải được liên kết trực tiếp với dữ liệu gốc và không được phép suy diễn thiếu căn cứ.
-2. **Leakage-Centric:** Mục tiêu tối thượng là nhận diện rò rỉ (tài chính, quy trình, thời gian). Mọi phân tích phải quy đổi được về giá trị thiệt hại hoặc rủi ro.
-3. **Systemic Thinking:** Đừng chỉ tìm lỗi cá nhân. Hãy tập trung nhận diện các lỗi hệ thống (Systemic Failures) thông qua việc tổng hợp các ngoại lệ (Exceptions).
-4. **Generic Excellence:** Xây dựng các công cụ và kỹ năng có tính tái sử dụng cao, áp dụng được cho nhiều case audit khác nhau.
+1. **Evidence Integrity:** Bằng chứng là sự sống còn. Mọi phát hiện sai phạm phải liên kết trực tiếp với dữ liệu gốc và có trích dẫn nguồn (citation) đầy đủ.
+2. **Leakage-Centric:** Tập trung nhận diện các rò rỉ (tài chính, quy trình, thời gian) và quy đổi được về giá trị thiệt hại hoặc mức độ rủi ro.
+3. **Systemic Thinking:** Nhận diện các lỗi hệ thống (Systemic Failures) thông qua tổng hợp các ngoại lệ, không chỉ tìm lỗi cá nhân.
+4. **Generic Excellence:** Xây dựng công cụ/kỹ năng có tính tái sử dụng cao cho nhiều case audit khác nhau.
 
 ---
 
 ## II. QUY TRÌNH KHỞI ĐỘNG (BOOTSTRAP ORDER)
 
-Để đảm bảo thực thi đúng quy trình nghiệp vụ, Agent **BẮT BUỘC** thực hiện bootstrap theo thứ tự:
-
-1. Đọc **`Training/handbook/cases/backlog.md`** để nắm roadmap và tiến độ các task.
-2. Tham chiếu các **Workflows** trong `.agents/workflows/` khi task liên quan đến quy trình chuẩn toàn hệ thống.
-3. Tham chiếu các **`Workflows`** trong `.agents/workflows/auditor/` ứng với giai đoạn hiện tại (Discovery, Execution, hoặc Delivery).
-4. Kích hoạt các **`Skills`** tương ứng trong `.agents/skills/` (ưu tiên `auditor/`, `common/`, và skill domain-specific được nhắc trực tiếp).
+Agent bắt buộc thực hiện theo thứ tự:
+1. Đọc **`Training/handbook/cases/backlog.md`** để nắm tiến độ và roadmap.
+2. Tham chiếu các **Workflows** chuẩn trong `.agents/workflows/` và `.agents/workflows/auditor/`.
+3. Kích hoạt các **Skills** tương ứng trong `.agents/skills/`.
 
 ---
 
-## III. TIÊU CHUẨN KỸ THUẬT AUDIT (AUDIT STANDARDS)
+## III. TIÊU CHUẨN KỸ THUẬT AUDIT
 
-- **Data Integrity:** Tuyệt đối không thay đổi dữ liệu gốc của khách hàng. Mọi thao tác chuẩn hóa phải được thực hiện trên bản sao hoặc thông qua các script log rõ ràng.
-- **Visual Evidence:** Sử dụng `auditor-mermaid-expert` để trực quan hóa mọi quy trình và điểm kiểm soát. Sơ đồ phải rõ ràng, dễ hiểu cho cả cấp quản lý.
-- **Evidence Dossier:** Mọi Findings phải được đóng gói vào `Evidence Pack` với đầy đủ mã ID giao dịch, timestamp và mô tả sai lệch.
-- **Reporting Quality:** Tuân thủ kỹ năng `writing-clearly-and-concisely`. Báo cáo phải sắc bén, đi thẳng vào vấn đề và có số liệu chứng minh.
+- **Data Integrity:** Không thay đổi dữ liệu gốc của khách hàng. Mọi chuẩn hóa phải thực hiện trên bản sao hoặc qua script ghi log rõ ràng.
+- **Visual Evidence:** Sử dụng sơ đồ Mermaid (`markdown-mermaid-expert`) để trực quan hóa các kiểm soát quy trình.
+- **Reporting Quality:** Báo cáo sắc bén, ngắn gọn, có số liệu minh chứng và trích dẫn trực tiếp tới dòng/trang của tài liệu PDF nguồn.
 
 ---
 
 ## IV. TIÊU CHUẨN LEGAL RAG / KNOWLEDGE GRAPH
 
-Khi task liên quan đến PDF, Knowledge Base, RAG, Neo4j graph, chuẩn mực ESG/GHG/luật hoặc tài liệu có rủi ro pháp lý:
-
-1. **Bắt buộc dùng workflow A-Z:** Đọc `.agents/workflows/auditor/pdf-to-kb.md` và skill `.agents/skills/common/pdf-to-kb/SKILL.md` trước khi extract/import/query một bộ tài liệu mới.
-2. **Citation First:** Không coi kết quả là đạt nếu `validate_citations.py --strict-metadata` chưa trả `issue_count = 0`.
-3. **Expert Overlay Priority:** `concept_map.json` do chuyên gia tạo là lớp enhance/override cuối cùng; sau LLM import phải import lại `concept_map.json`.
-4. **Multi-source Layout:** Với `Projects/ESG`, PDF nguồn đặt trong `sources/<source_id>/`, Markdown extract đặt trong `kb/<collection>/`, graph overlay/report đặt trong `graph/`, manifest đặt trong `manifests/`. Không đặt thêm PDF/report sinh mới trực tiếp ở root project.
-5. **Graph Scope:** Mọi import/query/validation phải truyền hoặc dùng mặc định `project_id`, `collection_id`, `source_id`. Với GHG hiện tại: `project_id=esg`, `collection_id=ghg_protocol`, `source_id=ghg_protocol_corporate_standard`.
-6. **LLM Is Candidate, Not Truth:** LLM chỉ sinh candidate graph. Candidate phải qua validator evidence/citation/ontology/confidence trước khi import.
-7. **Canonicalization Discipline:** Dùng `canonical_aliases.json`; luôn dry-run trước khi apply alias. Chỉ apply alias chắc chắn, giữ `deferred_candidates` để review ontology.
-8. **Quality Gates:** Với prototype legal-grade, phải có graph quality report, retrieval eval, answer guardrail và run manifest.
-9. **Answer Guardrail:** Không trả lời claim thiếu citation đầy đủ (`file_uri`, `anchor`, `source_pdf`, `page_start`, `page_end`, `content_hash`). Nếu thiếu căn cứ, trả lời rõ là không tìm thấy căn cứ đủ trong KB.
-10. **Current GHG KB Baseline:** GHG KB hiện đạt prototype với `171` Concept nodes, `142` relationships, citation issues `0`, retrieval eval `20` câu, Top-5 hit rate `0.85`, citation completeness `1.0`, tests `16 passed`.
+Khi làm việc với các hệ thống RAG, PDF hoặc Đồ thị tri thức (ESG/Luật):
+1. **Tuân thủ Workflow A-Z:** Bắt buộc sử dụng đúng quy trình tại `.agents/workflows/auditor/pdf-to-kb.md`.
+2. **Citation First:** Mọi kết quả import đồ thị bắt buộc phải qua xác thực bằng chứng đạt `issue_count = 0` thông qua `validate_citations.py`.
+3. **Phân biệt Namespace:** Các ID nút trên đồ thị của tài liệu khác nhau phải có tiền tố namespace riêng (ví dụ: `cbam_`, `tcvn_`) để tránh xung đột trên Neo4j.
+4. **Không Suy diễn:** Câu trả lời của hệ thống RAG bắt buộc phải đi kèm trích dẫn gốc đầy đủ (`file_uri`, `anchor`, `source_pdf`, `page_number`). Nếu thiếu căn cứ, phải báo cáo rõ là không tìm thấy trong cơ sở tri thức.
 
 ---
 
-## V. CẬP NHẬT & TỐI ƯU (HARDENING)
+## V. TIÊU CHUẨN MÔI TRƯỜNG KỸ THUẬT
 
-1. **Template Evolution:** Chủ động cập nhật các mẫu Template trong `.agents/templates/auditor/` dựa trên kinh nghiệm thực tế từ các case study.
-2. **Skill Sharpening:** Cải tiến các logic trong `scripts/` của kỹ năng để tăng độ chính xác của việc phát hiện bất thường.
-3. **Workflow Maintenance:** Duy trì `GEMINI.md`, global workflows và skill docs luôn phản ánh đúng quy trình hiện hành.
-
----
-
-## VI. TIÊU CHUẨN MÔI TRƯỜNG KỸ THUẬT (TECHNICAL STANDARDS)
-
-1. **Environment Management:** Workspace sử dụng **`uv`** làm công cụ quản lý môi trường và thư viện duy nhất. Tuyệt đối không sử dụng `pip` hoặc `conda`.
-2. **Dependency Definition:** Mọi thư viện phải được khai báo trong `pyproject.toml` thông qua lệnh `uv add`. Không sử dụng các file `requirements.txt` rời rạc.
-3. **Execution Discipline:** Mọi Script phân tích phải được thực thi thông qua lệnh **`uv run <script_path>`**. Script phải tuân thủ nghiêm ngặt bộ tiêu chuẩn tại [SCRIPT_STANDARDS.md](./.agents/rules/SCRIPT_STANDARDS.md).
-4. **Hermetic Environment:** Tuyệt đối không cài đặt thư viện vào Python hệ thống. Mọi tài sản kỹ thuật phải nằm trong Virtual Environment (`.venv`) của dự án.
-5. **Anti-Redundancy & Skill-First Discipline:** Tuyệt đối không tự viết script phân tích/truy vấn mới (ví dụ: truy vấn Neo4j/Cypher, xử lý PDF) nếu các file script chuẩn của bộ Skills (như `query_graph.py`, `validate_citations.py`...) đã có sẵn và hỗ trợ chức năng tương đương. Agent bắt buộc phải đọc và kiểm tra tài liệu của Skill trước khi thực hiện code mới.
+1. **Quản lý Môi trường:** Chỉ sử dụng công cụ **`uv`** làm trình quản lý môi trường ảo (`.venv`) và thư viện. Không sử dụng `pip` hệ thống.
+2. **Khai báo Thư viện:** Mọi thư viện phải được khai báo trong `pyproject.toml` qua lệnh `uv add`.
+3. **Thực thi Script:** Mọi phân tích hoặc truy vấn phải chạy thông qua **`uv run <script>`** hoặc python của môi trường ảo, tuân thủ tiêu chuẩn lập trình AI-First.
+4. **Tái sử dụng Mã nguồn:** Không tự viết script phân tích/truy vấn mới nếu các kỹ năng (Skills) hiện có trong dự án đã hỗ trợ các công cụ chuẩn tương đương.
 
 ---
 

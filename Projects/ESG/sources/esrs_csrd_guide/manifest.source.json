@@ -1,0 +1,8 @@
+{
+  "source_id": "esrs_csrd_guide",
+  "title": "A Complete Guide to the ESRS CSRD",
+  "status": "pending",
+  "pdf_dir": "Projects/ESG/sources/esrs_csrd_guide/pdf",
+  "kb_collection": "Projects/ESG/kb/esrs_csrd_guide",
+  "notes": "Complete guide to the ESRS CSRD document to be processed into Markdown KB and Neo4j graph."
+}

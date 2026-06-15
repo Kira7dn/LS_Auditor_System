@@ -1,0 +1,8 @@
+{
+  "source_id": "samsung_sustainability_2025",
+  "title": "Samsung Electronics Sustainability Report 2025",
+  "status": "pending",
+  "pdf_dir": "Projects/ESG/sources/samsung_sustainability_2025/pdf",
+  "kb_collection": "Projects/ESG/kb/samsung_sustainability_2025",
+  "notes": "Samsung Sustainability Report 2025 document to be processed into Markdown KB and Neo4j graph."
+}

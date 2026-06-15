@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "pdf": "Projects/ESG/sources/esrs_csrd_guide/pdf/0125_A_complete_guide_to_the_ESRS_CSRD.pdf",
+  "total_pages": 22,
+  "chapters": [
+    {
+      "num": 1,
+      "slug": "complete_guide",
+      "title": "A Complete Guide to the ESRS CSRD",
+      "start_page": 1,
+      "end_page": 22
+    }
+  ]
+}

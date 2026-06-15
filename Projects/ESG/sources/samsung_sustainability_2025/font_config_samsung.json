@@ -1,0 +1,11 @@
+{
+  "h2_min_size": 12.0,
+  "h3_min_size": 9.0,
+  "h3_max_len": 100,
+  "h3_no_trailing_punct": true,
+  "callout_max_size": 8.0,
+  "callout_min_len": 8,
+  "skip_max_size": 7.5,
+  "superscript_max_size": 6.5,
+  "bold_flag": 16
+}

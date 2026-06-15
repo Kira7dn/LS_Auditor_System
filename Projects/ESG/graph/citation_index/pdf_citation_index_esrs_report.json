@@ -1,0 +1,90 @@
+{
+  "status": "success",
+  "anchor_count": 217,
+  "resolved_count": 201,
+  "unresolved_count": 16,
+  "bbox_resolve_rate": 0.926,
+  "ambiguous_count": 47,
+  "unresolved_sample": [
+    {
+      "anchor": "supports_both_compliance_and_long_term_value_creation_a_timeline_of_csrd_implementation_from_start_to",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "category_standard_focus",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "environmental_i_e1_e5_climate_change_pollution_water_and_marine_resources_biodiversity_and",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "social_s1_s4_climate_change_pollution_water_and_marine_resources_biodiversity_and",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "ethical_guidelines_pdf_whistleblowing_systems_human_rights_policy_pdf_responsible_political_engagement",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "workplace_health_and_safety_policy_pdf_anti_competitive_behavior_anti_corruption_policy_pdf_travel_policy_pdf",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "business_ethics_and_culture_purchasing_policy_pdf_these_disclosures_require_companies_to_demonstrate_how_they_ensure_ethical_conduct",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "which_systems_were_used_how_it_can_be_verified_each_data_point_must_be_clearly_identifiable_in_the_sustainability",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "key_integration_points_include_disclosures_in_esrs_2_and_esrs_e1_e5_feed_into_the_environmental_objectives_of_the_taxonomy_taxonomy_tables_and_eligibility_alignment_assessments",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "verifying_and_expanding_their_disclosures_rather_than_reinventing_their_reporting_from_scratch_where_to_start_with_esrs_reporting",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "typical_focus_areas_include_identifying_which_esrs_data_points_are_already_captured_through_existing_reporting_frameworks_gri_tcfd_cdp",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "etc_reviewing_data_quality_completeness_and_traceability_assessing_whether_current_systems_can",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "support_audit_requirements_gap_analysis_often_reveals_that_companies_have_more_information_than_they",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "social_data_esrs_reporting_software_plays_a_critical_role_in_centralizing_data_across_departments_and_geographies_ensuring_traceability_and_audit_trails",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "robin_orset_k_l_s_senior_associate_provide_page_references_for_all_reported_drs_iro_2_requirement",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    },
+    {
+      "anchor": "book_a_demo_today_trusted_by",
+      "markdown_file": "Projects\\ESG\\kb\\esrs_csrd_guide\\01_complete_guide.md",
+      "reason": "no_pdf_match"
+    }
+  ]
+}

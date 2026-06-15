@@ -79,3 +79,7 @@ Tài liệu này là danh sách chính thức các thành phần cần xây dự
 - [x] `intervention-thesis.md`: Mẫu lộ trình can thiệp và ROI.
 - [x] `solution-proposal.md`: Mẫu đề xuất giải pháp và báo giá.
 - [x] `final-audit-report.md`: Mẫu báo cáo tổng hợp kết quả Audit.
+
+### 4.4. Hỗ trợ tra cứu & Báo cáo tri thức (KB/Graph Query)
+- [x] `query-graph-report.md`: Mẫu báo cáo kết quả truy vấn Graph Knowledge Base.
+
